@@ -4,16 +4,33 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import CommentIcon from '@material-ui/icons/Comment';
 import SettingsIcon from '@material-ui/icons/Settings';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import StorageIcon from '@material-ui/icons/Storage';
+import StorefrontIcon from '@material-ui/icons/Storefront';
+import DnsIcon from '@material-ui/icons/Dns';
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import ForumIcon from '@material-ui/icons/Forum';
 import PersonIcon from '@material-ui/icons/Person';
+import SignalCellularAltIcon from '@material-ui/icons/SignalCellularAlt';
 import GroupIcon from '@material-ui/icons/Group';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import SettingsIcon2 from '@material-ui/icons/Settings';
 import { useRouter } from 'next/router';
 
 export const MainListItems: React.FC = () => {
-	const router = useRouter();
-	return (
-		<div>
-<ListItem button onClick={() => router.push('/admin/models/User')}>
+  const router = useRouter();
+  return (
+    <div>
+      <ListItem button onClick={() => router.push('/admin/models/statictics')}>
+        <ListItemIcon>
+          <SignalCellularAltIcon />
+        </ListItemIcon>
+        <ListItemText primary="Cтатистика" />
+      </ListItem>
+      <ListItem button onClick={() => router.push('/admin/models/User')}>
         <ListItemIcon>
           <PersonIcon />
         </ListItemIcon>
@@ -22,80 +39,80 @@ export const MainListItems: React.FC = () => {
 
       <ListItem button onClick={() => router.push('/admin/models/Transaction')}>
         <ListItemIcon>
-          <ForumIcon />
+          <AttachMoneyIcon />
         </ListItemIcon>
         <ListItemText primary="Transaction" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/Purchase')}>
         <ListItemIcon>
-          <CommentIcon />
+          <ShoppingCartIcon />
         </ListItemIcon>
         <ListItemText primary="Purchase" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/Transfers')}>
         <ListItemIcon>
-          <CommentIcon />
+          <PeopleAltIcon />
         </ListItemIcon>
         <ListItemText primary="Transfers" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/Inventory')}>
         <ListItemIcon>
-          <CommentIcon />
+          <ShoppingBasketIcon />
         </ListItemIcon>
         <ListItemText primary="Inventory" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/ServerType')}>
         <ListItemIcon>
-          <CommentIcon />
+          <StorageIcon />
         </ListItemIcon>
         <ListItemText primary="ServerType" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/Server')}>
         <ListItemIcon>
-          <CommentIcon />
+          <DnsIcon />
         </ListItemIcon>
         <ListItemText primary="Server" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/Product')}>
         <ListItemIcon>
-          <CommentIcon />
+          <StorefrontIcon />
         </ListItemIcon>
         <ListItemText primary="Product" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/Promocodes')}>
         <ListItemIcon>
-          <CommentIcon />
+          <LoyaltyIcon />
         </ListItemIcon>
         <ListItemText primary="Promocodes" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/urlSettings')}>
         <ListItemIcon>
-          <CommentIcon />
+          <SettingsIcon2 />
         </ListItemIcon>
         <ListItemText primary="urlSettings" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/baseSettings')}>
         <ListItemIcon>
-          <CommentIcon />
+          <SettingsIcon2 />
         </ListItemIcon>
         <ListItemText primary="baseSettings" />
       </ListItem>
 
       <ListItem button onClick={() => router.push('/admin/models/Token')}>
         <ListItemIcon>
-          <CommentIcon />
+          <AccountCircleIcon />
         </ListItemIcon>
         <ListItemText primary="Token" />
       </ListItem>
-		</div>
-	);
+    </div>
+  );
 };

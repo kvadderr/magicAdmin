@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: 36,
+    // backgroundColor: 'red',
   },
   menuButtonHidden: {
     display: 'none',
@@ -60,6 +61,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   drawerPaper: {
+    // backgroundColor: '#171226',
+    // color: 'white',
+    // stroke: 'white',
+    // borderRight: '1px solid #8774b8',
     position: 'relative',
     whiteSpace: 'nowrap',
     width: drawerWidth,
@@ -131,7 +136,7 @@ const AdminLayout: React.FC = ({ children }) => {
                 <MenuIcon />
               </IconButton>
               <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-                Dashboard
+                Панель администратора
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
