@@ -1,0 +1,30 @@
+image: node:12.11.0-buster
+
+stages:
+  - dev
+  - staging
+
+
+dev:
+  type: deploy
+  stage: dev
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=dev-accelerator-admin --api-key=$HEROKU_API_KEY
+  only:
+    - dev
+
+staging:
+  type: deploy
+  stage: staging
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=staging-accelerator-admin --api-key=$HEROKU_API_KEY
+  only:
+    - staging
