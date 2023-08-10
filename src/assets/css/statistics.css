@@ -1,0 +1,27 @@
+.menuStatictic {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: row;
+  gap: 40px;
+}
+.sectionStatistic {
+  width: auto;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.sectionActive {
+  /* background-color: #0463f1; */
+  /* border-radius: 8px; */
+  border-bottom: 2px solid #0463f1;
+
+  /* color: #0463f1; */
+  /* text-decoration: underline; */
+}
+.containerSection {
+  padding-top: 20px;
+  width: 100%;
+}
