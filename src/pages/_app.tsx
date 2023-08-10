@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import { AppProps } from 'next/app';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import * as React from 'react';
 import { NextPage } from 'next';
 import { ApolloProvider } from '@apollo/client';
 import { useApollo } from 'server/client';
 import AdminLayout from 'layouts/Admin';
+import '../assets/css/App.css';
 
 import '@paljs/admin/style.css';
 
@@ -22,7 +24,7 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   }, []);
 
   const admin = router.pathname.startsWith('/admin');
-
+  const Query_Client = new QueryClient();
   return (
     <>
       <Head>
@@ -30,15 +32,17 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       </Head>
-      <ApolloProvider client={apolloClient}>
-        {admin ? (
-          <AdminLayout>
+      <QueryClientProvider client={Query_Client}>
+        <ApolloProvider client={apolloClient}>
+          {admin ? (
+            <AdminLayout>
+              <Component {...pageProps} />
+            </AdminLayout>
+          ) : (
             <Component {...pageProps} />
-          </AdminLayout>
-        ) : (
-          <Component {...pageProps} />
-        )}
-      </ApolloProvider>
+          )}
+        </ApolloProvider>
+      </QueryClientProvider>
     </>
   );
 };
