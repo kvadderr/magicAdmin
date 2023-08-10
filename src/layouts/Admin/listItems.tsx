@@ -24,7 +24,7 @@ export const MainListItems: React.FC = () => {
   const router = useRouter();
   return (
     <div>
-      <ListItem button onClick={() => router.push('/admin/Statictics')}>
+      <ListItem button onClick={() => router.push('/admin/Statistics')}>
         <ListItemIcon>
           <SignalCellularAltIcon />
         </ListItemIcon>
