@@ -7,13 +7,15 @@ export const baseApi = axios.create({
   withCredentials: true,
 });
 
-baseApi.defaults.headers.common['Content-Type'] = 'application/json';
+let token;
+
 if (typeof window !== 'undefined') {
-  // Perform localStorage action
-  const token = localStorage.getItem('accessToken');
-  if (token) {
-    baseApi.defaults.headers.common['authorization'] = `Bearer ${token}`;
-  }
+  token = localStorage.getItem('accessToken');
+}
+baseApi.defaults.headers.common['Content-Type'] = 'application/json';
+
+if (token) {
+  baseApi.defaults.headers.common['authorization'] = `Bearer ${token}`;
 }
 
 export const refreshAccessTokenFn = async () => {
@@ -21,8 +23,20 @@ export const refreshAccessTokenFn = async () => {
   return response.data;
 };
 
+const config = {
+  headers: {
+    ['Content-Type']: 'application/json',
+    authorization: `Bearer ${token}`,
+  },
+};
+
+export const checkAdmin = async () => {
+  const response = await axios.get<any>(`https://magicowgs.geryon.space/api_dev/auth/validateAdmin`, config);
+  return response.data;
+};
+
 baseApi.interceptors.response.use(
-  (response) => {
+  async (response: any) => {
     return response;
   },
   async (error) => {

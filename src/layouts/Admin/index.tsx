@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState, useEffect, useContext } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -18,6 +18,7 @@ import { MainListItems } from './listItems';
 import theme from '../../components/theme';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
+import { checkAdmin } from 'api/settings';
 
 const drawerWidth = 240;
 
@@ -107,8 +108,8 @@ const useStyles = makeStyles((theme) => ({
 
 const AdminLayout: React.FC = ({ children }) => {
   const classes = useStyles();
-  const router = useRouter();
-  const auth = router.pathname.startsWith('/admin/auth');
+  // const router = useRouter();
+  const [auth, setAuth] = useState(false);
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -117,10 +118,22 @@ const AdminLayout: React.FC = ({ children }) => {
     setOpen(false);
   };
 
+  const setDynamicComponent = async () => {
+    const res = await checkAdmin();
+    if (!res) {
+      window.location.href = 'https://magicowgs.geryon.space/';
+    }
+    setAuth(res);
+  };
+
+  useEffect(() => {
+    setDynamicComponent();
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
-      {auth ? (
-        <>{children}</>
+      {!auth ? (
+        <div>Вам недоступна данная страница</div>
       ) : (
         <div className={classes.root}>
           <CssBaseline />
