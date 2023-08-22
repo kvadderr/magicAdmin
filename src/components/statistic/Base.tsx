@@ -21,7 +21,7 @@ const Base = () => {
   if (isLoading) return <Loader />;
   return (
     <div className="container-base">
-      <div className="content-base">{array_menu[activeSection] + ': ' + data.profit + '₽'}</div>
+      <div className="content-base">{data?.profit ? array_menu[activeSection] + ': ' + data.profit + '₽' : ''}</div>
       <div className="menu-base">
         {array_menu.map((section: any, index: number) => (
           <div
