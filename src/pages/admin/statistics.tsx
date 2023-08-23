@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Base from 'components/statistic/Base';
+import Base from 'components/statistic/Base/Base';
 import ProfitDetails from 'components/statistic/ProfitDetails';
 import Visits from 'components/statistic/Visits';
 
