@@ -20,3 +20,15 @@ export const getIcomeByDay = async () => {
   const response = await baseApi.get<any>('/statisctic/perDay');
   return response.data;
 };
+export const getIcomeRangeDate = async (start: Date, end: Date) => {
+  const response = await baseApi.get<any>(`/statisctic/randomDate?startDate=${start}&endDate=${end}`);
+  return response.data;
+};
+export const getAverageDepositAmount = async () => {
+  const response = await baseApi.get<any>(`/statisctic/avgDeposite`);
+  return response.data;
+};
+export const getAverageNumberOfDeposits = async () => {
+  const response = await baseApi.get<any>(`statisctic/avgDepositePerUser`);
+  return response.data;
+};
