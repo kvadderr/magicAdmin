@@ -16,3 +16,7 @@ export const getIcomeAllTime = async () => {
   const response = await baseApi.get<any>('/statisctic/allTime');
   return response.data;
 };
+export const getIcomeByDay = async () => {
+  const response = await baseApi.get<any>('/statisctic/perDay');
+  return response.data;
+};
