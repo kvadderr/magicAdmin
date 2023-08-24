@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Base from 'components/statistic/Base/Base';
-import ProfitDetails from 'components/statistic/ProfitDetails';
+import ProfitDetails from 'components/statistic/ProfitDetails/ProfitDetails';
 import Visits from 'components/statistic/Visits/Visits';
 
 const Statistics = () => {
