@@ -1,0 +1,12 @@
+.header-count-visits {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 14px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.box-count-visits {
+  display: flex;
+  flex-direction: column;
+}

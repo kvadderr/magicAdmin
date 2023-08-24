@@ -31,8 +31,6 @@ const ProfitByDayItem = (value: any) => {
 };
 
 const ProfitByDay = ({ text, data }: ProfitByDayProps) => {
-  console.log('data', data);
-  console.log('typeof data', typeof data);
   return (
     <div>
       <div className="header-section-in-profit">{text}</div>
