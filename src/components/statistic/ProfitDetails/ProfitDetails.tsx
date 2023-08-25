@@ -28,21 +28,21 @@ const ProfitDetails = () => {
   ];
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [serverId, setServerId] = useState(null);
 
   const { isLoading, data, refetch, isFetching } = useQuery(['incomeToday', array_request[activeSection]], () =>
-    array_request[activeSection](startDate, endDate),
+    array_request[activeSection](startDate, endDate, serverId),
   );
 
   useEffect(() => {
     refetch();
-  }, [activeSection, startDate, endDate]);
+  }, [activeSection, startDate, endDate, serverId]);
 
   const ArrayMenu = [
     { text: 'Доход с каждого сервера', component: 'ProfitOnServer' },
     { text: 'Доход с каждого сервера за выбранный период', component: 'ProfitOnServerRangeDate' },
     { text: 'Доход с каждого товара', component: 'ProfitByItem' },
     { text: 'Доход с каждого товара за выбранный период', component: 'ProfitByItemRangeDate' },
-    // { text: 'Доход с каждого товара за выбранный период на указанном сервер', component: 'ProfitByDay' },
     { text: 'Количество покупок товара', component: 'CountOfProducts' },
     { text: 'Количество покупок товара за выбранный период', component: 'CountOfProductsRangeDate' },
   ];
@@ -82,6 +82,8 @@ const ProfitDetails = () => {
             setEndDate={setEndDate}
             data={data}
             text={item.text}
+            serverId={serverId}
+            setServerId={setServerId}
           />
         );
         break;

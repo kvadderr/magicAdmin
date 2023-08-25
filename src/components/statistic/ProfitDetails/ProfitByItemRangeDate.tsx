@@ -2,6 +2,8 @@ import React from 'react';
 import Table from '../../UI/Table';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useQuery } from 'react-query';
+import { getServers } from '../../../api/mainApi';
 
 interface dataItem {
   _sum: { lostMainBalance: number };
@@ -14,6 +16,8 @@ export interface ProfitByDayProps {
   setEndDate: (value: Date) => void;
   text: string;
   data: dataItem[] | undefined;
+  serverId: number | null;
+  setServerId: (val: number | null) => void;
 }
 const header = [
   {
@@ -31,12 +35,22 @@ const ProfitOnServerItem = (value: any) => {
   return (
     <tr>
       <td scope="row">{data?.item}</td>
-      <td>{data?.profit + ' ₽'}</td>
+      <td>{(data?.profit != null ? data.profit : 0) + ' ₽'}</td>
     </tr>
   );
 };
 
-const ProfitByItemRangeDate = ({ startDate, setStartDate, endDate, setEndDate, text, data }: ProfitByDayProps) => {
+const ProfitByItemRangeDate = ({
+  startDate,
+  setStartDate,
+  endDate,
+  setEndDate,
+  text,
+  data,
+  serverId,
+  setServerId,
+}: ProfitByDayProps) => {
+  const { data: servers } = useQuery('servers', getServers);
   return (
     <div>
       <div className="header-section-in-profit">
@@ -57,6 +71,16 @@ const ProfitByItemRangeDate = ({ startDate, setStartDate, endDate, setEndDate, t
             maxDate={new Date()}
             dateFormat="dd.MM.yyyy"
           />
+        </div>
+        <div className="custom-select">
+          <select defaultValue={serverId} onChange={(event) => setServerId(event.target.value)}>
+            <option value={null}>Все</option>
+            {servers?.map((server: any, index: any) => (
+              <option key={index} value={server.id}>
+                {server.name}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 

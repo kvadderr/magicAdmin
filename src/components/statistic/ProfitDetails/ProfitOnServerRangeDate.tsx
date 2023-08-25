@@ -31,7 +31,7 @@ const ProfitOnServerItem = (value: any) => {
   return (
     <tr>
       <td scope="row">{data?.serverName}</td>
-      <td>{data?.profit + ' ₽'}</td>
+      <td>{(data?.profit != null ? data.profit : 0) + ' ₽'}</td>
     </tr>
   );
 };
