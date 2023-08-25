@@ -31,7 +31,7 @@ const config = {
 };
 
 export const checkAdmin = async () => {
-  const response = await axios.get<any>(`https://magicowgs.geryon.space/api_dev/auth/validateAdmin`, config);
+  const response = await axios.get<any>(`https://magicowgs.geryon.space/dev/auth/validateAdmin`, config);
   return response.data;
 };
 
