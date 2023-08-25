@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://magicowgs.geryon.space/api_dev';
+const BASE_URL = 'https://magicowgs.geryon.space/dev';
 
 export const baseApi = axios.create({
   baseURL: BASE_URL,
