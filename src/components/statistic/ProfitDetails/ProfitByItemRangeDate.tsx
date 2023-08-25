@@ -71,16 +71,17 @@ const ProfitByItemRangeDate = ({
             maxDate={new Date()}
             dateFormat="dd.MM.yyyy"
           />
-        </div>
-        <div className="custom-select">
-          <select defaultValue={serverId} onChange={(event) => setServerId(event.target.value)}>
-            <option value={null}>Все</option>
-            {servers?.map((server: any, index: any) => (
-              <option key={index} value={server.id}>
-                {server.name}
-              </option>
-            ))}
-          </select>
+          <div> Выбранный сервер:</div>
+          <div className="custom-select">
+            <select defaultValue={serverId} onChange={(event) => setServerId(event.target.value)}>
+              <option value={null}>Все</option>
+              {servers?.map((server: any, index: any) => (
+                <option key={index} value={server.id}>
+                  {server.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
