@@ -26,9 +26,9 @@ const ProfitDetails = () => {
     getCountOfProducts,
     getCountOfProductsRangeDate,
   ];
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-  const [serverId, setServerId] = useState(null);
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [endDate, setEndDate] = useState<Date>(new Date());
+  const [serverId, setServerId] = useState<undefined | number>(undefined);
 
   const { isLoading, data, refetch, isFetching } = useQuery(['incomeToday', array_request[activeSection]], () =>
     array_request[activeSection](startDate, endDate, serverId),

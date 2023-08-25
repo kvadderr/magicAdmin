@@ -12,7 +12,7 @@ export const getProfitByItem = async () => {
   const response = await baseApi.get<any>('/statisctic/profitPerItem');
   return response.data;
 };
-export const getProfitByItemRangeDate = async (start: Date, end: Date, serverId: number | null) => {
+export const getProfitByItemRangeDate = async (start: Date, end: Date, serverId: number | undefined) => {
   const response = await baseApi.get<any>(
     `/statisctic/profitPerItemOnRandomDateOnServer?startDate=${start}&endDate=${end}&serverId=${serverId}`,
   );

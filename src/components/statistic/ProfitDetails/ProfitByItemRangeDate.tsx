@@ -10,14 +10,14 @@ interface dataItem {
   dateOfPurchase: string;
 }
 export interface ProfitByDayProps {
-  startDate: string | Date;
+  startDate: Date;
   setStartDate: (value: Date) => void;
-  endDate: string | Date;
+  endDate: Date;
   setEndDate: (value: Date) => void;
   text: string;
   data: dataItem[] | undefined;
-  serverId: number | null;
-  setServerId: (val: number | null) => void;
+  serverId: number | undefined;
+  setServerId: (val: number) => void;
 }
 const header = [
   {
@@ -73,8 +73,8 @@ const ProfitByItemRangeDate = ({
           />
           <div> Выбранный сервер:</div>
           <div className="custom-select">
-            <select defaultValue={serverId} onChange={(event) => setServerId(event.target.value)}>
-              <option value={null}>Все</option>
+            <select defaultValue={serverId} onChange={(event) => setServerId(Number(event.target.value))}>
+              <option value={undefined}>Все</option>
               {servers?.map((server: any, index: any) => (
                 <option key={index} value={server.id}>
                   {server.name}
