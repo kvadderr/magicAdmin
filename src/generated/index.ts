@@ -29,6 +29,15 @@ export type AggregateBaseSettings = {
   _sum?: Maybe<BaseSettingsSumAggregateOutputType>;
 };
 
+export type AggregateContacts = {
+  __typename?: 'AggregateContacts';
+  _avg?: Maybe<ContactsAvgAggregateOutputType>;
+  _count?: Maybe<ContactsCountAggregateOutputType>;
+  _max?: Maybe<ContactsMaxAggregateOutputType>;
+  _min?: Maybe<ContactsMinAggregateOutputType>;
+  _sum?: Maybe<ContactsSumAggregateOutputType>;
+};
+
 export type AggregateInventory = {
   __typename?: 'AggregateInventory';
   _avg?: Maybe<InventoryAvgAggregateOutputType>;
@@ -128,10 +137,36 @@ export type AggregateUser = {
   _sum?: Maybe<UserSumAggregateOutputType>;
 };
 
+export type AggregateVisitors = {
+  __typename?: 'AggregateVisitors';
+  _avg?: Maybe<VisitorsAvgAggregateOutputType>;
+  _count?: Maybe<VisitorsCountAggregateOutputType>;
+  _max?: Maybe<VisitorsMaxAggregateOutputType>;
+  _min?: Maybe<VisitorsMinAggregateOutputType>;
+  _sum?: Maybe<VisitorsSumAggregateOutputType>;
+};
+
+export type BaseSettings = {
+  __typename?: 'BaseSettings';
+  IPWhiteList: Scalars['String'];
+  apiKey: Scalars['String'];
+  header: Scalars['String'];
+  id: Scalars['Int'];
+  mainPage: Scalars['String'];
+  panelURLs?: Maybe<Scalars['Json']>;
+  saleMode: Scalars['Boolean'];
+  startBalance: Scalars['Int'];
+};
+
 export type BaseSettingsAvgAggregateOutputType = {
   __typename?: 'BaseSettingsAvgAggregateOutputType';
   id?: Maybe<Scalars['Float']>;
   startBalance?: Maybe<Scalars['Float']>;
+};
+
+export type BaseSettingsAvgOrderByAggregateInput = {
+  id?: Maybe<SortOrder>;
+  startBalance?: Maybe<SortOrder>;
 };
 
 export type BaseSettingsCountAggregateOutputType = {
@@ -147,6 +182,38 @@ export type BaseSettingsCountAggregateOutputType = {
   startBalance: Scalars['Int'];
 };
 
+export type BaseSettingsCountOrderByAggregateInput = {
+  IPWhiteList?: Maybe<SortOrder>;
+  apiKey?: Maybe<SortOrder>;
+  header?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  mainPage?: Maybe<SortOrder>;
+  panelURLs?: Maybe<SortOrder>;
+  saleMode?: Maybe<SortOrder>;
+  startBalance?: Maybe<SortOrder>;
+};
+
+export type BaseSettingsCreateInput = {
+  IPWhiteList: Scalars['String'];
+  apiKey: Scalars['String'];
+  header: Scalars['String'];
+  mainPage: Scalars['String'];
+  panelURLs?: Maybe<Scalars['Json']>;
+  saleMode?: Maybe<Scalars['Boolean']>;
+  startBalance: Scalars['Int'];
+};
+
+export type BaseSettingsCreateManyInput = {
+  IPWhiteList: Scalars['String'];
+  apiKey: Scalars['String'];
+  header: Scalars['String'];
+  id?: Maybe<Scalars['Int']>;
+  mainPage: Scalars['String'];
+  panelURLs?: Maybe<Scalars['Json']>;
+  saleMode?: Maybe<Scalars['Boolean']>;
+  startBalance: Scalars['Int'];
+};
+
 export type BaseSettingsMaxAggregateOutputType = {
   __typename?: 'BaseSettingsMaxAggregateOutputType';
   IPWhiteList?: Maybe<Scalars['String']>;
@@ -156,6 +223,16 @@ export type BaseSettingsMaxAggregateOutputType = {
   mainPage?: Maybe<Scalars['String']>;
   saleMode?: Maybe<Scalars['Boolean']>;
   startBalance?: Maybe<Scalars['Int']>;
+};
+
+export type BaseSettingsMaxOrderByAggregateInput = {
+  IPWhiteList?: Maybe<SortOrder>;
+  apiKey?: Maybe<SortOrder>;
+  header?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  mainPage?: Maybe<SortOrder>;
+  saleMode?: Maybe<SortOrder>;
+  startBalance?: Maybe<SortOrder>;
 };
 
 export type BaseSettingsMinAggregateOutputType = {
@@ -169,6 +246,43 @@ export type BaseSettingsMinAggregateOutputType = {
   startBalance?: Maybe<Scalars['Int']>;
 };
 
+export type BaseSettingsMinOrderByAggregateInput = {
+  IPWhiteList?: Maybe<SortOrder>;
+  apiKey?: Maybe<SortOrder>;
+  header?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  mainPage?: Maybe<SortOrder>;
+  saleMode?: Maybe<SortOrder>;
+  startBalance?: Maybe<SortOrder>;
+};
+
+export type BaseSettingsOrderByWithAggregationInput = {
+  IPWhiteList?: Maybe<SortOrder>;
+  _avg?: Maybe<BaseSettingsAvgOrderByAggregateInput>;
+  _count?: Maybe<BaseSettingsCountOrderByAggregateInput>;
+  _max?: Maybe<BaseSettingsMaxOrderByAggregateInput>;
+  _min?: Maybe<BaseSettingsMinOrderByAggregateInput>;
+  _sum?: Maybe<BaseSettingsSumOrderByAggregateInput>;
+  apiKey?: Maybe<SortOrder>;
+  header?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  mainPage?: Maybe<SortOrder>;
+  panelURLs?: Maybe<SortOrder>;
+  saleMode?: Maybe<SortOrder>;
+  startBalance?: Maybe<SortOrder>;
+};
+
+export type BaseSettingsOrderByWithRelationInput = {
+  IPWhiteList?: Maybe<SortOrder>;
+  apiKey?: Maybe<SortOrder>;
+  header?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  mainPage?: Maybe<SortOrder>;
+  panelURLs?: Maybe<SortOrder>;
+  saleMode?: Maybe<SortOrder>;
+  startBalance?: Maybe<SortOrder>;
+};
+
 export enum BaseSettingsScalarFieldEnum {
   IpWhiteList = 'IPWhiteList',
   ApiKey = 'apiKey',
@@ -180,10 +294,100 @@ export enum BaseSettingsScalarFieldEnum {
   StartBalance = 'startBalance'
 }
 
+export type BaseSettingsScalarWhereWithAggregatesInput = {
+  AND?: Maybe<Array<Maybe<BaseSettingsScalarWhereWithAggregatesInput>>>;
+  IPWhiteList?: Maybe<StringWithAggregatesFilter>;
+  NOT?: Maybe<Array<Maybe<BaseSettingsScalarWhereWithAggregatesInput>>>;
+  OR?: Maybe<Array<Maybe<BaseSettingsScalarWhereWithAggregatesInput>>>;
+  apiKey?: Maybe<StringWithAggregatesFilter>;
+  header?: Maybe<StringWithAggregatesFilter>;
+  id?: Maybe<IntWithAggregatesFilter>;
+  mainPage?: Maybe<StringWithAggregatesFilter>;
+  panelURLs?: Maybe<JsonNullableWithAggregatesFilter>;
+  saleMode?: Maybe<BoolWithAggregatesFilter>;
+  startBalance?: Maybe<IntWithAggregatesFilter>;
+};
+
 export type BaseSettingsSumAggregateOutputType = {
   __typename?: 'BaseSettingsSumAggregateOutputType';
   id?: Maybe<Scalars['Int']>;
   startBalance?: Maybe<Scalars['Int']>;
+};
+
+export type BaseSettingsSumOrderByAggregateInput = {
+  id?: Maybe<SortOrder>;
+  startBalance?: Maybe<SortOrder>;
+};
+
+export type BaseSettingsUncheckedCreateInput = {
+  IPWhiteList: Scalars['String'];
+  apiKey: Scalars['String'];
+  header: Scalars['String'];
+  id?: Maybe<Scalars['Int']>;
+  mainPage: Scalars['String'];
+  panelURLs?: Maybe<Scalars['Json']>;
+  saleMode?: Maybe<Scalars['Boolean']>;
+  startBalance: Scalars['Int'];
+};
+
+export type BaseSettingsUncheckedUpdateInput = {
+  IPWhiteList?: Maybe<StringFieldUpdateOperationsInput>;
+  apiKey?: Maybe<StringFieldUpdateOperationsInput>;
+  header?: Maybe<StringFieldUpdateOperationsInput>;
+  id?: Maybe<IntFieldUpdateOperationsInput>;
+  mainPage?: Maybe<StringFieldUpdateOperationsInput>;
+  panelURLs?: Maybe<Scalars['Json']>;
+  saleMode?: Maybe<BoolFieldUpdateOperationsInput>;
+  startBalance?: Maybe<IntFieldUpdateOperationsInput>;
+};
+
+export type BaseSettingsUncheckedUpdateManyInput = {
+  IPWhiteList?: Maybe<StringFieldUpdateOperationsInput>;
+  apiKey?: Maybe<StringFieldUpdateOperationsInput>;
+  header?: Maybe<StringFieldUpdateOperationsInput>;
+  id?: Maybe<IntFieldUpdateOperationsInput>;
+  mainPage?: Maybe<StringFieldUpdateOperationsInput>;
+  panelURLs?: Maybe<Scalars['Json']>;
+  saleMode?: Maybe<BoolFieldUpdateOperationsInput>;
+  startBalance?: Maybe<IntFieldUpdateOperationsInput>;
+};
+
+export type BaseSettingsUpdateInput = {
+  IPWhiteList?: Maybe<StringFieldUpdateOperationsInput>;
+  apiKey?: Maybe<StringFieldUpdateOperationsInput>;
+  header?: Maybe<StringFieldUpdateOperationsInput>;
+  mainPage?: Maybe<StringFieldUpdateOperationsInput>;
+  panelURLs?: Maybe<Scalars['Json']>;
+  saleMode?: Maybe<BoolFieldUpdateOperationsInput>;
+  startBalance?: Maybe<IntFieldUpdateOperationsInput>;
+};
+
+export type BaseSettingsUpdateManyMutationInput = {
+  IPWhiteList?: Maybe<StringFieldUpdateOperationsInput>;
+  apiKey?: Maybe<StringFieldUpdateOperationsInput>;
+  header?: Maybe<StringFieldUpdateOperationsInput>;
+  mainPage?: Maybe<StringFieldUpdateOperationsInput>;
+  panelURLs?: Maybe<Scalars['Json']>;
+  saleMode?: Maybe<BoolFieldUpdateOperationsInput>;
+  startBalance?: Maybe<IntFieldUpdateOperationsInput>;
+};
+
+export type BaseSettingsWhereInput = {
+  AND?: Maybe<Array<Maybe<BaseSettingsWhereInput>>>;
+  IPWhiteList?: Maybe<StringFilter>;
+  NOT?: Maybe<Array<Maybe<BaseSettingsWhereInput>>>;
+  OR?: Maybe<Array<Maybe<BaseSettingsWhereInput>>>;
+  apiKey?: Maybe<StringFilter>;
+  header?: Maybe<StringFilter>;
+  id?: Maybe<IntFilter>;
+  mainPage?: Maybe<StringFilter>;
+  panelURLs?: Maybe<JsonNullableFilter>;
+  saleMode?: Maybe<BoolFilter>;
+  startBalance?: Maybe<IntFilter>;
+};
+
+export type BaseSettingsWhereUniqueInput = {
+  id?: Maybe<Scalars['Int']>;
 };
 
 export type BatchPayload = {
@@ -219,6 +423,174 @@ export type BoolWithAggregatesFilter = {
   _min?: Maybe<NestedBoolFilter>;
   equals?: Maybe<Scalars['Boolean']>;
   not?: Maybe<NestedBoolWithAggregatesFilter>;
+};
+
+export type Contacts = {
+  __typename?: 'Contacts';
+  icon: Scalars['String'];
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  url: Scalars['String'];
+};
+
+export type ContactsAvgAggregateOutputType = {
+  __typename?: 'ContactsAvgAggregateOutputType';
+  id?: Maybe<Scalars['Float']>;
+};
+
+export type ContactsAvgOrderByAggregateInput = {
+  id?: Maybe<SortOrder>;
+};
+
+export type ContactsCountAggregateOutputType = {
+  __typename?: 'ContactsCountAggregateOutputType';
+  _all: Scalars['Int'];
+  icon: Scalars['Int'];
+  id: Scalars['Int'];
+  name: Scalars['Int'];
+  url: Scalars['Int'];
+};
+
+export type ContactsCountOrderByAggregateInput = {
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  name?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export type ContactsCreateInput = {
+  icon: Scalars['String'];
+  name: Scalars['String'];
+  url: Scalars['String'];
+};
+
+export type ContactsCreateManyInput = {
+  icon: Scalars['String'];
+  id?: Maybe<Scalars['Int']>;
+  name: Scalars['String'];
+  url: Scalars['String'];
+};
+
+export type ContactsMaxAggregateOutputType = {
+  __typename?: 'ContactsMaxAggregateOutputType';
+  icon?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+};
+
+export type ContactsMaxOrderByAggregateInput = {
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  name?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export type ContactsMinAggregateOutputType = {
+  __typename?: 'ContactsMinAggregateOutputType';
+  icon?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+};
+
+export type ContactsMinOrderByAggregateInput = {
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  name?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export type ContactsOrderByWithAggregationInput = {
+  _avg?: Maybe<ContactsAvgOrderByAggregateInput>;
+  _count?: Maybe<ContactsCountOrderByAggregateInput>;
+  _max?: Maybe<ContactsMaxOrderByAggregateInput>;
+  _min?: Maybe<ContactsMinOrderByAggregateInput>;
+  _sum?: Maybe<ContactsSumOrderByAggregateInput>;
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  name?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export type ContactsOrderByWithRelationInput = {
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  name?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export enum ContactsScalarFieldEnum {
+  Icon = 'icon',
+  Id = 'id',
+  Name = 'name',
+  Url = 'url'
+}
+
+export type ContactsScalarWhereWithAggregatesInput = {
+  AND?: Maybe<Array<Maybe<ContactsScalarWhereWithAggregatesInput>>>;
+  NOT?: Maybe<Array<Maybe<ContactsScalarWhereWithAggregatesInput>>>;
+  OR?: Maybe<Array<Maybe<ContactsScalarWhereWithAggregatesInput>>>;
+  icon?: Maybe<StringWithAggregatesFilter>;
+  id?: Maybe<IntWithAggregatesFilter>;
+  name?: Maybe<StringWithAggregatesFilter>;
+  url?: Maybe<StringWithAggregatesFilter>;
+};
+
+export type ContactsSumAggregateOutputType = {
+  __typename?: 'ContactsSumAggregateOutputType';
+  id?: Maybe<Scalars['Int']>;
+};
+
+export type ContactsSumOrderByAggregateInput = {
+  id?: Maybe<SortOrder>;
+};
+
+export type ContactsUncheckedCreateInput = {
+  icon: Scalars['String'];
+  id?: Maybe<Scalars['Int']>;
+  name: Scalars['String'];
+  url: Scalars['String'];
+};
+
+export type ContactsUncheckedUpdateInput = {
+  icon?: Maybe<StringFieldUpdateOperationsInput>;
+  id?: Maybe<IntFieldUpdateOperationsInput>;
+  name?: Maybe<StringFieldUpdateOperationsInput>;
+  url?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type ContactsUncheckedUpdateManyInput = {
+  icon?: Maybe<StringFieldUpdateOperationsInput>;
+  id?: Maybe<IntFieldUpdateOperationsInput>;
+  name?: Maybe<StringFieldUpdateOperationsInput>;
+  url?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type ContactsUpdateInput = {
+  icon?: Maybe<StringFieldUpdateOperationsInput>;
+  name?: Maybe<StringFieldUpdateOperationsInput>;
+  url?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type ContactsUpdateManyMutationInput = {
+  icon?: Maybe<StringFieldUpdateOperationsInput>;
+  name?: Maybe<StringFieldUpdateOperationsInput>;
+  url?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type ContactsWhereInput = {
+  AND?: Maybe<Array<Maybe<ContactsWhereInput>>>;
+  NOT?: Maybe<Array<Maybe<ContactsWhereInput>>>;
+  OR?: Maybe<Array<Maybe<ContactsWhereInput>>>;
+  icon?: Maybe<StringFilter>;
+  id?: Maybe<IntFilter>;
+  name?: Maybe<StringFilter>;
+  url?: Maybe<StringFilter>;
+};
+
+export type ContactsWhereUniqueInput = {
+  id?: Maybe<Scalars['Int']>;
 };
 
 export type DateTimeFieldUpdateOperationsInput = {
@@ -461,33 +833,6 @@ export type Field = {
   upload: Scalars['Boolean'];
 };
 
-export type FloatNullableFilter = {
-  equals?: Maybe<Scalars['Float']>;
-  gt?: Maybe<Scalars['Float']>;
-  gte?: Maybe<Scalars['Float']>;
-  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
-  lt?: Maybe<Scalars['Float']>;
-  lte?: Maybe<Scalars['Float']>;
-  not?: Maybe<NestedFloatNullableFilter>;
-  notIn?: Maybe<Array<Maybe<Scalars['Float']>>>;
-};
-
-export type FloatNullableWithAggregatesFilter = {
-  _avg?: Maybe<NestedFloatNullableFilter>;
-  _count?: Maybe<NestedIntNullableFilter>;
-  _max?: Maybe<NestedFloatNullableFilter>;
-  _min?: Maybe<NestedFloatNullableFilter>;
-  _sum?: Maybe<NestedFloatNullableFilter>;
-  equals?: Maybe<Scalars['Float']>;
-  gt?: Maybe<Scalars['Float']>;
-  gte?: Maybe<Scalars['Float']>;
-  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
-  lt?: Maybe<Scalars['Float']>;
-  lte?: Maybe<Scalars['Float']>;
-  not?: Maybe<NestedFloatNullableWithAggregatesFilter>;
-  notIn?: Maybe<Array<Maybe<Scalars['Float']>>>;
-};
-
 export type IntFieldUpdateOperationsInput = {
   decrement?: Maybe<Scalars['Int']>;
   divide?: Maybe<Scalars['Int']>;
@@ -557,6 +902,9 @@ export type Inventory = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id: Scalars['Int'];
+  isCanBeRefund: Scalars['Boolean'];
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   product: Product;
   productId: Scalars['Int'];
   purchase: Purchase;
@@ -575,6 +923,7 @@ export type InventoryAvgAggregateOutputType = {
   amount?: Maybe<Scalars['Float']>;
   historyOfPurchaseId?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
+  packId?: Maybe<Scalars['Float']>;
   productId?: Maybe<Scalars['Float']>;
   serverId?: Maybe<Scalars['Float']>;
   serverTypeId?: Maybe<Scalars['Float']>;
@@ -585,6 +934,7 @@ export type InventoryAvgOrderByAggregateInput = {
   amount?: Maybe<SortOrder>;
   historyOfPurchaseId?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
+  packId?: Maybe<SortOrder>;
   productId?: Maybe<SortOrder>;
   serverId?: Maybe<SortOrder>;
   serverTypeId?: Maybe<SortOrder>;
@@ -599,6 +949,9 @@ export type InventoryCountAggregateOutputType = {
   dateOfReceive: Scalars['Int'];
   historyOfPurchaseId: Scalars['Int'];
   id: Scalars['Int'];
+  isCanBeRefund: Scalars['Int'];
+  isPartOfPack: Scalars['Int'];
+  packId: Scalars['Int'];
   productId: Scalars['Int'];
   serverId: Scalars['Int'];
   serverName: Scalars['Int'];
@@ -613,6 +966,9 @@ export type InventoryCountOrderByAggregateInput = {
   dateOfReceive?: Maybe<SortOrder>;
   historyOfPurchaseId?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
+  isCanBeRefund?: Maybe<SortOrder>;
+  isPartOfPack?: Maybe<SortOrder>;
+  packId?: Maybe<SortOrder>;
   productId?: Maybe<SortOrder>;
   serverId?: Maybe<SortOrder>;
   serverName?: Maybe<SortOrder>;
@@ -625,6 +981,9 @@ export type InventoryCreateInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
   dateOfReceive?: Maybe<Scalars['DateTime']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   product: ProductCreateNestedOneWithoutInventoryInput;
   purchase: PurchaseCreateNestedOneWithoutInventoryInput;
   server?: Maybe<ServerCreateNestedOneWithoutInventoryInput>;
@@ -640,6 +999,9 @@ export type InventoryCreateManyInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -654,6 +1016,9 @@ export type InventoryCreateManyProductInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
   serverTypeId?: Maybe<Scalars['Int']>;
@@ -671,6 +1036,9 @@ export type InventoryCreateManyPurchaseInput = {
   createdAt?: Maybe<Scalars['DateTime']>;
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -690,6 +1058,9 @@ export type InventoryCreateManyServerInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverName?: Maybe<Scalars['String']>;
   serverTypeId?: Maybe<Scalars['Int']>;
@@ -708,6 +1079,9 @@ export type InventoryCreateManyServerTypeInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -726,6 +1100,9 @@ export type InventoryCreateManyUserInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -802,6 +1179,9 @@ export type InventoryCreateWithoutProductInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
   dateOfReceive?: Maybe<Scalars['DateTime']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   purchase: PurchaseCreateNestedOneWithoutInventoryInput;
   server?: Maybe<ServerCreateNestedOneWithoutInventoryInput>;
   serverName?: Maybe<Scalars['String']>;
@@ -814,6 +1194,9 @@ export type InventoryCreateWithoutPurchaseInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
   dateOfReceive?: Maybe<Scalars['DateTime']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   product: ProductCreateNestedOneWithoutInventoryInput;
   server?: Maybe<ServerCreateNestedOneWithoutInventoryInput>;
   serverName?: Maybe<Scalars['String']>;
@@ -826,6 +1209,9 @@ export type InventoryCreateWithoutServerInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
   dateOfReceive?: Maybe<Scalars['DateTime']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   product: ProductCreateNestedOneWithoutInventoryInput;
   purchase: PurchaseCreateNestedOneWithoutInventoryInput;
   serverName?: Maybe<Scalars['String']>;
@@ -838,6 +1224,9 @@ export type InventoryCreateWithoutServerTypeInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
   dateOfReceive?: Maybe<Scalars['DateTime']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   product: ProductCreateNestedOneWithoutInventoryInput;
   purchase: PurchaseCreateNestedOneWithoutInventoryInput;
   server?: Maybe<ServerCreateNestedOneWithoutInventoryInput>;
@@ -850,6 +1239,9 @@ export type InventoryCreateWithoutUserInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
   dateOfReceive?: Maybe<Scalars['DateTime']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   product: ProductCreateNestedOneWithoutInventoryInput;
   purchase: PurchaseCreateNestedOneWithoutInventoryInput;
   server?: Maybe<ServerCreateNestedOneWithoutInventoryInput>;
@@ -871,6 +1263,9 @@ export type InventoryMaxAggregateOutputType = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId?: Maybe<Scalars['Int']>;
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId?: Maybe<Scalars['Int']>;
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -885,6 +1280,9 @@ export type InventoryMaxOrderByAggregateInput = {
   dateOfReceive?: Maybe<SortOrder>;
   historyOfPurchaseId?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
+  isCanBeRefund?: Maybe<SortOrder>;
+  isPartOfPack?: Maybe<SortOrder>;
+  packId?: Maybe<SortOrder>;
   productId?: Maybe<SortOrder>;
   serverId?: Maybe<SortOrder>;
   serverName?: Maybe<SortOrder>;
@@ -900,6 +1298,9 @@ export type InventoryMinAggregateOutputType = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId?: Maybe<Scalars['Int']>;
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId?: Maybe<Scalars['Int']>;
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -914,6 +1315,9 @@ export type InventoryMinOrderByAggregateInput = {
   dateOfReceive?: Maybe<SortOrder>;
   historyOfPurchaseId?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
+  isCanBeRefund?: Maybe<SortOrder>;
+  isPartOfPack?: Maybe<SortOrder>;
+  packId?: Maybe<SortOrder>;
   productId?: Maybe<SortOrder>;
   serverId?: Maybe<SortOrder>;
   serverName?: Maybe<SortOrder>;
@@ -937,6 +1341,9 @@ export type InventoryOrderByWithAggregationInput = {
   dateOfReceive?: Maybe<SortOrder>;
   historyOfPurchaseId?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
+  isCanBeRefund?: Maybe<SortOrder>;
+  isPartOfPack?: Maybe<SortOrder>;
+  packId?: Maybe<SortOrder>;
   productId?: Maybe<SortOrder>;
   serverId?: Maybe<SortOrder>;
   serverName?: Maybe<SortOrder>;
@@ -951,6 +1358,9 @@ export type InventoryOrderByWithRelationInput = {
   dateOfReceive?: Maybe<SortOrder>;
   historyOfPurchaseId?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
+  isCanBeRefund?: Maybe<SortOrder>;
+  isPartOfPack?: Maybe<SortOrder>;
+  packId?: Maybe<SortOrder>;
   product?: Maybe<ProductOrderByWithRelationInput>;
   productId?: Maybe<SortOrder>;
   purchase?: Maybe<PurchaseOrderByWithRelationInput>;
@@ -970,6 +1380,9 @@ export enum InventoryScalarFieldEnum {
   DateOfReceive = 'dateOfReceive',
   HistoryOfPurchaseId = 'historyOfPurchaseId',
   Id = 'id',
+  IsCanBeRefund = 'isCanBeRefund',
+  IsPartOfPack = 'isPartOfPack',
+  PackId = 'packId',
   ProductId = 'productId',
   ServerId = 'serverId',
   ServerName = 'serverName',
@@ -987,6 +1400,9 @@ export type InventoryScalarWhereInput = {
   dateOfReceive?: Maybe<DateTimeNullableFilter>;
   historyOfPurchaseId?: Maybe<IntFilter>;
   id?: Maybe<IntFilter>;
+  isCanBeRefund?: Maybe<BoolFilter>;
+  isPartOfPack?: Maybe<BoolNullableFilter>;
+  packId?: Maybe<IntNullableFilter>;
   productId?: Maybe<IntFilter>;
   serverId?: Maybe<IntNullableFilter>;
   serverName?: Maybe<StringNullableFilter>;
@@ -1004,6 +1420,9 @@ export type InventoryScalarWhereWithAggregatesInput = {
   dateOfReceive?: Maybe<DateTimeNullableWithAggregatesFilter>;
   historyOfPurchaseId?: Maybe<IntWithAggregatesFilter>;
   id?: Maybe<IntWithAggregatesFilter>;
+  isCanBeRefund?: Maybe<BoolWithAggregatesFilter>;
+  isPartOfPack?: Maybe<BoolNullableWithAggregatesFilter>;
+  packId?: Maybe<IntNullableWithAggregatesFilter>;
   productId?: Maybe<IntWithAggregatesFilter>;
   serverId?: Maybe<IntNullableWithAggregatesFilter>;
   serverName?: Maybe<StringNullableWithAggregatesFilter>;
@@ -1017,6 +1436,7 @@ export type InventorySumAggregateOutputType = {
   amount?: Maybe<Scalars['Int']>;
   historyOfPurchaseId?: Maybe<Scalars['Int']>;
   id?: Maybe<Scalars['Int']>;
+  packId?: Maybe<Scalars['Int']>;
   productId?: Maybe<Scalars['Int']>;
   serverId?: Maybe<Scalars['Int']>;
   serverTypeId?: Maybe<Scalars['Int']>;
@@ -1027,6 +1447,7 @@ export type InventorySumOrderByAggregateInput = {
   amount?: Maybe<SortOrder>;
   historyOfPurchaseId?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
+  packId?: Maybe<SortOrder>;
   productId?: Maybe<SortOrder>;
   serverId?: Maybe<SortOrder>;
   serverTypeId?: Maybe<SortOrder>;
@@ -1039,6 +1460,9 @@ export type InventoryUncheckedCreateInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -1088,6 +1512,9 @@ export type InventoryUncheckedCreateWithoutProductInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
   serverTypeId?: Maybe<Scalars['Int']>;
@@ -1100,6 +1527,9 @@ export type InventoryUncheckedCreateWithoutPurchaseInput = {
   createdAt?: Maybe<Scalars['DateTime']>;
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -1114,6 +1544,9 @@ export type InventoryUncheckedCreateWithoutServerInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverName?: Maybe<Scalars['String']>;
   serverTypeId?: Maybe<Scalars['Int']>;
@@ -1127,6 +1560,9 @@ export type InventoryUncheckedCreateWithoutServerTypeInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -1140,6 +1576,9 @@ export type InventoryUncheckedCreateWithoutUserInput = {
   dateOfReceive?: Maybe<Scalars['DateTime']>;
   historyOfPurchaseId: Scalars['Int'];
   id?: Maybe<Scalars['Int']>;
+  isCanBeRefund?: Maybe<Scalars['Boolean']>;
+  isPartOfPack?: Maybe<Scalars['Boolean']>;
+  packId?: Maybe<Scalars['Int']>;
   productId: Scalars['Int'];
   serverId?: Maybe<Scalars['Int']>;
   serverName?: Maybe<Scalars['String']>;
@@ -1153,6 +1592,9 @@ export type InventoryUncheckedUpdateInput = {
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
   historyOfPurchaseId?: Maybe<IntFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   productId?: Maybe<IntFieldUpdateOperationsInput>;
   serverId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1167,6 +1609,9 @@ export type InventoryUncheckedUpdateManyInput = {
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
   historyOfPurchaseId?: Maybe<IntFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   productId?: Maybe<IntFieldUpdateOperationsInput>;
   serverId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1181,6 +1626,9 @@ export type InventoryUncheckedUpdateManyWithoutInventoryInput = {
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
   historyOfPurchaseId?: Maybe<IntFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   productId?: Maybe<IntFieldUpdateOperationsInput>;
   serverId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1264,6 +1712,9 @@ export type InventoryUncheckedUpdateWithoutProductInput = {
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
   historyOfPurchaseId?: Maybe<IntFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
   serverTypeId?: Maybe<NullableIntFieldUpdateOperationsInput>;
@@ -1276,6 +1727,9 @@ export type InventoryUncheckedUpdateWithoutPurchaseInput = {
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   productId?: Maybe<IntFieldUpdateOperationsInput>;
   serverId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1290,6 +1744,9 @@ export type InventoryUncheckedUpdateWithoutServerInput = {
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
   historyOfPurchaseId?: Maybe<IntFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   productId?: Maybe<IntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
   serverTypeId?: Maybe<NullableIntFieldUpdateOperationsInput>;
@@ -1303,6 +1760,9 @@ export type InventoryUncheckedUpdateWithoutServerTypeInput = {
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
   historyOfPurchaseId?: Maybe<IntFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   productId?: Maybe<IntFieldUpdateOperationsInput>;
   serverId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1316,6 +1776,9 @@ export type InventoryUncheckedUpdateWithoutUserInput = {
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
   historyOfPurchaseId?: Maybe<IntFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   productId?: Maybe<IntFieldUpdateOperationsInput>;
   serverId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1327,6 +1790,9 @@ export type InventoryUpdateInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   product?: Maybe<ProductUpdateOneRequiredWithoutInventoryInput>;
   purchase?: Maybe<PurchaseUpdateOneRequiredWithoutInventoryInput>;
   server?: Maybe<ServerUpdateOneWithoutInventoryInput>;
@@ -1340,6 +1806,9 @@ export type InventoryUpdateManyMutationInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
   status?: Maybe<EnumEStatusOfProductInInventoryFieldUpdateOperationsInput>;
 };
@@ -1468,6 +1937,9 @@ export type InventoryUpdateWithoutProductInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   purchase?: Maybe<PurchaseUpdateOneRequiredWithoutInventoryInput>;
   server?: Maybe<ServerUpdateOneWithoutInventoryInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1480,6 +1952,9 @@ export type InventoryUpdateWithoutPurchaseInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   product?: Maybe<ProductUpdateOneRequiredWithoutInventoryInput>;
   server?: Maybe<ServerUpdateOneWithoutInventoryInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1492,6 +1967,9 @@ export type InventoryUpdateWithoutServerInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   product?: Maybe<ProductUpdateOneRequiredWithoutInventoryInput>;
   purchase?: Maybe<PurchaseUpdateOneRequiredWithoutInventoryInput>;
   serverName?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -1504,6 +1982,9 @@ export type InventoryUpdateWithoutServerTypeInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   product?: Maybe<ProductUpdateOneRequiredWithoutInventoryInput>;
   purchase?: Maybe<PurchaseUpdateOneRequiredWithoutInventoryInput>;
   server?: Maybe<ServerUpdateOneWithoutInventoryInput>;
@@ -1516,6 +1997,9 @@ export type InventoryUpdateWithoutUserInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   dateOfReceive?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
+  isCanBeRefund?: Maybe<BoolFieldUpdateOperationsInput>;
+  isPartOfPack?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  packId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   product?: Maybe<ProductUpdateOneRequiredWithoutInventoryInput>;
   purchase?: Maybe<PurchaseUpdateOneRequiredWithoutInventoryInput>;
   server?: Maybe<ServerUpdateOneWithoutInventoryInput>;
@@ -1563,6 +2047,9 @@ export type InventoryWhereInput = {
   dateOfReceive?: Maybe<DateTimeNullableFilter>;
   historyOfPurchaseId?: Maybe<IntFilter>;
   id?: Maybe<IntFilter>;
+  isCanBeRefund?: Maybe<BoolFilter>;
+  isPartOfPack?: Maybe<BoolNullableFilter>;
+  packId?: Maybe<IntNullableFilter>;
   product?: Maybe<ProductWhereInput>;
   productId?: Maybe<IntFilter>;
   purchase?: Maybe<PurchaseWhereInput>;
@@ -1620,6 +2107,7 @@ export type Model = {
 export type Mutation = {
   __typename?: 'Mutation';
   createOneBaseSettings: BaseSettings;
+  createOneContacts: Contacts;
   createOneInventory: Inventory;
   createOneProduct: Product;
   createOnePromocodes: Promocodes;
@@ -1631,7 +2119,9 @@ export type Mutation = {
   createOneTransfers: Transfers;
   createOneUrlSettings: UrlSettings;
   createOneUser: User;
+  createOneVisitors: Visitors;
   deleteManyBaseSettings: BatchPayload;
+  deleteManyContacts: BatchPayload;
   deleteManyInventory: BatchPayload;
   deleteManyProduct: BatchPayload;
   deleteManyPromocodes: BatchPayload;
@@ -1643,7 +2133,9 @@ export type Mutation = {
   deleteManyTransfers: BatchPayload;
   deleteManyUrlSettings: BatchPayload;
   deleteManyUser: BatchPayload;
+  deleteManyVisitors: BatchPayload;
   deleteOneBaseSettings?: Maybe<BaseSettings>;
+  deleteOneContacts?: Maybe<Contacts>;
   deleteOneInventory?: Maybe<Inventory>;
   deleteOneProduct?: Maybe<Product>;
   deleteOnePromocodes?: Maybe<Promocodes>;
@@ -1655,8 +2147,10 @@ export type Mutation = {
   deleteOneTransfers?: Maybe<Transfers>;
   deleteOneUrlSettings?: Maybe<UrlSettings>;
   deleteOneUser?: Maybe<User>;
+  deleteOneVisitors?: Maybe<Visitors>;
   updateField: Field;
   updateManyBaseSettings: BatchPayload;
+  updateManyContacts: BatchPayload;
   updateManyInventory: BatchPayload;
   updateManyProduct: BatchPayload;
   updateManyPromocodes: BatchPayload;
@@ -1668,8 +2162,10 @@ export type Mutation = {
   updateManyTransfers: BatchPayload;
   updateManyUrlSettings: BatchPayload;
   updateManyUser: BatchPayload;
+  updateManyVisitors: BatchPayload;
   updateModel: Model;
   updateOneBaseSettings: BaseSettings;
+  updateOneContacts: Contacts;
   updateOneInventory: Inventory;
   updateOneProduct: Product;
   updateOnePromocodes: Promocodes;
@@ -1681,7 +2177,9 @@ export type Mutation = {
   updateOneTransfers: Transfers;
   updateOneUrlSettings: UrlSettings;
   updateOneUser: User;
+  updateOneVisitors: Visitors;
   upsertOneBaseSettings: BaseSettings;
+  upsertOneContacts: Contacts;
   upsertOneInventory: Inventory;
   upsertOneProduct: Product;
   upsertOnePromocodes: Promocodes;
@@ -1693,6 +2191,17 @@ export type Mutation = {
   upsertOneTransfers: Transfers;
   upsertOneUrlSettings: UrlSettings;
   upsertOneUser: User;
+  upsertOneVisitors: Visitors;
+};
+
+
+export type MutationCreateOneBaseSettingsArgs = {
+  data: BaseSettingsCreateInput;
+};
+
+
+export type MutationCreateOneContactsArgs = {
+  data: ContactsCreateInput;
 };
 
 
@@ -1741,8 +2250,28 @@ export type MutationCreateOneTransfersArgs = {
 };
 
 
+export type MutationCreateOneUrlSettingsArgs = {
+  data: UrlSettingsCreateInput;
+};
+
+
 export type MutationCreateOneUserArgs = {
   data: UserCreateInput;
+};
+
+
+export type MutationCreateOneVisitorsArgs = {
+  data: VisitorsCreateInput;
+};
+
+
+export type MutationDeleteManyBaseSettingsArgs = {
+  where?: Maybe<BaseSettingsWhereInput>;
+};
+
+
+export type MutationDeleteManyContactsArgs = {
+  where?: Maybe<ContactsWhereInput>;
 };
 
 
@@ -1791,8 +2320,28 @@ export type MutationDeleteManyTransfersArgs = {
 };
 
 
+export type MutationDeleteManyUrlSettingsArgs = {
+  where?: Maybe<UrlSettingsWhereInput>;
+};
+
+
 export type MutationDeleteManyUserArgs = {
   where?: Maybe<UserWhereInput>;
+};
+
+
+export type MutationDeleteManyVisitorsArgs = {
+  where?: Maybe<VisitorsWhereInput>;
+};
+
+
+export type MutationDeleteOneBaseSettingsArgs = {
+  where: BaseSettingsWhereUniqueInput;
+};
+
+
+export type MutationDeleteOneContactsArgs = {
+  where: ContactsWhereUniqueInput;
 };
 
 
@@ -1841,8 +2390,18 @@ export type MutationDeleteOneTransfersArgs = {
 };
 
 
+export type MutationDeleteOneUrlSettingsArgs = {
+  where: UrlSettingsWhereUniqueInput;
+};
+
+
 export type MutationDeleteOneUserArgs = {
   where: UserWhereUniqueInput;
+};
+
+
+export type MutationDeleteOneVisitorsArgs = {
+  where: VisitorsWhereUniqueInput;
 };
 
 
@@ -1850,6 +2409,18 @@ export type MutationUpdateFieldArgs = {
   data: UpdateFieldInput;
   id: Scalars['String'];
   modelId: Scalars['String'];
+};
+
+
+export type MutationUpdateManyBaseSettingsArgs = {
+  data: BaseSettingsUpdateManyMutationInput;
+  where?: Maybe<BaseSettingsWhereInput>;
+};
+
+
+export type MutationUpdateManyContactsArgs = {
+  data: ContactsUpdateManyMutationInput;
+  where?: Maybe<ContactsWhereInput>;
 };
 
 
@@ -1907,15 +2478,39 @@ export type MutationUpdateManyTransfersArgs = {
 };
 
 
+export type MutationUpdateManyUrlSettingsArgs = {
+  data: UrlSettingsUpdateManyMutationInput;
+  where?: Maybe<UrlSettingsWhereInput>;
+};
+
+
 export type MutationUpdateManyUserArgs = {
   data: UserUpdateManyMutationInput;
   where?: Maybe<UserWhereInput>;
 };
 
 
+export type MutationUpdateManyVisitorsArgs = {
+  data: VisitorsUpdateManyMutationInput;
+  where?: Maybe<VisitorsWhereInput>;
+};
+
+
 export type MutationUpdateModelArgs = {
   data: UpdateModelInput;
   id: Scalars['String'];
+};
+
+
+export type MutationUpdateOneBaseSettingsArgs = {
+  data: BaseSettingsUpdateInput;
+  where: BaseSettingsWhereUniqueInput;
+};
+
+
+export type MutationUpdateOneContactsArgs = {
+  data: ContactsUpdateInput;
+  where: ContactsWhereUniqueInput;
 };
 
 
@@ -1973,9 +2568,35 @@ export type MutationUpdateOneTransfersArgs = {
 };
 
 
+export type MutationUpdateOneUrlSettingsArgs = {
+  data: UrlSettingsUpdateInput;
+  where: UrlSettingsWhereUniqueInput;
+};
+
+
 export type MutationUpdateOneUserArgs = {
   data: UserUpdateInput;
   where: UserWhereUniqueInput;
+};
+
+
+export type MutationUpdateOneVisitorsArgs = {
+  data: VisitorsUpdateInput;
+  where: VisitorsWhereUniqueInput;
+};
+
+
+export type MutationUpsertOneBaseSettingsArgs = {
+  create: BaseSettingsCreateInput;
+  update: BaseSettingsUpdateInput;
+  where: BaseSettingsWhereUniqueInput;
+};
+
+
+export type MutationUpsertOneContactsArgs = {
+  create: ContactsCreateInput;
+  update: ContactsUpdateInput;
+  where: ContactsWhereUniqueInput;
 };
 
 
@@ -2042,10 +2663,24 @@ export type MutationUpsertOneTransfersArgs = {
 };
 
 
+export type MutationUpsertOneUrlSettingsArgs = {
+  create: UrlSettingsCreateInput;
+  update: UrlSettingsUpdateInput;
+  where: UrlSettingsWhereUniqueInput;
+};
+
+
 export type MutationUpsertOneUserArgs = {
   create: UserCreateInput;
   update: UserUpdateInput;
   where: UserWhereUniqueInput;
+};
+
+
+export type MutationUpsertOneVisitorsArgs = {
+  create: VisitorsCreateInput;
+  update: VisitorsUpdateInput;
+  where: VisitorsWhereUniqueInput;
 };
 
 export type NestedBoolFilter = {
@@ -2248,22 +2883,6 @@ export type NestedFloatNullableFilter = {
   notIn?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type NestedFloatNullableWithAggregatesFilter = {
-  _avg?: Maybe<NestedFloatNullableFilter>;
-  _count?: Maybe<NestedIntNullableFilter>;
-  _max?: Maybe<NestedFloatNullableFilter>;
-  _min?: Maybe<NestedFloatNullableFilter>;
-  _sum?: Maybe<NestedFloatNullableFilter>;
-  equals?: Maybe<Scalars['Float']>;
-  gt?: Maybe<Scalars['Float']>;
-  gte?: Maybe<Scalars['Float']>;
-  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
-  lt?: Maybe<Scalars['Float']>;
-  lte?: Maybe<Scalars['Float']>;
-  not?: Maybe<NestedFloatNullableWithAggregatesFilter>;
-  notIn?: Maybe<Array<Maybe<Scalars['Float']>>>;
-};
-
 export type NestedIntFilter = {
   equals?: Maybe<Scalars['Int']>;
   gt?: Maybe<Scalars['Int']>;
@@ -2393,14 +3012,6 @@ export type NullableDateTimeFieldUpdateOperationsInput = {
   set?: Maybe<Scalars['DateTime']>;
 };
 
-export type NullableFloatFieldUpdateOperationsInput = {
-  decrement?: Maybe<Scalars['Float']>;
-  divide?: Maybe<Scalars['Float']>;
-  increment?: Maybe<Scalars['Float']>;
-  multiply?: Maybe<Scalars['Float']>;
-  set?: Maybe<Scalars['Float']>;
-};
-
 export type NullableIntFieldUpdateOperationsInput = {
   decrement?: Maybe<Scalars['Int']>;
   divide?: Maybe<Scalars['Int']>;
@@ -2427,8 +3038,9 @@ export type Product = {
   autoactivation: Scalars['Boolean'];
   blockSize: Scalars['Int'];
   buttonColor: EButtonColor;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden: Scalars['Boolean'];
   iconButton?: Maybe<Scalars['String']>;
@@ -2438,16 +3050,18 @@ export type Product = {
   isBackgroundImage: Scalars['Boolean'];
   isChangeAmount: Scalars['Boolean'];
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverType?: Maybe<ServerType>;
   serverTypeId?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type: ETypeOfProduct;
 };
 
@@ -2505,7 +3119,8 @@ export type ProductCountAggregateOutputType = {
   autoactivation: Scalars['Int'];
   blockSize: Scalars['Int'];
   buttonColor: Scalars['Int'];
-  description: Scalars['Int'];
+  description_en: Scalars['Int'];
+  description_ru: Scalars['Int'];
   discount: Scalars['Int'];
   height: Scalars['Int'];
   hidden: Scalars['Int'];
@@ -2516,8 +3131,9 @@ export type ProductCountAggregateOutputType = {
   isBackgroundImage: Scalars['Int'];
   isChangeAmount: Scalars['Int'];
   maxCountOfSale: Scalars['Int'];
-  name: Scalars['Int'];
   nameID: Scalars['Int'];
+  name_en: Scalars['Int'];
+  name_ru: Scalars['Int'];
   number: Scalars['Int'];
   price: Scalars['Int'];
   productContent: Scalars['Int'];
@@ -2525,6 +3141,7 @@ export type ProductCountAggregateOutputType = {
   saleDiscount: Scalars['Int'];
   serverTypeId: Scalars['Int'];
   textButton: Scalars['Int'];
+  textButton_en: Scalars['Int'];
   type: Scalars['Int'];
 };
 
@@ -2533,7 +3150,8 @@ export type ProductCountOrderByAggregateInput = {
   autoactivation?: Maybe<SortOrder>;
   blockSize?: Maybe<SortOrder>;
   buttonColor?: Maybe<SortOrder>;
-  description?: Maybe<SortOrder>;
+  description_en?: Maybe<SortOrder>;
+  description_ru?: Maybe<SortOrder>;
   discount?: Maybe<SortOrder>;
   height?: Maybe<SortOrder>;
   hidden?: Maybe<SortOrder>;
@@ -2544,8 +3162,9 @@ export type ProductCountOrderByAggregateInput = {
   isBackgroundImage?: Maybe<SortOrder>;
   isChangeAmount?: Maybe<SortOrder>;
   maxCountOfSale?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
   nameID?: Maybe<SortOrder>;
+  name_en?: Maybe<SortOrder>;
+  name_ru?: Maybe<SortOrder>;
   number?: Maybe<SortOrder>;
   price?: Maybe<SortOrder>;
   productContent?: Maybe<SortOrder>;
@@ -2553,6 +3172,7 @@ export type ProductCountOrderByAggregateInput = {
   saleDiscount?: Maybe<SortOrder>;
   serverTypeId?: Maybe<SortOrder>;
   textButton?: Maybe<SortOrder>;
+  textButton_en?: Maybe<SortOrder>;
   type?: Maybe<SortOrder>;
 };
 
@@ -2569,8 +3189,9 @@ export type ProductCreateInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -2579,15 +3200,17 @@ export type ProductCreateInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverType?: Maybe<ServerTypeCreateNestedOneWithoutProductInput>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -2596,8 +3219,9 @@ export type ProductCreateManyInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -2607,15 +3231,17 @@ export type ProductCreateManyInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverTypeId?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -2624,8 +3250,9 @@ export type ProductCreateManyServerTypeInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -2635,14 +3262,16 @@ export type ProductCreateManyServerTypeInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -2691,8 +3320,9 @@ export type ProductCreateWithoutInventoryInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -2701,15 +3331,17 @@ export type ProductCreateWithoutInventoryInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverType?: Maybe<ServerTypeCreateNestedOneWithoutProductInput>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -2719,8 +3351,9 @@ export type ProductCreateWithoutPurchaseInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -2729,15 +3362,17 @@ export type ProductCreateWithoutPurchaseInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverType?: Maybe<ServerTypeCreateNestedOneWithoutProductInput>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -2748,8 +3383,9 @@ export type ProductCreateWithoutServerTypeInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -2758,14 +3394,16 @@ export type ProductCreateWithoutServerTypeInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -2781,8 +3419,9 @@ export type ProductMaxAggregateOutputType = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -2792,14 +3431,16 @@ export type ProductMaxAggregateOutputType = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
   nameID?: Maybe<Scalars['String']>;
+  name_en?: Maybe<Scalars['String']>;
+  name_ru?: Maybe<Scalars['String']>;
   number?: Maybe<Scalars['Int']>;
   price?: Maybe<Scalars['Int']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverTypeId?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -2808,7 +3449,8 @@ export type ProductMaxOrderByAggregateInput = {
   autoactivation?: Maybe<SortOrder>;
   blockSize?: Maybe<SortOrder>;
   buttonColor?: Maybe<SortOrder>;
-  description?: Maybe<SortOrder>;
+  description_en?: Maybe<SortOrder>;
+  description_ru?: Maybe<SortOrder>;
   discount?: Maybe<SortOrder>;
   height?: Maybe<SortOrder>;
   hidden?: Maybe<SortOrder>;
@@ -2819,14 +3461,16 @@ export type ProductMaxOrderByAggregateInput = {
   isBackgroundImage?: Maybe<SortOrder>;
   isChangeAmount?: Maybe<SortOrder>;
   maxCountOfSale?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
   nameID?: Maybe<SortOrder>;
+  name_en?: Maybe<SortOrder>;
+  name_ru?: Maybe<SortOrder>;
   number?: Maybe<SortOrder>;
   price?: Maybe<SortOrder>;
   saleDeadline?: Maybe<SortOrder>;
   saleDiscount?: Maybe<SortOrder>;
   serverTypeId?: Maybe<SortOrder>;
   textButton?: Maybe<SortOrder>;
+  textButton_en?: Maybe<SortOrder>;
   type?: Maybe<SortOrder>;
 };
 
@@ -2836,8 +3480,9 @@ export type ProductMinAggregateOutputType = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -2847,14 +3492,16 @@ export type ProductMinAggregateOutputType = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
   nameID?: Maybe<Scalars['String']>;
+  name_en?: Maybe<Scalars['String']>;
+  name_ru?: Maybe<Scalars['String']>;
   number?: Maybe<Scalars['Int']>;
   price?: Maybe<Scalars['Int']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverTypeId?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -2863,7 +3510,8 @@ export type ProductMinOrderByAggregateInput = {
   autoactivation?: Maybe<SortOrder>;
   blockSize?: Maybe<SortOrder>;
   buttonColor?: Maybe<SortOrder>;
-  description?: Maybe<SortOrder>;
+  description_en?: Maybe<SortOrder>;
+  description_ru?: Maybe<SortOrder>;
   discount?: Maybe<SortOrder>;
   height?: Maybe<SortOrder>;
   hidden?: Maybe<SortOrder>;
@@ -2874,14 +3522,16 @@ export type ProductMinOrderByAggregateInput = {
   isBackgroundImage?: Maybe<SortOrder>;
   isChangeAmount?: Maybe<SortOrder>;
   maxCountOfSale?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
   nameID?: Maybe<SortOrder>;
+  name_en?: Maybe<SortOrder>;
+  name_ru?: Maybe<SortOrder>;
   number?: Maybe<SortOrder>;
   price?: Maybe<SortOrder>;
   saleDeadline?: Maybe<SortOrder>;
   saleDiscount?: Maybe<SortOrder>;
   serverTypeId?: Maybe<SortOrder>;
   textButton?: Maybe<SortOrder>;
+  textButton_en?: Maybe<SortOrder>;
   type?: Maybe<SortOrder>;
 };
 
@@ -2899,7 +3549,8 @@ export type ProductOrderByWithAggregationInput = {
   autoactivation?: Maybe<SortOrder>;
   blockSize?: Maybe<SortOrder>;
   buttonColor?: Maybe<SortOrder>;
-  description?: Maybe<SortOrder>;
+  description_en?: Maybe<SortOrder>;
+  description_ru?: Maybe<SortOrder>;
   discount?: Maybe<SortOrder>;
   height?: Maybe<SortOrder>;
   hidden?: Maybe<SortOrder>;
@@ -2910,8 +3561,9 @@ export type ProductOrderByWithAggregationInput = {
   isBackgroundImage?: Maybe<SortOrder>;
   isChangeAmount?: Maybe<SortOrder>;
   maxCountOfSale?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
   nameID?: Maybe<SortOrder>;
+  name_en?: Maybe<SortOrder>;
+  name_ru?: Maybe<SortOrder>;
   number?: Maybe<SortOrder>;
   price?: Maybe<SortOrder>;
   productContent?: Maybe<SortOrder>;
@@ -2919,6 +3571,7 @@ export type ProductOrderByWithAggregationInput = {
   saleDiscount?: Maybe<SortOrder>;
   serverTypeId?: Maybe<SortOrder>;
   textButton?: Maybe<SortOrder>;
+  textButton_en?: Maybe<SortOrder>;
   type?: Maybe<SortOrder>;
 };
 
@@ -2929,7 +3582,8 @@ export type ProductOrderByWithRelationInput = {
   autoactivation?: Maybe<SortOrder>;
   blockSize?: Maybe<SortOrder>;
   buttonColor?: Maybe<SortOrder>;
-  description?: Maybe<SortOrder>;
+  description_en?: Maybe<SortOrder>;
+  description_ru?: Maybe<SortOrder>;
   discount?: Maybe<SortOrder>;
   height?: Maybe<SortOrder>;
   hidden?: Maybe<SortOrder>;
@@ -2940,8 +3594,9 @@ export type ProductOrderByWithRelationInput = {
   isBackgroundImage?: Maybe<SortOrder>;
   isChangeAmount?: Maybe<SortOrder>;
   maxCountOfSale?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
   nameID?: Maybe<SortOrder>;
+  name_en?: Maybe<SortOrder>;
+  name_ru?: Maybe<SortOrder>;
   number?: Maybe<SortOrder>;
   price?: Maybe<SortOrder>;
   productContent?: Maybe<SortOrder>;
@@ -2950,6 +3605,7 @@ export type ProductOrderByWithRelationInput = {
   serverType?: Maybe<ServerTypeOrderByWithRelationInput>;
   serverTypeId?: Maybe<SortOrder>;
   textButton?: Maybe<SortOrder>;
+  textButton_en?: Maybe<SortOrder>;
   type?: Maybe<SortOrder>;
 };
 
@@ -2963,7 +3619,8 @@ export enum ProductScalarFieldEnum {
   Autoactivation = 'autoactivation',
   BlockSize = 'blockSize',
   ButtonColor = 'buttonColor',
-  Description = 'description',
+  DescriptionEn = 'description_en',
+  DescriptionRu = 'description_ru',
   Discount = 'discount',
   Height = 'height',
   Hidden = 'hidden',
@@ -2974,8 +3631,9 @@ export enum ProductScalarFieldEnum {
   IsBackgroundImage = 'isBackgroundImage',
   IsChangeAmount = 'isChangeAmount',
   MaxCountOfSale = 'maxCountOfSale',
-  Name = 'name',
   NameId = 'nameID',
+  NameEn = 'name_en',
+  NameRu = 'name_ru',
   Number = 'number',
   Price = 'price',
   ProductContent = 'productContent',
@@ -2983,6 +3641,7 @@ export enum ProductScalarFieldEnum {
   SaleDiscount = 'saleDiscount',
   ServerTypeId = 'serverTypeId',
   TextButton = 'textButton',
+  TextButtonEn = 'textButton_en',
   Type = 'type'
 }
 
@@ -2994,8 +3653,9 @@ export type ProductScalarWhereInput = {
   autoactivation?: Maybe<BoolFilter>;
   blockSize?: Maybe<IntFilter>;
   buttonColor?: Maybe<EnumEButtonColorFilter>;
-  description?: Maybe<StringNullableFilter>;
-  discount?: Maybe<FloatNullableFilter>;
+  description_en?: Maybe<StringNullableFilter>;
+  description_ru?: Maybe<StringNullableFilter>;
+  discount?: Maybe<IntNullableFilter>;
   height?: Maybe<IntNullableFilter>;
   hidden?: Maybe<BoolFilter>;
   iconButton?: Maybe<StringNullableFilter>;
@@ -3005,15 +3665,17 @@ export type ProductScalarWhereInput = {
   isBackgroundImage?: Maybe<BoolFilter>;
   isChangeAmount?: Maybe<BoolFilter>;
   maxCountOfSale?: Maybe<IntNullableFilter>;
-  name?: Maybe<StringFilter>;
   nameID?: Maybe<StringNullableFilter>;
+  name_en?: Maybe<StringFilter>;
+  name_ru?: Maybe<StringFilter>;
   number?: Maybe<IntNullableFilter>;
   price?: Maybe<IntFilter>;
   productContent?: Maybe<JsonNullableFilter>;
   saleDeadline?: Maybe<DateTimeNullableFilter>;
-  saleDiscount?: Maybe<FloatNullableFilter>;
+  saleDiscount?: Maybe<IntNullableFilter>;
   serverTypeId?: Maybe<IntNullableFilter>;
   textButton?: Maybe<StringNullableFilter>;
+  textButton_en?: Maybe<StringNullableFilter>;
   type?: Maybe<EnumETypeOfProductFilter>;
 };
 
@@ -3025,8 +3687,9 @@ export type ProductScalarWhereWithAggregatesInput = {
   autoactivation?: Maybe<BoolWithAggregatesFilter>;
   blockSize?: Maybe<IntWithAggregatesFilter>;
   buttonColor?: Maybe<EnumEButtonColorWithAggregatesFilter>;
-  description?: Maybe<StringNullableWithAggregatesFilter>;
-  discount?: Maybe<FloatNullableWithAggregatesFilter>;
+  description_en?: Maybe<StringNullableWithAggregatesFilter>;
+  description_ru?: Maybe<StringNullableWithAggregatesFilter>;
+  discount?: Maybe<IntNullableWithAggregatesFilter>;
   height?: Maybe<IntNullableWithAggregatesFilter>;
   hidden?: Maybe<BoolWithAggregatesFilter>;
   iconButton?: Maybe<StringNullableWithAggregatesFilter>;
@@ -3036,15 +3699,17 @@ export type ProductScalarWhereWithAggregatesInput = {
   isBackgroundImage?: Maybe<BoolWithAggregatesFilter>;
   isChangeAmount?: Maybe<BoolWithAggregatesFilter>;
   maxCountOfSale?: Maybe<IntNullableWithAggregatesFilter>;
-  name?: Maybe<StringWithAggregatesFilter>;
   nameID?: Maybe<StringNullableWithAggregatesFilter>;
+  name_en?: Maybe<StringWithAggregatesFilter>;
+  name_ru?: Maybe<StringWithAggregatesFilter>;
   number?: Maybe<IntNullableWithAggregatesFilter>;
   price?: Maybe<IntWithAggregatesFilter>;
   productContent?: Maybe<JsonNullableWithAggregatesFilter>;
   saleDeadline?: Maybe<DateTimeNullableWithAggregatesFilter>;
-  saleDiscount?: Maybe<FloatNullableWithAggregatesFilter>;
+  saleDiscount?: Maybe<IntNullableWithAggregatesFilter>;
   serverTypeId?: Maybe<IntNullableWithAggregatesFilter>;
   textButton?: Maybe<StringNullableWithAggregatesFilter>;
+  textButton_en?: Maybe<StringNullableWithAggregatesFilter>;
   type?: Maybe<EnumETypeOfProductWithAggregatesFilter>;
 };
 
@@ -3052,13 +3717,13 @@ export type ProductSumAggregateOutputType = {
   __typename?: 'ProductSumAggregateOutputType';
   amount?: Maybe<Scalars['Int']>;
   blockSize?: Maybe<Scalars['Int']>;
-  discount?: Maybe<Scalars['Float']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   id?: Maybe<Scalars['Int']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
   number?: Maybe<Scalars['Int']>;
   price?: Maybe<Scalars['Int']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverTypeId?: Maybe<Scalars['Int']>;
 };
 
@@ -3082,8 +3747,9 @@ export type ProductUncheckedCreateInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -3093,15 +3759,17 @@ export type ProductUncheckedCreateInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverTypeId?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -3118,8 +3786,9 @@ export type ProductUncheckedCreateWithoutInventoryInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -3129,15 +3798,17 @@ export type ProductUncheckedCreateWithoutInventoryInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverTypeId?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -3147,8 +3818,9 @@ export type ProductUncheckedCreateWithoutPurchaseInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -3158,15 +3830,17 @@ export type ProductUncheckedCreateWithoutPurchaseInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   serverTypeId?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -3177,8 +3851,9 @@ export type ProductUncheckedCreateWithoutServerTypeInput = {
   autoactivation?: Maybe<Scalars['Boolean']>;
   blockSize?: Maybe<Scalars['Int']>;
   buttonColor?: Maybe<EButtonColor>;
-  description?: Maybe<Scalars['String']>;
-  discount?: Maybe<Scalars['Float']>;
+  description_en?: Maybe<Scalars['String']>;
+  description_ru?: Maybe<Scalars['String']>;
+  discount?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   hidden?: Maybe<Scalars['Boolean']>;
   iconButton?: Maybe<Scalars['String']>;
@@ -3188,14 +3863,16 @@ export type ProductUncheckedCreateWithoutServerTypeInput = {
   isBackgroundImage?: Maybe<Scalars['Boolean']>;
   isChangeAmount?: Maybe<Scalars['Boolean']>;
   maxCountOfSale?: Maybe<Scalars['Int']>;
-  name: Scalars['String'];
   nameID?: Maybe<Scalars['String']>;
+  name_en: Scalars['String'];
+  name_ru: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
   price: Scalars['Int'];
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<Scalars['DateTime']>;
-  saleDiscount?: Maybe<Scalars['Float']>;
+  saleDiscount?: Maybe<Scalars['Int']>;
   textButton?: Maybe<Scalars['String']>;
+  textButton_en?: Maybe<Scalars['String']>;
   type?: Maybe<ETypeOfProduct>;
 };
 
@@ -3206,8 +3883,9 @@ export type ProductUncheckedUpdateInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3217,15 +3895,17 @@ export type ProductUncheckedUpdateInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverTypeId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3234,8 +3914,9 @@ export type ProductUncheckedUpdateManyInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3245,15 +3926,17 @@ export type ProductUncheckedUpdateManyInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverTypeId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3262,8 +3945,9 @@ export type ProductUncheckedUpdateManyWithoutProductInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3273,14 +3957,16 @@ export type ProductUncheckedUpdateManyWithoutProductInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3304,8 +3990,9 @@ export type ProductUncheckedUpdateWithoutInventoryInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3315,15 +4002,17 @@ export type ProductUncheckedUpdateWithoutInventoryInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverTypeId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3333,8 +4022,9 @@ export type ProductUncheckedUpdateWithoutPurchaseInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3344,15 +4034,17 @@ export type ProductUncheckedUpdateWithoutPurchaseInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverTypeId?: Maybe<NullableIntFieldUpdateOperationsInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3363,8 +4055,9 @@ export type ProductUncheckedUpdateWithoutServerTypeInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3374,14 +4067,16 @@ export type ProductUncheckedUpdateWithoutServerTypeInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3392,8 +4087,9 @@ export type ProductUpdateInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3402,15 +4098,17 @@ export type ProductUpdateInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverType?: Maybe<ServerTypeUpdateOneWithoutProductInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3419,8 +4117,9 @@ export type ProductUpdateManyMutationInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3429,14 +4128,16 @@ export type ProductUpdateManyMutationInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3486,8 +4187,9 @@ export type ProductUpdateWithoutInventoryInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3496,15 +4198,17 @@ export type ProductUpdateWithoutInventoryInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverType?: Maybe<ServerTypeUpdateOneWithoutProductInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3514,8 +4218,9 @@ export type ProductUpdateWithoutPurchaseInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3524,15 +4229,17 @@ export type ProductUpdateWithoutPurchaseInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   serverType?: Maybe<ServerTypeUpdateOneWithoutProductInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3543,8 +4250,9 @@ export type ProductUpdateWithoutServerTypeInput = {
   autoactivation?: Maybe<BoolFieldUpdateOperationsInput>;
   blockSize?: Maybe<IntFieldUpdateOperationsInput>;
   buttonColor?: Maybe<EnumEButtonColorFieldUpdateOperationsInput>;
-  description?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  discount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  description_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  description_ru?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  discount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   height?: Maybe<NullableIntFieldUpdateOperationsInput>;
   hidden?: Maybe<BoolFieldUpdateOperationsInput>;
   iconButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
@@ -3553,14 +4261,16 @@ export type ProductUpdateWithoutServerTypeInput = {
   isBackgroundImage?: Maybe<BoolFieldUpdateOperationsInput>;
   isChangeAmount?: Maybe<BoolFieldUpdateOperationsInput>;
   maxCountOfSale?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
   nameID?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  name_en?: Maybe<StringFieldUpdateOperationsInput>;
+  name_ru?: Maybe<StringFieldUpdateOperationsInput>;
   number?: Maybe<NullableIntFieldUpdateOperationsInput>;
   price?: Maybe<IntFieldUpdateOperationsInput>;
   productContent?: Maybe<Scalars['Json']>;
   saleDeadline?: Maybe<NullableDateTimeFieldUpdateOperationsInput>;
-  saleDiscount?: Maybe<NullableFloatFieldUpdateOperationsInput>;
+  saleDiscount?: Maybe<NullableIntFieldUpdateOperationsInput>;
   textButton?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  textButton_en?: Maybe<NullableStringFieldUpdateOperationsInput>;
   type?: Maybe<EnumETypeOfProductFieldUpdateOperationsInput>;
 };
 
@@ -3590,8 +4300,9 @@ export type ProductWhereInput = {
   autoactivation?: Maybe<BoolFilter>;
   blockSize?: Maybe<IntFilter>;
   buttonColor?: Maybe<EnumEButtonColorFilter>;
-  description?: Maybe<StringNullableFilter>;
-  discount?: Maybe<FloatNullableFilter>;
+  description_en?: Maybe<StringNullableFilter>;
+  description_ru?: Maybe<StringNullableFilter>;
+  discount?: Maybe<IntNullableFilter>;
   height?: Maybe<IntNullableFilter>;
   hidden?: Maybe<BoolFilter>;
   iconButton?: Maybe<StringNullableFilter>;
@@ -3601,16 +4312,18 @@ export type ProductWhereInput = {
   isBackgroundImage?: Maybe<BoolFilter>;
   isChangeAmount?: Maybe<BoolFilter>;
   maxCountOfSale?: Maybe<IntNullableFilter>;
-  name?: Maybe<StringFilter>;
   nameID?: Maybe<StringNullableFilter>;
+  name_en?: Maybe<StringFilter>;
+  name_ru?: Maybe<StringFilter>;
   number?: Maybe<IntNullableFilter>;
   price?: Maybe<IntFilter>;
   productContent?: Maybe<JsonNullableFilter>;
   saleDeadline?: Maybe<DateTimeNullableFilter>;
-  saleDiscount?: Maybe<FloatNullableFilter>;
+  saleDiscount?: Maybe<IntNullableFilter>;
   serverType?: Maybe<ServerTypeWhereInput>;
   serverTypeId?: Maybe<IntNullableFilter>;
   textButton?: Maybe<StringNullableFilter>;
+  textButton_en?: Maybe<StringNullableFilter>;
   type?: Maybe<EnumETypeOfProductFilter>;
 };
 
@@ -3964,6 +4677,7 @@ export type Purchase = {
   _count?: Maybe<PurchaseCountOutputType>;
   amount: Scalars['Int'];
   createdAt: Scalars['DateTime'];
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id: Scalars['Int'];
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4008,6 +4722,7 @@ export type PurchaseCountAggregateOutputType = {
   _all: Scalars['Int'];
   amount: Scalars['Int'];
   createdAt: Scalars['Int'];
+  dateOfPurchase: Scalars['Int'];
   id: Scalars['Int'];
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4019,6 +4734,7 @@ export type PurchaseCountAggregateOutputType = {
 export type PurchaseCountOrderByAggregateInput = {
   amount?: Maybe<SortOrder>;
   createdAt?: Maybe<SortOrder>;
+  dateOfPurchase?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   lostBonusBalance?: Maybe<SortOrder>;
   lostMainBalance?: Maybe<SortOrder>;
@@ -4036,6 +4752,7 @@ export type PurchaseCreateInput = {
   Inventory?: Maybe<InventoryCreateNestedManyWithoutPurchaseInput>;
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
   product: ProductCreateNestedOneWithoutPurchaseInput;
@@ -4046,6 +4763,7 @@ export type PurchaseCreateInput = {
 export type PurchaseCreateManyInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4057,6 +4775,7 @@ export type PurchaseCreateManyInput = {
 export type PurchaseCreateManyProductInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4072,6 +4791,7 @@ export type PurchaseCreateManyProductInputEnvelope = {
 export type PurchaseCreateManyUserInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4122,6 +4842,7 @@ export type PurchaseCreateOrConnectWithoutUserInput = {
 export type PurchaseCreateWithoutInventoryInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
   product: ProductCreateNestedOneWithoutPurchaseInput;
@@ -4133,6 +4854,7 @@ export type PurchaseCreateWithoutProductInput = {
   Inventory?: Maybe<InventoryCreateNestedManyWithoutPurchaseInput>;
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
   refund: Scalars['Boolean'];
@@ -4143,6 +4865,7 @@ export type PurchaseCreateWithoutUserInput = {
   Inventory?: Maybe<InventoryCreateNestedManyWithoutPurchaseInput>;
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
   product: ProductCreateNestedOneWithoutPurchaseInput;
@@ -4159,6 +4882,7 @@ export type PurchaseMaxAggregateOutputType = {
   __typename?: 'PurchaseMaxAggregateOutputType';
   amount?: Maybe<Scalars['Int']>;
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance?: Maybe<Scalars['Int']>;
   lostMainBalance?: Maybe<Scalars['Int']>;
@@ -4170,6 +4894,7 @@ export type PurchaseMaxAggregateOutputType = {
 export type PurchaseMaxOrderByAggregateInput = {
   amount?: Maybe<SortOrder>;
   createdAt?: Maybe<SortOrder>;
+  dateOfPurchase?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   lostBonusBalance?: Maybe<SortOrder>;
   lostMainBalance?: Maybe<SortOrder>;
@@ -4182,6 +4907,7 @@ export type PurchaseMinAggregateOutputType = {
   __typename?: 'PurchaseMinAggregateOutputType';
   amount?: Maybe<Scalars['Int']>;
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance?: Maybe<Scalars['Int']>;
   lostMainBalance?: Maybe<Scalars['Int']>;
@@ -4193,6 +4919,7 @@ export type PurchaseMinAggregateOutputType = {
 export type PurchaseMinOrderByAggregateInput = {
   amount?: Maybe<SortOrder>;
   createdAt?: Maybe<SortOrder>;
+  dateOfPurchase?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   lostBonusBalance?: Maybe<SortOrder>;
   lostMainBalance?: Maybe<SortOrder>;
@@ -4213,6 +4940,7 @@ export type PurchaseOrderByWithAggregationInput = {
   _sum?: Maybe<PurchaseSumOrderByAggregateInput>;
   amount?: Maybe<SortOrder>;
   createdAt?: Maybe<SortOrder>;
+  dateOfPurchase?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   lostBonusBalance?: Maybe<SortOrder>;
   lostMainBalance?: Maybe<SortOrder>;
@@ -4225,6 +4953,7 @@ export type PurchaseOrderByWithRelationInput = {
   Inventory?: Maybe<InventoryOrderByRelationAggregateInput>;
   amount?: Maybe<SortOrder>;
   createdAt?: Maybe<SortOrder>;
+  dateOfPurchase?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   lostBonusBalance?: Maybe<SortOrder>;
   lostMainBalance?: Maybe<SortOrder>;
@@ -4243,6 +4972,7 @@ export type PurchaseRelationFilter = {
 export enum PurchaseScalarFieldEnum {
   Amount = 'amount',
   CreatedAt = 'createdAt',
+  DateOfPurchase = 'dateOfPurchase',
   Id = 'id',
   LostBonusBalance = 'lostBonusBalance',
   LostMainBalance = 'lostMainBalance',
@@ -4257,6 +4987,7 @@ export type PurchaseScalarWhereInput = {
   OR?: Maybe<Array<Maybe<PurchaseScalarWhereInput>>>;
   amount?: Maybe<IntFilter>;
   createdAt?: Maybe<DateTimeFilter>;
+  dateOfPurchase?: Maybe<StringNullableFilter>;
   id?: Maybe<IntFilter>;
   lostBonusBalance?: Maybe<IntFilter>;
   lostMainBalance?: Maybe<IntFilter>;
@@ -4271,6 +5002,7 @@ export type PurchaseScalarWhereWithAggregatesInput = {
   OR?: Maybe<Array<Maybe<PurchaseScalarWhereWithAggregatesInput>>>;
   amount?: Maybe<IntWithAggregatesFilter>;
   createdAt?: Maybe<DateTimeWithAggregatesFilter>;
+  dateOfPurchase?: Maybe<StringNullableWithAggregatesFilter>;
   id?: Maybe<IntWithAggregatesFilter>;
   lostBonusBalance?: Maybe<IntWithAggregatesFilter>;
   lostMainBalance?: Maybe<IntWithAggregatesFilter>;
@@ -4302,6 +5034,7 @@ export type PurchaseUncheckedCreateInput = {
   Inventory?: Maybe<InventoryUncheckedCreateNestedManyWithoutPurchaseInput>;
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4327,6 +5060,7 @@ export type PurchaseUncheckedCreateNestedManyWithoutUserInput = {
 export type PurchaseUncheckedCreateWithoutInventoryInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4339,6 +5073,7 @@ export type PurchaseUncheckedCreateWithoutProductInput = {
   Inventory?: Maybe<InventoryUncheckedCreateNestedManyWithoutPurchaseInput>;
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4350,6 +5085,7 @@ export type PurchaseUncheckedCreateWithoutUserInput = {
   Inventory?: Maybe<InventoryUncheckedCreateNestedManyWithoutPurchaseInput>;
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
+  dateOfPurchase?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   lostBonusBalance: Scalars['Int'];
   lostMainBalance: Scalars['Int'];
@@ -4361,6 +5097,7 @@ export type PurchaseUncheckedUpdateInput = {
   Inventory?: Maybe<InventoryUncheckedUpdateManyWithoutPurchaseInput>;
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
@@ -4372,6 +5109,7 @@ export type PurchaseUncheckedUpdateInput = {
 export type PurchaseUncheckedUpdateManyInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
@@ -4397,6 +5135,7 @@ export type PurchaseUncheckedUpdateManyWithoutProductInput = {
 export type PurchaseUncheckedUpdateManyWithoutPurchaseInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
@@ -4421,6 +5160,7 @@ export type PurchaseUncheckedUpdateManyWithoutUserInput = {
 export type PurchaseUncheckedUpdateWithoutInventoryInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
@@ -4433,6 +5173,7 @@ export type PurchaseUncheckedUpdateWithoutProductInput = {
   Inventory?: Maybe<InventoryUncheckedUpdateManyWithoutPurchaseInput>;
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
@@ -4444,6 +5185,7 @@ export type PurchaseUncheckedUpdateWithoutUserInput = {
   Inventory?: Maybe<InventoryUncheckedUpdateManyWithoutPurchaseInput>;
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
@@ -4455,6 +5197,7 @@ export type PurchaseUpdateInput = {
   Inventory?: Maybe<InventoryUpdateManyWithoutPurchaseInput>;
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
   product?: Maybe<ProductUpdateOneRequiredWithoutPurchaseInput>;
@@ -4465,6 +5208,7 @@ export type PurchaseUpdateInput = {
 export type PurchaseUpdateManyMutationInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
   refund?: Maybe<BoolFieldUpdateOperationsInput>;
@@ -4529,6 +5273,7 @@ export type PurchaseUpdateWithWhereUniqueWithoutUserInput = {
 export type PurchaseUpdateWithoutInventoryInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
   product?: Maybe<ProductUpdateOneRequiredWithoutPurchaseInput>;
@@ -4540,6 +5285,7 @@ export type PurchaseUpdateWithoutProductInput = {
   Inventory?: Maybe<InventoryUpdateManyWithoutPurchaseInput>;
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
   refund?: Maybe<BoolFieldUpdateOperationsInput>;
@@ -4550,6 +5296,7 @@ export type PurchaseUpdateWithoutUserInput = {
   Inventory?: Maybe<InventoryUpdateManyWithoutPurchaseInput>;
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  dateOfPurchase?: Maybe<NullableStringFieldUpdateOperationsInput>;
   lostBonusBalance?: Maybe<IntFieldUpdateOperationsInput>;
   lostMainBalance?: Maybe<IntFieldUpdateOperationsInput>;
   product?: Maybe<ProductUpdateOneRequiredWithoutPurchaseInput>;
@@ -4580,6 +5327,7 @@ export type PurchaseWhereInput = {
   OR?: Maybe<Array<Maybe<PurchaseWhereInput>>>;
   amount?: Maybe<IntFilter>;
   createdAt?: Maybe<DateTimeFilter>;
+  dateOfPurchase?: Maybe<StringNullableFilter>;
   id?: Maybe<IntFilter>;
   lostBonusBalance?: Maybe<IntFilter>;
   lostMainBalance?: Maybe<IntFilter>;
@@ -4597,6 +5345,7 @@ export type PurchaseWhereUniqueInput = {
 export type Query = {
   __typename?: 'Query';
   aggregateBaseSettings?: Maybe<AggregateBaseSettings>;
+  aggregateContacts?: Maybe<AggregateContacts>;
   aggregateInventory?: Maybe<AggregateInventory>;
   aggregateProduct?: Maybe<AggregateProduct>;
   aggregatePromocodes?: Maybe<AggregatePromocodes>;
@@ -4608,7 +5357,9 @@ export type Query = {
   aggregateTransfers?: Maybe<AggregateTransfers>;
   aggregateUrlSettings?: Maybe<AggregateUrlSettings>;
   aggregateUser?: Maybe<AggregateUser>;
+  aggregateVisitors?: Maybe<AggregateVisitors>;
   findFirstBaseSettings?: Maybe<BaseSettings>;
+  findFirstContacts?: Maybe<Contacts>;
   findFirstInventory?: Maybe<Inventory>;
   findFirstProduct?: Maybe<Product>;
   findFirstPromocodes?: Maybe<Promocodes>;
@@ -4620,8 +5371,11 @@ export type Query = {
   findFirstTransfers?: Maybe<Transfers>;
   findFirstUrlSettings?: Maybe<UrlSettings>;
   findFirstUser?: Maybe<User>;
+  findFirstVisitors?: Maybe<Visitors>;
   findManyBaseSettings: Array<BaseSettings>;
   findManyBaseSettingsCount: Scalars['Int'];
+  findManyContacts: Array<Contacts>;
+  findManyContactsCount: Scalars['Int'];
   findManyInventory: Array<Inventory>;
   findManyInventoryCount: Scalars['Int'];
   findManyProduct: Array<Product>;
@@ -4644,7 +5398,10 @@ export type Query = {
   findManyUrlSettingsCount: Scalars['Int'];
   findManyUser: Array<User>;
   findManyUserCount: Scalars['Int'];
+  findManyVisitors: Array<Visitors>;
+  findManyVisitorsCount: Scalars['Int'];
   findUniqueBaseSettings?: Maybe<BaseSettings>;
+  findUniqueContacts?: Maybe<Contacts>;
   findUniqueInventory?: Maybe<Inventory>;
   findUniqueProduct?: Maybe<Product>;
   findUniquePromocodes?: Maybe<Promocodes>;
@@ -4656,7 +5413,26 @@ export type Query = {
   findUniqueTransfers?: Maybe<Transfers>;
   findUniqueUrlSettings?: Maybe<UrlSettings>;
   findUniqueUser?: Maybe<User>;
+  findUniqueVisitors?: Maybe<Visitors>;
   getSchema: Schema;
+};
+
+
+export type QueryAggregateBaseSettingsArgs = {
+  cursor?: Maybe<BaseSettingsWhereUniqueInput>;
+  orderBy?: Maybe<Array<Maybe<BaseSettingsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<BaseSettingsWhereInput>;
+};
+
+
+export type QueryAggregateContactsArgs = {
+  cursor?: Maybe<ContactsWhereUniqueInput>;
+  orderBy?: Maybe<Array<Maybe<ContactsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<ContactsWhereInput>;
 };
 
 
@@ -4741,12 +5517,50 @@ export type QueryAggregateTransfersArgs = {
 };
 
 
+export type QueryAggregateUrlSettingsArgs = {
+  cursor?: Maybe<UrlSettingsWhereUniqueInput>;
+  orderBy?: Maybe<Array<Maybe<UrlSettingsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<UrlSettingsWhereInput>;
+};
+
+
 export type QueryAggregateUserArgs = {
   cursor?: Maybe<UserWhereUniqueInput>;
   orderBy?: Maybe<Array<Maybe<UserOrderByWithRelationInput>>>;
   skip?: Maybe<Scalars['Int']>;
   take?: Maybe<Scalars['Int']>;
   where?: Maybe<UserWhereInput>;
+};
+
+
+export type QueryAggregateVisitorsArgs = {
+  cursor?: Maybe<VisitorsWhereUniqueInput>;
+  orderBy?: Maybe<Array<Maybe<VisitorsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<VisitorsWhereInput>;
+};
+
+
+export type QueryFindFirstBaseSettingsArgs = {
+  cursor?: Maybe<BaseSettingsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<BaseSettingsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<BaseSettingsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<BaseSettingsWhereInput>;
+};
+
+
+export type QueryFindFirstContactsArgs = {
+  cursor?: Maybe<ContactsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<ContactsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<ContactsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<ContactsWhereInput>;
 };
 
 
@@ -4840,6 +5654,16 @@ export type QueryFindFirstTransfersArgs = {
 };
 
 
+export type QueryFindFirstUrlSettingsArgs = {
+  cursor?: Maybe<UrlSettingsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<UrlSettingsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<UrlSettingsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<UrlSettingsWhereInput>;
+};
+
+
 export type QueryFindFirstUserArgs = {
   cursor?: Maybe<UserWhereUniqueInput>;
   distinct?: Maybe<Array<Maybe<UserScalarFieldEnum>>>;
@@ -4847,6 +5671,56 @@ export type QueryFindFirstUserArgs = {
   skip?: Maybe<Scalars['Int']>;
   take?: Maybe<Scalars['Int']>;
   where?: Maybe<UserWhereInput>;
+};
+
+
+export type QueryFindFirstVisitorsArgs = {
+  cursor?: Maybe<VisitorsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<VisitorsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<VisitorsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<VisitorsWhereInput>;
+};
+
+
+export type QueryFindManyBaseSettingsArgs = {
+  cursor?: Maybe<BaseSettingsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<BaseSettingsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<BaseSettingsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<BaseSettingsWhereInput>;
+};
+
+
+export type QueryFindManyBaseSettingsCountArgs = {
+  cursor?: Maybe<BaseSettingsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<BaseSettingsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<BaseSettingsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<BaseSettingsWhereInput>;
+};
+
+
+export type QueryFindManyContactsArgs = {
+  cursor?: Maybe<ContactsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<ContactsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<ContactsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<ContactsWhereInput>;
+};
+
+
+export type QueryFindManyContactsCountArgs = {
+  cursor?: Maybe<ContactsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<ContactsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<ContactsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<ContactsWhereInput>;
 };
 
 
@@ -5030,6 +5904,26 @@ export type QueryFindManyTransfersCountArgs = {
 };
 
 
+export type QueryFindManyUrlSettingsArgs = {
+  cursor?: Maybe<UrlSettingsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<UrlSettingsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<UrlSettingsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<UrlSettingsWhereInput>;
+};
+
+
+export type QueryFindManyUrlSettingsCountArgs = {
+  cursor?: Maybe<UrlSettingsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<UrlSettingsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<UrlSettingsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<UrlSettingsWhereInput>;
+};
+
+
 export type QueryFindManyUserArgs = {
   cursor?: Maybe<UserWhereUniqueInput>;
   distinct?: Maybe<Array<Maybe<UserScalarFieldEnum>>>;
@@ -5047,6 +5941,36 @@ export type QueryFindManyUserCountArgs = {
   skip?: Maybe<Scalars['Int']>;
   take?: Maybe<Scalars['Int']>;
   where?: Maybe<UserWhereInput>;
+};
+
+
+export type QueryFindManyVisitorsArgs = {
+  cursor?: Maybe<VisitorsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<VisitorsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<VisitorsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<VisitorsWhereInput>;
+};
+
+
+export type QueryFindManyVisitorsCountArgs = {
+  cursor?: Maybe<VisitorsWhereUniqueInput>;
+  distinct?: Maybe<Array<Maybe<VisitorsScalarFieldEnum>>>;
+  orderBy?: Maybe<Array<Maybe<VisitorsOrderByWithRelationInput>>>;
+  skip?: Maybe<Scalars['Int']>;
+  take?: Maybe<Scalars['Int']>;
+  where?: Maybe<VisitorsWhereInput>;
+};
+
+
+export type QueryFindUniqueBaseSettingsArgs = {
+  where: BaseSettingsWhereUniqueInput;
+};
+
+
+export type QueryFindUniqueContactsArgs = {
+  where: ContactsWhereUniqueInput;
 };
 
 
@@ -5095,8 +6019,18 @@ export type QueryFindUniqueTransfersArgs = {
 };
 
 
+export type QueryFindUniqueUrlSettingsArgs = {
+  where: UrlSettingsWhereUniqueInput;
+};
+
+
 export type QueryFindUniqueUserArgs = {
   where: UserWhereUniqueInput;
+};
+
+
+export type QueryFindUniqueVisitorsArgs = {
+  where: VisitorsWhereUniqueInput;
 };
 
 export type Schema = {
@@ -7323,9 +8257,25 @@ export type UpdateModelInput = {
   update?: Maybe<Scalars['Boolean']>;
 };
 
+export type UrlSettings = {
+  __typename?: 'UrlSettings';
+  hidden: Scalars['Boolean'];
+  icon?: Maybe<Scalars['String']>;
+  id: Scalars['Int'];
+  isHaveSidebar?: Maybe<Scalars['Boolean']>;
+  sections?: Maybe<Scalars['Json']>;
+  text?: Maybe<Scalars['String']>;
+  typeUrl: ETypeOfUrl;
+  url: Scalars['String'];
+};
+
 export type UrlSettingsAvgAggregateOutputType = {
   __typename?: 'UrlSettingsAvgAggregateOutputType';
   id?: Maybe<Scalars['Float']>;
+};
+
+export type UrlSettingsAvgOrderByAggregateInput = {
+  id?: Maybe<SortOrder>;
 };
 
 export type UrlSettingsCountAggregateOutputType = {
@@ -7341,6 +8291,38 @@ export type UrlSettingsCountAggregateOutputType = {
   url: Scalars['Int'];
 };
 
+export type UrlSettingsCountOrderByAggregateInput = {
+  hidden?: Maybe<SortOrder>;
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  isHaveSidebar?: Maybe<SortOrder>;
+  sections?: Maybe<SortOrder>;
+  text?: Maybe<SortOrder>;
+  typeUrl?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export type UrlSettingsCreateInput = {
+  hidden?: Maybe<Scalars['Boolean']>;
+  icon?: Maybe<Scalars['String']>;
+  isHaveSidebar?: Maybe<Scalars['Boolean']>;
+  sections?: Maybe<Scalars['Json']>;
+  text?: Maybe<Scalars['String']>;
+  typeUrl?: Maybe<ETypeOfUrl>;
+  url: Scalars['String'];
+};
+
+export type UrlSettingsCreateManyInput = {
+  hidden?: Maybe<Scalars['Boolean']>;
+  icon?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['Int']>;
+  isHaveSidebar?: Maybe<Scalars['Boolean']>;
+  sections?: Maybe<Scalars['Json']>;
+  text?: Maybe<Scalars['String']>;
+  typeUrl?: Maybe<ETypeOfUrl>;
+  url: Scalars['String'];
+};
+
 export type UrlSettingsMaxAggregateOutputType = {
   __typename?: 'UrlSettingsMaxAggregateOutputType';
   hidden?: Maybe<Scalars['Boolean']>;
@@ -7350,6 +8332,16 @@ export type UrlSettingsMaxAggregateOutputType = {
   text?: Maybe<Scalars['String']>;
   typeUrl?: Maybe<ETypeOfUrl>;
   url?: Maybe<Scalars['String']>;
+};
+
+export type UrlSettingsMaxOrderByAggregateInput = {
+  hidden?: Maybe<SortOrder>;
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  isHaveSidebar?: Maybe<SortOrder>;
+  text?: Maybe<SortOrder>;
+  typeUrl?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
 };
 
 export type UrlSettingsMinAggregateOutputType = {
@@ -7363,6 +8355,43 @@ export type UrlSettingsMinAggregateOutputType = {
   url?: Maybe<Scalars['String']>;
 };
 
+export type UrlSettingsMinOrderByAggregateInput = {
+  hidden?: Maybe<SortOrder>;
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  isHaveSidebar?: Maybe<SortOrder>;
+  text?: Maybe<SortOrder>;
+  typeUrl?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export type UrlSettingsOrderByWithAggregationInput = {
+  _avg?: Maybe<UrlSettingsAvgOrderByAggregateInput>;
+  _count?: Maybe<UrlSettingsCountOrderByAggregateInput>;
+  _max?: Maybe<UrlSettingsMaxOrderByAggregateInput>;
+  _min?: Maybe<UrlSettingsMinOrderByAggregateInput>;
+  _sum?: Maybe<UrlSettingsSumOrderByAggregateInput>;
+  hidden?: Maybe<SortOrder>;
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  isHaveSidebar?: Maybe<SortOrder>;
+  sections?: Maybe<SortOrder>;
+  text?: Maybe<SortOrder>;
+  typeUrl?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export type UrlSettingsOrderByWithRelationInput = {
+  hidden?: Maybe<SortOrder>;
+  icon?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  isHaveSidebar?: Maybe<SortOrder>;
+  sections?: Maybe<SortOrder>;
+  text?: Maybe<SortOrder>;
+  typeUrl?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
 export enum UrlSettingsScalarFieldEnum {
   Hidden = 'hidden',
   Icon = 'icon',
@@ -7374,8 +8403,97 @@ export enum UrlSettingsScalarFieldEnum {
   Url = 'url'
 }
 
+export type UrlSettingsScalarWhereWithAggregatesInput = {
+  AND?: Maybe<Array<Maybe<UrlSettingsScalarWhereWithAggregatesInput>>>;
+  NOT?: Maybe<Array<Maybe<UrlSettingsScalarWhereWithAggregatesInput>>>;
+  OR?: Maybe<Array<Maybe<UrlSettingsScalarWhereWithAggregatesInput>>>;
+  hidden?: Maybe<BoolWithAggregatesFilter>;
+  icon?: Maybe<StringNullableWithAggregatesFilter>;
+  id?: Maybe<IntWithAggregatesFilter>;
+  isHaveSidebar?: Maybe<BoolNullableWithAggregatesFilter>;
+  sections?: Maybe<JsonNullableWithAggregatesFilter>;
+  text?: Maybe<StringNullableWithAggregatesFilter>;
+  typeUrl?: Maybe<EnumETypeOfUrlWithAggregatesFilter>;
+  url?: Maybe<StringWithAggregatesFilter>;
+};
+
 export type UrlSettingsSumAggregateOutputType = {
   __typename?: 'UrlSettingsSumAggregateOutputType';
+  id?: Maybe<Scalars['Int']>;
+};
+
+export type UrlSettingsSumOrderByAggregateInput = {
+  id?: Maybe<SortOrder>;
+};
+
+export type UrlSettingsUncheckedCreateInput = {
+  hidden?: Maybe<Scalars['Boolean']>;
+  icon?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['Int']>;
+  isHaveSidebar?: Maybe<Scalars['Boolean']>;
+  sections?: Maybe<Scalars['Json']>;
+  text?: Maybe<Scalars['String']>;
+  typeUrl?: Maybe<ETypeOfUrl>;
+  url: Scalars['String'];
+};
+
+export type UrlSettingsUncheckedUpdateInput = {
+  hidden?: Maybe<BoolFieldUpdateOperationsInput>;
+  icon?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  id?: Maybe<IntFieldUpdateOperationsInput>;
+  isHaveSidebar?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  sections?: Maybe<Scalars['Json']>;
+  text?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  typeUrl?: Maybe<EnumETypeOfUrlFieldUpdateOperationsInput>;
+  url?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type UrlSettingsUncheckedUpdateManyInput = {
+  hidden?: Maybe<BoolFieldUpdateOperationsInput>;
+  icon?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  id?: Maybe<IntFieldUpdateOperationsInput>;
+  isHaveSidebar?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  sections?: Maybe<Scalars['Json']>;
+  text?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  typeUrl?: Maybe<EnumETypeOfUrlFieldUpdateOperationsInput>;
+  url?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type UrlSettingsUpdateInput = {
+  hidden?: Maybe<BoolFieldUpdateOperationsInput>;
+  icon?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  isHaveSidebar?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  sections?: Maybe<Scalars['Json']>;
+  text?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  typeUrl?: Maybe<EnumETypeOfUrlFieldUpdateOperationsInput>;
+  url?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type UrlSettingsUpdateManyMutationInput = {
+  hidden?: Maybe<BoolFieldUpdateOperationsInput>;
+  icon?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  isHaveSidebar?: Maybe<NullableBoolFieldUpdateOperationsInput>;
+  sections?: Maybe<Scalars['Json']>;
+  text?: Maybe<NullableStringFieldUpdateOperationsInput>;
+  typeUrl?: Maybe<EnumETypeOfUrlFieldUpdateOperationsInput>;
+  url?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type UrlSettingsWhereInput = {
+  AND?: Maybe<Array<Maybe<UrlSettingsWhereInput>>>;
+  NOT?: Maybe<Array<Maybe<UrlSettingsWhereInput>>>;
+  OR?: Maybe<Array<Maybe<UrlSettingsWhereInput>>>;
+  hidden?: Maybe<BoolFilter>;
+  icon?: Maybe<StringNullableFilter>;
+  id?: Maybe<IntFilter>;
+  isHaveSidebar?: Maybe<BoolNullableFilter>;
+  sections?: Maybe<JsonNullableFilter>;
+  text?: Maybe<StringNullableFilter>;
+  typeUrl?: Maybe<EnumETypeOfUrlFilter>;
+  url?: Maybe<StringFilter>;
+};
+
+export type UrlSettingsWhereUniqueInput = {
   id?: Maybe<Scalars['Int']>;
 };
 
@@ -8719,6 +9837,193 @@ export type UserWhereUniqueInput = {
   steamID?: Maybe<Scalars['String']>;
 };
 
+export type Visitors = {
+  __typename?: 'Visitors';
+  createdAt: Scalars['DateTime'];
+  id: Scalars['Int'];
+  ip: Scalars['String'];
+  sortDate: Scalars['String'];
+  sortedMonth: Scalars['String'];
+};
+
+export type VisitorsAvgAggregateOutputType = {
+  __typename?: 'VisitorsAvgAggregateOutputType';
+  id?: Maybe<Scalars['Float']>;
+};
+
+export type VisitorsAvgOrderByAggregateInput = {
+  id?: Maybe<SortOrder>;
+};
+
+export type VisitorsCountAggregateOutputType = {
+  __typename?: 'VisitorsCountAggregateOutputType';
+  _all: Scalars['Int'];
+  createdAt: Scalars['Int'];
+  id: Scalars['Int'];
+  ip: Scalars['Int'];
+  sortDate: Scalars['Int'];
+  sortedMonth: Scalars['Int'];
+};
+
+export type VisitorsCountOrderByAggregateInput = {
+  createdAt?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  ip?: Maybe<SortOrder>;
+  sortDate?: Maybe<SortOrder>;
+  sortedMonth?: Maybe<SortOrder>;
+};
+
+export type VisitorsCreateInput = {
+  createdAt?: Maybe<Scalars['DateTime']>;
+  ip: Scalars['String'];
+  sortDate: Scalars['String'];
+  sortedMonth: Scalars['String'];
+};
+
+export type VisitorsCreateManyInput = {
+  createdAt?: Maybe<Scalars['DateTime']>;
+  id?: Maybe<Scalars['Int']>;
+  ip: Scalars['String'];
+  sortDate: Scalars['String'];
+  sortedMonth: Scalars['String'];
+};
+
+export type VisitorsMaxAggregateOutputType = {
+  __typename?: 'VisitorsMaxAggregateOutputType';
+  createdAt?: Maybe<Scalars['DateTime']>;
+  id?: Maybe<Scalars['Int']>;
+  ip?: Maybe<Scalars['String']>;
+  sortDate?: Maybe<Scalars['String']>;
+  sortedMonth?: Maybe<Scalars['String']>;
+};
+
+export type VisitorsMaxOrderByAggregateInput = {
+  createdAt?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  ip?: Maybe<SortOrder>;
+  sortDate?: Maybe<SortOrder>;
+  sortedMonth?: Maybe<SortOrder>;
+};
+
+export type VisitorsMinAggregateOutputType = {
+  __typename?: 'VisitorsMinAggregateOutputType';
+  createdAt?: Maybe<Scalars['DateTime']>;
+  id?: Maybe<Scalars['Int']>;
+  ip?: Maybe<Scalars['String']>;
+  sortDate?: Maybe<Scalars['String']>;
+  sortedMonth?: Maybe<Scalars['String']>;
+};
+
+export type VisitorsMinOrderByAggregateInput = {
+  createdAt?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  ip?: Maybe<SortOrder>;
+  sortDate?: Maybe<SortOrder>;
+  sortedMonth?: Maybe<SortOrder>;
+};
+
+export type VisitorsOrderByWithAggregationInput = {
+  _avg?: Maybe<VisitorsAvgOrderByAggregateInput>;
+  _count?: Maybe<VisitorsCountOrderByAggregateInput>;
+  _max?: Maybe<VisitorsMaxOrderByAggregateInput>;
+  _min?: Maybe<VisitorsMinOrderByAggregateInput>;
+  _sum?: Maybe<VisitorsSumOrderByAggregateInput>;
+  createdAt?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  ip?: Maybe<SortOrder>;
+  sortDate?: Maybe<SortOrder>;
+  sortedMonth?: Maybe<SortOrder>;
+};
+
+export type VisitorsOrderByWithRelationInput = {
+  createdAt?: Maybe<SortOrder>;
+  id?: Maybe<SortOrder>;
+  ip?: Maybe<SortOrder>;
+  sortDate?: Maybe<SortOrder>;
+  sortedMonth?: Maybe<SortOrder>;
+};
+
+export enum VisitorsScalarFieldEnum {
+  CreatedAt = 'createdAt',
+  Id = 'id',
+  Ip = 'ip',
+  SortDate = 'sortDate',
+  SortedMonth = 'sortedMonth'
+}
+
+export type VisitorsScalarWhereWithAggregatesInput = {
+  AND?: Maybe<Array<Maybe<VisitorsScalarWhereWithAggregatesInput>>>;
+  NOT?: Maybe<Array<Maybe<VisitorsScalarWhereWithAggregatesInput>>>;
+  OR?: Maybe<Array<Maybe<VisitorsScalarWhereWithAggregatesInput>>>;
+  createdAt?: Maybe<DateTimeWithAggregatesFilter>;
+  id?: Maybe<IntWithAggregatesFilter>;
+  ip?: Maybe<StringWithAggregatesFilter>;
+  sortDate?: Maybe<StringWithAggregatesFilter>;
+  sortedMonth?: Maybe<StringWithAggregatesFilter>;
+};
+
+export type VisitorsSumAggregateOutputType = {
+  __typename?: 'VisitorsSumAggregateOutputType';
+  id?: Maybe<Scalars['Int']>;
+};
+
+export type VisitorsSumOrderByAggregateInput = {
+  id?: Maybe<SortOrder>;
+};
+
+export type VisitorsUncheckedCreateInput = {
+  createdAt?: Maybe<Scalars['DateTime']>;
+  id?: Maybe<Scalars['Int']>;
+  ip: Scalars['String'];
+  sortDate: Scalars['String'];
+  sortedMonth: Scalars['String'];
+};
+
+export type VisitorsUncheckedUpdateInput = {
+  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  id?: Maybe<IntFieldUpdateOperationsInput>;
+  ip?: Maybe<StringFieldUpdateOperationsInput>;
+  sortDate?: Maybe<StringFieldUpdateOperationsInput>;
+  sortedMonth?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type VisitorsUncheckedUpdateManyInput = {
+  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  id?: Maybe<IntFieldUpdateOperationsInput>;
+  ip?: Maybe<StringFieldUpdateOperationsInput>;
+  sortDate?: Maybe<StringFieldUpdateOperationsInput>;
+  sortedMonth?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type VisitorsUpdateInput = {
+  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  ip?: Maybe<StringFieldUpdateOperationsInput>;
+  sortDate?: Maybe<StringFieldUpdateOperationsInput>;
+  sortedMonth?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type VisitorsUpdateManyMutationInput = {
+  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
+  ip?: Maybe<StringFieldUpdateOperationsInput>;
+  sortDate?: Maybe<StringFieldUpdateOperationsInput>;
+  sortedMonth?: Maybe<StringFieldUpdateOperationsInput>;
+};
+
+export type VisitorsWhereInput = {
+  AND?: Maybe<Array<Maybe<VisitorsWhereInput>>>;
+  NOT?: Maybe<Array<Maybe<VisitorsWhereInput>>>;
+  OR?: Maybe<Array<Maybe<VisitorsWhereInput>>>;
+  createdAt?: Maybe<DateTimeFilter>;
+  id?: Maybe<IntFilter>;
+  ip?: Maybe<StringFilter>;
+  sortDate?: Maybe<StringFilter>;
+  sortedMonth?: Maybe<StringFilter>;
+};
+
+export type VisitorsWhereUniqueInput = {
+  id?: Maybe<Scalars['Int']>;
+};
+
 export type BaseSettings = {
   __typename?: 'baseSettings';
   IPWhiteList: Scalars['String'];
@@ -8731,180 +10036,6 @@ export type BaseSettings = {
   startBalance: Scalars['Int'];
 };
 
-export type BaseSettingsAvgOrderByAggregateInput = {
-  id?: Maybe<SortOrder>;
-  startBalance?: Maybe<SortOrder>;
-};
-
-export type BaseSettingsCountOrderByAggregateInput = {
-  IPWhiteList?: Maybe<SortOrder>;
-  apiKey?: Maybe<SortOrder>;
-  header?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  mainPage?: Maybe<SortOrder>;
-  panelURLs?: Maybe<SortOrder>;
-  saleMode?: Maybe<SortOrder>;
-  startBalance?: Maybe<SortOrder>;
-};
-
-export type BaseSettingsCreateInput = {
-  IPWhiteList: Scalars['String'];
-  apiKey: Scalars['String'];
-  header: Scalars['String'];
-  mainPage: Scalars['String'];
-  panelURLs?: Maybe<Scalars['Json']>;
-  saleMode?: Maybe<Scalars['Boolean']>;
-  startBalance: Scalars['Int'];
-};
-
-export type BaseSettingsCreateManyInput = {
-  IPWhiteList: Scalars['String'];
-  apiKey: Scalars['String'];
-  header: Scalars['String'];
-  id?: Maybe<Scalars['Int']>;
-  mainPage: Scalars['String'];
-  panelURLs?: Maybe<Scalars['Json']>;
-  saleMode?: Maybe<Scalars['Boolean']>;
-  startBalance: Scalars['Int'];
-};
-
-export type BaseSettingsMaxOrderByAggregateInput = {
-  IPWhiteList?: Maybe<SortOrder>;
-  apiKey?: Maybe<SortOrder>;
-  header?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  mainPage?: Maybe<SortOrder>;
-  saleMode?: Maybe<SortOrder>;
-  startBalance?: Maybe<SortOrder>;
-};
-
-export type BaseSettingsMinOrderByAggregateInput = {
-  IPWhiteList?: Maybe<SortOrder>;
-  apiKey?: Maybe<SortOrder>;
-  header?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  mainPage?: Maybe<SortOrder>;
-  saleMode?: Maybe<SortOrder>;
-  startBalance?: Maybe<SortOrder>;
-};
-
-export type BaseSettingsOrderByWithAggregationInput = {
-  IPWhiteList?: Maybe<SortOrder>;
-  _avg?: Maybe<BaseSettingsAvgOrderByAggregateInput>;
-  _count?: Maybe<BaseSettingsCountOrderByAggregateInput>;
-  _max?: Maybe<BaseSettingsMaxOrderByAggregateInput>;
-  _min?: Maybe<BaseSettingsMinOrderByAggregateInput>;
-  _sum?: Maybe<BaseSettingsSumOrderByAggregateInput>;
-  apiKey?: Maybe<SortOrder>;
-  header?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  mainPage?: Maybe<SortOrder>;
-  panelURLs?: Maybe<SortOrder>;
-  saleMode?: Maybe<SortOrder>;
-  startBalance?: Maybe<SortOrder>;
-};
-
-export type BaseSettingsOrderByWithRelationInput = {
-  IPWhiteList?: Maybe<SortOrder>;
-  apiKey?: Maybe<SortOrder>;
-  header?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  mainPage?: Maybe<SortOrder>;
-  panelURLs?: Maybe<SortOrder>;
-  saleMode?: Maybe<SortOrder>;
-  startBalance?: Maybe<SortOrder>;
-};
-
-export type BaseSettingsScalarWhereWithAggregatesInput = {
-  AND?: Maybe<Array<Maybe<BaseSettingsScalarWhereWithAggregatesInput>>>;
-  IPWhiteList?: Maybe<StringWithAggregatesFilter>;
-  NOT?: Maybe<Array<Maybe<BaseSettingsScalarWhereWithAggregatesInput>>>;
-  OR?: Maybe<Array<Maybe<BaseSettingsScalarWhereWithAggregatesInput>>>;
-  apiKey?: Maybe<StringWithAggregatesFilter>;
-  header?: Maybe<StringWithAggregatesFilter>;
-  id?: Maybe<IntWithAggregatesFilter>;
-  mainPage?: Maybe<StringWithAggregatesFilter>;
-  panelURLs?: Maybe<JsonNullableWithAggregatesFilter>;
-  saleMode?: Maybe<BoolWithAggregatesFilter>;
-  startBalance?: Maybe<IntWithAggregatesFilter>;
-};
-
-export type BaseSettingsSumOrderByAggregateInput = {
-  id?: Maybe<SortOrder>;
-  startBalance?: Maybe<SortOrder>;
-};
-
-export type BaseSettingsUncheckedCreateInput = {
-  IPWhiteList: Scalars['String'];
-  apiKey: Scalars['String'];
-  header: Scalars['String'];
-  id?: Maybe<Scalars['Int']>;
-  mainPage: Scalars['String'];
-  panelURLs?: Maybe<Scalars['Json']>;
-  saleMode?: Maybe<Scalars['Boolean']>;
-  startBalance: Scalars['Int'];
-};
-
-export type BaseSettingsUncheckedUpdateInput = {
-  IPWhiteList?: Maybe<StringFieldUpdateOperationsInput>;
-  apiKey?: Maybe<StringFieldUpdateOperationsInput>;
-  header?: Maybe<StringFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  mainPage?: Maybe<StringFieldUpdateOperationsInput>;
-  panelURLs?: Maybe<Scalars['Json']>;
-  saleMode?: Maybe<BoolFieldUpdateOperationsInput>;
-  startBalance?: Maybe<IntFieldUpdateOperationsInput>;
-};
-
-export type BaseSettingsUncheckedUpdateManyInput = {
-  IPWhiteList?: Maybe<StringFieldUpdateOperationsInput>;
-  apiKey?: Maybe<StringFieldUpdateOperationsInput>;
-  header?: Maybe<StringFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  mainPage?: Maybe<StringFieldUpdateOperationsInput>;
-  panelURLs?: Maybe<Scalars['Json']>;
-  saleMode?: Maybe<BoolFieldUpdateOperationsInput>;
-  startBalance?: Maybe<IntFieldUpdateOperationsInput>;
-};
-
-export type BaseSettingsUpdateInput = {
-  IPWhiteList?: Maybe<StringFieldUpdateOperationsInput>;
-  apiKey?: Maybe<StringFieldUpdateOperationsInput>;
-  header?: Maybe<StringFieldUpdateOperationsInput>;
-  mainPage?: Maybe<StringFieldUpdateOperationsInput>;
-  panelURLs?: Maybe<Scalars['Json']>;
-  saleMode?: Maybe<BoolFieldUpdateOperationsInput>;
-  startBalance?: Maybe<IntFieldUpdateOperationsInput>;
-};
-
-export type BaseSettingsUpdateManyMutationInput = {
-  IPWhiteList?: Maybe<StringFieldUpdateOperationsInput>;
-  apiKey?: Maybe<StringFieldUpdateOperationsInput>;
-  header?: Maybe<StringFieldUpdateOperationsInput>;
-  mainPage?: Maybe<StringFieldUpdateOperationsInput>;
-  panelURLs?: Maybe<Scalars['Json']>;
-  saleMode?: Maybe<BoolFieldUpdateOperationsInput>;
-  startBalance?: Maybe<IntFieldUpdateOperationsInput>;
-};
-
-export type BaseSettingsWhereInput = {
-  AND?: Maybe<Array<Maybe<BaseSettingsWhereInput>>>;
-  IPWhiteList?: Maybe<StringFilter>;
-  NOT?: Maybe<Array<Maybe<BaseSettingsWhereInput>>>;
-  OR?: Maybe<Array<Maybe<BaseSettingsWhereInput>>>;
-  apiKey?: Maybe<StringFilter>;
-  header?: Maybe<StringFilter>;
-  id?: Maybe<IntFilter>;
-  mainPage?: Maybe<StringFilter>;
-  panelURLs?: Maybe<JsonNullableFilter>;
-  saleMode?: Maybe<BoolFilter>;
-  startBalance?: Maybe<IntFilter>;
-};
-
-export type BaseSettingsWhereUniqueInput = {
-  id?: Maybe<Scalars['Int']>;
-};
-
 export type UrlSettings = {
   __typename?: 'urlSettings';
   hidden: Scalars['Boolean'];
@@ -8915,176 +10046,4 @@ export type UrlSettings = {
   text?: Maybe<Scalars['String']>;
   typeUrl: ETypeOfUrl;
   url: Scalars['String'];
-};
-
-export type UrlSettingsAvgOrderByAggregateInput = {
-  id?: Maybe<SortOrder>;
-};
-
-export type UrlSettingsCountOrderByAggregateInput = {
-  hidden?: Maybe<SortOrder>;
-  icon?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  isHaveSidebar?: Maybe<SortOrder>;
-  sections?: Maybe<SortOrder>;
-  text?: Maybe<SortOrder>;
-  typeUrl?: Maybe<SortOrder>;
-  url?: Maybe<SortOrder>;
-};
-
-export type UrlSettingsCreateInput = {
-  hidden?: Maybe<Scalars['Boolean']>;
-  icon?: Maybe<Scalars['String']>;
-  isHaveSidebar?: Maybe<Scalars['Boolean']>;
-  sections?: Maybe<Scalars['Json']>;
-  text?: Maybe<Scalars['String']>;
-  typeUrl?: Maybe<ETypeOfUrl>;
-  url: Scalars['String'];
-};
-
-export type UrlSettingsCreateManyInput = {
-  hidden?: Maybe<Scalars['Boolean']>;
-  icon?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-  isHaveSidebar?: Maybe<Scalars['Boolean']>;
-  sections?: Maybe<Scalars['Json']>;
-  text?: Maybe<Scalars['String']>;
-  typeUrl?: Maybe<ETypeOfUrl>;
-  url: Scalars['String'];
-};
-
-export type UrlSettingsMaxOrderByAggregateInput = {
-  hidden?: Maybe<SortOrder>;
-  icon?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  isHaveSidebar?: Maybe<SortOrder>;
-  text?: Maybe<SortOrder>;
-  typeUrl?: Maybe<SortOrder>;
-  url?: Maybe<SortOrder>;
-};
-
-export type UrlSettingsMinOrderByAggregateInput = {
-  hidden?: Maybe<SortOrder>;
-  icon?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  isHaveSidebar?: Maybe<SortOrder>;
-  text?: Maybe<SortOrder>;
-  typeUrl?: Maybe<SortOrder>;
-  url?: Maybe<SortOrder>;
-};
-
-export type UrlSettingsOrderByWithAggregationInput = {
-  _avg?: Maybe<UrlSettingsAvgOrderByAggregateInput>;
-  _count?: Maybe<UrlSettingsCountOrderByAggregateInput>;
-  _max?: Maybe<UrlSettingsMaxOrderByAggregateInput>;
-  _min?: Maybe<UrlSettingsMinOrderByAggregateInput>;
-  _sum?: Maybe<UrlSettingsSumOrderByAggregateInput>;
-  hidden?: Maybe<SortOrder>;
-  icon?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  isHaveSidebar?: Maybe<SortOrder>;
-  sections?: Maybe<SortOrder>;
-  text?: Maybe<SortOrder>;
-  typeUrl?: Maybe<SortOrder>;
-  url?: Maybe<SortOrder>;
-};
-
-export type UrlSettingsOrderByWithRelationInput = {
-  hidden?: Maybe<SortOrder>;
-  icon?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  isHaveSidebar?: Maybe<SortOrder>;
-  sections?: Maybe<SortOrder>;
-  text?: Maybe<SortOrder>;
-  typeUrl?: Maybe<SortOrder>;
-  url?: Maybe<SortOrder>;
-};
-
-export type UrlSettingsScalarWhereWithAggregatesInput = {
-  AND?: Maybe<Array<Maybe<UrlSettingsScalarWhereWithAggregatesInput>>>;
-  NOT?: Maybe<Array<Maybe<UrlSettingsScalarWhereWithAggregatesInput>>>;
-  OR?: Maybe<Array<Maybe<UrlSettingsScalarWhereWithAggregatesInput>>>;
-  hidden?: Maybe<BoolWithAggregatesFilter>;
-  icon?: Maybe<StringNullableWithAggregatesFilter>;
-  id?: Maybe<IntWithAggregatesFilter>;
-  isHaveSidebar?: Maybe<BoolNullableWithAggregatesFilter>;
-  sections?: Maybe<JsonNullableWithAggregatesFilter>;
-  text?: Maybe<StringNullableWithAggregatesFilter>;
-  typeUrl?: Maybe<EnumETypeOfUrlWithAggregatesFilter>;
-  url?: Maybe<StringWithAggregatesFilter>;
-};
-
-export type UrlSettingsSumOrderByAggregateInput = {
-  id?: Maybe<SortOrder>;
-};
-
-export type UrlSettingsUncheckedCreateInput = {
-  hidden?: Maybe<Scalars['Boolean']>;
-  icon?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-  isHaveSidebar?: Maybe<Scalars['Boolean']>;
-  sections?: Maybe<Scalars['Json']>;
-  text?: Maybe<Scalars['String']>;
-  typeUrl?: Maybe<ETypeOfUrl>;
-  url: Scalars['String'];
-};
-
-export type UrlSettingsUncheckedUpdateInput = {
-  hidden?: Maybe<BoolFieldUpdateOperationsInput>;
-  icon?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  isHaveSidebar?: Maybe<NullableBoolFieldUpdateOperationsInput>;
-  sections?: Maybe<Scalars['Json']>;
-  text?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  typeUrl?: Maybe<EnumETypeOfUrlFieldUpdateOperationsInput>;
-  url?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type UrlSettingsUncheckedUpdateManyInput = {
-  hidden?: Maybe<BoolFieldUpdateOperationsInput>;
-  icon?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  isHaveSidebar?: Maybe<NullableBoolFieldUpdateOperationsInput>;
-  sections?: Maybe<Scalars['Json']>;
-  text?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  typeUrl?: Maybe<EnumETypeOfUrlFieldUpdateOperationsInput>;
-  url?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type UrlSettingsUpdateInput = {
-  hidden?: Maybe<BoolFieldUpdateOperationsInput>;
-  icon?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  isHaveSidebar?: Maybe<NullableBoolFieldUpdateOperationsInput>;
-  sections?: Maybe<Scalars['Json']>;
-  text?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  typeUrl?: Maybe<EnumETypeOfUrlFieldUpdateOperationsInput>;
-  url?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type UrlSettingsUpdateManyMutationInput = {
-  hidden?: Maybe<BoolFieldUpdateOperationsInput>;
-  icon?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  isHaveSidebar?: Maybe<NullableBoolFieldUpdateOperationsInput>;
-  sections?: Maybe<Scalars['Json']>;
-  text?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  typeUrl?: Maybe<EnumETypeOfUrlFieldUpdateOperationsInput>;
-  url?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type UrlSettingsWhereInput = {
-  AND?: Maybe<Array<Maybe<UrlSettingsWhereInput>>>;
-  NOT?: Maybe<Array<Maybe<UrlSettingsWhereInput>>>;
-  OR?: Maybe<Array<Maybe<UrlSettingsWhereInput>>>;
-  hidden?: Maybe<BoolFilter>;
-  icon?: Maybe<StringNullableFilter>;
-  id?: Maybe<IntFilter>;
-  isHaveSidebar?: Maybe<BoolNullableFilter>;
-  sections?: Maybe<JsonNullableFilter>;
-  text?: Maybe<StringNullableFilter>;
-  typeUrl?: Maybe<EnumETypeOfUrlFilter>;
-  url?: Maybe<StringFilter>;
-};
-
-export type UrlSettingsWhereUniqueInput = {
-  id?: Maybe<Scalars['Int']>;
 };

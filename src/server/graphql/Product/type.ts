@@ -8,9 +8,11 @@ export const Product = objectType({
   name: 'Product',
   definition(t) {
     t.int('id')
-    t.string('name')
+    t.string('name_ru')
+    t.string('name_en')
     t.nullable.string('nameID')
-    t.nullable.string('description')
+    t.nullable.string('description_ru')
+    t.nullable.string('description_en')
     t.nullable.string('image')
     t.field('type', { type: 'ETypeOfProduct' })
     t.nullable.json('productContent')
@@ -24,8 +26,8 @@ export const Product = objectType({
     t.int('amount')
     t.boolean('isChangeAmount')
     t.int('price')
-    t.nullable.float('discount')
-    t.nullable.float('saleDiscount')
+    t.nullable.int('discount')
+    t.nullable.int('saleDiscount')
     t.nullable.field('saleDeadline', { type: 'DateTime' })
     t.nullable.int('maxCountOfSale')
     t.boolean('hidden')
@@ -36,6 +38,7 @@ export const Product = objectType({
     t.boolean('isBackgroundImage')
     t.field('buttonColor', { type: 'EButtonColor' })
     t.nullable.string('textButton')
+    t.nullable.string('textButton_en')
     t.nullable.string('iconButton')
     t.nullable.int('height')
     t.list.field('Purchase', {

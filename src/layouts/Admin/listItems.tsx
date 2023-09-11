@@ -89,14 +89,14 @@ export const MainListItems: React.FC = () => {
         <ListItemText primary="Promocodes" />
       </ListItem>
 
-      <ListItem button onClick={() => router.push('/admin/models/urlSettings')}>
+      <ListItem button onClick={() => router.push('/admin/models/UrlSettings')}>
         <ListItemIcon>
           <SettingsIcon2 />
         </ListItemIcon>
         <ListItemText primary="urlSettings" />
       </ListItem>
 
-      <ListItem button onClick={() => router.push('/admin/models/baseSettings')}>
+      <ListItem button onClick={() => router.push('/admin/models/BaseSettings')}>
         <ListItemIcon>
           <SettingsIcon2 />
         </ListItemIcon>
@@ -109,6 +109,14 @@ export const MainListItems: React.FC = () => {
         </ListItemIcon>
         <ListItemText primary="Token" />
       </ListItem>
+
+	<ListItem button onClick={() => router.push('/admin/models/Contacts')}>
+        <ListItemIcon>
+          <SettingsIcon2 />
+        </ListItemIcon>
+        <ListItemText primary="Contacts" />
+      </ListItem>
+
     </div>
   );
 };

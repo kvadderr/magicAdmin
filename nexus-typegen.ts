@@ -53,6 +53,163 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  BaseSettingsAvgOrderByAggregateInput: { // input type
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  BaseSettingsCountOrderByAggregateInput: { // input type
+    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    panelURLs?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  BaseSettingsCreateInput: { // input type
+    IPWhiteList: string; // String!
+    apiKey: string; // String!
+    header: string; // String!
+    mainPage: string; // String!
+    panelURLs?: NexusGenScalars['Json'] | null; // Json
+    saleMode?: boolean | null; // Boolean
+    startBalance: number; // Int!
+  }
+  BaseSettingsCreateManyInput: { // input type
+    IPWhiteList: string; // String!
+    apiKey: string; // String!
+    header: string; // String!
+    id?: number | null; // Int
+    mainPage: string; // String!
+    panelURLs?: NexusGenScalars['Json'] | null; // Json
+    saleMode?: boolean | null; // Boolean
+    startBalance: number; // Int!
+  }
+  BaseSettingsMaxOrderByAggregateInput: { // input type
+    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  BaseSettingsMinOrderByAggregateInput: { // input type
+    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  BaseSettingsOrderByWithAggregationInput: { // input type
+    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    _avg?: NexusGenInputs['BaseSettingsAvgOrderByAggregateInput'] | null; // BaseSettingsAvgOrderByAggregateInput
+    _count?: NexusGenInputs['BaseSettingsCountOrderByAggregateInput'] | null; // BaseSettingsCountOrderByAggregateInput
+    _max?: NexusGenInputs['BaseSettingsMaxOrderByAggregateInput'] | null; // BaseSettingsMaxOrderByAggregateInput
+    _min?: NexusGenInputs['BaseSettingsMinOrderByAggregateInput'] | null; // BaseSettingsMinOrderByAggregateInput
+    _sum?: NexusGenInputs['BaseSettingsSumOrderByAggregateInput'] | null; // BaseSettingsSumOrderByAggregateInput
+    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    panelURLs?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  BaseSettingsOrderByWithRelationInput: { // input type
+    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    panelURLs?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  BaseSettingsScalarWhereWithAggregatesInput: { // input type
+    AND?: Array<NexusGenInputs['BaseSettingsScalarWhereWithAggregatesInput'] | null> | null; // [BaseSettingsScalarWhereWithAggregatesInput]
+    IPWhiteList?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    NOT?: Array<NexusGenInputs['BaseSettingsScalarWhereWithAggregatesInput'] | null> | null; // [BaseSettingsScalarWhereWithAggregatesInput]
+    OR?: Array<NexusGenInputs['BaseSettingsScalarWhereWithAggregatesInput'] | null> | null; // [BaseSettingsScalarWhereWithAggregatesInput]
+    apiKey?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    header?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    id?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
+    mainPage?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    panelURLs?: NexusGenInputs['JsonNullableWithAggregatesFilter'] | null; // JsonNullableWithAggregatesFilter
+    saleMode?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
+    startBalance?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
+  }
+  BaseSettingsSumOrderByAggregateInput: { // input type
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  BaseSettingsUncheckedCreateInput: { // input type
+    IPWhiteList: string; // String!
+    apiKey: string; // String!
+    header: string; // String!
+    id?: number | null; // Int
+    mainPage: string; // String!
+    panelURLs?: NexusGenScalars['Json'] | null; // Json
+    saleMode?: boolean | null; // Boolean
+    startBalance: number; // Int!
+  }
+  BaseSettingsUncheckedUpdateInput: { // input type
+    IPWhiteList?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    apiKey?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    header?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    mainPage?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    panelURLs?: NexusGenScalars['Json'] | null; // Json
+    saleMode?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    startBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+  }
+  BaseSettingsUncheckedUpdateManyInput: { // input type
+    IPWhiteList?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    apiKey?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    header?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    mainPage?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    panelURLs?: NexusGenScalars['Json'] | null; // Json
+    saleMode?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    startBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+  }
+  BaseSettingsUpdateInput: { // input type
+    IPWhiteList?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    apiKey?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    header?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    mainPage?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    panelURLs?: NexusGenScalars['Json'] | null; // Json
+    saleMode?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    startBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+  }
+  BaseSettingsUpdateManyMutationInput: { // input type
+    IPWhiteList?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    apiKey?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    header?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    mainPage?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    panelURLs?: NexusGenScalars['Json'] | null; // Json
+    saleMode?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    startBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+  }
+  BaseSettingsWhereInput: { // input type
+    AND?: Array<NexusGenInputs['BaseSettingsWhereInput'] | null> | null; // [BaseSettingsWhereInput]
+    IPWhiteList?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    NOT?: Array<NexusGenInputs['BaseSettingsWhereInput'] | null> | null; // [BaseSettingsWhereInput]
+    OR?: Array<NexusGenInputs['BaseSettingsWhereInput'] | null> | null; // [BaseSettingsWhereInput]
+    apiKey?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    header?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    mainPage?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    panelURLs?: NexusGenInputs['JsonNullableFilter'] | null; // JsonNullableFilter
+    saleMode?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
+    startBalance?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  BaseSettingsWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
   BoolFieldUpdateOperationsInput: { // input type
     set?: boolean | null; // Boolean
   }
@@ -77,6 +234,107 @@ export interface NexusGenInputs {
     _min?: NexusGenInputs['NestedBoolFilter'] | null; // NestedBoolFilter
     equals?: boolean | null; // Boolean
     not?: NexusGenInputs['NestedBoolWithAggregatesFilter'] | null; // NestedBoolWithAggregatesFilter
+  }
+  ContactsAvgOrderByAggregateInput: { // input type
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  ContactsCountOrderByAggregateInput: { // input type
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  ContactsCreateInput: { // input type
+    icon: string; // String!
+    name: string; // String!
+    url: string; // String!
+  }
+  ContactsCreateManyInput: { // input type
+    icon: string; // String!
+    id?: number | null; // Int
+    name: string; // String!
+    url: string; // String!
+  }
+  ContactsMaxOrderByAggregateInput: { // input type
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  ContactsMinOrderByAggregateInput: { // input type
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  ContactsOrderByWithAggregationInput: { // input type
+    _avg?: NexusGenInputs['ContactsAvgOrderByAggregateInput'] | null; // ContactsAvgOrderByAggregateInput
+    _count?: NexusGenInputs['ContactsCountOrderByAggregateInput'] | null; // ContactsCountOrderByAggregateInput
+    _max?: NexusGenInputs['ContactsMaxOrderByAggregateInput'] | null; // ContactsMaxOrderByAggregateInput
+    _min?: NexusGenInputs['ContactsMinOrderByAggregateInput'] | null; // ContactsMinOrderByAggregateInput
+    _sum?: NexusGenInputs['ContactsSumOrderByAggregateInput'] | null; // ContactsSumOrderByAggregateInput
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  ContactsOrderByWithRelationInput: { // input type
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  ContactsScalarWhereWithAggregatesInput: { // input type
+    AND?: Array<NexusGenInputs['ContactsScalarWhereWithAggregatesInput'] | null> | null; // [ContactsScalarWhereWithAggregatesInput]
+    NOT?: Array<NexusGenInputs['ContactsScalarWhereWithAggregatesInput'] | null> | null; // [ContactsScalarWhereWithAggregatesInput]
+    OR?: Array<NexusGenInputs['ContactsScalarWhereWithAggregatesInput'] | null> | null; // [ContactsScalarWhereWithAggregatesInput]
+    icon?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    id?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
+    name?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    url?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+  }
+  ContactsSumOrderByAggregateInput: { // input type
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  ContactsUncheckedCreateInput: { // input type
+    icon: string; // String!
+    id?: number | null; // Int
+    name: string; // String!
+    url: string; // String!
+  }
+  ContactsUncheckedUpdateInput: { // input type
+    icon?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  }
+  ContactsUncheckedUpdateManyInput: { // input type
+    icon?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  }
+  ContactsUpdateInput: { // input type
+    icon?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  }
+  ContactsUpdateManyMutationInput: { // input type
+    icon?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  }
+  ContactsWhereInput: { // input type
+    AND?: Array<NexusGenInputs['ContactsWhereInput'] | null> | null; // [ContactsWhereInput]
+    NOT?: Array<NexusGenInputs['ContactsWhereInput'] | null> | null; // [ContactsWhereInput]
+    OR?: Array<NexusGenInputs['ContactsWhereInput'] | null> | null; // [ContactsWhereInput]
+    icon?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    name?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    url?: NexusGenInputs['StringFilter'] | null; // StringFilter
+  }
+  ContactsWhereUniqueInput: { // input type
+    id?: number | null; // Int
   }
   DateTimeFieldUpdateOperationsInput: { // input type
     set?: NexusGenScalars['DateTime'] | null; // DateTime
@@ -235,31 +493,6 @@ export interface NexusGenInputs {
     not?: NexusGenInputs['NestedEnumUSER_ROLEWithAggregatesFilter'] | null; // NestedEnumUSER_ROLEWithAggregatesFilter
     notIn?: Array<NexusGenEnums['USER_ROLE'] | null> | null; // [USER_ROLE]
   }
-  FloatNullableFilter: { // input type
-    equals?: number | null; // Float
-    gt?: number | null; // Float
-    gte?: number | null; // Float
-    in?: Array<number | null> | null; // [Float]
-    lt?: number | null; // Float
-    lte?: number | null; // Float
-    not?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    notIn?: Array<number | null> | null; // [Float]
-  }
-  FloatNullableWithAggregatesFilter: { // input type
-    _avg?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    _count?: NexusGenInputs['NestedIntNullableFilter'] | null; // NestedIntNullableFilter
-    _max?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    _min?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    _sum?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    equals?: number | null; // Float
-    gt?: number | null; // Float
-    gte?: number | null; // Float
-    in?: Array<number | null> | null; // [Float]
-    lt?: number | null; // Float
-    lte?: number | null; // Float
-    not?: NexusGenInputs['NestedFloatNullableWithAggregatesFilter'] | null; // NestedFloatNullableWithAggregatesFilter
-    notIn?: Array<number | null> | null; // [Float]
-  }
   IntFieldUpdateOperationsInput: { // input type
     decrement?: number | null; // Int
     divide?: number | null; // Int
@@ -321,6 +554,7 @@ export interface NexusGenInputs {
     amount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     historyOfPurchaseId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    packId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverTypeId?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -332,6 +566,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenEnums['SortOrder'] | null; // SortOrder
     historyOfPurchaseId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isCanBeRefund?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isPartOfPack?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    packId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverName?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -343,6 +580,9 @@ export interface NexusGenInputs {
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     product: NexusGenInputs['ProductCreateNestedOneWithoutInventoryInput']; // ProductCreateNestedOneWithoutInventoryInput!
     purchase: NexusGenInputs['PurchaseCreateNestedOneWithoutInventoryInput']; // PurchaseCreateNestedOneWithoutInventoryInput!
     server?: NexusGenInputs['ServerCreateNestedOneWithoutInventoryInput'] | null; // ServerCreateNestedOneWithoutInventoryInput
@@ -357,6 +597,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -370,6 +613,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     serverId?: number | null; // Int
     serverName?: string | null; // String
     serverTypeId?: number | null; // Int
@@ -385,6 +631,9 @@ export interface NexusGenInputs {
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -402,6 +651,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverName?: string | null; // String
     serverTypeId?: number | null; // Int
@@ -418,6 +670,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -434,6 +689,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -498,6 +756,9 @@ export interface NexusGenInputs {
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     purchase: NexusGenInputs['PurchaseCreateNestedOneWithoutInventoryInput']; // PurchaseCreateNestedOneWithoutInventoryInput!
     server?: NexusGenInputs['ServerCreateNestedOneWithoutInventoryInput'] | null; // ServerCreateNestedOneWithoutInventoryInput
     serverName?: string | null; // String
@@ -509,6 +770,9 @@ export interface NexusGenInputs {
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     product: NexusGenInputs['ProductCreateNestedOneWithoutInventoryInput']; // ProductCreateNestedOneWithoutInventoryInput!
     server?: NexusGenInputs['ServerCreateNestedOneWithoutInventoryInput'] | null; // ServerCreateNestedOneWithoutInventoryInput
     serverName?: string | null; // String
@@ -520,6 +784,9 @@ export interface NexusGenInputs {
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     product: NexusGenInputs['ProductCreateNestedOneWithoutInventoryInput']; // ProductCreateNestedOneWithoutInventoryInput!
     purchase: NexusGenInputs['PurchaseCreateNestedOneWithoutInventoryInput']; // PurchaseCreateNestedOneWithoutInventoryInput!
     serverName?: string | null; // String
@@ -531,6 +798,9 @@ export interface NexusGenInputs {
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     product: NexusGenInputs['ProductCreateNestedOneWithoutInventoryInput']; // ProductCreateNestedOneWithoutInventoryInput!
     purchase: NexusGenInputs['PurchaseCreateNestedOneWithoutInventoryInput']; // PurchaseCreateNestedOneWithoutInventoryInput!
     server?: NexusGenInputs['ServerCreateNestedOneWithoutInventoryInput'] | null; // ServerCreateNestedOneWithoutInventoryInput
@@ -542,6 +812,9 @@ export interface NexusGenInputs {
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     product: NexusGenInputs['ProductCreateNestedOneWithoutInventoryInput']; // ProductCreateNestedOneWithoutInventoryInput!
     purchase: NexusGenInputs['PurchaseCreateNestedOneWithoutInventoryInput']; // PurchaseCreateNestedOneWithoutInventoryInput!
     server?: NexusGenInputs['ServerCreateNestedOneWithoutInventoryInput'] | null; // ServerCreateNestedOneWithoutInventoryInput
@@ -560,6 +833,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenEnums['SortOrder'] | null; // SortOrder
     historyOfPurchaseId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isCanBeRefund?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isPartOfPack?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    packId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverName?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -573,6 +849,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenEnums['SortOrder'] | null; // SortOrder
     historyOfPurchaseId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isCanBeRefund?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isPartOfPack?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    packId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverName?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -594,6 +873,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenEnums['SortOrder'] | null; // SortOrder
     historyOfPurchaseId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isCanBeRefund?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isPartOfPack?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    packId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverName?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -607,6 +889,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenEnums['SortOrder'] | null; // SortOrder
     historyOfPurchaseId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isCanBeRefund?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isPartOfPack?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    packId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     product?: NexusGenInputs['ProductOrderByWithRelationInput'] | null; // ProductOrderByWithRelationInput
     productId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     purchase?: NexusGenInputs['PurchaseOrderByWithRelationInput'] | null; // PurchaseOrderByWithRelationInput
@@ -628,6 +913,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['DateTimeNullableFilter'] | null; // DateTimeNullableFilter
     historyOfPurchaseId?: NexusGenInputs['IntFilter'] | null; // IntFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    isCanBeRefund?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
+    isPartOfPack?: NexusGenInputs['BoolNullableFilter'] | null; // BoolNullableFilter
+    packId?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     productId?: NexusGenInputs['IntFilter'] | null; // IntFilter
     serverId?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     serverName?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
@@ -644,6 +932,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['DateTimeNullableWithAggregatesFilter'] | null; // DateTimeNullableWithAggregatesFilter
     historyOfPurchaseId?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
     id?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
+    isCanBeRefund?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
+    isPartOfPack?: NexusGenInputs['BoolNullableWithAggregatesFilter'] | null; // BoolNullableWithAggregatesFilter
+    packId?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
     productId?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
     serverId?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
     serverName?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
@@ -655,6 +946,7 @@ export interface NexusGenInputs {
     amount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     historyOfPurchaseId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    packId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverTypeId?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -666,6 +958,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -709,6 +1004,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     serverId?: number | null; // Int
     serverName?: string | null; // String
     serverTypeId?: number | null; // Int
@@ -720,6 +1018,9 @@ export interface NexusGenInputs {
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -733,6 +1034,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverName?: string | null; // String
     serverTypeId?: number | null; // Int
@@ -745,6 +1049,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -757,6 +1064,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -769,6 +1079,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     historyOfPurchaseId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     productId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     serverId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -782,6 +1095,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     historyOfPurchaseId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     productId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     serverId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -795,6 +1111,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     historyOfPurchaseId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     productId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     serverId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -872,6 +1191,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     historyOfPurchaseId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     serverTypeId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
@@ -883,6 +1205,9 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     productId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     serverId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -896,6 +1221,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     historyOfPurchaseId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     productId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     serverTypeId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
@@ -908,6 +1236,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     historyOfPurchaseId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     productId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     serverId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -920,6 +1251,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     historyOfPurchaseId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     productId?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     serverId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -930,6 +1264,9 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     product?: NexusGenInputs['ProductUpdateOneRequiredWithoutInventoryInput'] | null; // ProductUpdateOneRequiredWithoutInventoryInput
     purchase?: NexusGenInputs['PurchaseUpdateOneRequiredWithoutInventoryInput'] | null; // PurchaseUpdateOneRequiredWithoutInventoryInput
     server?: NexusGenInputs['ServerUpdateOneWithoutInventoryInput'] | null; // ServerUpdateOneWithoutInventoryInput
@@ -942,6 +1279,9 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     status?: NexusGenInputs['EnumEStatusOfProductInInventoryFieldUpdateOperationsInput'] | null; // EnumEStatusOfProductInInventoryFieldUpdateOperationsInput
   }
@@ -1054,6 +1394,9 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     purchase?: NexusGenInputs['PurchaseUpdateOneRequiredWithoutInventoryInput'] | null; // PurchaseUpdateOneRequiredWithoutInventoryInput
     server?: NexusGenInputs['ServerUpdateOneWithoutInventoryInput'] | null; // ServerUpdateOneWithoutInventoryInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -1065,6 +1408,9 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     product?: NexusGenInputs['ProductUpdateOneRequiredWithoutInventoryInput'] | null; // ProductUpdateOneRequiredWithoutInventoryInput
     server?: NexusGenInputs['ServerUpdateOneWithoutInventoryInput'] | null; // ServerUpdateOneWithoutInventoryInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -1076,6 +1422,9 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     product?: NexusGenInputs['ProductUpdateOneRequiredWithoutInventoryInput'] | null; // ProductUpdateOneRequiredWithoutInventoryInput
     purchase?: NexusGenInputs['PurchaseUpdateOneRequiredWithoutInventoryInput'] | null; // PurchaseUpdateOneRequiredWithoutInventoryInput
     serverName?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -1087,6 +1436,9 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     product?: NexusGenInputs['ProductUpdateOneRequiredWithoutInventoryInput'] | null; // ProductUpdateOneRequiredWithoutInventoryInput
     purchase?: NexusGenInputs['PurchaseUpdateOneRequiredWithoutInventoryInput'] | null; // PurchaseUpdateOneRequiredWithoutInventoryInput
     server?: NexusGenInputs['ServerUpdateOneWithoutInventoryInput'] | null; // ServerUpdateOneWithoutInventoryInput
@@ -1098,6 +1450,9 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     dateOfReceive?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    isCanBeRefund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    isPartOfPack?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    packId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     product?: NexusGenInputs['ProductUpdateOneRequiredWithoutInventoryInput'] | null; // ProductUpdateOneRequiredWithoutInventoryInput
     purchase?: NexusGenInputs['PurchaseUpdateOneRequiredWithoutInventoryInput'] | null; // PurchaseUpdateOneRequiredWithoutInventoryInput
     server?: NexusGenInputs['ServerUpdateOneWithoutInventoryInput'] | null; // ServerUpdateOneWithoutInventoryInput
@@ -1139,6 +1494,9 @@ export interface NexusGenInputs {
     dateOfReceive?: NexusGenInputs['DateTimeNullableFilter'] | null; // DateTimeNullableFilter
     historyOfPurchaseId?: NexusGenInputs['IntFilter'] | null; // IntFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    isCanBeRefund?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
+    isPartOfPack?: NexusGenInputs['BoolNullableFilter'] | null; // BoolNullableFilter
+    packId?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     product?: NexusGenInputs['ProductWhereInput'] | null; // ProductWhereInput
     productId?: NexusGenInputs['IntFilter'] | null; // IntFilter
     purchase?: NexusGenInputs['PurchaseWhereInput'] | null; // PurchaseWhereInput
@@ -1343,21 +1701,6 @@ export interface NexusGenInputs {
     not?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
     notIn?: Array<number | null> | null; // [Float]
   }
-  NestedFloatNullableWithAggregatesFilter: { // input type
-    _avg?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    _count?: NexusGenInputs['NestedIntNullableFilter'] | null; // NestedIntNullableFilter
-    _max?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    _min?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    _sum?: NexusGenInputs['NestedFloatNullableFilter'] | null; // NestedFloatNullableFilter
-    equals?: number | null; // Float
-    gt?: number | null; // Float
-    gte?: number | null; // Float
-    in?: Array<number | null> | null; // [Float]
-    lt?: number | null; // Float
-    lte?: number | null; // Float
-    not?: NexusGenInputs['NestedFloatNullableWithAggregatesFilter'] | null; // NestedFloatNullableWithAggregatesFilter
-    notIn?: Array<number | null> | null; // [Float]
-  }
   NestedIntFilter: { // input type
     equals?: number | null; // Int
     gt?: number | null; // Int
@@ -1476,13 +1819,6 @@ export interface NexusGenInputs {
   NullableDateTimeFieldUpdateOperationsInput: { // input type
     set?: NexusGenScalars['DateTime'] | null; // DateTime
   }
-  NullableFloatFieldUpdateOperationsInput: { // input type
-    decrement?: number | null; // Float
-    divide?: number | null; // Float
-    increment?: number | null; // Float
-    multiply?: number | null; // Float
-    set?: number | null; // Float
-  }
   NullableIntFieldUpdateOperationsInput: { // input type
     decrement?: number | null; // Int
     divide?: number | null; // Int
@@ -1510,7 +1846,8 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenEnums['SortOrder'] | null; // SortOrder
     blockSize?: NexusGenEnums['SortOrder'] | null; // SortOrder
     buttonColor?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    description?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     discount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     height?: NexusGenEnums['SortOrder'] | null; // SortOrder
     hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1521,8 +1858,9 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenEnums['SortOrder'] | null; // SortOrder
     isChangeAmount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     maxCountOfSale?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
     nameID?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     number?: NexusGenEnums['SortOrder'] | null; // SortOrder
     price?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productContent?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1530,6 +1868,7 @@ export interface NexusGenInputs {
     saleDiscount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverTypeId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     textButton?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    textButton_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
     type?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
   ProductCreateInput: { // input type
@@ -1539,8 +1878,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -1549,15 +1889,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverType?: NexusGenInputs['ServerTypeCreateNestedOneWithoutProductInput'] | null; // ServerTypeCreateNestedOneWithoutProductInput
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductCreateManyInput: { // input type
@@ -1565,8 +1907,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -1576,15 +1919,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverTypeId?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductCreateManyServerTypeInput: { // input type
@@ -1592,8 +1937,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -1603,14 +1949,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductCreateManyServerTypeInputEnvelope: { // input type
@@ -1651,8 +1999,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -1661,15 +2010,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverType?: NexusGenInputs['ServerTypeCreateNestedOneWithoutProductInput'] | null; // ServerTypeCreateNestedOneWithoutProductInput
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductCreateWithoutPurchaseInput: { // input type
@@ -1678,8 +2029,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -1688,15 +2040,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverType?: NexusGenInputs['ServerTypeCreateNestedOneWithoutProductInput'] | null; // ServerTypeCreateNestedOneWithoutProductInput
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductCreateWithoutServerTypeInput: { // input type
@@ -1706,8 +2060,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -1716,14 +2071,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductListRelationFilter: { // input type
@@ -1736,7 +2093,8 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenEnums['SortOrder'] | null; // SortOrder
     blockSize?: NexusGenEnums['SortOrder'] | null; // SortOrder
     buttonColor?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    description?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     discount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     height?: NexusGenEnums['SortOrder'] | null; // SortOrder
     hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1747,14 +2105,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenEnums['SortOrder'] | null; // SortOrder
     isChangeAmount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     maxCountOfSale?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
     nameID?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     number?: NexusGenEnums['SortOrder'] | null; // SortOrder
     price?: NexusGenEnums['SortOrder'] | null; // SortOrder
     saleDeadline?: NexusGenEnums['SortOrder'] | null; // SortOrder
     saleDiscount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverTypeId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     textButton?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    textButton_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
     type?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
   ProductMinOrderByAggregateInput: { // input type
@@ -1762,7 +2122,8 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenEnums['SortOrder'] | null; // SortOrder
     blockSize?: NexusGenEnums['SortOrder'] | null; // SortOrder
     buttonColor?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    description?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     discount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     height?: NexusGenEnums['SortOrder'] | null; // SortOrder
     hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1773,14 +2134,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenEnums['SortOrder'] | null; // SortOrder
     isChangeAmount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     maxCountOfSale?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
     nameID?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     number?: NexusGenEnums['SortOrder'] | null; // SortOrder
     price?: NexusGenEnums['SortOrder'] | null; // SortOrder
     saleDeadline?: NexusGenEnums['SortOrder'] | null; // SortOrder
     saleDiscount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverTypeId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     textButton?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    textButton_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
     type?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
   ProductOrderByRelationAggregateInput: { // input type
@@ -1796,7 +2159,8 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenEnums['SortOrder'] | null; // SortOrder
     blockSize?: NexusGenEnums['SortOrder'] | null; // SortOrder
     buttonColor?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    description?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     discount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     height?: NexusGenEnums['SortOrder'] | null; // SortOrder
     hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1807,8 +2171,9 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenEnums['SortOrder'] | null; // SortOrder
     isChangeAmount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     maxCountOfSale?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
     nameID?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     number?: NexusGenEnums['SortOrder'] | null; // SortOrder
     price?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productContent?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1816,6 +2181,7 @@ export interface NexusGenInputs {
     saleDiscount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     serverTypeId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     textButton?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    textButton_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
     type?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
   ProductOrderByWithRelationInput: { // input type
@@ -1825,7 +2191,8 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenEnums['SortOrder'] | null; // SortOrder
     blockSize?: NexusGenEnums['SortOrder'] | null; // SortOrder
     buttonColor?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    description?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    description_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     discount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     height?: NexusGenEnums['SortOrder'] | null; // SortOrder
     hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1836,8 +2203,9 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenEnums['SortOrder'] | null; // SortOrder
     isChangeAmount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     maxCountOfSale?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    name?: NexusGenEnums['SortOrder'] | null; // SortOrder
     nameID?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    name_ru?: NexusGenEnums['SortOrder'] | null; // SortOrder
     number?: NexusGenEnums['SortOrder'] | null; // SortOrder
     price?: NexusGenEnums['SortOrder'] | null; // SortOrder
     productContent?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1846,6 +2214,7 @@ export interface NexusGenInputs {
     serverType?: NexusGenInputs['ServerTypeOrderByWithRelationInput'] | null; // ServerTypeOrderByWithRelationInput
     serverTypeId?: NexusGenEnums['SortOrder'] | null; // SortOrder
     textButton?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    textButton_en?: NexusGenEnums['SortOrder'] | null; // SortOrder
     type?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
   ProductRelationFilter: { // input type
@@ -1860,8 +2229,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     blockSize?: NexusGenInputs['IntFilter'] | null; // IntFilter
     buttonColor?: NexusGenInputs['EnumEButtonColorFilter'] | null; // EnumEButtonColorFilter
-    description?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
-    discount?: NexusGenInputs['FloatNullableFilter'] | null; // FloatNullableFilter
+    description_en?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    description_ru?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    discount?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     height?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     hidden?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     iconButton?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
@@ -1871,15 +2241,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     isChangeAmount?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     maxCountOfSale?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
-    name?: NexusGenInputs['StringFilter'] | null; // StringFilter
     nameID?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    name_en?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    name_ru?: NexusGenInputs['StringFilter'] | null; // StringFilter
     number?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     price?: NexusGenInputs['IntFilter'] | null; // IntFilter
     productContent?: NexusGenInputs['JsonNullableFilter'] | null; // JsonNullableFilter
     saleDeadline?: NexusGenInputs['DateTimeNullableFilter'] | null; // DateTimeNullableFilter
-    saleDiscount?: NexusGenInputs['FloatNullableFilter'] | null; // FloatNullableFilter
+    saleDiscount?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     serverTypeId?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     textButton?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    textButton_en?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     type?: NexusGenInputs['EnumETypeOfProductFilter'] | null; // EnumETypeOfProductFilter
   }
   ProductScalarWhereWithAggregatesInput: { // input type
@@ -1890,8 +2262,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
     blockSize?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
     buttonColor?: NexusGenInputs['EnumEButtonColorWithAggregatesFilter'] | null; // EnumEButtonColorWithAggregatesFilter
-    description?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
-    discount?: NexusGenInputs['FloatNullableWithAggregatesFilter'] | null; // FloatNullableWithAggregatesFilter
+    description_en?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
+    description_ru?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
+    discount?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
     height?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
     hidden?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
     iconButton?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
@@ -1901,15 +2274,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
     isChangeAmount?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
     maxCountOfSale?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
-    name?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
     nameID?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
+    name_en?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    name_ru?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
     number?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
     price?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
     productContent?: NexusGenInputs['JsonNullableWithAggregatesFilter'] | null; // JsonNullableWithAggregatesFilter
     saleDeadline?: NexusGenInputs['DateTimeNullableWithAggregatesFilter'] | null; // DateTimeNullableWithAggregatesFilter
-    saleDiscount?: NexusGenInputs['FloatNullableWithAggregatesFilter'] | null; // FloatNullableWithAggregatesFilter
+    saleDiscount?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
     serverTypeId?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
     textButton?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
+    textButton_en?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
     type?: NexusGenInputs['EnumETypeOfProductWithAggregatesFilter'] | null; // EnumETypeOfProductWithAggregatesFilter
   }
   ProductSumOrderByAggregateInput: { // input type
@@ -1931,8 +2306,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -1942,15 +2318,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverTypeId?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductUncheckedCreateNestedManyWithoutServerTypeInput: { // input type
@@ -1965,8 +2343,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -1976,15 +2355,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverTypeId?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductUncheckedCreateWithoutPurchaseInput: { // input type
@@ -1993,8 +2374,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -2004,15 +2386,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverTypeId?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductUncheckedCreateWithoutServerTypeInput: { // input type
@@ -2022,8 +2406,9 @@ export interface NexusGenInputs {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -2033,14 +2418,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductUncheckedUpdateInput: { // input type
@@ -2050,8 +2437,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2061,15 +2449,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverTypeId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUncheckedUpdateManyInput: { // input type
@@ -2077,8 +2467,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2088,15 +2479,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverTypeId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUncheckedUpdateManyWithoutProductInput: { // input type
@@ -2104,8 +2497,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2115,14 +2509,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUncheckedUpdateManyWithoutServerTypeInput: { // input type
@@ -2144,8 +2540,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2155,15 +2552,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverTypeId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUncheckedUpdateWithoutPurchaseInput: { // input type
@@ -2172,8 +2571,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2183,15 +2583,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverTypeId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUncheckedUpdateWithoutServerTypeInput: { // input type
@@ -2201,8 +2603,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2212,14 +2615,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUpdateInput: { // input type
@@ -2229,8 +2634,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2239,15 +2645,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverType?: NexusGenInputs['ServerTypeUpdateOneWithoutProductInput'] | null; // ServerTypeUpdateOneWithoutProductInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUpdateManyMutationInput: { // input type
@@ -2255,8 +2663,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2265,14 +2674,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUpdateManyWithWhereWithoutServerTypeInput: { // input type
@@ -2316,8 +2727,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2326,15 +2738,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverType?: NexusGenInputs['ServerTypeUpdateOneWithoutProductInput'] | null; // ServerTypeUpdateOneWithoutProductInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUpdateWithoutPurchaseInput: { // input type
@@ -2343,8 +2757,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2353,15 +2768,17 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     serverType?: NexusGenInputs['ServerTypeUpdateOneWithoutProductInput'] | null; // ServerTypeUpdateOneWithoutProductInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUpdateWithoutServerTypeInput: { // input type
@@ -2371,8 +2788,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     blockSize?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     buttonColor?: NexusGenInputs['EnumEButtonColorFieldUpdateOperationsInput'] | null; // EnumEButtonColorFieldUpdateOperationsInput
-    description?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    discount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    description_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    description_ru?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    discount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     height?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     iconButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -2381,14 +2799,16 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     isChangeAmount?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     maxCountOfSale?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
-    name?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     nameID?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    name_en?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    name_ru?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     number?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     price?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
-    saleDiscount?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    saleDiscount?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
     textButton?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    textButton_en?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     type?: NexusGenInputs['EnumETypeOfProductFieldUpdateOperationsInput'] | null; // EnumETypeOfProductFieldUpdateOperationsInput
   }
   ProductUpsertWithWhereUniqueWithoutServerTypeInput: { // input type
@@ -2414,8 +2834,9 @@ export interface NexusGenInputs {
     autoactivation?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     blockSize?: NexusGenInputs['IntFilter'] | null; // IntFilter
     buttonColor?: NexusGenInputs['EnumEButtonColorFilter'] | null; // EnumEButtonColorFilter
-    description?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
-    discount?: NexusGenInputs['FloatNullableFilter'] | null; // FloatNullableFilter
+    description_en?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    description_ru?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    discount?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     height?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     hidden?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     iconButton?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
@@ -2425,16 +2846,18 @@ export interface NexusGenInputs {
     isBackgroundImage?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     isChangeAmount?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     maxCountOfSale?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
-    name?: NexusGenInputs['StringFilter'] | null; // StringFilter
     nameID?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    name_en?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    name_ru?: NexusGenInputs['StringFilter'] | null; // StringFilter
     number?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     price?: NexusGenInputs['IntFilter'] | null; // IntFilter
     productContent?: NexusGenInputs['JsonNullableFilter'] | null; // JsonNullableFilter
     saleDeadline?: NexusGenInputs['DateTimeNullableFilter'] | null; // DateTimeNullableFilter
-    saleDiscount?: NexusGenInputs['FloatNullableFilter'] | null; // FloatNullableFilter
+    saleDiscount?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     serverType?: NexusGenInputs['ServerTypeWhereInput'] | null; // ServerTypeWhereInput
     serverTypeId?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
     textButton?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    textButton_en?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     type?: NexusGenInputs['EnumETypeOfProductFilter'] | null; // EnumETypeOfProductFilter
   }
   ProductWhereUniqueInput: { // input type
@@ -2674,6 +3097,7 @@ export interface NexusGenInputs {
   PurchaseCountOrderByAggregateInput: { // input type
     amount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    dateOfPurchase?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostBonusBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostMainBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -2685,6 +3109,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryCreateNestedManyWithoutPurchaseInput'] | null; // InventoryCreateNestedManyWithoutPurchaseInput
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
     product: NexusGenInputs['ProductCreateNestedOneWithoutPurchaseInput']; // ProductCreateNestedOneWithoutPurchaseInput!
@@ -2694,6 +3119,7 @@ export interface NexusGenInputs {
   PurchaseCreateManyInput: { // input type
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -2704,6 +3130,7 @@ export interface NexusGenInputs {
   PurchaseCreateManyProductInput: { // input type
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -2717,6 +3144,7 @@ export interface NexusGenInputs {
   PurchaseCreateManyUserInput: { // input type
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -2759,6 +3187,7 @@ export interface NexusGenInputs {
   PurchaseCreateWithoutInventoryInput: { // input type
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
     product: NexusGenInputs['ProductCreateNestedOneWithoutPurchaseInput']; // ProductCreateNestedOneWithoutPurchaseInput!
@@ -2769,6 +3198,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryCreateNestedManyWithoutPurchaseInput'] | null; // InventoryCreateNestedManyWithoutPurchaseInput
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
     refund: boolean; // Boolean!
@@ -2778,6 +3208,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryCreateNestedManyWithoutPurchaseInput'] | null; // InventoryCreateNestedManyWithoutPurchaseInput
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
     product: NexusGenInputs['ProductCreateNestedOneWithoutPurchaseInput']; // ProductCreateNestedOneWithoutPurchaseInput!
@@ -2791,6 +3222,7 @@ export interface NexusGenInputs {
   PurchaseMaxOrderByAggregateInput: { // input type
     amount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    dateOfPurchase?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostBonusBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostMainBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -2801,6 +3233,7 @@ export interface NexusGenInputs {
   PurchaseMinOrderByAggregateInput: { // input type
     amount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    dateOfPurchase?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostBonusBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostMainBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -2819,6 +3252,7 @@ export interface NexusGenInputs {
     _sum?: NexusGenInputs['PurchaseSumOrderByAggregateInput'] | null; // PurchaseSumOrderByAggregateInput
     amount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    dateOfPurchase?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostBonusBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostMainBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -2830,6 +3264,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryOrderByRelationAggregateInput'] | null; // InventoryOrderByRelationAggregateInput
     amount?: NexusGenEnums['SortOrder'] | null; // SortOrder
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    dateOfPurchase?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostBonusBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
     lostMainBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -2849,6 +3284,7 @@ export interface NexusGenInputs {
     OR?: Array<NexusGenInputs['PurchaseScalarWhereInput'] | null> | null; // [PurchaseScalarWhereInput]
     amount?: NexusGenInputs['IntFilter'] | null; // IntFilter
     createdAt?: NexusGenInputs['DateTimeFilter'] | null; // DateTimeFilter
+    dateOfPurchase?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
     lostBonusBalance?: NexusGenInputs['IntFilter'] | null; // IntFilter
     lostMainBalance?: NexusGenInputs['IntFilter'] | null; // IntFilter
@@ -2862,6 +3298,7 @@ export interface NexusGenInputs {
     OR?: Array<NexusGenInputs['PurchaseScalarWhereWithAggregatesInput'] | null> | null; // [PurchaseScalarWhereWithAggregatesInput]
     amount?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
     createdAt?: NexusGenInputs['DateTimeWithAggregatesFilter'] | null; // DateTimeWithAggregatesFilter
+    dateOfPurchase?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
     id?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
     lostBonusBalance?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
     lostMainBalance?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
@@ -2881,6 +3318,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUncheckedCreateNestedManyWithoutPurchaseInput'] | null; // InventoryUncheckedCreateNestedManyWithoutPurchaseInput
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -2903,6 +3341,7 @@ export interface NexusGenInputs {
   PurchaseUncheckedCreateWithoutInventoryInput: { // input type
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -2914,6 +3353,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUncheckedCreateNestedManyWithoutPurchaseInput'] | null; // InventoryUncheckedCreateNestedManyWithoutPurchaseInput
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -2924,6 +3364,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUncheckedCreateNestedManyWithoutPurchaseInput'] | null; // InventoryUncheckedCreateNestedManyWithoutPurchaseInput
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -2934,6 +3375,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUncheckedUpdateManyWithoutPurchaseInput'] | null; // InventoryUncheckedUpdateManyWithoutPurchaseInput
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
@@ -2944,6 +3386,7 @@ export interface NexusGenInputs {
   PurchaseUncheckedUpdateManyInput: { // input type
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
@@ -2967,6 +3410,7 @@ export interface NexusGenInputs {
   PurchaseUncheckedUpdateManyWithoutPurchaseInput: { // input type
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
@@ -2989,6 +3433,7 @@ export interface NexusGenInputs {
   PurchaseUncheckedUpdateWithoutInventoryInput: { // input type
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
@@ -3000,6 +3445,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUncheckedUpdateManyWithoutPurchaseInput'] | null; // InventoryUncheckedUpdateManyWithoutPurchaseInput
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
@@ -3010,6 +3456,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUncheckedUpdateManyWithoutPurchaseInput'] | null; // InventoryUncheckedUpdateManyWithoutPurchaseInput
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
@@ -3020,6 +3467,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUpdateManyWithoutPurchaseInput'] | null; // InventoryUpdateManyWithoutPurchaseInput
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     product?: NexusGenInputs['ProductUpdateOneRequiredWithoutPurchaseInput'] | null; // ProductUpdateOneRequiredWithoutPurchaseInput
@@ -3029,6 +3477,7 @@ export interface NexusGenInputs {
   PurchaseUpdateManyMutationInput: { // input type
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     refund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
@@ -3085,6 +3534,7 @@ export interface NexusGenInputs {
   PurchaseUpdateWithoutInventoryInput: { // input type
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     product?: NexusGenInputs['ProductUpdateOneRequiredWithoutPurchaseInput'] | null; // ProductUpdateOneRequiredWithoutPurchaseInput
@@ -3095,6 +3545,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUpdateManyWithoutPurchaseInput'] | null; // InventoryUpdateManyWithoutPurchaseInput
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     refund?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
@@ -3104,6 +3555,7 @@ export interface NexusGenInputs {
     Inventory?: NexusGenInputs['InventoryUpdateManyWithoutPurchaseInput'] | null; // InventoryUpdateManyWithoutPurchaseInput
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    dateOfPurchase?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     lostBonusBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     lostMainBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     product?: NexusGenInputs['ProductUpdateOneRequiredWithoutPurchaseInput'] | null; // ProductUpdateOneRequiredWithoutPurchaseInput
@@ -3130,6 +3582,7 @@ export interface NexusGenInputs {
     OR?: Array<NexusGenInputs['PurchaseWhereInput'] | null> | null; // [PurchaseWhereInput]
     amount?: NexusGenInputs['IntFilter'] | null; // IntFilter
     createdAt?: NexusGenInputs['DateTimeFilter'] | null; // DateTimeFilter
+    dateOfPurchase?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
     lostBonusBalance?: NexusGenInputs['IntFilter'] | null; // IntFilter
     lostMainBalance?: NexusGenInputs['IntFilter'] | null; // IntFilter
@@ -4751,6 +5204,161 @@ export interface NexusGenInputs {
     name?: string | null; // String
     update?: boolean | null; // Boolean
   }
+  UrlSettingsAvgOrderByAggregateInput: { // input type
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  UrlSettingsCountOrderByAggregateInput: { // input type
+    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sections?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  UrlSettingsCreateInput: { // input type
+    hidden?: boolean | null; // Boolean
+    icon?: string | null; // String
+    isHaveSidebar?: boolean | null; // Boolean
+    sections?: NexusGenScalars['Json'] | null; // Json
+    text?: string | null; // String
+    typeUrl?: NexusGenEnums['ETypeOfURL'] | null; // ETypeOfURL
+    url: string; // String!
+  }
+  UrlSettingsCreateManyInput: { // input type
+    hidden?: boolean | null; // Boolean
+    icon?: string | null; // String
+    id?: number | null; // Int
+    isHaveSidebar?: boolean | null; // Boolean
+    sections?: NexusGenScalars['Json'] | null; // Json
+    text?: string | null; // String
+    typeUrl?: NexusGenEnums['ETypeOfURL'] | null; // ETypeOfURL
+    url: string; // String!
+  }
+  UrlSettingsMaxOrderByAggregateInput: { // input type
+    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  UrlSettingsMinOrderByAggregateInput: { // input type
+    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  UrlSettingsOrderByWithAggregationInput: { // input type
+    _avg?: NexusGenInputs['UrlSettingsAvgOrderByAggregateInput'] | null; // UrlSettingsAvgOrderByAggregateInput
+    _count?: NexusGenInputs['UrlSettingsCountOrderByAggregateInput'] | null; // UrlSettingsCountOrderByAggregateInput
+    _max?: NexusGenInputs['UrlSettingsMaxOrderByAggregateInput'] | null; // UrlSettingsMaxOrderByAggregateInput
+    _min?: NexusGenInputs['UrlSettingsMinOrderByAggregateInput'] | null; // UrlSettingsMinOrderByAggregateInput
+    _sum?: NexusGenInputs['UrlSettingsSumOrderByAggregateInput'] | null; // UrlSettingsSumOrderByAggregateInput
+    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sections?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  UrlSettingsOrderByWithRelationInput: { // input type
+    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sections?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  UrlSettingsScalarWhereWithAggregatesInput: { // input type
+    AND?: Array<NexusGenInputs['UrlSettingsScalarWhereWithAggregatesInput'] | null> | null; // [UrlSettingsScalarWhereWithAggregatesInput]
+    NOT?: Array<NexusGenInputs['UrlSettingsScalarWhereWithAggregatesInput'] | null> | null; // [UrlSettingsScalarWhereWithAggregatesInput]
+    OR?: Array<NexusGenInputs['UrlSettingsScalarWhereWithAggregatesInput'] | null> | null; // [UrlSettingsScalarWhereWithAggregatesInput]
+    hidden?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
+    icon?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
+    id?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
+    isHaveSidebar?: NexusGenInputs['BoolNullableWithAggregatesFilter'] | null; // BoolNullableWithAggregatesFilter
+    sections?: NexusGenInputs['JsonNullableWithAggregatesFilter'] | null; // JsonNullableWithAggregatesFilter
+    text?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
+    typeUrl?: NexusGenInputs['EnumETypeOfURLWithAggregatesFilter'] | null; // EnumETypeOfURLWithAggregatesFilter
+    url?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+  }
+  UrlSettingsSumOrderByAggregateInput: { // input type
+    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  }
+  UrlSettingsUncheckedCreateInput: { // input type
+    hidden?: boolean | null; // Boolean
+    icon?: string | null; // String
+    id?: number | null; // Int
+    isHaveSidebar?: boolean | null; // Boolean
+    sections?: NexusGenScalars['Json'] | null; // Json
+    text?: string | null; // String
+    typeUrl?: NexusGenEnums['ETypeOfURL'] | null; // ETypeOfURL
+    url: string; // String!
+  }
+  UrlSettingsUncheckedUpdateInput: { // input type
+    hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    icon?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isHaveSidebar?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    sections?: NexusGenScalars['Json'] | null; // Json
+    text?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    typeUrl?: NexusGenInputs['EnumETypeOfURLFieldUpdateOperationsInput'] | null; // EnumETypeOfURLFieldUpdateOperationsInput
+    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  }
+  UrlSettingsUncheckedUpdateManyInput: { // input type
+    hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    icon?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    isHaveSidebar?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    sections?: NexusGenScalars['Json'] | null; // Json
+    text?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    typeUrl?: NexusGenInputs['EnumETypeOfURLFieldUpdateOperationsInput'] | null; // EnumETypeOfURLFieldUpdateOperationsInput
+    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  }
+  UrlSettingsUpdateInput: { // input type
+    hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    icon?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    isHaveSidebar?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    sections?: NexusGenScalars['Json'] | null; // Json
+    text?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    typeUrl?: NexusGenInputs['EnumETypeOfURLFieldUpdateOperationsInput'] | null; // EnumETypeOfURLFieldUpdateOperationsInput
+    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  }
+  UrlSettingsUpdateManyMutationInput: { // input type
+    hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
+    icon?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    isHaveSidebar?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    sections?: NexusGenScalars['Json'] | null; // Json
+    text?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    typeUrl?: NexusGenInputs['EnumETypeOfURLFieldUpdateOperationsInput'] | null; // EnumETypeOfURLFieldUpdateOperationsInput
+    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  }
+  UrlSettingsWhereInput: { // input type
+    AND?: Array<NexusGenInputs['UrlSettingsWhereInput'] | null> | null; // [UrlSettingsWhereInput]
+    NOT?: Array<NexusGenInputs['UrlSettingsWhereInput'] | null> | null; // [UrlSettingsWhereInput]
+    OR?: Array<NexusGenInputs['UrlSettingsWhereInput'] | null> | null; // [UrlSettingsWhereInput]
+    hidden?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
+    icon?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    isHaveSidebar?: NexusGenInputs['BoolNullableFilter'] | null; // BoolNullableFilter
+    sections?: NexusGenInputs['JsonNullableFilter'] | null; // JsonNullableFilter
+    text?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    typeUrl?: NexusGenInputs['EnumETypeOfURLFilter'] | null; // EnumETypeOfURLFilter
+    url?: NexusGenInputs['StringFilter'] | null; // StringFilter
+  }
+  UrlSettingsWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
   UserAvgOrderByAggregateInput: { // input type
     bonusBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
     experience?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -5816,334 +6424,138 @@ export interface NexusGenInputs {
     id?: number | null; // Int
     steamID?: string | null; // String
   }
-  baseSettingsAvgOrderByAggregateInput: { // input type
+  VisitorsAvgOrderByAggregateInput: { // input type
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
-  baseSettingsCountOrderByAggregateInput: { // input type
-    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  VisitorsCountOrderByAggregateInput: { // input type
+    createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    panelURLs?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    ip?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortDate?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortedMonth?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
-  baseSettingsCreateInput: { // input type
-    IPWhiteList: string; // String!
-    apiKey: string; // String!
-    header: string; // String!
-    mainPage: string; // String!
-    panelURLs?: NexusGenScalars['Json'] | null; // Json
-    saleMode?: boolean | null; // Boolean
-    startBalance: number; // Int!
+  VisitorsCreateInput: { // input type
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    ip: string; // String!
+    sortDate: string; // String!
+    sortedMonth: string; // String!
   }
-  baseSettingsCreateManyInput: { // input type
-    IPWhiteList: string; // String!
-    apiKey: string; // String!
-    header: string; // String!
+  VisitorsCreateManyInput: { // input type
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
-    mainPage: string; // String!
-    panelURLs?: NexusGenScalars['Json'] | null; // Json
-    saleMode?: boolean | null; // Boolean
-    startBalance: number; // Int!
+    ip: string; // String!
+    sortDate: string; // String!
+    sortedMonth: string; // String!
   }
-  baseSettingsMaxOrderByAggregateInput: { // input type
-    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  VisitorsMaxOrderByAggregateInput: { // input type
+    createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    ip?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortDate?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortedMonth?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
-  baseSettingsMinOrderByAggregateInput: { // input type
-    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  VisitorsMinOrderByAggregateInput: { // input type
+    createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    ip?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortDate?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortedMonth?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
-  baseSettingsOrderByWithAggregationInput: { // input type
-    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    _avg?: NexusGenInputs['baseSettingsAvgOrderByAggregateInput'] | null; // baseSettingsAvgOrderByAggregateInput
-    _count?: NexusGenInputs['baseSettingsCountOrderByAggregateInput'] | null; // baseSettingsCountOrderByAggregateInput
-    _max?: NexusGenInputs['baseSettingsMaxOrderByAggregateInput'] | null; // baseSettingsMaxOrderByAggregateInput
-    _min?: NexusGenInputs['baseSettingsMinOrderByAggregateInput'] | null; // baseSettingsMinOrderByAggregateInput
-    _sum?: NexusGenInputs['baseSettingsSumOrderByAggregateInput'] | null; // baseSettingsSumOrderByAggregateInput
-    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  VisitorsOrderByWithAggregationInput: { // input type
+    _avg?: NexusGenInputs['VisitorsAvgOrderByAggregateInput'] | null; // VisitorsAvgOrderByAggregateInput
+    _count?: NexusGenInputs['VisitorsCountOrderByAggregateInput'] | null; // VisitorsCountOrderByAggregateInput
+    _max?: NexusGenInputs['VisitorsMaxOrderByAggregateInput'] | null; // VisitorsMaxOrderByAggregateInput
+    _min?: NexusGenInputs['VisitorsMinOrderByAggregateInput'] | null; // VisitorsMinOrderByAggregateInput
+    _sum?: NexusGenInputs['VisitorsSumOrderByAggregateInput'] | null; // VisitorsSumOrderByAggregateInput
+    createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    panelURLs?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    ip?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortDate?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortedMonth?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
-  baseSettingsOrderByWithRelationInput: { // input type
-    IPWhiteList?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    apiKey?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    header?: NexusGenEnums['SortOrder'] | null; // SortOrder
+  VisitorsOrderByWithRelationInput: { // input type
+    createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    mainPage?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    panelURLs?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    saleMode?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    ip?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortDate?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sortedMonth?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
-  baseSettingsScalarWhereWithAggregatesInput: { // input type
-    AND?: Array<NexusGenInputs['baseSettingsScalarWhereWithAggregatesInput'] | null> | null; // [baseSettingsScalarWhereWithAggregatesInput]
-    IPWhiteList?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
-    NOT?: Array<NexusGenInputs['baseSettingsScalarWhereWithAggregatesInput'] | null> | null; // [baseSettingsScalarWhereWithAggregatesInput]
-    OR?: Array<NexusGenInputs['baseSettingsScalarWhereWithAggregatesInput'] | null> | null; // [baseSettingsScalarWhereWithAggregatesInput]
-    apiKey?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
-    header?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+  VisitorsScalarWhereWithAggregatesInput: { // input type
+    AND?: Array<NexusGenInputs['VisitorsScalarWhereWithAggregatesInput'] | null> | null; // [VisitorsScalarWhereWithAggregatesInput]
+    NOT?: Array<NexusGenInputs['VisitorsScalarWhereWithAggregatesInput'] | null> | null; // [VisitorsScalarWhereWithAggregatesInput]
+    OR?: Array<NexusGenInputs['VisitorsScalarWhereWithAggregatesInput'] | null> | null; // [VisitorsScalarWhereWithAggregatesInput]
+    createdAt?: NexusGenInputs['DateTimeWithAggregatesFilter'] | null; // DateTimeWithAggregatesFilter
     id?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
-    mainPage?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
-    panelURLs?: NexusGenInputs['JsonNullableWithAggregatesFilter'] | null; // JsonNullableWithAggregatesFilter
-    saleMode?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
-    startBalance?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
+    ip?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    sortDate?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    sortedMonth?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
   }
-  baseSettingsSumOrderByAggregateInput: { // input type
+  VisitorsSumOrderByAggregateInput: { // input type
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    startBalance?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
-  baseSettingsUncheckedCreateInput: { // input type
-    IPWhiteList: string; // String!
-    apiKey: string; // String!
-    header: string; // String!
+  VisitorsUncheckedCreateInput: { // input type
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
-    mainPage: string; // String!
-    panelURLs?: NexusGenScalars['Json'] | null; // Json
-    saleMode?: boolean | null; // Boolean
-    startBalance: number; // Int!
+    ip: string; // String!
+    sortDate: string; // String!
+    sortedMonth: string; // String!
   }
-  baseSettingsUncheckedUpdateInput: { // input type
-    IPWhiteList?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    apiKey?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    header?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  VisitorsUncheckedUpdateInput: { // input type
+    createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
-    mainPage?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    panelURLs?: NexusGenScalars['Json'] | null; // Json
-    saleMode?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
-    startBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    ip?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sortDate?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sortedMonth?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
   }
-  baseSettingsUncheckedUpdateManyInput: { // input type
-    IPWhiteList?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    apiKey?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    header?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+  VisitorsUncheckedUpdateManyInput: { // input type
+    createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
-    mainPage?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    panelURLs?: NexusGenScalars['Json'] | null; // Json
-    saleMode?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
-    startBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+    ip?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sortDate?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sortedMonth?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
   }
-  baseSettingsUpdateInput: { // input type
-    IPWhiteList?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    apiKey?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    header?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    mainPage?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    panelURLs?: NexusGenScalars['Json'] | null; // Json
-    saleMode?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
-    startBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+  VisitorsUpdateInput: { // input type
+    createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    ip?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sortDate?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sortedMonth?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
   }
-  baseSettingsUpdateManyMutationInput: { // input type
-    IPWhiteList?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    apiKey?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    header?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    mainPage?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    panelURLs?: NexusGenScalars['Json'] | null; // Json
-    saleMode?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
-    startBalance?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
+  VisitorsUpdateManyMutationInput: { // input type
+    createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    ip?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sortDate?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sortedMonth?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
   }
-  baseSettingsWhereInput: { // input type
-    AND?: Array<NexusGenInputs['baseSettingsWhereInput'] | null> | null; // [baseSettingsWhereInput]
-    IPWhiteList?: NexusGenInputs['StringFilter'] | null; // StringFilter
-    NOT?: Array<NexusGenInputs['baseSettingsWhereInput'] | null> | null; // [baseSettingsWhereInput]
-    OR?: Array<NexusGenInputs['baseSettingsWhereInput'] | null> | null; // [baseSettingsWhereInput]
-    apiKey?: NexusGenInputs['StringFilter'] | null; // StringFilter
-    header?: NexusGenInputs['StringFilter'] | null; // StringFilter
+  VisitorsWhereInput: { // input type
+    AND?: Array<NexusGenInputs['VisitorsWhereInput'] | null> | null; // [VisitorsWhereInput]
+    NOT?: Array<NexusGenInputs['VisitorsWhereInput'] | null> | null; // [VisitorsWhereInput]
+    OR?: Array<NexusGenInputs['VisitorsWhereInput'] | null> | null; // [VisitorsWhereInput]
+    createdAt?: NexusGenInputs['DateTimeFilter'] | null; // DateTimeFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
-    mainPage?: NexusGenInputs['StringFilter'] | null; // StringFilter
-    panelURLs?: NexusGenInputs['JsonNullableFilter'] | null; // JsonNullableFilter
-    saleMode?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
-    startBalance?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    ip?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    sortDate?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    sortedMonth?: NexusGenInputs['StringFilter'] | null; // StringFilter
   }
-  baseSettingsWhereUniqueInput: { // input type
-    id?: number | null; // Int
-  }
-  urlSettingsAvgOrderByAggregateInput: { // input type
-    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-  }
-  urlSettingsCountOrderByAggregateInput: { // input type
-    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    sections?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
-  }
-  urlSettingsCreateInput: { // input type
-    hidden?: boolean | null; // Boolean
-    icon?: string | null; // String
-    isHaveSidebar?: boolean | null; // Boolean
-    sections?: NexusGenScalars['Json'] | null; // Json
-    text?: string | null; // String
-    typeUrl?: NexusGenEnums['ETypeOfURL'] | null; // ETypeOfURL
-    url: string; // String!
-  }
-  urlSettingsCreateManyInput: { // input type
-    hidden?: boolean | null; // Boolean
-    icon?: string | null; // String
-    id?: number | null; // Int
-    isHaveSidebar?: boolean | null; // Boolean
-    sections?: NexusGenScalars['Json'] | null; // Json
-    text?: string | null; // String
-    typeUrl?: NexusGenEnums['ETypeOfURL'] | null; // ETypeOfURL
-    url: string; // String!
-  }
-  urlSettingsMaxOrderByAggregateInput: { // input type
-    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
-  }
-  urlSettingsMinOrderByAggregateInput: { // input type
-    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
-  }
-  urlSettingsOrderByWithAggregationInput: { // input type
-    _avg?: NexusGenInputs['urlSettingsAvgOrderByAggregateInput'] | null; // urlSettingsAvgOrderByAggregateInput
-    _count?: NexusGenInputs['urlSettingsCountOrderByAggregateInput'] | null; // urlSettingsCountOrderByAggregateInput
-    _max?: NexusGenInputs['urlSettingsMaxOrderByAggregateInput'] | null; // urlSettingsMaxOrderByAggregateInput
-    _min?: NexusGenInputs['urlSettingsMinOrderByAggregateInput'] | null; // urlSettingsMinOrderByAggregateInput
-    _sum?: NexusGenInputs['urlSettingsSumOrderByAggregateInput'] | null; // urlSettingsSumOrderByAggregateInput
-    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    sections?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
-  }
-  urlSettingsOrderByWithRelationInput: { // input type
-    hidden?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    icon?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    isHaveSidebar?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    sections?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    text?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    typeUrl?: NexusGenEnums['SortOrder'] | null; // SortOrder
-    url?: NexusGenEnums['SortOrder'] | null; // SortOrder
-  }
-  urlSettingsScalarWhereWithAggregatesInput: { // input type
-    AND?: Array<NexusGenInputs['urlSettingsScalarWhereWithAggregatesInput'] | null> | null; // [urlSettingsScalarWhereWithAggregatesInput]
-    NOT?: Array<NexusGenInputs['urlSettingsScalarWhereWithAggregatesInput'] | null> | null; // [urlSettingsScalarWhereWithAggregatesInput]
-    OR?: Array<NexusGenInputs['urlSettingsScalarWhereWithAggregatesInput'] | null> | null; // [urlSettingsScalarWhereWithAggregatesInput]
-    hidden?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
-    icon?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
-    id?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
-    isHaveSidebar?: NexusGenInputs['BoolNullableWithAggregatesFilter'] | null; // BoolNullableWithAggregatesFilter
-    sections?: NexusGenInputs['JsonNullableWithAggregatesFilter'] | null; // JsonNullableWithAggregatesFilter
-    text?: NexusGenInputs['StringNullableWithAggregatesFilter'] | null; // StringNullableWithAggregatesFilter
-    typeUrl?: NexusGenInputs['EnumETypeOfURLWithAggregatesFilter'] | null; // EnumETypeOfURLWithAggregatesFilter
-    url?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
-  }
-  urlSettingsSumOrderByAggregateInput: { // input type
-    id?: NexusGenEnums['SortOrder'] | null; // SortOrder
-  }
-  urlSettingsUncheckedCreateInput: { // input type
-    hidden?: boolean | null; // Boolean
-    icon?: string | null; // String
-    id?: number | null; // Int
-    isHaveSidebar?: boolean | null; // Boolean
-    sections?: NexusGenScalars['Json'] | null; // Json
-    text?: string | null; // String
-    typeUrl?: NexusGenEnums['ETypeOfURL'] | null; // ETypeOfURL
-    url: string; // String!
-  }
-  urlSettingsUncheckedUpdateInput: { // input type
-    hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
-    icon?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
-    isHaveSidebar?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
-    sections?: NexusGenScalars['Json'] | null; // Json
-    text?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    typeUrl?: NexusGenInputs['EnumETypeOfURLFieldUpdateOperationsInput'] | null; // EnumETypeOfURLFieldUpdateOperationsInput
-    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-  }
-  urlSettingsUncheckedUpdateManyInput: { // input type
-    hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
-    icon?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
-    isHaveSidebar?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
-    sections?: NexusGenScalars['Json'] | null; // Json
-    text?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    typeUrl?: NexusGenInputs['EnumETypeOfURLFieldUpdateOperationsInput'] | null; // EnumETypeOfURLFieldUpdateOperationsInput
-    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-  }
-  urlSettingsUpdateInput: { // input type
-    hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
-    icon?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    isHaveSidebar?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
-    sections?: NexusGenScalars['Json'] | null; // Json
-    text?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    typeUrl?: NexusGenInputs['EnumETypeOfURLFieldUpdateOperationsInput'] | null; // EnumETypeOfURLFieldUpdateOperationsInput
-    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-  }
-  urlSettingsUpdateManyMutationInput: { // input type
-    hidden?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
-    icon?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    isHaveSidebar?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
-    sections?: NexusGenScalars['Json'] | null; // Json
-    text?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    typeUrl?: NexusGenInputs['EnumETypeOfURLFieldUpdateOperationsInput'] | null; // EnumETypeOfURLFieldUpdateOperationsInput
-    url?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-  }
-  urlSettingsWhereInput: { // input type
-    AND?: Array<NexusGenInputs['urlSettingsWhereInput'] | null> | null; // [urlSettingsWhereInput]
-    NOT?: Array<NexusGenInputs['urlSettingsWhereInput'] | null> | null; // [urlSettingsWhereInput]
-    OR?: Array<NexusGenInputs['urlSettingsWhereInput'] | null> | null; // [urlSettingsWhereInput]
-    hidden?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
-    icon?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
-    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
-    isHaveSidebar?: NexusGenInputs['BoolNullableFilter'] | null; // BoolNullableFilter
-    sections?: NexusGenInputs['JsonNullableFilter'] | null; // JsonNullableFilter
-    text?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
-    typeUrl?: NexusGenInputs['EnumETypeOfURLFilter'] | null; // EnumETypeOfURLFilter
-    url?: NexusGenInputs['StringFilter'] | null; // StringFilter
-  }
-  urlSettingsWhereUniqueInput: { // input type
+  VisitorsWhereUniqueInput: { // input type
     id?: number | null; // Int
   }
 }
 
 export interface NexusGenEnums {
   BaseSettingsScalarFieldEnum: "IPWhiteList" | "apiKey" | "header" | "id" | "mainPage" | "panelURLs" | "saleMode" | "startBalance"
+  ContactsScalarFieldEnum: "icon" | "id" | "name" | "url"
   EButtonColor: "BLUE" | "GREEN"
   EStatusOfProductInInventory: "INVENTORY" | "ON_SERVER"
   EStatusOfRefill: "DENIED" | "FALSE" | "SUCCESS"
   ETypeOfProduct: "CARDS" | "CURRENCY" | "GAME_ITEM" | "HTTP_REQUEST" | "SERVICE" | "SETS_OF_PRODUCTS"
   ETypeOfURL: "CUSTOM_PAGE" | "DROPDOWN_LIST" | "EXTERNAL_LINK" | "SITE_SECTION"
-  InventoryScalarFieldEnum: "amount" | "createdAt" | "dateOfReceive" | "historyOfPurchaseId" | "id" | "productId" | "serverId" | "serverName" | "serverTypeId" | "status" | "userId"
+  InventoryScalarFieldEnum: "amount" | "createdAt" | "dateOfReceive" | "historyOfPurchaseId" | "id" | "isCanBeRefund" | "isPartOfPack" | "packId" | "productId" | "serverId" | "serverName" | "serverTypeId" | "status" | "userId"
   JsonNullValueFilter: "AnyNull" | "DbNull" | "JsonNull"
   KindEnum: "enum" | "object" | "scalar"
   NullableJsonNullValueInput: "DbNull" | "JsonNull"
-  ProductScalarFieldEnum: "amount" | "autoactivation" | "blockSize" | "buttonColor" | "description" | "discount" | "height" | "hidden" | "iconButton" | "id" | "image" | "isBackgroundColor" | "isBackgroundImage" | "isChangeAmount" | "maxCountOfSale" | "name" | "nameID" | "number" | "price" | "productContent" | "saleDeadline" | "saleDiscount" | "serverTypeId" | "textButton" | "type"
+  ProductScalarFieldEnum: "amount" | "autoactivation" | "blockSize" | "buttonColor" | "description_en" | "description_ru" | "discount" | "height" | "hidden" | "iconButton" | "id" | "image" | "isBackgroundColor" | "isBackgroundImage" | "isChangeAmount" | "maxCountOfSale" | "nameID" | "name_en" | "name_ru" | "number" | "price" | "productContent" | "saleDeadline" | "saleDiscount" | "serverTypeId" | "textButton" | "textButton_en" | "type"
   PromocodesScalarFieldEnum: "countOfActivation" | "createdAt" | "depositBonus" | "discountAmount" | "endDate" | "groupId" | "id" | "itemSet" | "limitActivation" | "name" | "plusBonusBalance" | "startDate"
-  PurchaseScalarFieldEnum: "amount" | "createdAt" | "id" | "lostBonusBalance" | "lostMainBalance" | "productId" | "refund" | "userId"
+  PurchaseScalarFieldEnum: "amount" | "createdAt" | "dateOfPurchase" | "id" | "lostBonusBalance" | "lostMainBalance" | "productId" | "refund" | "userId"
   ServerScalarFieldEnum: "IP" | "apiKey" | "id" | "name" | "port" | "serverID" | "serverTypeId"
   ServerTypeScalarFieldEnum: "description" | "hidden" | "id" | "name" | "number"
   SortOrder: "asc" | "desc"
@@ -6153,6 +6565,7 @@ export interface NexusGenEnums {
   USER_ROLE: "ADMINISTRATOR" | "CLIENT"
   UrlSettingsScalarFieldEnum: "hidden" | "icon" | "id" | "isHaveSidebar" | "sections" | "text" | "typeUrl" | "url"
   UserScalarFieldEnum: "TGLink" | "VKLink" | "bonusBalance" | "createdAt" | "discordLink" | "email" | "experience" | "firstDateAuth" | "id" | "lastActivity" | "lvl" | "mainBalance" | "role" | "steamAvatar" | "steamID" | "steamName" | "sumOfDeposits" | "sumOfRefunds"
+  VisitorsScalarFieldEnum: "createdAt" | "id" | "ip" | "sortDate" | "sortedMonth"
 }
 
 export interface NexusGenScalars {
@@ -6174,6 +6587,13 @@ export interface NexusGenObjects {
     _max?: NexusGenRootTypes['BaseSettingsMaxAggregateOutputType'] | null; // BaseSettingsMaxAggregateOutputType
     _min?: NexusGenRootTypes['BaseSettingsMinAggregateOutputType'] | null; // BaseSettingsMinAggregateOutputType
     _sum?: NexusGenRootTypes['BaseSettingsSumAggregateOutputType'] | null; // BaseSettingsSumAggregateOutputType
+  }
+  AggregateContacts: { // root type
+    _avg?: NexusGenRootTypes['ContactsAvgAggregateOutputType'] | null; // ContactsAvgAggregateOutputType
+    _count?: NexusGenRootTypes['ContactsCountAggregateOutputType'] | null; // ContactsCountAggregateOutputType
+    _max?: NexusGenRootTypes['ContactsMaxAggregateOutputType'] | null; // ContactsMaxAggregateOutputType
+    _min?: NexusGenRootTypes['ContactsMinAggregateOutputType'] | null; // ContactsMinAggregateOutputType
+    _sum?: NexusGenRootTypes['ContactsSumAggregateOutputType'] | null; // ContactsSumAggregateOutputType
   }
   AggregateInventory: { // root type
     _avg?: NexusGenRootTypes['InventoryAvgAggregateOutputType'] | null; // InventoryAvgAggregateOutputType
@@ -6252,6 +6672,23 @@ export interface NexusGenObjects {
     _min?: NexusGenRootTypes['UserMinAggregateOutputType'] | null; // UserMinAggregateOutputType
     _sum?: NexusGenRootTypes['UserSumAggregateOutputType'] | null; // UserSumAggregateOutputType
   }
+  AggregateVisitors: { // root type
+    _avg?: NexusGenRootTypes['VisitorsAvgAggregateOutputType'] | null; // VisitorsAvgAggregateOutputType
+    _count?: NexusGenRootTypes['VisitorsCountAggregateOutputType'] | null; // VisitorsCountAggregateOutputType
+    _max?: NexusGenRootTypes['VisitorsMaxAggregateOutputType'] | null; // VisitorsMaxAggregateOutputType
+    _min?: NexusGenRootTypes['VisitorsMinAggregateOutputType'] | null; // VisitorsMinAggregateOutputType
+    _sum?: NexusGenRootTypes['VisitorsSumAggregateOutputType'] | null; // VisitorsSumAggregateOutputType
+  }
+  BaseSettings: { // root type
+    IPWhiteList: string; // String!
+    apiKey: string; // String!
+    header: string; // String!
+    id: number; // Int!
+    mainPage: string; // String!
+    panelURLs?: NexusGenScalars['Json'] | null; // Json
+    saleMode: boolean; // Boolean!
+    startBalance: number; // Int!
+  }
   BaseSettingsAvgAggregateOutputType: { // root type
     id?: number | null; // Float
     startBalance?: number | null; // Float
@@ -6292,6 +6729,37 @@ export interface NexusGenObjects {
   BatchPayload: { // root type
     count: number; // Int!
   }
+  Contacts: { // root type
+    icon: string; // String!
+    id: number; // Int!
+    name: string; // String!
+    url: string; // String!
+  }
+  ContactsAvgAggregateOutputType: { // root type
+    id?: number | null; // Float
+  }
+  ContactsCountAggregateOutputType: { // root type
+    _all: number; // Int!
+    icon: number; // Int!
+    id: number; // Int!
+    name: number; // Int!
+    url: number; // Int!
+  }
+  ContactsMaxAggregateOutputType: { // root type
+    icon?: string | null; // String
+    id?: number | null; // Int
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  ContactsMinAggregateOutputType: { // root type
+    icon?: string | null; // String
+    id?: number | null; // Int
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  ContactsSumAggregateOutputType: { // root type
+    id?: number | null; // Int
+  }
   Enum: { // root type
     fields: string[]; // [String!]!
     name: string; // String!
@@ -6322,6 +6790,9 @@ export interface NexusGenObjects {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id: number; // Int!
+    isCanBeRefund: boolean; // Boolean!
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId: number; // Int!
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -6333,6 +6804,7 @@ export interface NexusGenObjects {
     amount?: number | null; // Float
     historyOfPurchaseId?: number | null; // Float
     id?: number | null; // Float
+    packId?: number | null; // Float
     productId?: number | null; // Float
     serverId?: number | null; // Float
     serverTypeId?: number | null; // Float
@@ -6345,6 +6817,9 @@ export interface NexusGenObjects {
     dateOfReceive: number; // Int!
     historyOfPurchaseId: number; // Int!
     id: number; // Int!
+    isCanBeRefund: number; // Int!
+    isPartOfPack: number; // Int!
+    packId: number; // Int!
     productId: number; // Int!
     serverId: number; // Int!
     serverName: number; // Int!
@@ -6358,6 +6833,9 @@ export interface NexusGenObjects {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId?: number | null; // Int
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId?: number | null; // Int
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -6371,6 +6849,9 @@ export interface NexusGenObjects {
     dateOfReceive?: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId?: number | null; // Int
     id?: number | null; // Int
+    isCanBeRefund?: boolean | null; // Boolean
+    isPartOfPack?: boolean | null; // Boolean
+    packId?: number | null; // Int
     productId?: number | null; // Int
     serverId?: number | null; // Int
     serverName?: string | null; // String
@@ -6382,6 +6863,7 @@ export interface NexusGenObjects {
     amount?: number | null; // Int
     historyOfPurchaseId?: number | null; // Int
     id?: number | null; // Int
+    packId?: number | null; // Int
     productId?: number | null; // Int
     serverId?: number | null; // Int
     serverTypeId?: number | null; // Int
@@ -6403,8 +6885,9 @@ export interface NexusGenObjects {
     autoactivation: boolean; // Boolean!
     blockSize: number; // Int!
     buttonColor: NexusGenEnums['EButtonColor']; // EButtonColor!
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden: boolean; // Boolean!
     iconButton?: string | null; // String
@@ -6414,15 +6897,17 @@ export interface NexusGenObjects {
     isBackgroundImage: boolean; // Boolean!
     isChangeAmount: boolean; // Boolean!
     maxCountOfSale?: number | null; // Int
-    name: string; // String!
     nameID?: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number?: number | null; // Int
     price: number; // Int!
     productContent?: NexusGenScalars['Json'] | null; // Json
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverTypeId?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type: NexusGenEnums['ETypeOfProduct']; // ETypeOfProduct!
   }
   ProductAvgAggregateOutputType: { // root type
@@ -6443,7 +6928,8 @@ export interface NexusGenObjects {
     autoactivation: number; // Int!
     blockSize: number; // Int!
     buttonColor: number; // Int!
-    description: number; // Int!
+    description_en: number; // Int!
+    description_ru: number; // Int!
     discount: number; // Int!
     height: number; // Int!
     hidden: number; // Int!
@@ -6454,8 +6940,9 @@ export interface NexusGenObjects {
     isBackgroundImage: number; // Int!
     isChangeAmount: number; // Int!
     maxCountOfSale: number; // Int!
-    name: number; // Int!
     nameID: number; // Int!
+    name_en: number; // Int!
+    name_ru: number; // Int!
     number: number; // Int!
     price: number; // Int!
     productContent: number; // Int!
@@ -6463,6 +6950,7 @@ export interface NexusGenObjects {
     saleDiscount: number; // Int!
     serverTypeId: number; // Int!
     textButton: number; // Int!
+    textButton_en: number; // Int!
     type: number; // Int!
   }
   ProductCountOutputType: { // root type
@@ -6474,8 +6962,9 @@ export interface NexusGenObjects {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -6485,14 +6974,16 @@ export interface NexusGenObjects {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name?: string | null; // String
     nameID?: string | null; // String
+    name_en?: string | null; // String
+    name_ru?: string | null; // String
     number?: number | null; // Int
     price?: number | null; // Int
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverTypeId?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductMinAggregateOutputType: { // root type
@@ -6500,8 +6991,9 @@ export interface NexusGenObjects {
     autoactivation?: boolean | null; // Boolean
     blockSize?: number | null; // Int
     buttonColor?: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description?: string | null; // String
-    discount?: number | null; // Float
+    description_en?: string | null; // String
+    description_ru?: string | null; // String
+    discount?: number | null; // Int
     height?: number | null; // Int
     hidden?: boolean | null; // Boolean
     iconButton?: string | null; // String
@@ -6511,26 +7003,28 @@ export interface NexusGenObjects {
     isBackgroundImage?: boolean | null; // Boolean
     isChangeAmount?: boolean | null; // Boolean
     maxCountOfSale?: number | null; // Int
-    name?: string | null; // String
     nameID?: string | null; // String
+    name_en?: string | null; // String
+    name_ru?: string | null; // String
     number?: number | null; // Int
     price?: number | null; // Int
     saleDeadline?: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverTypeId?: number | null; // Int
     textButton?: string | null; // String
+    textButton_en?: string | null; // String
     type?: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductSumAggregateOutputType: { // root type
     amount?: number | null; // Int
     blockSize?: number | null; // Int
-    discount?: number | null; // Float
+    discount?: number | null; // Int
     height?: number | null; // Int
     id?: number | null; // Int
     maxCountOfSale?: number | null; // Int
     number?: number | null; // Int
     price?: number | null; // Int
-    saleDiscount?: number | null; // Float
+    saleDiscount?: number | null; // Int
     serverTypeId?: number | null; // Int
   }
   Promocodes: { // root type
@@ -6609,6 +7103,7 @@ export interface NexusGenObjects {
   Purchase: { // root type
     amount: number; // Int!
     createdAt: NexusGenScalars['DateTime']; // DateTime!
+    dateOfPurchase?: string | null; // String
     id: number; // Int!
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -6628,6 +7123,7 @@ export interface NexusGenObjects {
     _all: number; // Int!
     amount: number; // Int!
     createdAt: number; // Int!
+    dateOfPurchase: number; // Int!
     id: number; // Int!
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -6641,6 +7137,7 @@ export interface NexusGenObjects {
   PurchaseMaxAggregateOutputType: { // root type
     amount?: number | null; // Int
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance?: number | null; // Int
     lostMainBalance?: number | null; // Int
@@ -6651,6 +7148,7 @@ export interface NexusGenObjects {
   PurchaseMinAggregateOutputType: { // root type
     amount?: number | null; // Int
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase?: string | null; // String
     id?: number | null; // Int
     lostBonusBalance?: number | null; // Int
     lostMainBalance?: number | null; // Int
@@ -6896,6 +7394,16 @@ export interface NexusGenObjects {
     receiverId?: number | null; // Int
     senderId?: number | null; // Int
   }
+  UrlSettings: { // root type
+    hidden: boolean; // Boolean!
+    icon?: string | null; // String
+    id: number; // Int!
+    isHaveSidebar?: boolean | null; // Boolean
+    sections?: NexusGenScalars['Json'] | null; // Json
+    text?: string | null; // String
+    typeUrl: NexusGenEnums['ETypeOfURL']; // ETypeOfURL!
+    url: string; // String!
+  }
   UrlSettingsAvgAggregateOutputType: { // root type
     id?: number | null; // Float
   }
@@ -7038,6 +7546,41 @@ export interface NexusGenObjects {
     sumOfDeposits?: number | null; // Int
     sumOfRefunds?: number | null; // Int
   }
+  Visitors: { // root type
+    createdAt: NexusGenScalars['DateTime']; // DateTime!
+    id: number; // Int!
+    ip: string; // String!
+    sortDate: string; // String!
+    sortedMonth: string; // String!
+  }
+  VisitorsAvgAggregateOutputType: { // root type
+    id?: number | null; // Float
+  }
+  VisitorsCountAggregateOutputType: { // root type
+    _all: number; // Int!
+    createdAt: number; // Int!
+    id: number; // Int!
+    ip: number; // Int!
+    sortDate: number; // Int!
+    sortedMonth: number; // Int!
+  }
+  VisitorsMaxAggregateOutputType: { // root type
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    id?: number | null; // Int
+    ip?: string | null; // String
+    sortDate?: string | null; // String
+    sortedMonth?: string | null; // String
+  }
+  VisitorsMinAggregateOutputType: { // root type
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    id?: number | null; // Int
+    ip?: string | null; // String
+    sortDate?: string | null; // String
+    sortedMonth?: string | null; // String
+  }
+  VisitorsSumAggregateOutputType: { // root type
+    id?: number | null; // Int
+  }
   baseSettings: { // root type
     IPWhiteList: string; // String!
     apiKey: string; // String!
@@ -7077,6 +7620,13 @@ export interface NexusGenFieldTypes {
     _max: NexusGenRootTypes['BaseSettingsMaxAggregateOutputType'] | null; // BaseSettingsMaxAggregateOutputType
     _min: NexusGenRootTypes['BaseSettingsMinAggregateOutputType'] | null; // BaseSettingsMinAggregateOutputType
     _sum: NexusGenRootTypes['BaseSettingsSumAggregateOutputType'] | null; // BaseSettingsSumAggregateOutputType
+  }
+  AggregateContacts: { // field return type
+    _avg: NexusGenRootTypes['ContactsAvgAggregateOutputType'] | null; // ContactsAvgAggregateOutputType
+    _count: NexusGenRootTypes['ContactsCountAggregateOutputType'] | null; // ContactsCountAggregateOutputType
+    _max: NexusGenRootTypes['ContactsMaxAggregateOutputType'] | null; // ContactsMaxAggregateOutputType
+    _min: NexusGenRootTypes['ContactsMinAggregateOutputType'] | null; // ContactsMinAggregateOutputType
+    _sum: NexusGenRootTypes['ContactsSumAggregateOutputType'] | null; // ContactsSumAggregateOutputType
   }
   AggregateInventory: { // field return type
     _avg: NexusGenRootTypes['InventoryAvgAggregateOutputType'] | null; // InventoryAvgAggregateOutputType
@@ -7155,6 +7705,23 @@ export interface NexusGenFieldTypes {
     _min: NexusGenRootTypes['UserMinAggregateOutputType'] | null; // UserMinAggregateOutputType
     _sum: NexusGenRootTypes['UserSumAggregateOutputType'] | null; // UserSumAggregateOutputType
   }
+  AggregateVisitors: { // field return type
+    _avg: NexusGenRootTypes['VisitorsAvgAggregateOutputType'] | null; // VisitorsAvgAggregateOutputType
+    _count: NexusGenRootTypes['VisitorsCountAggregateOutputType'] | null; // VisitorsCountAggregateOutputType
+    _max: NexusGenRootTypes['VisitorsMaxAggregateOutputType'] | null; // VisitorsMaxAggregateOutputType
+    _min: NexusGenRootTypes['VisitorsMinAggregateOutputType'] | null; // VisitorsMinAggregateOutputType
+    _sum: NexusGenRootTypes['VisitorsSumAggregateOutputType'] | null; // VisitorsSumAggregateOutputType
+  }
+  BaseSettings: { // field return type
+    IPWhiteList: string; // String!
+    apiKey: string; // String!
+    header: string; // String!
+    id: number; // Int!
+    mainPage: string; // String!
+    panelURLs: NexusGenScalars['Json'] | null; // Json
+    saleMode: boolean; // Boolean!
+    startBalance: number; // Int!
+  }
   BaseSettingsAvgAggregateOutputType: { // field return type
     id: number | null; // Float
     startBalance: number | null; // Float
@@ -7195,6 +7762,37 @@ export interface NexusGenFieldTypes {
   BatchPayload: { // field return type
     count: number; // Int!
   }
+  Contacts: { // field return type
+    icon: string; // String!
+    id: number; // Int!
+    name: string; // String!
+    url: string; // String!
+  }
+  ContactsAvgAggregateOutputType: { // field return type
+    id: number | null; // Float
+  }
+  ContactsCountAggregateOutputType: { // field return type
+    _all: number; // Int!
+    icon: number; // Int!
+    id: number; // Int!
+    name: number; // Int!
+    url: number; // Int!
+  }
+  ContactsMaxAggregateOutputType: { // field return type
+    icon: string | null; // String
+    id: number | null; // Int
+    name: string | null; // String
+    url: string | null; // String
+  }
+  ContactsMinAggregateOutputType: { // field return type
+    icon: string | null; // String
+    id: number | null; // Int
+    name: string | null; // String
+    url: string | null; // String
+  }
+  ContactsSumAggregateOutputType: { // field return type
+    id: number | null; // Int
+  }
   Enum: { // field return type
     fields: string[]; // [String!]!
     name: string; // String!
@@ -7225,6 +7823,9 @@ export interface NexusGenFieldTypes {
     dateOfReceive: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number; // Int!
     id: number; // Int!
+    isCanBeRefund: boolean; // Boolean!
+    isPartOfPack: boolean | null; // Boolean
+    packId: number | null; // Int
     product: NexusGenRootTypes['Product']; // Product!
     productId: number; // Int!
     purchase: NexusGenRootTypes['Purchase']; // Purchase!
@@ -7241,6 +7842,7 @@ export interface NexusGenFieldTypes {
     amount: number | null; // Float
     historyOfPurchaseId: number | null; // Float
     id: number | null; // Float
+    packId: number | null; // Float
     productId: number | null; // Float
     serverId: number | null; // Float
     serverTypeId: number | null; // Float
@@ -7253,6 +7855,9 @@ export interface NexusGenFieldTypes {
     dateOfReceive: number; // Int!
     historyOfPurchaseId: number; // Int!
     id: number; // Int!
+    isCanBeRefund: number; // Int!
+    isPartOfPack: number; // Int!
+    packId: number; // Int!
     productId: number; // Int!
     serverId: number; // Int!
     serverName: number; // Int!
@@ -7266,6 +7871,9 @@ export interface NexusGenFieldTypes {
     dateOfReceive: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number | null; // Int
     id: number | null; // Int
+    isCanBeRefund: boolean | null; // Boolean
+    isPartOfPack: boolean | null; // Boolean
+    packId: number | null; // Int
     productId: number | null; // Int
     serverId: number | null; // Int
     serverName: string | null; // String
@@ -7279,6 +7887,9 @@ export interface NexusGenFieldTypes {
     dateOfReceive: NexusGenScalars['DateTime'] | null; // DateTime
     historyOfPurchaseId: number | null; // Int
     id: number | null; // Int
+    isCanBeRefund: boolean | null; // Boolean
+    isPartOfPack: boolean | null; // Boolean
+    packId: number | null; // Int
     productId: number | null; // Int
     serverId: number | null; // Int
     serverName: string | null; // String
@@ -7290,6 +7901,7 @@ export interface NexusGenFieldTypes {
     amount: number | null; // Int
     historyOfPurchaseId: number | null; // Int
     id: number | null; // Int
+    packId: number | null; // Int
     productId: number | null; // Int
     serverId: number | null; // Int
     serverTypeId: number | null; // Int
@@ -7306,7 +7918,8 @@ export interface NexusGenFieldTypes {
     update: boolean; // Boolean!
   }
   Mutation: { // field return type
-    createOneBaseSettings: NexusGenRootTypes['baseSettings']; // baseSettings!
+    createOneBaseSettings: NexusGenRootTypes['BaseSettings']; // BaseSettings!
+    createOneContacts: NexusGenRootTypes['Contacts']; // Contacts!
     createOneInventory: NexusGenRootTypes['Inventory']; // Inventory!
     createOneProduct: NexusGenRootTypes['Product']; // Product!
     createOnePromocodes: NexusGenRootTypes['Promocodes']; // Promocodes!
@@ -7316,9 +7929,11 @@ export interface NexusGenFieldTypes {
     createOneToken: NexusGenRootTypes['Token']; // Token!
     createOneTransaction: NexusGenRootTypes['Transaction']; // Transaction!
     createOneTransfers: NexusGenRootTypes['Transfers']; // Transfers!
-    createOneUrlSettings: NexusGenRootTypes['urlSettings']; // urlSettings!
+    createOneUrlSettings: NexusGenRootTypes['UrlSettings']; // UrlSettings!
     createOneUser: NexusGenRootTypes['User']; // User!
+    createOneVisitors: NexusGenRootTypes['Visitors']; // Visitors!
     deleteManyBaseSettings: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyContacts: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     deleteManyInventory: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     deleteManyProduct: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     deleteManyPromocodes: NexusGenRootTypes['BatchPayload']; // BatchPayload!
@@ -7330,7 +7945,9 @@ export interface NexusGenFieldTypes {
     deleteManyTransfers: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     deleteManyUrlSettings: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     deleteManyUser: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    deleteOneBaseSettings: NexusGenRootTypes['baseSettings'] | null; // baseSettings
+    deleteManyVisitors: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteOneBaseSettings: NexusGenRootTypes['BaseSettings'] | null; // BaseSettings
+    deleteOneContacts: NexusGenRootTypes['Contacts'] | null; // Contacts
     deleteOneInventory: NexusGenRootTypes['Inventory'] | null; // Inventory
     deleteOneProduct: NexusGenRootTypes['Product'] | null; // Product
     deleteOnePromocodes: NexusGenRootTypes['Promocodes'] | null; // Promocodes
@@ -7340,10 +7957,12 @@ export interface NexusGenFieldTypes {
     deleteOneToken: NexusGenRootTypes['Token'] | null; // Token
     deleteOneTransaction: NexusGenRootTypes['Transaction'] | null; // Transaction
     deleteOneTransfers: NexusGenRootTypes['Transfers'] | null; // Transfers
-    deleteOneUrlSettings: NexusGenRootTypes['urlSettings'] | null; // urlSettings
+    deleteOneUrlSettings: NexusGenRootTypes['UrlSettings'] | null; // UrlSettings
     deleteOneUser: NexusGenRootTypes['User'] | null; // User
+    deleteOneVisitors: NexusGenRootTypes['Visitors'] | null; // Visitors
     updateField: NexusGenRootTypes['Field']; // Field!
     updateManyBaseSettings: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyContacts: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     updateManyInventory: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     updateManyProduct: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     updateManyPromocodes: NexusGenRootTypes['BatchPayload']; // BatchPayload!
@@ -7355,8 +7974,10 @@ export interface NexusGenFieldTypes {
     updateManyTransfers: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     updateManyUrlSettings: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     updateManyUser: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyVisitors: NexusGenRootTypes['BatchPayload']; // BatchPayload!
     updateModel: NexusGenRootTypes['Model']; // Model!
-    updateOneBaseSettings: NexusGenRootTypes['baseSettings']; // baseSettings!
+    updateOneBaseSettings: NexusGenRootTypes['BaseSettings']; // BaseSettings!
+    updateOneContacts: NexusGenRootTypes['Contacts']; // Contacts!
     updateOneInventory: NexusGenRootTypes['Inventory']; // Inventory!
     updateOneProduct: NexusGenRootTypes['Product']; // Product!
     updateOnePromocodes: NexusGenRootTypes['Promocodes']; // Promocodes!
@@ -7366,9 +7987,11 @@ export interface NexusGenFieldTypes {
     updateOneToken: NexusGenRootTypes['Token']; // Token!
     updateOneTransaction: NexusGenRootTypes['Transaction']; // Transaction!
     updateOneTransfers: NexusGenRootTypes['Transfers']; // Transfers!
-    updateOneUrlSettings: NexusGenRootTypes['urlSettings']; // urlSettings!
+    updateOneUrlSettings: NexusGenRootTypes['UrlSettings']; // UrlSettings!
     updateOneUser: NexusGenRootTypes['User']; // User!
-    upsertOneBaseSettings: NexusGenRootTypes['baseSettings']; // baseSettings!
+    updateOneVisitors: NexusGenRootTypes['Visitors']; // Visitors!
+    upsertOneBaseSettings: NexusGenRootTypes['BaseSettings']; // BaseSettings!
+    upsertOneContacts: NexusGenRootTypes['Contacts']; // Contacts!
     upsertOneInventory: NexusGenRootTypes['Inventory']; // Inventory!
     upsertOneProduct: NexusGenRootTypes['Product']; // Product!
     upsertOnePromocodes: NexusGenRootTypes['Promocodes']; // Promocodes!
@@ -7378,8 +8001,9 @@ export interface NexusGenFieldTypes {
     upsertOneToken: NexusGenRootTypes['Token']; // Token!
     upsertOneTransaction: NexusGenRootTypes['Transaction']; // Transaction!
     upsertOneTransfers: NexusGenRootTypes['Transfers']; // Transfers!
-    upsertOneUrlSettings: NexusGenRootTypes['urlSettings']; // urlSettings!
+    upsertOneUrlSettings: NexusGenRootTypes['UrlSettings']; // UrlSettings!
     upsertOneUser: NexusGenRootTypes['User']; // User!
+    upsertOneVisitors: NexusGenRootTypes['Visitors']; // Visitors!
   }
   Product: { // field return type
     Inventory: NexusGenRootTypes['Inventory'][]; // [Inventory!]!
@@ -7389,8 +8013,9 @@ export interface NexusGenFieldTypes {
     autoactivation: boolean; // Boolean!
     blockSize: number; // Int!
     buttonColor: NexusGenEnums['EButtonColor']; // EButtonColor!
-    description: string | null; // String
-    discount: number | null; // Float
+    description_en: string | null; // String
+    description_ru: string | null; // String
+    discount: number | null; // Int
     height: number | null; // Int
     hidden: boolean; // Boolean!
     iconButton: string | null; // String
@@ -7400,16 +8025,18 @@ export interface NexusGenFieldTypes {
     isBackgroundImage: boolean; // Boolean!
     isChangeAmount: boolean; // Boolean!
     maxCountOfSale: number | null; // Int
-    name: string; // String!
     nameID: string | null; // String
+    name_en: string; // String!
+    name_ru: string; // String!
     number: number | null; // Int
     price: number; // Int!
     productContent: NexusGenScalars['Json'] | null; // Json
     saleDeadline: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount: number | null; // Float
+    saleDiscount: number | null; // Int
     serverType: NexusGenRootTypes['ServerType'] | null; // ServerType
     serverTypeId: number | null; // Int
     textButton: string | null; // String
+    textButton_en: string | null; // String
     type: NexusGenEnums['ETypeOfProduct']; // ETypeOfProduct!
   }
   ProductAvgAggregateOutputType: { // field return type
@@ -7430,7 +8057,8 @@ export interface NexusGenFieldTypes {
     autoactivation: number; // Int!
     blockSize: number; // Int!
     buttonColor: number; // Int!
-    description: number; // Int!
+    description_en: number; // Int!
+    description_ru: number; // Int!
     discount: number; // Int!
     height: number; // Int!
     hidden: number; // Int!
@@ -7441,8 +8069,9 @@ export interface NexusGenFieldTypes {
     isBackgroundImage: number; // Int!
     isChangeAmount: number; // Int!
     maxCountOfSale: number; // Int!
-    name: number; // Int!
     nameID: number; // Int!
+    name_en: number; // Int!
+    name_ru: number; // Int!
     number: number; // Int!
     price: number; // Int!
     productContent: number; // Int!
@@ -7450,6 +8079,7 @@ export interface NexusGenFieldTypes {
     saleDiscount: number; // Int!
     serverTypeId: number; // Int!
     textButton: number; // Int!
+    textButton_en: number; // Int!
     type: number; // Int!
   }
   ProductCountOutputType: { // field return type
@@ -7461,8 +8091,9 @@ export interface NexusGenFieldTypes {
     autoactivation: boolean | null; // Boolean
     blockSize: number | null; // Int
     buttonColor: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description: string | null; // String
-    discount: number | null; // Float
+    description_en: string | null; // String
+    description_ru: string | null; // String
+    discount: number | null; // Int
     height: number | null; // Int
     hidden: boolean | null; // Boolean
     iconButton: string | null; // String
@@ -7472,14 +8103,16 @@ export interface NexusGenFieldTypes {
     isBackgroundImage: boolean | null; // Boolean
     isChangeAmount: boolean | null; // Boolean
     maxCountOfSale: number | null; // Int
-    name: string | null; // String
     nameID: string | null; // String
+    name_en: string | null; // String
+    name_ru: string | null; // String
     number: number | null; // Int
     price: number | null; // Int
     saleDeadline: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount: number | null; // Float
+    saleDiscount: number | null; // Int
     serverTypeId: number | null; // Int
     textButton: string | null; // String
+    textButton_en: string | null; // String
     type: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductMinAggregateOutputType: { // field return type
@@ -7487,8 +8120,9 @@ export interface NexusGenFieldTypes {
     autoactivation: boolean | null; // Boolean
     blockSize: number | null; // Int
     buttonColor: NexusGenEnums['EButtonColor'] | null; // EButtonColor
-    description: string | null; // String
-    discount: number | null; // Float
+    description_en: string | null; // String
+    description_ru: string | null; // String
+    discount: number | null; // Int
     height: number | null; // Int
     hidden: boolean | null; // Boolean
     iconButton: string | null; // String
@@ -7498,26 +8132,28 @@ export interface NexusGenFieldTypes {
     isBackgroundImage: boolean | null; // Boolean
     isChangeAmount: boolean | null; // Boolean
     maxCountOfSale: number | null; // Int
-    name: string | null; // String
     nameID: string | null; // String
+    name_en: string | null; // String
+    name_ru: string | null; // String
     number: number | null; // Int
     price: number | null; // Int
     saleDeadline: NexusGenScalars['DateTime'] | null; // DateTime
-    saleDiscount: number | null; // Float
+    saleDiscount: number | null; // Int
     serverTypeId: number | null; // Int
     textButton: string | null; // String
+    textButton_en: string | null; // String
     type: NexusGenEnums['ETypeOfProduct'] | null; // ETypeOfProduct
   }
   ProductSumAggregateOutputType: { // field return type
     amount: number | null; // Int
     blockSize: number | null; // Int
-    discount: number | null; // Float
+    discount: number | null; // Int
     height: number | null; // Int
     id: number | null; // Int
     maxCountOfSale: number | null; // Int
     number: number | null; // Int
     price: number | null; // Int
-    saleDiscount: number | null; // Float
+    saleDiscount: number | null; // Int
     serverTypeId: number | null; // Int
   }
   Promocodes: { // field return type
@@ -7598,6 +8234,7 @@ export interface NexusGenFieldTypes {
     _count: NexusGenRootTypes['PurchaseCountOutputType'] | null; // PurchaseCountOutputType
     amount: number; // Int!
     createdAt: NexusGenScalars['DateTime']; // DateTime!
+    dateOfPurchase: string | null; // String
     id: number; // Int!
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -7619,6 +8256,7 @@ export interface NexusGenFieldTypes {
     _all: number; // Int!
     amount: number; // Int!
     createdAt: number; // Int!
+    dateOfPurchase: number; // Int!
     id: number; // Int!
     lostBonusBalance: number; // Int!
     lostMainBalance: number; // Int!
@@ -7632,6 +8270,7 @@ export interface NexusGenFieldTypes {
   PurchaseMaxAggregateOutputType: { // field return type
     amount: number | null; // Int
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase: string | null; // String
     id: number | null; // Int
     lostBonusBalance: number | null; // Int
     lostMainBalance: number | null; // Int
@@ -7642,6 +8281,7 @@ export interface NexusGenFieldTypes {
   PurchaseMinAggregateOutputType: { // field return type
     amount: number | null; // Int
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
+    dateOfPurchase: string | null; // String
     id: number | null; // Int
     lostBonusBalance: number | null; // Int
     lostMainBalance: number | null; // Int
@@ -7659,6 +8299,7 @@ export interface NexusGenFieldTypes {
   }
   Query: { // field return type
     aggregateBaseSettings: NexusGenRootTypes['AggregateBaseSettings'] | null; // AggregateBaseSettings
+    aggregateContacts: NexusGenRootTypes['AggregateContacts'] | null; // AggregateContacts
     aggregateInventory: NexusGenRootTypes['AggregateInventory'] | null; // AggregateInventory
     aggregateProduct: NexusGenRootTypes['AggregateProduct'] | null; // AggregateProduct
     aggregatePromocodes: NexusGenRootTypes['AggregatePromocodes'] | null; // AggregatePromocodes
@@ -7670,7 +8311,9 @@ export interface NexusGenFieldTypes {
     aggregateTransfers: NexusGenRootTypes['AggregateTransfers'] | null; // AggregateTransfers
     aggregateUrlSettings: NexusGenRootTypes['AggregateUrlSettings'] | null; // AggregateUrlSettings
     aggregateUser: NexusGenRootTypes['AggregateUser'] | null; // AggregateUser
-    findFirstBaseSettings: NexusGenRootTypes['baseSettings'] | null; // baseSettings
+    aggregateVisitors: NexusGenRootTypes['AggregateVisitors'] | null; // AggregateVisitors
+    findFirstBaseSettings: NexusGenRootTypes['BaseSettings'] | null; // BaseSettings
+    findFirstContacts: NexusGenRootTypes['Contacts'] | null; // Contacts
     findFirstInventory: NexusGenRootTypes['Inventory'] | null; // Inventory
     findFirstProduct: NexusGenRootTypes['Product'] | null; // Product
     findFirstPromocodes: NexusGenRootTypes['Promocodes'] | null; // Promocodes
@@ -7680,10 +8323,13 @@ export interface NexusGenFieldTypes {
     findFirstToken: NexusGenRootTypes['Token'] | null; // Token
     findFirstTransaction: NexusGenRootTypes['Transaction'] | null; // Transaction
     findFirstTransfers: NexusGenRootTypes['Transfers'] | null; // Transfers
-    findFirstUrlSettings: NexusGenRootTypes['urlSettings'] | null; // urlSettings
+    findFirstUrlSettings: NexusGenRootTypes['UrlSettings'] | null; // UrlSettings
     findFirstUser: NexusGenRootTypes['User'] | null; // User
-    findManyBaseSettings: NexusGenRootTypes['baseSettings'][]; // [baseSettings!]!
+    findFirstVisitors: NexusGenRootTypes['Visitors'] | null; // Visitors
+    findManyBaseSettings: NexusGenRootTypes['BaseSettings'][]; // [BaseSettings!]!
     findManyBaseSettingsCount: number; // Int!
+    findManyContacts: NexusGenRootTypes['Contacts'][]; // [Contacts!]!
+    findManyContactsCount: number; // Int!
     findManyInventory: NexusGenRootTypes['Inventory'][]; // [Inventory!]!
     findManyInventoryCount: number; // Int!
     findManyProduct: NexusGenRootTypes['Product'][]; // [Product!]!
@@ -7702,11 +8348,14 @@ export interface NexusGenFieldTypes {
     findManyTransactionCount: number; // Int!
     findManyTransfers: NexusGenRootTypes['Transfers'][]; // [Transfers!]!
     findManyTransfersCount: number; // Int!
-    findManyUrlSettings: NexusGenRootTypes['urlSettings'][]; // [urlSettings!]!
+    findManyUrlSettings: NexusGenRootTypes['UrlSettings'][]; // [UrlSettings!]!
     findManyUrlSettingsCount: number; // Int!
     findManyUser: NexusGenRootTypes['User'][]; // [User!]!
     findManyUserCount: number; // Int!
-    findUniqueBaseSettings: NexusGenRootTypes['baseSettings'] | null; // baseSettings
+    findManyVisitors: NexusGenRootTypes['Visitors'][]; // [Visitors!]!
+    findManyVisitorsCount: number; // Int!
+    findUniqueBaseSettings: NexusGenRootTypes['BaseSettings'] | null; // BaseSettings
+    findUniqueContacts: NexusGenRootTypes['Contacts'] | null; // Contacts
     findUniqueInventory: NexusGenRootTypes['Inventory'] | null; // Inventory
     findUniqueProduct: NexusGenRootTypes['Product'] | null; // Product
     findUniquePromocodes: NexusGenRootTypes['Promocodes'] | null; // Promocodes
@@ -7716,8 +8365,9 @@ export interface NexusGenFieldTypes {
     findUniqueToken: NexusGenRootTypes['Token'] | null; // Token
     findUniqueTransaction: NexusGenRootTypes['Transaction'] | null; // Transaction
     findUniqueTransfers: NexusGenRootTypes['Transfers'] | null; // Transfers
-    findUniqueUrlSettings: NexusGenRootTypes['urlSettings'] | null; // urlSettings
+    findUniqueUrlSettings: NexusGenRootTypes['UrlSettings'] | null; // UrlSettings
     findUniqueUser: NexusGenRootTypes['User'] | null; // User
+    findUniqueVisitors: NexusGenRootTypes['Visitors'] | null; // Visitors
     getSchema: NexusGenRootTypes['Schema']; // Schema!
   }
   Schema: { // field return type
@@ -7960,6 +8610,16 @@ export interface NexusGenFieldTypes {
     receiverId: number | null; // Int
     senderId: number | null; // Int
   }
+  UrlSettings: { // field return type
+    hidden: boolean; // Boolean!
+    icon: string | null; // String
+    id: number; // Int!
+    isHaveSidebar: boolean | null; // Boolean
+    sections: NexusGenScalars['Json'] | null; // Json
+    text: string | null; // String
+    typeUrl: NexusGenEnums['ETypeOfURL']; // ETypeOfURL!
+    url: string; // String!
+  }
   UrlSettingsAvgAggregateOutputType: { // field return type
     id: number | null; // Float
   }
@@ -8109,6 +8769,41 @@ export interface NexusGenFieldTypes {
     sumOfDeposits: number | null; // Int
     sumOfRefunds: number | null; // Int
   }
+  Visitors: { // field return type
+    createdAt: NexusGenScalars['DateTime']; // DateTime!
+    id: number; // Int!
+    ip: string; // String!
+    sortDate: string; // String!
+    sortedMonth: string; // String!
+  }
+  VisitorsAvgAggregateOutputType: { // field return type
+    id: number | null; // Float
+  }
+  VisitorsCountAggregateOutputType: { // field return type
+    _all: number; // Int!
+    createdAt: number; // Int!
+    id: number; // Int!
+    ip: number; // Int!
+    sortDate: number; // Int!
+    sortedMonth: number; // Int!
+  }
+  VisitorsMaxAggregateOutputType: { // field return type
+    createdAt: NexusGenScalars['DateTime'] | null; // DateTime
+    id: number | null; // Int
+    ip: string | null; // String
+    sortDate: string | null; // String
+    sortedMonth: string | null; // String
+  }
+  VisitorsMinAggregateOutputType: { // field return type
+    createdAt: NexusGenScalars['DateTime'] | null; // DateTime
+    id: number | null; // Int
+    ip: string | null; // String
+    sortDate: string | null; // String
+    sortedMonth: string | null; // String
+  }
+  VisitorsSumAggregateOutputType: { // field return type
+    id: number | null; // Int
+  }
   baseSettings: { // field return type
     IPWhiteList: string; // String!
     apiKey: string; // String!
@@ -8138,6 +8833,13 @@ export interface NexusGenFieldTypeNames {
     _max: 'BaseSettingsMaxAggregateOutputType'
     _min: 'BaseSettingsMinAggregateOutputType'
     _sum: 'BaseSettingsSumAggregateOutputType'
+  }
+  AggregateContacts: { // field return type name
+    _avg: 'ContactsAvgAggregateOutputType'
+    _count: 'ContactsCountAggregateOutputType'
+    _max: 'ContactsMaxAggregateOutputType'
+    _min: 'ContactsMinAggregateOutputType'
+    _sum: 'ContactsSumAggregateOutputType'
   }
   AggregateInventory: { // field return type name
     _avg: 'InventoryAvgAggregateOutputType'
@@ -8216,6 +8918,23 @@ export interface NexusGenFieldTypeNames {
     _min: 'UserMinAggregateOutputType'
     _sum: 'UserSumAggregateOutputType'
   }
+  AggregateVisitors: { // field return type name
+    _avg: 'VisitorsAvgAggregateOutputType'
+    _count: 'VisitorsCountAggregateOutputType'
+    _max: 'VisitorsMaxAggregateOutputType'
+    _min: 'VisitorsMinAggregateOutputType'
+    _sum: 'VisitorsSumAggregateOutputType'
+  }
+  BaseSettings: { // field return type name
+    IPWhiteList: 'String'
+    apiKey: 'String'
+    header: 'String'
+    id: 'Int'
+    mainPage: 'String'
+    panelURLs: 'Json'
+    saleMode: 'Boolean'
+    startBalance: 'Int'
+  }
   BaseSettingsAvgAggregateOutputType: { // field return type name
     id: 'Float'
     startBalance: 'Float'
@@ -8256,6 +8975,37 @@ export interface NexusGenFieldTypeNames {
   BatchPayload: { // field return type name
     count: 'Int'
   }
+  Contacts: { // field return type name
+    icon: 'String'
+    id: 'Int'
+    name: 'String'
+    url: 'String'
+  }
+  ContactsAvgAggregateOutputType: { // field return type name
+    id: 'Float'
+  }
+  ContactsCountAggregateOutputType: { // field return type name
+    _all: 'Int'
+    icon: 'Int'
+    id: 'Int'
+    name: 'Int'
+    url: 'Int'
+  }
+  ContactsMaxAggregateOutputType: { // field return type name
+    icon: 'String'
+    id: 'Int'
+    name: 'String'
+    url: 'String'
+  }
+  ContactsMinAggregateOutputType: { // field return type name
+    icon: 'String'
+    id: 'Int'
+    name: 'String'
+    url: 'String'
+  }
+  ContactsSumAggregateOutputType: { // field return type name
+    id: 'Int'
+  }
   Enum: { // field return type name
     fields: 'String'
     name: 'String'
@@ -8286,6 +9036,9 @@ export interface NexusGenFieldTypeNames {
     dateOfReceive: 'DateTime'
     historyOfPurchaseId: 'Int'
     id: 'Int'
+    isCanBeRefund: 'Boolean'
+    isPartOfPack: 'Boolean'
+    packId: 'Int'
     product: 'Product'
     productId: 'Int'
     purchase: 'Purchase'
@@ -8302,6 +9055,7 @@ export interface NexusGenFieldTypeNames {
     amount: 'Float'
     historyOfPurchaseId: 'Float'
     id: 'Float'
+    packId: 'Float'
     productId: 'Float'
     serverId: 'Float'
     serverTypeId: 'Float'
@@ -8314,6 +9068,9 @@ export interface NexusGenFieldTypeNames {
     dateOfReceive: 'Int'
     historyOfPurchaseId: 'Int'
     id: 'Int'
+    isCanBeRefund: 'Int'
+    isPartOfPack: 'Int'
+    packId: 'Int'
     productId: 'Int'
     serverId: 'Int'
     serverName: 'Int'
@@ -8327,6 +9084,9 @@ export interface NexusGenFieldTypeNames {
     dateOfReceive: 'DateTime'
     historyOfPurchaseId: 'Int'
     id: 'Int'
+    isCanBeRefund: 'Boolean'
+    isPartOfPack: 'Boolean'
+    packId: 'Int'
     productId: 'Int'
     serverId: 'Int'
     serverName: 'String'
@@ -8340,6 +9100,9 @@ export interface NexusGenFieldTypeNames {
     dateOfReceive: 'DateTime'
     historyOfPurchaseId: 'Int'
     id: 'Int'
+    isCanBeRefund: 'Boolean'
+    isPartOfPack: 'Boolean'
+    packId: 'Int'
     productId: 'Int'
     serverId: 'Int'
     serverName: 'String'
@@ -8351,6 +9114,7 @@ export interface NexusGenFieldTypeNames {
     amount: 'Int'
     historyOfPurchaseId: 'Int'
     id: 'Int'
+    packId: 'Int'
     productId: 'Int'
     serverId: 'Int'
     serverTypeId: 'Int'
@@ -8367,7 +9131,8 @@ export interface NexusGenFieldTypeNames {
     update: 'Boolean'
   }
   Mutation: { // field return type name
-    createOneBaseSettings: 'baseSettings'
+    createOneBaseSettings: 'BaseSettings'
+    createOneContacts: 'Contacts'
     createOneInventory: 'Inventory'
     createOneProduct: 'Product'
     createOnePromocodes: 'Promocodes'
@@ -8377,9 +9142,11 @@ export interface NexusGenFieldTypeNames {
     createOneToken: 'Token'
     createOneTransaction: 'Transaction'
     createOneTransfers: 'Transfers'
-    createOneUrlSettings: 'urlSettings'
+    createOneUrlSettings: 'UrlSettings'
     createOneUser: 'User'
+    createOneVisitors: 'Visitors'
     deleteManyBaseSettings: 'BatchPayload'
+    deleteManyContacts: 'BatchPayload'
     deleteManyInventory: 'BatchPayload'
     deleteManyProduct: 'BatchPayload'
     deleteManyPromocodes: 'BatchPayload'
@@ -8391,7 +9158,9 @@ export interface NexusGenFieldTypeNames {
     deleteManyTransfers: 'BatchPayload'
     deleteManyUrlSettings: 'BatchPayload'
     deleteManyUser: 'BatchPayload'
-    deleteOneBaseSettings: 'baseSettings'
+    deleteManyVisitors: 'BatchPayload'
+    deleteOneBaseSettings: 'BaseSettings'
+    deleteOneContacts: 'Contacts'
     deleteOneInventory: 'Inventory'
     deleteOneProduct: 'Product'
     deleteOnePromocodes: 'Promocodes'
@@ -8401,10 +9170,12 @@ export interface NexusGenFieldTypeNames {
     deleteOneToken: 'Token'
     deleteOneTransaction: 'Transaction'
     deleteOneTransfers: 'Transfers'
-    deleteOneUrlSettings: 'urlSettings'
+    deleteOneUrlSettings: 'UrlSettings'
     deleteOneUser: 'User'
+    deleteOneVisitors: 'Visitors'
     updateField: 'Field'
     updateManyBaseSettings: 'BatchPayload'
+    updateManyContacts: 'BatchPayload'
     updateManyInventory: 'BatchPayload'
     updateManyProduct: 'BatchPayload'
     updateManyPromocodes: 'BatchPayload'
@@ -8416,8 +9187,10 @@ export interface NexusGenFieldTypeNames {
     updateManyTransfers: 'BatchPayload'
     updateManyUrlSettings: 'BatchPayload'
     updateManyUser: 'BatchPayload'
+    updateManyVisitors: 'BatchPayload'
     updateModel: 'Model'
-    updateOneBaseSettings: 'baseSettings'
+    updateOneBaseSettings: 'BaseSettings'
+    updateOneContacts: 'Contacts'
     updateOneInventory: 'Inventory'
     updateOneProduct: 'Product'
     updateOnePromocodes: 'Promocodes'
@@ -8427,9 +9200,11 @@ export interface NexusGenFieldTypeNames {
     updateOneToken: 'Token'
     updateOneTransaction: 'Transaction'
     updateOneTransfers: 'Transfers'
-    updateOneUrlSettings: 'urlSettings'
+    updateOneUrlSettings: 'UrlSettings'
     updateOneUser: 'User'
-    upsertOneBaseSettings: 'baseSettings'
+    updateOneVisitors: 'Visitors'
+    upsertOneBaseSettings: 'BaseSettings'
+    upsertOneContacts: 'Contacts'
     upsertOneInventory: 'Inventory'
     upsertOneProduct: 'Product'
     upsertOnePromocodes: 'Promocodes'
@@ -8439,8 +9214,9 @@ export interface NexusGenFieldTypeNames {
     upsertOneToken: 'Token'
     upsertOneTransaction: 'Transaction'
     upsertOneTransfers: 'Transfers'
-    upsertOneUrlSettings: 'urlSettings'
+    upsertOneUrlSettings: 'UrlSettings'
     upsertOneUser: 'User'
+    upsertOneVisitors: 'Visitors'
   }
   Product: { // field return type name
     Inventory: 'Inventory'
@@ -8450,8 +9226,9 @@ export interface NexusGenFieldTypeNames {
     autoactivation: 'Boolean'
     blockSize: 'Int'
     buttonColor: 'EButtonColor'
-    description: 'String'
-    discount: 'Float'
+    description_en: 'String'
+    description_ru: 'String'
+    discount: 'Int'
     height: 'Int'
     hidden: 'Boolean'
     iconButton: 'String'
@@ -8461,16 +9238,18 @@ export interface NexusGenFieldTypeNames {
     isBackgroundImage: 'Boolean'
     isChangeAmount: 'Boolean'
     maxCountOfSale: 'Int'
-    name: 'String'
     nameID: 'String'
+    name_en: 'String'
+    name_ru: 'String'
     number: 'Int'
     price: 'Int'
     productContent: 'Json'
     saleDeadline: 'DateTime'
-    saleDiscount: 'Float'
+    saleDiscount: 'Int'
     serverType: 'ServerType'
     serverTypeId: 'Int'
     textButton: 'String'
+    textButton_en: 'String'
     type: 'ETypeOfProduct'
   }
   ProductAvgAggregateOutputType: { // field return type name
@@ -8491,7 +9270,8 @@ export interface NexusGenFieldTypeNames {
     autoactivation: 'Int'
     blockSize: 'Int'
     buttonColor: 'Int'
-    description: 'Int'
+    description_en: 'Int'
+    description_ru: 'Int'
     discount: 'Int'
     height: 'Int'
     hidden: 'Int'
@@ -8502,8 +9282,9 @@ export interface NexusGenFieldTypeNames {
     isBackgroundImage: 'Int'
     isChangeAmount: 'Int'
     maxCountOfSale: 'Int'
-    name: 'Int'
     nameID: 'Int'
+    name_en: 'Int'
+    name_ru: 'Int'
     number: 'Int'
     price: 'Int'
     productContent: 'Int'
@@ -8511,6 +9292,7 @@ export interface NexusGenFieldTypeNames {
     saleDiscount: 'Int'
     serverTypeId: 'Int'
     textButton: 'Int'
+    textButton_en: 'Int'
     type: 'Int'
   }
   ProductCountOutputType: { // field return type name
@@ -8522,8 +9304,9 @@ export interface NexusGenFieldTypeNames {
     autoactivation: 'Boolean'
     blockSize: 'Int'
     buttonColor: 'EButtonColor'
-    description: 'String'
-    discount: 'Float'
+    description_en: 'String'
+    description_ru: 'String'
+    discount: 'Int'
     height: 'Int'
     hidden: 'Boolean'
     iconButton: 'String'
@@ -8533,14 +9316,16 @@ export interface NexusGenFieldTypeNames {
     isBackgroundImage: 'Boolean'
     isChangeAmount: 'Boolean'
     maxCountOfSale: 'Int'
-    name: 'String'
     nameID: 'String'
+    name_en: 'String'
+    name_ru: 'String'
     number: 'Int'
     price: 'Int'
     saleDeadline: 'DateTime'
-    saleDiscount: 'Float'
+    saleDiscount: 'Int'
     serverTypeId: 'Int'
     textButton: 'String'
+    textButton_en: 'String'
     type: 'ETypeOfProduct'
   }
   ProductMinAggregateOutputType: { // field return type name
@@ -8548,8 +9333,9 @@ export interface NexusGenFieldTypeNames {
     autoactivation: 'Boolean'
     blockSize: 'Int'
     buttonColor: 'EButtonColor'
-    description: 'String'
-    discount: 'Float'
+    description_en: 'String'
+    description_ru: 'String'
+    discount: 'Int'
     height: 'Int'
     hidden: 'Boolean'
     iconButton: 'String'
@@ -8559,26 +9345,28 @@ export interface NexusGenFieldTypeNames {
     isBackgroundImage: 'Boolean'
     isChangeAmount: 'Boolean'
     maxCountOfSale: 'Int'
-    name: 'String'
     nameID: 'String'
+    name_en: 'String'
+    name_ru: 'String'
     number: 'Int'
     price: 'Int'
     saleDeadline: 'DateTime'
-    saleDiscount: 'Float'
+    saleDiscount: 'Int'
     serverTypeId: 'Int'
     textButton: 'String'
+    textButton_en: 'String'
     type: 'ETypeOfProduct'
   }
   ProductSumAggregateOutputType: { // field return type name
     amount: 'Int'
     blockSize: 'Int'
-    discount: 'Float'
+    discount: 'Int'
     height: 'Int'
     id: 'Int'
     maxCountOfSale: 'Int'
     number: 'Int'
     price: 'Int'
-    saleDiscount: 'Float'
+    saleDiscount: 'Int'
     serverTypeId: 'Int'
   }
   Promocodes: { // field return type name
@@ -8659,6 +9447,7 @@ export interface NexusGenFieldTypeNames {
     _count: 'PurchaseCountOutputType'
     amount: 'Int'
     createdAt: 'DateTime'
+    dateOfPurchase: 'String'
     id: 'Int'
     lostBonusBalance: 'Int'
     lostMainBalance: 'Int'
@@ -8680,6 +9469,7 @@ export interface NexusGenFieldTypeNames {
     _all: 'Int'
     amount: 'Int'
     createdAt: 'Int'
+    dateOfPurchase: 'Int'
     id: 'Int'
     lostBonusBalance: 'Int'
     lostMainBalance: 'Int'
@@ -8693,6 +9483,7 @@ export interface NexusGenFieldTypeNames {
   PurchaseMaxAggregateOutputType: { // field return type name
     amount: 'Int'
     createdAt: 'DateTime'
+    dateOfPurchase: 'String'
     id: 'Int'
     lostBonusBalance: 'Int'
     lostMainBalance: 'Int'
@@ -8703,6 +9494,7 @@ export interface NexusGenFieldTypeNames {
   PurchaseMinAggregateOutputType: { // field return type name
     amount: 'Int'
     createdAt: 'DateTime'
+    dateOfPurchase: 'String'
     id: 'Int'
     lostBonusBalance: 'Int'
     lostMainBalance: 'Int'
@@ -8720,6 +9512,7 @@ export interface NexusGenFieldTypeNames {
   }
   Query: { // field return type name
     aggregateBaseSettings: 'AggregateBaseSettings'
+    aggregateContacts: 'AggregateContacts'
     aggregateInventory: 'AggregateInventory'
     aggregateProduct: 'AggregateProduct'
     aggregatePromocodes: 'AggregatePromocodes'
@@ -8731,7 +9524,9 @@ export interface NexusGenFieldTypeNames {
     aggregateTransfers: 'AggregateTransfers'
     aggregateUrlSettings: 'AggregateUrlSettings'
     aggregateUser: 'AggregateUser'
-    findFirstBaseSettings: 'baseSettings'
+    aggregateVisitors: 'AggregateVisitors'
+    findFirstBaseSettings: 'BaseSettings'
+    findFirstContacts: 'Contacts'
     findFirstInventory: 'Inventory'
     findFirstProduct: 'Product'
     findFirstPromocodes: 'Promocodes'
@@ -8741,10 +9536,13 @@ export interface NexusGenFieldTypeNames {
     findFirstToken: 'Token'
     findFirstTransaction: 'Transaction'
     findFirstTransfers: 'Transfers'
-    findFirstUrlSettings: 'urlSettings'
+    findFirstUrlSettings: 'UrlSettings'
     findFirstUser: 'User'
-    findManyBaseSettings: 'baseSettings'
+    findFirstVisitors: 'Visitors'
+    findManyBaseSettings: 'BaseSettings'
     findManyBaseSettingsCount: 'Int'
+    findManyContacts: 'Contacts'
+    findManyContactsCount: 'Int'
     findManyInventory: 'Inventory'
     findManyInventoryCount: 'Int'
     findManyProduct: 'Product'
@@ -8763,11 +9561,14 @@ export interface NexusGenFieldTypeNames {
     findManyTransactionCount: 'Int'
     findManyTransfers: 'Transfers'
     findManyTransfersCount: 'Int'
-    findManyUrlSettings: 'urlSettings'
+    findManyUrlSettings: 'UrlSettings'
     findManyUrlSettingsCount: 'Int'
     findManyUser: 'User'
     findManyUserCount: 'Int'
-    findUniqueBaseSettings: 'baseSettings'
+    findManyVisitors: 'Visitors'
+    findManyVisitorsCount: 'Int'
+    findUniqueBaseSettings: 'BaseSettings'
+    findUniqueContacts: 'Contacts'
     findUniqueInventory: 'Inventory'
     findUniqueProduct: 'Product'
     findUniquePromocodes: 'Promocodes'
@@ -8777,8 +9578,9 @@ export interface NexusGenFieldTypeNames {
     findUniqueToken: 'Token'
     findUniqueTransaction: 'Transaction'
     findUniqueTransfers: 'Transfers'
-    findUniqueUrlSettings: 'urlSettings'
+    findUniqueUrlSettings: 'UrlSettings'
     findUniqueUser: 'User'
+    findUniqueVisitors: 'Visitors'
     getSchema: 'Schema'
   }
   Schema: { // field return type name
@@ -9021,6 +9823,16 @@ export interface NexusGenFieldTypeNames {
     receiverId: 'Int'
     senderId: 'Int'
   }
+  UrlSettings: { // field return type name
+    hidden: 'Boolean'
+    icon: 'String'
+    id: 'Int'
+    isHaveSidebar: 'Boolean'
+    sections: 'Json'
+    text: 'String'
+    typeUrl: 'ETypeOfURL'
+    url: 'String'
+  }
   UrlSettingsAvgAggregateOutputType: { // field return type name
     id: 'Float'
   }
@@ -9170,6 +9982,41 @@ export interface NexusGenFieldTypeNames {
     sumOfDeposits: 'Int'
     sumOfRefunds: 'Int'
   }
+  Visitors: { // field return type name
+    createdAt: 'DateTime'
+    id: 'Int'
+    ip: 'String'
+    sortDate: 'String'
+    sortedMonth: 'String'
+  }
+  VisitorsAvgAggregateOutputType: { // field return type name
+    id: 'Float'
+  }
+  VisitorsCountAggregateOutputType: { // field return type name
+    _all: 'Int'
+    createdAt: 'Int'
+    id: 'Int'
+    ip: 'Int'
+    sortDate: 'Int'
+    sortedMonth: 'Int'
+  }
+  VisitorsMaxAggregateOutputType: { // field return type name
+    createdAt: 'DateTime'
+    id: 'Int'
+    ip: 'String'
+    sortDate: 'String'
+    sortedMonth: 'String'
+  }
+  VisitorsMinAggregateOutputType: { // field return type name
+    createdAt: 'DateTime'
+    id: 'Int'
+    ip: 'String'
+    sortDate: 'String'
+    sortedMonth: 'String'
+  }
+  VisitorsSumAggregateOutputType: { // field return type name
+    id: 'Int'
+  }
   baseSettings: { // field return type name
     IPWhiteList: 'String'
     apiKey: 'String'
@@ -9194,6 +10041,12 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
+    createOneBaseSettings: { // args
+      data: NexusGenInputs['BaseSettingsCreateInput']; // BaseSettingsCreateInput!
+    }
+    createOneContacts: { // args
+      data: NexusGenInputs['ContactsCreateInput']; // ContactsCreateInput!
+    }
     createOneInventory: { // args
       data: NexusGenInputs['InventoryCreateInput']; // InventoryCreateInput!
     }
@@ -9221,8 +10074,20 @@ export interface NexusGenArgTypes {
     createOneTransfers: { // args
       data: NexusGenInputs['TransfersCreateInput']; // TransfersCreateInput!
     }
+    createOneUrlSettings: { // args
+      data: NexusGenInputs['UrlSettingsCreateInput']; // UrlSettingsCreateInput!
+    }
     createOneUser: { // args
       data: NexusGenInputs['UserCreateInput']; // UserCreateInput!
+    }
+    createOneVisitors: { // args
+      data: NexusGenInputs['VisitorsCreateInput']; // VisitorsCreateInput!
+    }
+    deleteManyBaseSettings: { // args
+      where?: NexusGenInputs['BaseSettingsWhereInput'] | null; // BaseSettingsWhereInput
+    }
+    deleteManyContacts: { // args
+      where?: NexusGenInputs['ContactsWhereInput'] | null; // ContactsWhereInput
     }
     deleteManyInventory: { // args
       where?: NexusGenInputs['InventoryWhereInput'] | null; // InventoryWhereInput
@@ -9251,8 +10116,20 @@ export interface NexusGenArgTypes {
     deleteManyTransfers: { // args
       where?: NexusGenInputs['TransfersWhereInput'] | null; // TransfersWhereInput
     }
+    deleteManyUrlSettings: { // args
+      where?: NexusGenInputs['UrlSettingsWhereInput'] | null; // UrlSettingsWhereInput
+    }
     deleteManyUser: { // args
       where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
+    }
+    deleteManyVisitors: { // args
+      where?: NexusGenInputs['VisitorsWhereInput'] | null; // VisitorsWhereInput
+    }
+    deleteOneBaseSettings: { // args
+      where: NexusGenInputs['BaseSettingsWhereUniqueInput']; // BaseSettingsWhereUniqueInput!
+    }
+    deleteOneContacts: { // args
+      where: NexusGenInputs['ContactsWhereUniqueInput']; // ContactsWhereUniqueInput!
     }
     deleteOneInventory: { // args
       where: NexusGenInputs['InventoryWhereUniqueInput']; // InventoryWhereUniqueInput!
@@ -9281,13 +10158,27 @@ export interface NexusGenArgTypes {
     deleteOneTransfers: { // args
       where: NexusGenInputs['TransfersWhereUniqueInput']; // TransfersWhereUniqueInput!
     }
+    deleteOneUrlSettings: { // args
+      where: NexusGenInputs['UrlSettingsWhereUniqueInput']; // UrlSettingsWhereUniqueInput!
+    }
     deleteOneUser: { // args
       where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
+    }
+    deleteOneVisitors: { // args
+      where: NexusGenInputs['VisitorsWhereUniqueInput']; // VisitorsWhereUniqueInput!
     }
     updateField: { // args
       data: NexusGenInputs['UpdateFieldInput']; // UpdateFieldInput!
       id: string; // String!
       modelId: string; // String!
+    }
+    updateManyBaseSettings: { // args
+      data: NexusGenInputs['BaseSettingsUpdateManyMutationInput']; // BaseSettingsUpdateManyMutationInput!
+      where?: NexusGenInputs['BaseSettingsWhereInput'] | null; // BaseSettingsWhereInput
+    }
+    updateManyContacts: { // args
+      data: NexusGenInputs['ContactsUpdateManyMutationInput']; // ContactsUpdateManyMutationInput!
+      where?: NexusGenInputs['ContactsWhereInput'] | null; // ContactsWhereInput
     }
     updateManyInventory: { // args
       data: NexusGenInputs['InventoryUpdateManyMutationInput']; // InventoryUpdateManyMutationInput!
@@ -9325,13 +10216,29 @@ export interface NexusGenArgTypes {
       data: NexusGenInputs['TransfersUpdateManyMutationInput']; // TransfersUpdateManyMutationInput!
       where?: NexusGenInputs['TransfersWhereInput'] | null; // TransfersWhereInput
     }
+    updateManyUrlSettings: { // args
+      data: NexusGenInputs['UrlSettingsUpdateManyMutationInput']; // UrlSettingsUpdateManyMutationInput!
+      where?: NexusGenInputs['UrlSettingsWhereInput'] | null; // UrlSettingsWhereInput
+    }
     updateManyUser: { // args
       data: NexusGenInputs['UserUpdateManyMutationInput']; // UserUpdateManyMutationInput!
       where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
     }
+    updateManyVisitors: { // args
+      data: NexusGenInputs['VisitorsUpdateManyMutationInput']; // VisitorsUpdateManyMutationInput!
+      where?: NexusGenInputs['VisitorsWhereInput'] | null; // VisitorsWhereInput
+    }
     updateModel: { // args
       data: NexusGenInputs['UpdateModelInput']; // UpdateModelInput!
       id: string; // String!
+    }
+    updateOneBaseSettings: { // args
+      data: NexusGenInputs['BaseSettingsUpdateInput']; // BaseSettingsUpdateInput!
+      where: NexusGenInputs['BaseSettingsWhereUniqueInput']; // BaseSettingsWhereUniqueInput!
+    }
+    updateOneContacts: { // args
+      data: NexusGenInputs['ContactsUpdateInput']; // ContactsUpdateInput!
+      where: NexusGenInputs['ContactsWhereUniqueInput']; // ContactsWhereUniqueInput!
     }
     updateOneInventory: { // args
       data: NexusGenInputs['InventoryUpdateInput']; // InventoryUpdateInput!
@@ -9369,9 +10276,27 @@ export interface NexusGenArgTypes {
       data: NexusGenInputs['TransfersUpdateInput']; // TransfersUpdateInput!
       where: NexusGenInputs['TransfersWhereUniqueInput']; // TransfersWhereUniqueInput!
     }
+    updateOneUrlSettings: { // args
+      data: NexusGenInputs['UrlSettingsUpdateInput']; // UrlSettingsUpdateInput!
+      where: NexusGenInputs['UrlSettingsWhereUniqueInput']; // UrlSettingsWhereUniqueInput!
+    }
     updateOneUser: { // args
       data: NexusGenInputs['UserUpdateInput']; // UserUpdateInput!
       where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
+    }
+    updateOneVisitors: { // args
+      data: NexusGenInputs['VisitorsUpdateInput']; // VisitorsUpdateInput!
+      where: NexusGenInputs['VisitorsWhereUniqueInput']; // VisitorsWhereUniqueInput!
+    }
+    upsertOneBaseSettings: { // args
+      create: NexusGenInputs['BaseSettingsCreateInput']; // BaseSettingsCreateInput!
+      update: NexusGenInputs['BaseSettingsUpdateInput']; // BaseSettingsUpdateInput!
+      where: NexusGenInputs['BaseSettingsWhereUniqueInput']; // BaseSettingsWhereUniqueInput!
+    }
+    upsertOneContacts: { // args
+      create: NexusGenInputs['ContactsCreateInput']; // ContactsCreateInput!
+      update: NexusGenInputs['ContactsUpdateInput']; // ContactsUpdateInput!
+      where: NexusGenInputs['ContactsWhereUniqueInput']; // ContactsWhereUniqueInput!
     }
     upsertOneInventory: { // args
       create: NexusGenInputs['InventoryCreateInput']; // InventoryCreateInput!
@@ -9418,10 +10343,20 @@ export interface NexusGenArgTypes {
       update: NexusGenInputs['TransfersUpdateInput']; // TransfersUpdateInput!
       where: NexusGenInputs['TransfersWhereUniqueInput']; // TransfersWhereUniqueInput!
     }
+    upsertOneUrlSettings: { // args
+      create: NexusGenInputs['UrlSettingsCreateInput']; // UrlSettingsCreateInput!
+      update: NexusGenInputs['UrlSettingsUpdateInput']; // UrlSettingsUpdateInput!
+      where: NexusGenInputs['UrlSettingsWhereUniqueInput']; // UrlSettingsWhereUniqueInput!
+    }
     upsertOneUser: { // args
       create: NexusGenInputs['UserCreateInput']; // UserCreateInput!
       update: NexusGenInputs['UserUpdateInput']; // UserUpdateInput!
       where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
+    }
+    upsertOneVisitors: { // args
+      create: NexusGenInputs['VisitorsCreateInput']; // VisitorsCreateInput!
+      update: NexusGenInputs['VisitorsUpdateInput']; // VisitorsUpdateInput!
+      where: NexusGenInputs['VisitorsWhereUniqueInput']; // VisitorsWhereUniqueInput!
     }
   }
   Product: {
@@ -9453,6 +10388,20 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
+    aggregateBaseSettings: { // args
+      cursor?: NexusGenInputs['BaseSettingsWhereUniqueInput'] | null; // BaseSettingsWhereUniqueInput
+      orderBy?: Array<NexusGenInputs['BaseSettingsOrderByWithRelationInput'] | null> | null; // [BaseSettingsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['BaseSettingsWhereInput'] | null; // BaseSettingsWhereInput
+    }
+    aggregateContacts: { // args
+      cursor?: NexusGenInputs['ContactsWhereUniqueInput'] | null; // ContactsWhereUniqueInput
+      orderBy?: Array<NexusGenInputs['ContactsOrderByWithRelationInput'] | null> | null; // [ContactsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['ContactsWhereInput'] | null; // ContactsWhereInput
+    }
     aggregateInventory: { // args
       cursor?: NexusGenInputs['InventoryWhereUniqueInput'] | null; // InventoryWhereUniqueInput
       orderBy?: Array<NexusGenInputs['InventoryOrderByWithRelationInput'] | null> | null; // [InventoryOrderByWithRelationInput]
@@ -9516,12 +10465,42 @@ export interface NexusGenArgTypes {
       take?: number | null; // Int
       where?: NexusGenInputs['TransfersWhereInput'] | null; // TransfersWhereInput
     }
+    aggregateUrlSettings: { // args
+      cursor?: NexusGenInputs['UrlSettingsWhereUniqueInput'] | null; // UrlSettingsWhereUniqueInput
+      orderBy?: Array<NexusGenInputs['UrlSettingsOrderByWithRelationInput'] | null> | null; // [UrlSettingsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['UrlSettingsWhereInput'] | null; // UrlSettingsWhereInput
+    }
     aggregateUser: { // args
       cursor?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
       orderBy?: Array<NexusGenInputs['UserOrderByWithRelationInput'] | null> | null; // [UserOrderByWithRelationInput]
       skip?: number | null; // Int
       take?: number | null; // Int
       where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
+    }
+    aggregateVisitors: { // args
+      cursor?: NexusGenInputs['VisitorsWhereUniqueInput'] | null; // VisitorsWhereUniqueInput
+      orderBy?: Array<NexusGenInputs['VisitorsOrderByWithRelationInput'] | null> | null; // [VisitorsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['VisitorsWhereInput'] | null; // VisitorsWhereInput
+    }
+    findFirstBaseSettings: { // args
+      cursor?: NexusGenInputs['BaseSettingsWhereUniqueInput'] | null; // BaseSettingsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['BaseSettingsScalarFieldEnum'] | null> | null; // [BaseSettingsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['BaseSettingsOrderByWithRelationInput'] | null> | null; // [BaseSettingsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['BaseSettingsWhereInput'] | null; // BaseSettingsWhereInput
+    }
+    findFirstContacts: { // args
+      cursor?: NexusGenInputs['ContactsWhereUniqueInput'] | null; // ContactsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['ContactsScalarFieldEnum'] | null> | null; // [ContactsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['ContactsOrderByWithRelationInput'] | null> | null; // [ContactsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['ContactsWhereInput'] | null; // ContactsWhereInput
     }
     findFirstInventory: { // args
       cursor?: NexusGenInputs['InventoryWhereUniqueInput'] | null; // InventoryWhereUniqueInput
@@ -9595,6 +10574,14 @@ export interface NexusGenArgTypes {
       take?: number | null; // Int
       where?: NexusGenInputs['TransfersWhereInput'] | null; // TransfersWhereInput
     }
+    findFirstUrlSettings: { // args
+      cursor?: NexusGenInputs['UrlSettingsWhereUniqueInput'] | null; // UrlSettingsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['UrlSettingsScalarFieldEnum'] | null> | null; // [UrlSettingsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['UrlSettingsOrderByWithRelationInput'] | null> | null; // [UrlSettingsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['UrlSettingsWhereInput'] | null; // UrlSettingsWhereInput
+    }
     findFirstUser: { // args
       cursor?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
       distinct?: Array<NexusGenEnums['UserScalarFieldEnum'] | null> | null; // [UserScalarFieldEnum]
@@ -9602,6 +10589,46 @@ export interface NexusGenArgTypes {
       skip?: number | null; // Int
       take?: number | null; // Int
       where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
+    }
+    findFirstVisitors: { // args
+      cursor?: NexusGenInputs['VisitorsWhereUniqueInput'] | null; // VisitorsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['VisitorsScalarFieldEnum'] | null> | null; // [VisitorsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['VisitorsOrderByWithRelationInput'] | null> | null; // [VisitorsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['VisitorsWhereInput'] | null; // VisitorsWhereInput
+    }
+    findManyBaseSettings: { // args
+      cursor?: NexusGenInputs['BaseSettingsWhereUniqueInput'] | null; // BaseSettingsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['BaseSettingsScalarFieldEnum'] | null> | null; // [BaseSettingsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['BaseSettingsOrderByWithRelationInput'] | null> | null; // [BaseSettingsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['BaseSettingsWhereInput'] | null; // BaseSettingsWhereInput
+    }
+    findManyBaseSettingsCount: { // args
+      cursor?: NexusGenInputs['BaseSettingsWhereUniqueInput'] | null; // BaseSettingsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['BaseSettingsScalarFieldEnum'] | null> | null; // [BaseSettingsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['BaseSettingsOrderByWithRelationInput'] | null> | null; // [BaseSettingsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['BaseSettingsWhereInput'] | null; // BaseSettingsWhereInput
+    }
+    findManyContacts: { // args
+      cursor?: NexusGenInputs['ContactsWhereUniqueInput'] | null; // ContactsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['ContactsScalarFieldEnum'] | null> | null; // [ContactsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['ContactsOrderByWithRelationInput'] | null> | null; // [ContactsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['ContactsWhereInput'] | null; // ContactsWhereInput
+    }
+    findManyContactsCount: { // args
+      cursor?: NexusGenInputs['ContactsWhereUniqueInput'] | null; // ContactsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['ContactsScalarFieldEnum'] | null> | null; // [ContactsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['ContactsOrderByWithRelationInput'] | null> | null; // [ContactsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['ContactsWhereInput'] | null; // ContactsWhereInput
     }
     findManyInventory: { // args
       cursor?: NexusGenInputs['InventoryWhereUniqueInput'] | null; // InventoryWhereUniqueInput
@@ -9747,6 +10774,22 @@ export interface NexusGenArgTypes {
       take?: number | null; // Int
       where?: NexusGenInputs['TransfersWhereInput'] | null; // TransfersWhereInput
     }
+    findManyUrlSettings: { // args
+      cursor?: NexusGenInputs['UrlSettingsWhereUniqueInput'] | null; // UrlSettingsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['UrlSettingsScalarFieldEnum'] | null> | null; // [UrlSettingsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['UrlSettingsOrderByWithRelationInput'] | null> | null; // [UrlSettingsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['UrlSettingsWhereInput'] | null; // UrlSettingsWhereInput
+    }
+    findManyUrlSettingsCount: { // args
+      cursor?: NexusGenInputs['UrlSettingsWhereUniqueInput'] | null; // UrlSettingsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['UrlSettingsScalarFieldEnum'] | null> | null; // [UrlSettingsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['UrlSettingsOrderByWithRelationInput'] | null> | null; // [UrlSettingsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['UrlSettingsWhereInput'] | null; // UrlSettingsWhereInput
+    }
     findManyUser: { // args
       cursor?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
       distinct?: Array<NexusGenEnums['UserScalarFieldEnum'] | null> | null; // [UserScalarFieldEnum]
@@ -9762,6 +10805,28 @@ export interface NexusGenArgTypes {
       skip?: number | null; // Int
       take?: number | null; // Int
       where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
+    }
+    findManyVisitors: { // args
+      cursor?: NexusGenInputs['VisitorsWhereUniqueInput'] | null; // VisitorsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['VisitorsScalarFieldEnum'] | null> | null; // [VisitorsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['VisitorsOrderByWithRelationInput'] | null> | null; // [VisitorsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['VisitorsWhereInput'] | null; // VisitorsWhereInput
+    }
+    findManyVisitorsCount: { // args
+      cursor?: NexusGenInputs['VisitorsWhereUniqueInput'] | null; // VisitorsWhereUniqueInput
+      distinct?: Array<NexusGenEnums['VisitorsScalarFieldEnum'] | null> | null; // [VisitorsScalarFieldEnum]
+      orderBy?: Array<NexusGenInputs['VisitorsOrderByWithRelationInput'] | null> | null; // [VisitorsOrderByWithRelationInput]
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['VisitorsWhereInput'] | null; // VisitorsWhereInput
+    }
+    findUniqueBaseSettings: { // args
+      where: NexusGenInputs['BaseSettingsWhereUniqueInput']; // BaseSettingsWhereUniqueInput!
+    }
+    findUniqueContacts: { // args
+      where: NexusGenInputs['ContactsWhereUniqueInput']; // ContactsWhereUniqueInput!
     }
     findUniqueInventory: { // args
       where: NexusGenInputs['InventoryWhereUniqueInput']; // InventoryWhereUniqueInput!
@@ -9790,8 +10855,14 @@ export interface NexusGenArgTypes {
     findUniqueTransfers: { // args
       where: NexusGenInputs['TransfersWhereUniqueInput']; // TransfersWhereUniqueInput!
     }
+    findUniqueUrlSettings: { // args
+      where: NexusGenInputs['UrlSettingsWhereUniqueInput']; // UrlSettingsWhereUniqueInput!
+    }
     findUniqueUser: { // args
       where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
+    }
+    findUniqueVisitors: { // args
+      where: NexusGenInputs['VisitorsWhereUniqueInput']; // VisitorsWhereUniqueInput!
     }
   }
   Server: {

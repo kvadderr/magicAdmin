@@ -41,6 +41,7 @@ export const Purchase = objectType({
       },
     })
     t.int('productId')
+    t.nullable.string('dateOfPurchase')
     t.nullable.field('_count', {
       type: 'PurchaseCountOutputType',
       resolve(root: any) {

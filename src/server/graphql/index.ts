@@ -1,3 +1,7 @@
+export * from './UrlSettings'
+export * from './BaseSettings'
+export * from './Visitors'
+export * from './Contacts'
 export * from './Token'
 export * from './urlSettings'
 export * from './baseSettings'

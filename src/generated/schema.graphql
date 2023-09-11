@@ -10,6 +10,14 @@ type AggregateBaseSettings {
   _sum: BaseSettingsSumAggregateOutputType
 }
 
+type AggregateContacts {
+  _avg: ContactsAvgAggregateOutputType
+  _count: ContactsCountAggregateOutputType
+  _max: ContactsMaxAggregateOutputType
+  _min: ContactsMinAggregateOutputType
+  _sum: ContactsSumAggregateOutputType
+}
+
 type AggregateInventory {
   _avg: InventoryAvgAggregateOutputType
   _count: InventoryCountAggregateOutputType
@@ -98,9 +106,33 @@ type AggregateUser {
   _sum: UserSumAggregateOutputType
 }
 
+type AggregateVisitors {
+  _avg: VisitorsAvgAggregateOutputType
+  _count: VisitorsCountAggregateOutputType
+  _max: VisitorsMaxAggregateOutputType
+  _min: VisitorsMinAggregateOutputType
+  _sum: VisitorsSumAggregateOutputType
+}
+
+type BaseSettings {
+  IPWhiteList: String!
+  apiKey: String!
+  header: String!
+  id: Int!
+  mainPage: String!
+  panelURLs: Json
+  saleMode: Boolean!
+  startBalance: Int!
+}
+
 type BaseSettingsAvgAggregateOutputType {
   id: Float
   startBalance: Float
+}
+
+input BaseSettingsAvgOrderByAggregateInput {
+  id: SortOrder
+  startBalance: SortOrder
 }
 
 type BaseSettingsCountAggregateOutputType {
@@ -115,6 +147,38 @@ type BaseSettingsCountAggregateOutputType {
   startBalance: Int!
 }
 
+input BaseSettingsCountOrderByAggregateInput {
+  IPWhiteList: SortOrder
+  apiKey: SortOrder
+  header: SortOrder
+  id: SortOrder
+  mainPage: SortOrder
+  panelURLs: SortOrder
+  saleMode: SortOrder
+  startBalance: SortOrder
+}
+
+input BaseSettingsCreateInput {
+  IPWhiteList: String!
+  apiKey: String!
+  header: String!
+  mainPage: String!
+  panelURLs: Json
+  saleMode: Boolean
+  startBalance: Int!
+}
+
+input BaseSettingsCreateManyInput {
+  IPWhiteList: String!
+  apiKey: String!
+  header: String!
+  id: Int
+  mainPage: String!
+  panelURLs: Json
+  saleMode: Boolean
+  startBalance: Int!
+}
+
 type BaseSettingsMaxAggregateOutputType {
   IPWhiteList: String
   apiKey: String
@@ -125,6 +189,16 @@ type BaseSettingsMaxAggregateOutputType {
   startBalance: Int
 }
 
+input BaseSettingsMaxOrderByAggregateInput {
+  IPWhiteList: SortOrder
+  apiKey: SortOrder
+  header: SortOrder
+  id: SortOrder
+  mainPage: SortOrder
+  saleMode: SortOrder
+  startBalance: SortOrder
+}
+
 type BaseSettingsMinAggregateOutputType {
   IPWhiteList: String
   apiKey: String
@@ -133,6 +207,43 @@ type BaseSettingsMinAggregateOutputType {
   mainPage: String
   saleMode: Boolean
   startBalance: Int
+}
+
+input BaseSettingsMinOrderByAggregateInput {
+  IPWhiteList: SortOrder
+  apiKey: SortOrder
+  header: SortOrder
+  id: SortOrder
+  mainPage: SortOrder
+  saleMode: SortOrder
+  startBalance: SortOrder
+}
+
+input BaseSettingsOrderByWithAggregationInput {
+  IPWhiteList: SortOrder
+  _avg: BaseSettingsAvgOrderByAggregateInput
+  _count: BaseSettingsCountOrderByAggregateInput
+  _max: BaseSettingsMaxOrderByAggregateInput
+  _min: BaseSettingsMinOrderByAggregateInput
+  _sum: BaseSettingsSumOrderByAggregateInput
+  apiKey: SortOrder
+  header: SortOrder
+  id: SortOrder
+  mainPage: SortOrder
+  panelURLs: SortOrder
+  saleMode: SortOrder
+  startBalance: SortOrder
+}
+
+input BaseSettingsOrderByWithRelationInput {
+  IPWhiteList: SortOrder
+  apiKey: SortOrder
+  header: SortOrder
+  id: SortOrder
+  mainPage: SortOrder
+  panelURLs: SortOrder
+  saleMode: SortOrder
+  startBalance: SortOrder
 }
 
 enum BaseSettingsScalarFieldEnum {
@@ -146,9 +257,99 @@ enum BaseSettingsScalarFieldEnum {
   startBalance
 }
 
+input BaseSettingsScalarWhereWithAggregatesInput {
+  AND: [BaseSettingsScalarWhereWithAggregatesInput]
+  IPWhiteList: StringWithAggregatesFilter
+  NOT: [BaseSettingsScalarWhereWithAggregatesInput]
+  OR: [BaseSettingsScalarWhereWithAggregatesInput]
+  apiKey: StringWithAggregatesFilter
+  header: StringWithAggregatesFilter
+  id: IntWithAggregatesFilter
+  mainPage: StringWithAggregatesFilter
+  panelURLs: JsonNullableWithAggregatesFilter
+  saleMode: BoolWithAggregatesFilter
+  startBalance: IntWithAggregatesFilter
+}
+
 type BaseSettingsSumAggregateOutputType {
   id: Int
   startBalance: Int
+}
+
+input BaseSettingsSumOrderByAggregateInput {
+  id: SortOrder
+  startBalance: SortOrder
+}
+
+input BaseSettingsUncheckedCreateInput {
+  IPWhiteList: String!
+  apiKey: String!
+  header: String!
+  id: Int
+  mainPage: String!
+  panelURLs: Json
+  saleMode: Boolean
+  startBalance: Int!
+}
+
+input BaseSettingsUncheckedUpdateInput {
+  IPWhiteList: StringFieldUpdateOperationsInput
+  apiKey: StringFieldUpdateOperationsInput
+  header: StringFieldUpdateOperationsInput
+  id: IntFieldUpdateOperationsInput
+  mainPage: StringFieldUpdateOperationsInput
+  panelURLs: Json
+  saleMode: BoolFieldUpdateOperationsInput
+  startBalance: IntFieldUpdateOperationsInput
+}
+
+input BaseSettingsUncheckedUpdateManyInput {
+  IPWhiteList: StringFieldUpdateOperationsInput
+  apiKey: StringFieldUpdateOperationsInput
+  header: StringFieldUpdateOperationsInput
+  id: IntFieldUpdateOperationsInput
+  mainPage: StringFieldUpdateOperationsInput
+  panelURLs: Json
+  saleMode: BoolFieldUpdateOperationsInput
+  startBalance: IntFieldUpdateOperationsInput
+}
+
+input BaseSettingsUpdateInput {
+  IPWhiteList: StringFieldUpdateOperationsInput
+  apiKey: StringFieldUpdateOperationsInput
+  header: StringFieldUpdateOperationsInput
+  mainPage: StringFieldUpdateOperationsInput
+  panelURLs: Json
+  saleMode: BoolFieldUpdateOperationsInput
+  startBalance: IntFieldUpdateOperationsInput
+}
+
+input BaseSettingsUpdateManyMutationInput {
+  IPWhiteList: StringFieldUpdateOperationsInput
+  apiKey: StringFieldUpdateOperationsInput
+  header: StringFieldUpdateOperationsInput
+  mainPage: StringFieldUpdateOperationsInput
+  panelURLs: Json
+  saleMode: BoolFieldUpdateOperationsInput
+  startBalance: IntFieldUpdateOperationsInput
+}
+
+input BaseSettingsWhereInput {
+  AND: [BaseSettingsWhereInput]
+  IPWhiteList: StringFilter
+  NOT: [BaseSettingsWhereInput]
+  OR: [BaseSettingsWhereInput]
+  apiKey: StringFilter
+  header: StringFilter
+  id: IntFilter
+  mainPage: StringFilter
+  panelURLs: JsonNullableFilter
+  saleMode: BoolFilter
+  startBalance: IntFilter
+}
+
+input BaseSettingsWhereUniqueInput {
+  id: Int
 }
 
 type BatchPayload {
@@ -186,6 +387,168 @@ input BoolWithAggregatesFilter {
   _min: NestedBoolFilter
   equals: Boolean
   not: NestedBoolWithAggregatesFilter
+}
+
+type Contacts {
+  icon: String!
+  id: Int!
+  name: String!
+  url: String!
+}
+
+type ContactsAvgAggregateOutputType {
+  id: Float
+}
+
+input ContactsAvgOrderByAggregateInput {
+  id: SortOrder
+}
+
+type ContactsCountAggregateOutputType {
+  _all: Int!
+  icon: Int!
+  id: Int!
+  name: Int!
+  url: Int!
+}
+
+input ContactsCountOrderByAggregateInput {
+  icon: SortOrder
+  id: SortOrder
+  name: SortOrder
+  url: SortOrder
+}
+
+input ContactsCreateInput {
+  icon: String!
+  name: String!
+  url: String!
+}
+
+input ContactsCreateManyInput {
+  icon: String!
+  id: Int
+  name: String!
+  url: String!
+}
+
+type ContactsMaxAggregateOutputType {
+  icon: String
+  id: Int
+  name: String
+  url: String
+}
+
+input ContactsMaxOrderByAggregateInput {
+  icon: SortOrder
+  id: SortOrder
+  name: SortOrder
+  url: SortOrder
+}
+
+type ContactsMinAggregateOutputType {
+  icon: String
+  id: Int
+  name: String
+  url: String
+}
+
+input ContactsMinOrderByAggregateInput {
+  icon: SortOrder
+  id: SortOrder
+  name: SortOrder
+  url: SortOrder
+}
+
+input ContactsOrderByWithAggregationInput {
+  _avg: ContactsAvgOrderByAggregateInput
+  _count: ContactsCountOrderByAggregateInput
+  _max: ContactsMaxOrderByAggregateInput
+  _min: ContactsMinOrderByAggregateInput
+  _sum: ContactsSumOrderByAggregateInput
+  icon: SortOrder
+  id: SortOrder
+  name: SortOrder
+  url: SortOrder
+}
+
+input ContactsOrderByWithRelationInput {
+  icon: SortOrder
+  id: SortOrder
+  name: SortOrder
+  url: SortOrder
+}
+
+enum ContactsScalarFieldEnum {
+  icon
+  id
+  name
+  url
+}
+
+input ContactsScalarWhereWithAggregatesInput {
+  AND: [ContactsScalarWhereWithAggregatesInput]
+  NOT: [ContactsScalarWhereWithAggregatesInput]
+  OR: [ContactsScalarWhereWithAggregatesInput]
+  icon: StringWithAggregatesFilter
+  id: IntWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  url: StringWithAggregatesFilter
+}
+
+type ContactsSumAggregateOutputType {
+  id: Int
+}
+
+input ContactsSumOrderByAggregateInput {
+  id: SortOrder
+}
+
+input ContactsUncheckedCreateInput {
+  icon: String!
+  id: Int
+  name: String!
+  url: String!
+}
+
+input ContactsUncheckedUpdateInput {
+  icon: StringFieldUpdateOperationsInput
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+}
+
+input ContactsUncheckedUpdateManyInput {
+  icon: StringFieldUpdateOperationsInput
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+}
+
+input ContactsUpdateInput {
+  icon: StringFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+}
+
+input ContactsUpdateManyMutationInput {
+  icon: StringFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+}
+
+input ContactsWhereInput {
+  AND: [ContactsWhereInput]
+  NOT: [ContactsWhereInput]
+  OR: [ContactsWhereInput]
+  icon: StringFilter
+  id: IntFilter
+  name: StringFilter
+  url: StringFilter
+}
+
+input ContactsWhereUniqueInput {
+  id: Int
 }
 
 """Date custom scalar type"""
@@ -432,33 +795,6 @@ type Field {
   upload: Boolean!
 }
 
-input FloatNullableFilter {
-  equals: Float
-  gt: Float
-  gte: Float
-  in: [Float]
-  lt: Float
-  lte: Float
-  not: NestedFloatNullableFilter
-  notIn: [Float]
-}
-
-input FloatNullableWithAggregatesFilter {
-  _avg: NestedFloatNullableFilter
-  _count: NestedIntNullableFilter
-  _max: NestedFloatNullableFilter
-  _min: NestedFloatNullableFilter
-  _sum: NestedFloatNullableFilter
-  equals: Float
-  gt: Float
-  gte: Float
-  in: [Float]
-  lt: Float
-  lte: Float
-  not: NestedFloatNullableWithAggregatesFilter
-  notIn: [Float]
-}
-
 input IntFieldUpdateOperationsInput {
   decrement: Int
   divide: Int
@@ -527,6 +863,9 @@ type Inventory {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int!
+  isCanBeRefund: Boolean!
+  isPartOfPack: Boolean
+  packId: Int
   product: Product!
   productId: Int!
   purchase: Purchase!
@@ -544,6 +883,7 @@ type InventoryAvgAggregateOutputType {
   amount: Float
   historyOfPurchaseId: Float
   id: Float
+  packId: Float
   productId: Float
   serverId: Float
   serverTypeId: Float
@@ -554,6 +894,7 @@ input InventoryAvgOrderByAggregateInput {
   amount: SortOrder
   historyOfPurchaseId: SortOrder
   id: SortOrder
+  packId: SortOrder
   productId: SortOrder
   serverId: SortOrder
   serverTypeId: SortOrder
@@ -567,6 +908,9 @@ type InventoryCountAggregateOutputType {
   dateOfReceive: Int!
   historyOfPurchaseId: Int!
   id: Int!
+  isCanBeRefund: Int!
+  isPartOfPack: Int!
+  packId: Int!
   productId: Int!
   serverId: Int!
   serverName: Int!
@@ -581,6 +925,9 @@ input InventoryCountOrderByAggregateInput {
   dateOfReceive: SortOrder
   historyOfPurchaseId: SortOrder
   id: SortOrder
+  isCanBeRefund: SortOrder
+  isPartOfPack: SortOrder
+  packId: SortOrder
   productId: SortOrder
   serverId: SortOrder
   serverName: SortOrder
@@ -593,6 +940,9 @@ input InventoryCreateInput {
   amount: Int!
   createdAt: DateTime
   dateOfReceive: DateTime
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   product: ProductCreateNestedOneWithoutInventoryInput!
   purchase: PurchaseCreateNestedOneWithoutInventoryInput!
   server: ServerCreateNestedOneWithoutInventoryInput
@@ -608,6 +958,9 @@ input InventoryCreateManyInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverId: Int
   serverName: String
@@ -622,6 +975,9 @@ input InventoryCreateManyProductInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   serverId: Int
   serverName: String
   serverTypeId: Int
@@ -639,6 +995,9 @@ input InventoryCreateManyPurchaseInput {
   createdAt: DateTime
   dateOfReceive: DateTime
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverId: Int
   serverName: String
@@ -658,6 +1017,9 @@ input InventoryCreateManyServerInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverName: String
   serverTypeId: Int
@@ -676,6 +1038,9 @@ input InventoryCreateManyServerTypeInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverId: Int
   serverName: String
@@ -694,6 +1059,9 @@ input InventoryCreateManyUserInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverId: Int
   serverName: String
@@ -770,6 +1138,9 @@ input InventoryCreateWithoutProductInput {
   amount: Int!
   createdAt: DateTime
   dateOfReceive: DateTime
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   purchase: PurchaseCreateNestedOneWithoutInventoryInput!
   server: ServerCreateNestedOneWithoutInventoryInput
   serverName: String
@@ -782,6 +1153,9 @@ input InventoryCreateWithoutPurchaseInput {
   amount: Int!
   createdAt: DateTime
   dateOfReceive: DateTime
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   product: ProductCreateNestedOneWithoutInventoryInput!
   server: ServerCreateNestedOneWithoutInventoryInput
   serverName: String
@@ -794,6 +1168,9 @@ input InventoryCreateWithoutServerInput {
   amount: Int!
   createdAt: DateTime
   dateOfReceive: DateTime
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   product: ProductCreateNestedOneWithoutInventoryInput!
   purchase: PurchaseCreateNestedOneWithoutInventoryInput!
   serverName: String
@@ -806,6 +1183,9 @@ input InventoryCreateWithoutServerTypeInput {
   amount: Int!
   createdAt: DateTime
   dateOfReceive: DateTime
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   product: ProductCreateNestedOneWithoutInventoryInput!
   purchase: PurchaseCreateNestedOneWithoutInventoryInput!
   server: ServerCreateNestedOneWithoutInventoryInput
@@ -818,6 +1198,9 @@ input InventoryCreateWithoutUserInput {
   amount: Int!
   createdAt: DateTime
   dateOfReceive: DateTime
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   product: ProductCreateNestedOneWithoutInventoryInput!
   purchase: PurchaseCreateNestedOneWithoutInventoryInput!
   server: ServerCreateNestedOneWithoutInventoryInput
@@ -838,6 +1221,9 @@ type InventoryMaxAggregateOutputType {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int
   serverId: Int
   serverName: String
@@ -852,6 +1238,9 @@ input InventoryMaxOrderByAggregateInput {
   dateOfReceive: SortOrder
   historyOfPurchaseId: SortOrder
   id: SortOrder
+  isCanBeRefund: SortOrder
+  isPartOfPack: SortOrder
+  packId: SortOrder
   productId: SortOrder
   serverId: SortOrder
   serverName: SortOrder
@@ -866,6 +1255,9 @@ type InventoryMinAggregateOutputType {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int
   serverId: Int
   serverName: String
@@ -880,6 +1272,9 @@ input InventoryMinOrderByAggregateInput {
   dateOfReceive: SortOrder
   historyOfPurchaseId: SortOrder
   id: SortOrder
+  isCanBeRefund: SortOrder
+  isPartOfPack: SortOrder
+  packId: SortOrder
   productId: SortOrder
   serverId: SortOrder
   serverName: SortOrder
@@ -903,6 +1298,9 @@ input InventoryOrderByWithAggregationInput {
   dateOfReceive: SortOrder
   historyOfPurchaseId: SortOrder
   id: SortOrder
+  isCanBeRefund: SortOrder
+  isPartOfPack: SortOrder
+  packId: SortOrder
   productId: SortOrder
   serverId: SortOrder
   serverName: SortOrder
@@ -917,6 +1315,9 @@ input InventoryOrderByWithRelationInput {
   dateOfReceive: SortOrder
   historyOfPurchaseId: SortOrder
   id: SortOrder
+  isCanBeRefund: SortOrder
+  isPartOfPack: SortOrder
+  packId: SortOrder
   product: ProductOrderByWithRelationInput
   productId: SortOrder
   purchase: PurchaseOrderByWithRelationInput
@@ -936,6 +1337,9 @@ enum InventoryScalarFieldEnum {
   dateOfReceive
   historyOfPurchaseId
   id
+  isCanBeRefund
+  isPartOfPack
+  packId
   productId
   serverId
   serverName
@@ -953,6 +1357,9 @@ input InventoryScalarWhereInput {
   dateOfReceive: DateTimeNullableFilter
   historyOfPurchaseId: IntFilter
   id: IntFilter
+  isCanBeRefund: BoolFilter
+  isPartOfPack: BoolNullableFilter
+  packId: IntNullableFilter
   productId: IntFilter
   serverId: IntNullableFilter
   serverName: StringNullableFilter
@@ -970,6 +1377,9 @@ input InventoryScalarWhereWithAggregatesInput {
   dateOfReceive: DateTimeNullableWithAggregatesFilter
   historyOfPurchaseId: IntWithAggregatesFilter
   id: IntWithAggregatesFilter
+  isCanBeRefund: BoolWithAggregatesFilter
+  isPartOfPack: BoolNullableWithAggregatesFilter
+  packId: IntNullableWithAggregatesFilter
   productId: IntWithAggregatesFilter
   serverId: IntNullableWithAggregatesFilter
   serverName: StringNullableWithAggregatesFilter
@@ -982,6 +1392,7 @@ type InventorySumAggregateOutputType {
   amount: Int
   historyOfPurchaseId: Int
   id: Int
+  packId: Int
   productId: Int
   serverId: Int
   serverTypeId: Int
@@ -992,6 +1403,7 @@ input InventorySumOrderByAggregateInput {
   amount: SortOrder
   historyOfPurchaseId: SortOrder
   id: SortOrder
+  packId: SortOrder
   productId: SortOrder
   serverId: SortOrder
   serverTypeId: SortOrder
@@ -1004,6 +1416,9 @@ input InventoryUncheckedCreateInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverId: Int
   serverName: String
@@ -1053,6 +1468,9 @@ input InventoryUncheckedCreateWithoutProductInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   serverId: Int
   serverName: String
   serverTypeId: Int
@@ -1065,6 +1483,9 @@ input InventoryUncheckedCreateWithoutPurchaseInput {
   createdAt: DateTime
   dateOfReceive: DateTime
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverId: Int
   serverName: String
@@ -1079,6 +1500,9 @@ input InventoryUncheckedCreateWithoutServerInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverName: String
   serverTypeId: Int
@@ -1092,6 +1516,9 @@ input InventoryUncheckedCreateWithoutServerTypeInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverId: Int
   serverName: String
@@ -1105,6 +1532,9 @@ input InventoryUncheckedCreateWithoutUserInput {
   dateOfReceive: DateTime
   historyOfPurchaseId: Int!
   id: Int
+  isCanBeRefund: Boolean
+  isPartOfPack: Boolean
+  packId: Int
   productId: Int!
   serverId: Int
   serverName: String
@@ -1118,6 +1548,9 @@ input InventoryUncheckedUpdateInput {
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
   historyOfPurchaseId: IntFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   productId: IntFieldUpdateOperationsInput
   serverId: NullableIntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1132,6 +1565,9 @@ input InventoryUncheckedUpdateManyInput {
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
   historyOfPurchaseId: IntFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   productId: IntFieldUpdateOperationsInput
   serverId: NullableIntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1146,6 +1582,9 @@ input InventoryUncheckedUpdateManyWithoutInventoryInput {
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
   historyOfPurchaseId: IntFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   productId: IntFieldUpdateOperationsInput
   serverId: NullableIntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1229,6 +1668,9 @@ input InventoryUncheckedUpdateWithoutProductInput {
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
   historyOfPurchaseId: IntFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   serverId: NullableIntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
   serverTypeId: NullableIntFieldUpdateOperationsInput
@@ -1241,6 +1683,9 @@ input InventoryUncheckedUpdateWithoutPurchaseInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   productId: IntFieldUpdateOperationsInput
   serverId: NullableIntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1255,6 +1700,9 @@ input InventoryUncheckedUpdateWithoutServerInput {
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
   historyOfPurchaseId: IntFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   productId: IntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
   serverTypeId: NullableIntFieldUpdateOperationsInput
@@ -1268,6 +1716,9 @@ input InventoryUncheckedUpdateWithoutServerTypeInput {
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
   historyOfPurchaseId: IntFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   productId: IntFieldUpdateOperationsInput
   serverId: NullableIntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1281,6 +1732,9 @@ input InventoryUncheckedUpdateWithoutUserInput {
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
   historyOfPurchaseId: IntFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   productId: IntFieldUpdateOperationsInput
   serverId: NullableIntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1292,6 +1746,9 @@ input InventoryUpdateInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   product: ProductUpdateOneRequiredWithoutInventoryInput
   purchase: PurchaseUpdateOneRequiredWithoutInventoryInput
   server: ServerUpdateOneWithoutInventoryInput
@@ -1305,6 +1762,9 @@ input InventoryUpdateManyMutationInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   serverName: NullableStringFieldUpdateOperationsInput
   status: EnumEStatusOfProductInInventoryFieldUpdateOperationsInput
 }
@@ -1433,6 +1893,9 @@ input InventoryUpdateWithoutProductInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   purchase: PurchaseUpdateOneRequiredWithoutInventoryInput
   server: ServerUpdateOneWithoutInventoryInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1445,6 +1908,9 @@ input InventoryUpdateWithoutPurchaseInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   product: ProductUpdateOneRequiredWithoutInventoryInput
   server: ServerUpdateOneWithoutInventoryInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1457,6 +1923,9 @@ input InventoryUpdateWithoutServerInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   product: ProductUpdateOneRequiredWithoutInventoryInput
   purchase: PurchaseUpdateOneRequiredWithoutInventoryInput
   serverName: NullableStringFieldUpdateOperationsInput
@@ -1469,6 +1938,9 @@ input InventoryUpdateWithoutServerTypeInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   product: ProductUpdateOneRequiredWithoutInventoryInput
   purchase: PurchaseUpdateOneRequiredWithoutInventoryInput
   server: ServerUpdateOneWithoutInventoryInput
@@ -1481,6 +1953,9 @@ input InventoryUpdateWithoutUserInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfReceive: NullableDateTimeFieldUpdateOperationsInput
+  isCanBeRefund: BoolFieldUpdateOperationsInput
+  isPartOfPack: NullableBoolFieldUpdateOperationsInput
+  packId: NullableIntFieldUpdateOperationsInput
   product: ProductUpdateOneRequiredWithoutInventoryInput
   purchase: PurchaseUpdateOneRequiredWithoutInventoryInput
   server: ServerUpdateOneWithoutInventoryInput
@@ -1528,6 +2003,9 @@ input InventoryWhereInput {
   dateOfReceive: DateTimeNullableFilter
   historyOfPurchaseId: IntFilter
   id: IntFilter
+  isCanBeRefund: BoolFilter
+  isPartOfPack: BoolNullableFilter
+  packId: IntNullableFilter
   product: ProductWhereInput
   productId: IntFilter
   purchase: PurchaseWhereInput
@@ -1585,7 +2063,8 @@ type Model {
 }
 
 type Mutation {
-  createOneBaseSettings: baseSettings!
+  createOneBaseSettings(data: BaseSettingsCreateInput!): BaseSettings!
+  createOneContacts(data: ContactsCreateInput!): Contacts!
   createOneInventory(data: InventoryCreateInput!): Inventory!
   createOneProduct(data: ProductCreateInput!): Product!
   createOnePromocodes(data: PromocodesCreateInput!): Promocodes!
@@ -1595,9 +2074,11 @@ type Mutation {
   createOneToken(data: TokenCreateInput!): Token!
   createOneTransaction(data: TransactionCreateInput!): Transaction!
   createOneTransfers(data: TransfersCreateInput!): Transfers!
-  createOneUrlSettings: urlSettings!
+  createOneUrlSettings(data: UrlSettingsCreateInput!): UrlSettings!
   createOneUser(data: UserCreateInput!): User!
-  deleteManyBaseSettings: BatchPayload!
+  createOneVisitors(data: VisitorsCreateInput!): Visitors!
+  deleteManyBaseSettings(where: BaseSettingsWhereInput): BatchPayload!
+  deleteManyContacts(where: ContactsWhereInput): BatchPayload!
   deleteManyInventory(where: InventoryWhereInput): BatchPayload!
   deleteManyProduct(where: ProductWhereInput): BatchPayload!
   deleteManyPromocodes(where: PromocodesWhereInput): BatchPayload!
@@ -1607,9 +2088,11 @@ type Mutation {
   deleteManyToken(where: TokenWhereInput): BatchPayload!
   deleteManyTransaction(where: TransactionWhereInput): BatchPayload!
   deleteManyTransfers(where: TransfersWhereInput): BatchPayload!
-  deleteManyUrlSettings: BatchPayload!
+  deleteManyUrlSettings(where: UrlSettingsWhereInput): BatchPayload!
   deleteManyUser(where: UserWhereInput): BatchPayload!
-  deleteOneBaseSettings: baseSettings
+  deleteManyVisitors(where: VisitorsWhereInput): BatchPayload!
+  deleteOneBaseSettings(where: BaseSettingsWhereUniqueInput!): BaseSettings
+  deleteOneContacts(where: ContactsWhereUniqueInput!): Contacts
   deleteOneInventory(where: InventoryWhereUniqueInput!): Inventory
   deleteOneProduct(where: ProductWhereUniqueInput!): Product
   deleteOnePromocodes(where: PromocodesWhereUniqueInput!): Promocodes
@@ -1619,10 +2102,12 @@ type Mutation {
   deleteOneToken(where: TokenWhereUniqueInput!): Token
   deleteOneTransaction(where: TransactionWhereUniqueInput!): Transaction
   deleteOneTransfers(where: TransfersWhereUniqueInput!): Transfers
-  deleteOneUrlSettings: urlSettings
+  deleteOneUrlSettings(where: UrlSettingsWhereUniqueInput!): UrlSettings
   deleteOneUser(where: UserWhereUniqueInput!): User
+  deleteOneVisitors(where: VisitorsWhereUniqueInput!): Visitors
   updateField(data: UpdateFieldInput!, id: String!, modelId: String!): Field!
-  updateManyBaseSettings: BatchPayload!
+  updateManyBaseSettings(data: BaseSettingsUpdateManyMutationInput!, where: BaseSettingsWhereInput): BatchPayload!
+  updateManyContacts(data: ContactsUpdateManyMutationInput!, where: ContactsWhereInput): BatchPayload!
   updateManyInventory(data: InventoryUpdateManyMutationInput!, where: InventoryWhereInput): BatchPayload!
   updateManyProduct(data: ProductUpdateManyMutationInput!, where: ProductWhereInput): BatchPayload!
   updateManyPromocodes(data: PromocodesUpdateManyMutationInput!, where: PromocodesWhereInput): BatchPayload!
@@ -1632,10 +2117,12 @@ type Mutation {
   updateManyToken(data: TokenUpdateManyMutationInput!, where: TokenWhereInput): BatchPayload!
   updateManyTransaction(data: TransactionUpdateManyMutationInput!, where: TransactionWhereInput): BatchPayload!
   updateManyTransfers(data: TransfersUpdateManyMutationInput!, where: TransfersWhereInput): BatchPayload!
-  updateManyUrlSettings: BatchPayload!
+  updateManyUrlSettings(data: UrlSettingsUpdateManyMutationInput!, where: UrlSettingsWhereInput): BatchPayload!
   updateManyUser(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  updateManyVisitors(data: VisitorsUpdateManyMutationInput!, where: VisitorsWhereInput): BatchPayload!
   updateModel(data: UpdateModelInput!, id: String!): Model!
-  updateOneBaseSettings: baseSettings!
+  updateOneBaseSettings(data: BaseSettingsUpdateInput!, where: BaseSettingsWhereUniqueInput!): BaseSettings!
+  updateOneContacts(data: ContactsUpdateInput!, where: ContactsWhereUniqueInput!): Contacts!
   updateOneInventory(data: InventoryUpdateInput!, where: InventoryWhereUniqueInput!): Inventory!
   updateOneProduct(data: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product!
   updateOnePromocodes(data: PromocodesUpdateInput!, where: PromocodesWhereUniqueInput!): Promocodes!
@@ -1645,9 +2132,11 @@ type Mutation {
   updateOneToken(data: TokenUpdateInput!, where: TokenWhereUniqueInput!): Token!
   updateOneTransaction(data: TransactionUpdateInput!, where: TransactionWhereUniqueInput!): Transaction!
   updateOneTransfers(data: TransfersUpdateInput!, where: TransfersWhereUniqueInput!): Transfers!
-  updateOneUrlSettings: urlSettings!
+  updateOneUrlSettings(data: UrlSettingsUpdateInput!, where: UrlSettingsWhereUniqueInput!): UrlSettings!
   updateOneUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
-  upsertOneBaseSettings: baseSettings!
+  updateOneVisitors(data: VisitorsUpdateInput!, where: VisitorsWhereUniqueInput!): Visitors!
+  upsertOneBaseSettings(create: BaseSettingsCreateInput!, update: BaseSettingsUpdateInput!, where: BaseSettingsWhereUniqueInput!): BaseSettings!
+  upsertOneContacts(create: ContactsCreateInput!, update: ContactsUpdateInput!, where: ContactsWhereUniqueInput!): Contacts!
   upsertOneInventory(create: InventoryCreateInput!, update: InventoryUpdateInput!, where: InventoryWhereUniqueInput!): Inventory!
   upsertOneProduct(create: ProductCreateInput!, update: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product!
   upsertOnePromocodes(create: PromocodesCreateInput!, update: PromocodesUpdateInput!, where: PromocodesWhereUniqueInput!): Promocodes!
@@ -1657,8 +2146,9 @@ type Mutation {
   upsertOneToken(create: TokenCreateInput!, update: TokenUpdateInput!, where: TokenWhereUniqueInput!): Token!
   upsertOneTransaction(create: TransactionCreateInput!, update: TransactionUpdateInput!, where: TransactionWhereUniqueInput!): Transaction!
   upsertOneTransfers(create: TransfersCreateInput!, update: TransfersUpdateInput!, where: TransfersWhereUniqueInput!): Transfers!
-  upsertOneUrlSettings: urlSettings!
+  upsertOneUrlSettings(create: UrlSettingsCreateInput!, update: UrlSettingsUpdateInput!, where: UrlSettingsWhereUniqueInput!): UrlSettings!
   upsertOneUser(create: UserCreateInput!, update: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+  upsertOneVisitors(create: VisitorsCreateInput!, update: VisitorsUpdateInput!, where: VisitorsWhereUniqueInput!): Visitors!
 }
 
 input NestedBoolFilter {
@@ -1861,22 +2351,6 @@ input NestedFloatNullableFilter {
   notIn: [Float]
 }
 
-input NestedFloatNullableWithAggregatesFilter {
-  _avg: NestedFloatNullableFilter
-  _count: NestedIntNullableFilter
-  _max: NestedFloatNullableFilter
-  _min: NestedFloatNullableFilter
-  _sum: NestedFloatNullableFilter
-  equals: Float
-  gt: Float
-  gte: Float
-  in: [Float]
-  lt: Float
-  lte: Float
-  not: NestedFloatNullableWithAggregatesFilter
-  notIn: [Float]
-}
-
 input NestedIntFilter {
   equals: Int
   gt: Int
@@ -2006,14 +2480,6 @@ input NullableDateTimeFieldUpdateOperationsInput {
   set: DateTime
 }
 
-input NullableFloatFieldUpdateOperationsInput {
-  decrement: Float
-  divide: Float
-  increment: Float
-  multiply: Float
-  set: Float
-}
-
 input NullableIntFieldUpdateOperationsInput {
   decrement: Int
   divide: Int
@@ -2039,8 +2505,9 @@ type Product {
   autoactivation: Boolean!
   blockSize: Int!
   buttonColor: EButtonColor!
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean!
   iconButton: String
@@ -2050,16 +2517,18 @@ type Product {
   isBackgroundImage: Boolean!
   isChangeAmount: Boolean!
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverType: ServerType
   serverTypeId: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct!
 }
 
@@ -2095,7 +2564,8 @@ type ProductCountAggregateOutputType {
   autoactivation: Int!
   blockSize: Int!
   buttonColor: Int!
-  description: Int!
+  description_en: Int!
+  description_ru: Int!
   discount: Int!
   height: Int!
   hidden: Int!
@@ -2106,8 +2576,9 @@ type ProductCountAggregateOutputType {
   isBackgroundImage: Int!
   isChangeAmount: Int!
   maxCountOfSale: Int!
-  name: Int!
   nameID: Int!
+  name_en: Int!
+  name_ru: Int!
   number: Int!
   price: Int!
   productContent: Int!
@@ -2115,6 +2586,7 @@ type ProductCountAggregateOutputType {
   saleDiscount: Int!
   serverTypeId: Int!
   textButton: Int!
+  textButton_en: Int!
   type: Int!
 }
 
@@ -2123,7 +2595,8 @@ input ProductCountOrderByAggregateInput {
   autoactivation: SortOrder
   blockSize: SortOrder
   buttonColor: SortOrder
-  description: SortOrder
+  description_en: SortOrder
+  description_ru: SortOrder
   discount: SortOrder
   height: SortOrder
   hidden: SortOrder
@@ -2134,8 +2607,9 @@ input ProductCountOrderByAggregateInput {
   isBackgroundImage: SortOrder
   isChangeAmount: SortOrder
   maxCountOfSale: SortOrder
-  name: SortOrder
   nameID: SortOrder
+  name_en: SortOrder
+  name_ru: SortOrder
   number: SortOrder
   price: SortOrder
   productContent: SortOrder
@@ -2143,6 +2617,7 @@ input ProductCountOrderByAggregateInput {
   saleDiscount: SortOrder
   serverTypeId: SortOrder
   textButton: SortOrder
+  textButton_en: SortOrder
   type: SortOrder
 }
 
@@ -2158,8 +2633,9 @@ input ProductCreateInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2168,15 +2644,17 @@ input ProductCreateInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverType: ServerTypeCreateNestedOneWithoutProductInput
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2185,8 +2663,9 @@ input ProductCreateManyInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2196,15 +2675,17 @@ input ProductCreateManyInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverTypeId: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2213,8 +2694,9 @@ input ProductCreateManyServerTypeInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2224,14 +2706,16 @@ input ProductCreateManyServerTypeInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2280,8 +2764,9 @@ input ProductCreateWithoutInventoryInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2290,15 +2775,17 @@ input ProductCreateWithoutInventoryInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverType: ServerTypeCreateNestedOneWithoutProductInput
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2308,8 +2795,9 @@ input ProductCreateWithoutPurchaseInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2318,15 +2806,17 @@ input ProductCreateWithoutPurchaseInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverType: ServerTypeCreateNestedOneWithoutProductInput
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2337,8 +2827,9 @@ input ProductCreateWithoutServerTypeInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2347,14 +2838,16 @@ input ProductCreateWithoutServerTypeInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2369,8 +2862,9 @@ type ProductMaxAggregateOutputType {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2380,14 +2874,16 @@ type ProductMaxAggregateOutputType {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String
   nameID: String
+  name_en: String
+  name_ru: String
   number: Int
   price: Int
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverTypeId: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2396,7 +2892,8 @@ input ProductMaxOrderByAggregateInput {
   autoactivation: SortOrder
   blockSize: SortOrder
   buttonColor: SortOrder
-  description: SortOrder
+  description_en: SortOrder
+  description_ru: SortOrder
   discount: SortOrder
   height: SortOrder
   hidden: SortOrder
@@ -2407,14 +2904,16 @@ input ProductMaxOrderByAggregateInput {
   isBackgroundImage: SortOrder
   isChangeAmount: SortOrder
   maxCountOfSale: SortOrder
-  name: SortOrder
   nameID: SortOrder
+  name_en: SortOrder
+  name_ru: SortOrder
   number: SortOrder
   price: SortOrder
   saleDeadline: SortOrder
   saleDiscount: SortOrder
   serverTypeId: SortOrder
   textButton: SortOrder
+  textButton_en: SortOrder
   type: SortOrder
 }
 
@@ -2423,8 +2922,9 @@ type ProductMinAggregateOutputType {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2434,14 +2934,16 @@ type ProductMinAggregateOutputType {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String
   nameID: String
+  name_en: String
+  name_ru: String
   number: Int
   price: Int
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverTypeId: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2450,7 +2952,8 @@ input ProductMinOrderByAggregateInput {
   autoactivation: SortOrder
   blockSize: SortOrder
   buttonColor: SortOrder
-  description: SortOrder
+  description_en: SortOrder
+  description_ru: SortOrder
   discount: SortOrder
   height: SortOrder
   hidden: SortOrder
@@ -2461,14 +2964,16 @@ input ProductMinOrderByAggregateInput {
   isBackgroundImage: SortOrder
   isChangeAmount: SortOrder
   maxCountOfSale: SortOrder
-  name: SortOrder
   nameID: SortOrder
+  name_en: SortOrder
+  name_ru: SortOrder
   number: SortOrder
   price: SortOrder
   saleDeadline: SortOrder
   saleDiscount: SortOrder
   serverTypeId: SortOrder
   textButton: SortOrder
+  textButton_en: SortOrder
   type: SortOrder
 }
 
@@ -2486,7 +2991,8 @@ input ProductOrderByWithAggregationInput {
   autoactivation: SortOrder
   blockSize: SortOrder
   buttonColor: SortOrder
-  description: SortOrder
+  description_en: SortOrder
+  description_ru: SortOrder
   discount: SortOrder
   height: SortOrder
   hidden: SortOrder
@@ -2497,8 +3003,9 @@ input ProductOrderByWithAggregationInput {
   isBackgroundImage: SortOrder
   isChangeAmount: SortOrder
   maxCountOfSale: SortOrder
-  name: SortOrder
   nameID: SortOrder
+  name_en: SortOrder
+  name_ru: SortOrder
   number: SortOrder
   price: SortOrder
   productContent: SortOrder
@@ -2506,6 +3013,7 @@ input ProductOrderByWithAggregationInput {
   saleDiscount: SortOrder
   serverTypeId: SortOrder
   textButton: SortOrder
+  textButton_en: SortOrder
   type: SortOrder
 }
 
@@ -2516,7 +3024,8 @@ input ProductOrderByWithRelationInput {
   autoactivation: SortOrder
   blockSize: SortOrder
   buttonColor: SortOrder
-  description: SortOrder
+  description_en: SortOrder
+  description_ru: SortOrder
   discount: SortOrder
   height: SortOrder
   hidden: SortOrder
@@ -2527,8 +3036,9 @@ input ProductOrderByWithRelationInput {
   isBackgroundImage: SortOrder
   isChangeAmount: SortOrder
   maxCountOfSale: SortOrder
-  name: SortOrder
   nameID: SortOrder
+  name_en: SortOrder
+  name_ru: SortOrder
   number: SortOrder
   price: SortOrder
   productContent: SortOrder
@@ -2537,6 +3047,7 @@ input ProductOrderByWithRelationInput {
   serverType: ServerTypeOrderByWithRelationInput
   serverTypeId: SortOrder
   textButton: SortOrder
+  textButton_en: SortOrder
   type: SortOrder
 }
 
@@ -2550,7 +3061,8 @@ enum ProductScalarFieldEnum {
   autoactivation
   blockSize
   buttonColor
-  description
+  description_en
+  description_ru
   discount
   height
   hidden
@@ -2561,8 +3073,9 @@ enum ProductScalarFieldEnum {
   isBackgroundImage
   isChangeAmount
   maxCountOfSale
-  name
   nameID
+  name_en
+  name_ru
   number
   price
   productContent
@@ -2570,6 +3083,7 @@ enum ProductScalarFieldEnum {
   saleDiscount
   serverTypeId
   textButton
+  textButton_en
   type
 }
 
@@ -2581,8 +3095,9 @@ input ProductScalarWhereInput {
   autoactivation: BoolFilter
   blockSize: IntFilter
   buttonColor: EnumEButtonColorFilter
-  description: StringNullableFilter
-  discount: FloatNullableFilter
+  description_en: StringNullableFilter
+  description_ru: StringNullableFilter
+  discount: IntNullableFilter
   height: IntNullableFilter
   hidden: BoolFilter
   iconButton: StringNullableFilter
@@ -2592,15 +3107,17 @@ input ProductScalarWhereInput {
   isBackgroundImage: BoolFilter
   isChangeAmount: BoolFilter
   maxCountOfSale: IntNullableFilter
-  name: StringFilter
   nameID: StringNullableFilter
+  name_en: StringFilter
+  name_ru: StringFilter
   number: IntNullableFilter
   price: IntFilter
   productContent: JsonNullableFilter
   saleDeadline: DateTimeNullableFilter
-  saleDiscount: FloatNullableFilter
+  saleDiscount: IntNullableFilter
   serverTypeId: IntNullableFilter
   textButton: StringNullableFilter
+  textButton_en: StringNullableFilter
   type: EnumETypeOfProductFilter
 }
 
@@ -2612,8 +3129,9 @@ input ProductScalarWhereWithAggregatesInput {
   autoactivation: BoolWithAggregatesFilter
   blockSize: IntWithAggregatesFilter
   buttonColor: EnumEButtonColorWithAggregatesFilter
-  description: StringNullableWithAggregatesFilter
-  discount: FloatNullableWithAggregatesFilter
+  description_en: StringNullableWithAggregatesFilter
+  description_ru: StringNullableWithAggregatesFilter
+  discount: IntNullableWithAggregatesFilter
   height: IntNullableWithAggregatesFilter
   hidden: BoolWithAggregatesFilter
   iconButton: StringNullableWithAggregatesFilter
@@ -2623,28 +3141,30 @@ input ProductScalarWhereWithAggregatesInput {
   isBackgroundImage: BoolWithAggregatesFilter
   isChangeAmount: BoolWithAggregatesFilter
   maxCountOfSale: IntNullableWithAggregatesFilter
-  name: StringWithAggregatesFilter
   nameID: StringNullableWithAggregatesFilter
+  name_en: StringWithAggregatesFilter
+  name_ru: StringWithAggregatesFilter
   number: IntNullableWithAggregatesFilter
   price: IntWithAggregatesFilter
   productContent: JsonNullableWithAggregatesFilter
   saleDeadline: DateTimeNullableWithAggregatesFilter
-  saleDiscount: FloatNullableWithAggregatesFilter
+  saleDiscount: IntNullableWithAggregatesFilter
   serverTypeId: IntNullableWithAggregatesFilter
   textButton: StringNullableWithAggregatesFilter
+  textButton_en: StringNullableWithAggregatesFilter
   type: EnumETypeOfProductWithAggregatesFilter
 }
 
 type ProductSumAggregateOutputType {
   amount: Int
   blockSize: Int
-  discount: Float
+  discount: Int
   height: Int
   id: Int
   maxCountOfSale: Int
   number: Int
   price: Int
-  saleDiscount: Float
+  saleDiscount: Int
   serverTypeId: Int
 }
 
@@ -2668,8 +3188,9 @@ input ProductUncheckedCreateInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2679,15 +3200,17 @@ input ProductUncheckedCreateInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverTypeId: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2704,8 +3227,9 @@ input ProductUncheckedCreateWithoutInventoryInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2715,15 +3239,17 @@ input ProductUncheckedCreateWithoutInventoryInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverTypeId: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2733,8 +3259,9 @@ input ProductUncheckedCreateWithoutPurchaseInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2744,15 +3271,17 @@ input ProductUncheckedCreateWithoutPurchaseInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   serverTypeId: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2763,8 +3292,9 @@ input ProductUncheckedCreateWithoutServerTypeInput {
   autoactivation: Boolean
   blockSize: Int
   buttonColor: EButtonColor
-  description: String
-  discount: Float
+  description_en: String
+  description_ru: String
+  discount: Int
   height: Int
   hidden: Boolean
   iconButton: String
@@ -2774,14 +3304,16 @@ input ProductUncheckedCreateWithoutServerTypeInput {
   isBackgroundImage: Boolean
   isChangeAmount: Boolean
   maxCountOfSale: Int
-  name: String!
   nameID: String
+  name_en: String!
+  name_ru: String!
   number: Int
   price: Int!
   productContent: Json
   saleDeadline: DateTime
-  saleDiscount: Float
+  saleDiscount: Int
   textButton: String
+  textButton_en: String
   type: ETypeOfProduct
 }
 
@@ -2792,8 +3324,9 @@ input ProductUncheckedUpdateInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -2803,15 +3336,17 @@ input ProductUncheckedUpdateInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   serverTypeId: NullableIntFieldUpdateOperationsInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -2820,8 +3355,9 @@ input ProductUncheckedUpdateManyInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -2831,15 +3367,17 @@ input ProductUncheckedUpdateManyInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   serverTypeId: NullableIntFieldUpdateOperationsInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -2848,8 +3386,9 @@ input ProductUncheckedUpdateManyWithoutProductInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -2859,14 +3398,16 @@ input ProductUncheckedUpdateManyWithoutProductInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -2890,8 +3431,9 @@ input ProductUncheckedUpdateWithoutInventoryInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -2901,15 +3443,17 @@ input ProductUncheckedUpdateWithoutInventoryInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   serverTypeId: NullableIntFieldUpdateOperationsInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -2919,8 +3463,9 @@ input ProductUncheckedUpdateWithoutPurchaseInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -2930,15 +3475,17 @@ input ProductUncheckedUpdateWithoutPurchaseInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   serverTypeId: NullableIntFieldUpdateOperationsInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -2949,8 +3496,9 @@ input ProductUncheckedUpdateWithoutServerTypeInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -2960,14 +3508,16 @@ input ProductUncheckedUpdateWithoutServerTypeInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -2978,8 +3528,9 @@ input ProductUpdateInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -2988,15 +3539,17 @@ input ProductUpdateInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   serverType: ServerTypeUpdateOneWithoutProductInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -3005,8 +3558,9 @@ input ProductUpdateManyMutationInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -3015,14 +3569,16 @@ input ProductUpdateManyMutationInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -3072,8 +3628,9 @@ input ProductUpdateWithoutInventoryInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -3082,15 +3639,17 @@ input ProductUpdateWithoutInventoryInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   serverType: ServerTypeUpdateOneWithoutProductInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -3100,8 +3659,9 @@ input ProductUpdateWithoutPurchaseInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -3110,15 +3670,17 @@ input ProductUpdateWithoutPurchaseInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   serverType: ServerTypeUpdateOneWithoutProductInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -3129,8 +3691,9 @@ input ProductUpdateWithoutServerTypeInput {
   autoactivation: BoolFieldUpdateOperationsInput
   blockSize: IntFieldUpdateOperationsInput
   buttonColor: EnumEButtonColorFieldUpdateOperationsInput
-  description: NullableStringFieldUpdateOperationsInput
-  discount: NullableFloatFieldUpdateOperationsInput
+  description_en: NullableStringFieldUpdateOperationsInput
+  description_ru: NullableStringFieldUpdateOperationsInput
+  discount: NullableIntFieldUpdateOperationsInput
   height: NullableIntFieldUpdateOperationsInput
   hidden: BoolFieldUpdateOperationsInput
   iconButton: NullableStringFieldUpdateOperationsInput
@@ -3139,14 +3702,16 @@ input ProductUpdateWithoutServerTypeInput {
   isBackgroundImage: BoolFieldUpdateOperationsInput
   isChangeAmount: BoolFieldUpdateOperationsInput
   maxCountOfSale: NullableIntFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
   nameID: NullableStringFieldUpdateOperationsInput
+  name_en: StringFieldUpdateOperationsInput
+  name_ru: StringFieldUpdateOperationsInput
   number: NullableIntFieldUpdateOperationsInput
   price: IntFieldUpdateOperationsInput
   productContent: Json
   saleDeadline: NullableDateTimeFieldUpdateOperationsInput
-  saleDiscount: NullableFloatFieldUpdateOperationsInput
+  saleDiscount: NullableIntFieldUpdateOperationsInput
   textButton: NullableStringFieldUpdateOperationsInput
+  textButton_en: NullableStringFieldUpdateOperationsInput
   type: EnumETypeOfProductFieldUpdateOperationsInput
 }
 
@@ -3176,8 +3741,9 @@ input ProductWhereInput {
   autoactivation: BoolFilter
   blockSize: IntFilter
   buttonColor: EnumEButtonColorFilter
-  description: StringNullableFilter
-  discount: FloatNullableFilter
+  description_en: StringNullableFilter
+  description_ru: StringNullableFilter
+  discount: IntNullableFilter
   height: IntNullableFilter
   hidden: BoolFilter
   iconButton: StringNullableFilter
@@ -3187,16 +3753,18 @@ input ProductWhereInput {
   isBackgroundImage: BoolFilter
   isChangeAmount: BoolFilter
   maxCountOfSale: IntNullableFilter
-  name: StringFilter
   nameID: StringNullableFilter
+  name_en: StringFilter
+  name_ru: StringFilter
   number: IntNullableFilter
   price: IntFilter
   productContent: JsonNullableFilter
   saleDeadline: DateTimeNullableFilter
-  saleDiscount: FloatNullableFilter
+  saleDiscount: IntNullableFilter
   serverType: ServerTypeWhereInput
   serverTypeId: IntNullableFilter
   textButton: StringNullableFilter
+  textButton_en: StringNullableFilter
   type: EnumETypeOfProductFilter
 }
 
@@ -3543,6 +4111,7 @@ type Purchase {
   _count: PurchaseCountOutputType
   amount: Int!
   createdAt: DateTime!
+  dateOfPurchase: String
   id: Int!
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3575,6 +4144,7 @@ type PurchaseCountAggregateOutputType {
   _all: Int!
   amount: Int!
   createdAt: Int!
+  dateOfPurchase: Int!
   id: Int!
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3586,6 +4156,7 @@ type PurchaseCountAggregateOutputType {
 input PurchaseCountOrderByAggregateInput {
   amount: SortOrder
   createdAt: SortOrder
+  dateOfPurchase: SortOrder
   id: SortOrder
   lostBonusBalance: SortOrder
   lostMainBalance: SortOrder
@@ -3602,6 +4173,7 @@ input PurchaseCreateInput {
   Inventory: InventoryCreateNestedManyWithoutPurchaseInput
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   lostBonusBalance: Int!
   lostMainBalance: Int!
   product: ProductCreateNestedOneWithoutPurchaseInput!
@@ -3612,6 +4184,7 @@ input PurchaseCreateInput {
 input PurchaseCreateManyInput {
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3623,6 +4196,7 @@ input PurchaseCreateManyInput {
 input PurchaseCreateManyProductInput {
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3638,6 +4212,7 @@ input PurchaseCreateManyProductInputEnvelope {
 input PurchaseCreateManyUserInput {
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3688,6 +4263,7 @@ input PurchaseCreateOrConnectWithoutUserInput {
 input PurchaseCreateWithoutInventoryInput {
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   lostBonusBalance: Int!
   lostMainBalance: Int!
   product: ProductCreateNestedOneWithoutPurchaseInput!
@@ -3699,6 +4275,7 @@ input PurchaseCreateWithoutProductInput {
   Inventory: InventoryCreateNestedManyWithoutPurchaseInput
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   lostBonusBalance: Int!
   lostMainBalance: Int!
   refund: Boolean!
@@ -3709,6 +4286,7 @@ input PurchaseCreateWithoutUserInput {
   Inventory: InventoryCreateNestedManyWithoutPurchaseInput
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   lostBonusBalance: Int!
   lostMainBalance: Int!
   product: ProductCreateNestedOneWithoutPurchaseInput!
@@ -3724,6 +4302,7 @@ input PurchaseListRelationFilter {
 type PurchaseMaxAggregateOutputType {
   amount: Int
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int
   lostMainBalance: Int
@@ -3735,6 +4314,7 @@ type PurchaseMaxAggregateOutputType {
 input PurchaseMaxOrderByAggregateInput {
   amount: SortOrder
   createdAt: SortOrder
+  dateOfPurchase: SortOrder
   id: SortOrder
   lostBonusBalance: SortOrder
   lostMainBalance: SortOrder
@@ -3746,6 +4326,7 @@ input PurchaseMaxOrderByAggregateInput {
 type PurchaseMinAggregateOutputType {
   amount: Int
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int
   lostMainBalance: Int
@@ -3757,6 +4338,7 @@ type PurchaseMinAggregateOutputType {
 input PurchaseMinOrderByAggregateInput {
   amount: SortOrder
   createdAt: SortOrder
+  dateOfPurchase: SortOrder
   id: SortOrder
   lostBonusBalance: SortOrder
   lostMainBalance: SortOrder
@@ -3777,6 +4359,7 @@ input PurchaseOrderByWithAggregationInput {
   _sum: PurchaseSumOrderByAggregateInput
   amount: SortOrder
   createdAt: SortOrder
+  dateOfPurchase: SortOrder
   id: SortOrder
   lostBonusBalance: SortOrder
   lostMainBalance: SortOrder
@@ -3789,6 +4372,7 @@ input PurchaseOrderByWithRelationInput {
   Inventory: InventoryOrderByRelationAggregateInput
   amount: SortOrder
   createdAt: SortOrder
+  dateOfPurchase: SortOrder
   id: SortOrder
   lostBonusBalance: SortOrder
   lostMainBalance: SortOrder
@@ -3807,6 +4391,7 @@ input PurchaseRelationFilter {
 enum PurchaseScalarFieldEnum {
   amount
   createdAt
+  dateOfPurchase
   id
   lostBonusBalance
   lostMainBalance
@@ -3821,6 +4406,7 @@ input PurchaseScalarWhereInput {
   OR: [PurchaseScalarWhereInput]
   amount: IntFilter
   createdAt: DateTimeFilter
+  dateOfPurchase: StringNullableFilter
   id: IntFilter
   lostBonusBalance: IntFilter
   lostMainBalance: IntFilter
@@ -3835,6 +4421,7 @@ input PurchaseScalarWhereWithAggregatesInput {
   OR: [PurchaseScalarWhereWithAggregatesInput]
   amount: IntWithAggregatesFilter
   createdAt: DateTimeWithAggregatesFilter
+  dateOfPurchase: StringNullableWithAggregatesFilter
   id: IntWithAggregatesFilter
   lostBonusBalance: IntWithAggregatesFilter
   lostMainBalance: IntWithAggregatesFilter
@@ -3865,6 +4452,7 @@ input PurchaseUncheckedCreateInput {
   Inventory: InventoryUncheckedCreateNestedManyWithoutPurchaseInput
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3890,6 +4478,7 @@ input PurchaseUncheckedCreateNestedManyWithoutUserInput {
 input PurchaseUncheckedCreateWithoutInventoryInput {
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3902,6 +4491,7 @@ input PurchaseUncheckedCreateWithoutProductInput {
   Inventory: InventoryUncheckedCreateNestedManyWithoutPurchaseInput
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3913,6 +4503,7 @@ input PurchaseUncheckedCreateWithoutUserInput {
   Inventory: InventoryUncheckedCreateNestedManyWithoutPurchaseInput
   amount: Int!
   createdAt: DateTime
+  dateOfPurchase: String
   id: Int
   lostBonusBalance: Int!
   lostMainBalance: Int!
@@ -3924,6 +4515,7 @@ input PurchaseUncheckedUpdateInput {
   Inventory: InventoryUncheckedUpdateManyWithoutPurchaseInput
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
@@ -3935,6 +4527,7 @@ input PurchaseUncheckedUpdateInput {
 input PurchaseUncheckedUpdateManyInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
@@ -3960,6 +4553,7 @@ input PurchaseUncheckedUpdateManyWithoutProductInput {
 input PurchaseUncheckedUpdateManyWithoutPurchaseInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
@@ -3984,6 +4578,7 @@ input PurchaseUncheckedUpdateManyWithoutUserInput {
 input PurchaseUncheckedUpdateWithoutInventoryInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
@@ -3996,6 +4591,7 @@ input PurchaseUncheckedUpdateWithoutProductInput {
   Inventory: InventoryUncheckedUpdateManyWithoutPurchaseInput
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
@@ -4007,6 +4603,7 @@ input PurchaseUncheckedUpdateWithoutUserInput {
   Inventory: InventoryUncheckedUpdateManyWithoutPurchaseInput
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
@@ -4018,6 +4615,7 @@ input PurchaseUpdateInput {
   Inventory: InventoryUpdateManyWithoutPurchaseInput
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
   product: ProductUpdateOneRequiredWithoutPurchaseInput
@@ -4028,6 +4626,7 @@ input PurchaseUpdateInput {
 input PurchaseUpdateManyMutationInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
   refund: BoolFieldUpdateOperationsInput
@@ -4092,6 +4691,7 @@ input PurchaseUpdateWithWhereUniqueWithoutUserInput {
 input PurchaseUpdateWithoutInventoryInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
   product: ProductUpdateOneRequiredWithoutPurchaseInput
@@ -4103,6 +4703,7 @@ input PurchaseUpdateWithoutProductInput {
   Inventory: InventoryUpdateManyWithoutPurchaseInput
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
   refund: BoolFieldUpdateOperationsInput
@@ -4113,6 +4714,7 @@ input PurchaseUpdateWithoutUserInput {
   Inventory: InventoryUpdateManyWithoutPurchaseInput
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfPurchase: NullableStringFieldUpdateOperationsInput
   lostBonusBalance: IntFieldUpdateOperationsInput
   lostMainBalance: IntFieldUpdateOperationsInput
   product: ProductUpdateOneRequiredWithoutPurchaseInput
@@ -4143,6 +4745,7 @@ input PurchaseWhereInput {
   OR: [PurchaseWhereInput]
   amount: IntFilter
   createdAt: DateTimeFilter
+  dateOfPurchase: StringNullableFilter
   id: IntFilter
   lostBonusBalance: IntFilter
   lostMainBalance: IntFilter
@@ -4158,7 +4761,8 @@ input PurchaseWhereUniqueInput {
 }
 
 type Query {
-  aggregateBaseSettings: AggregateBaseSettings
+  aggregateBaseSettings(cursor: BaseSettingsWhereUniqueInput, orderBy: [BaseSettingsOrderByWithRelationInput], skip: Int, take: Int, where: BaseSettingsWhereInput): AggregateBaseSettings
+  aggregateContacts(cursor: ContactsWhereUniqueInput, orderBy: [ContactsOrderByWithRelationInput], skip: Int, take: Int, where: ContactsWhereInput): AggregateContacts
   aggregateInventory(cursor: InventoryWhereUniqueInput, orderBy: [InventoryOrderByWithRelationInput], skip: Int, take: Int, where: InventoryWhereInput): AggregateInventory
   aggregateProduct(cursor: ProductWhereUniqueInput, orderBy: [ProductOrderByWithRelationInput], skip: Int, take: Int, where: ProductWhereInput): AggregateProduct
   aggregatePromocodes(cursor: PromocodesWhereUniqueInput, orderBy: [PromocodesOrderByWithRelationInput], skip: Int, take: Int, where: PromocodesWhereInput): AggregatePromocodes
@@ -4168,9 +4772,11 @@ type Query {
   aggregateToken(cursor: TokenWhereUniqueInput, orderBy: [TokenOrderByWithRelationInput], skip: Int, take: Int, where: TokenWhereInput): AggregateToken
   aggregateTransaction(cursor: TransactionWhereUniqueInput, orderBy: [TransactionOrderByWithRelationInput], skip: Int, take: Int, where: TransactionWhereInput): AggregateTransaction
   aggregateTransfers(cursor: TransfersWhereUniqueInput, orderBy: [TransfersOrderByWithRelationInput], skip: Int, take: Int, where: TransfersWhereInput): AggregateTransfers
-  aggregateUrlSettings: AggregateUrlSettings
+  aggregateUrlSettings(cursor: UrlSettingsWhereUniqueInput, orderBy: [UrlSettingsOrderByWithRelationInput], skip: Int, take: Int, where: UrlSettingsWhereInput): AggregateUrlSettings
   aggregateUser(cursor: UserWhereUniqueInput, orderBy: [UserOrderByWithRelationInput], skip: Int, take: Int, where: UserWhereInput): AggregateUser
-  findFirstBaseSettings: baseSettings
+  aggregateVisitors(cursor: VisitorsWhereUniqueInput, orderBy: [VisitorsOrderByWithRelationInput], skip: Int, take: Int, where: VisitorsWhereInput): AggregateVisitors
+  findFirstBaseSettings(cursor: BaseSettingsWhereUniqueInput, distinct: [BaseSettingsScalarFieldEnum], orderBy: [BaseSettingsOrderByWithRelationInput], skip: Int, take: Int, where: BaseSettingsWhereInput): BaseSettings
+  findFirstContacts(cursor: ContactsWhereUniqueInput, distinct: [ContactsScalarFieldEnum], orderBy: [ContactsOrderByWithRelationInput], skip: Int, take: Int, where: ContactsWhereInput): Contacts
   findFirstInventory(cursor: InventoryWhereUniqueInput, distinct: [InventoryScalarFieldEnum], orderBy: [InventoryOrderByWithRelationInput], skip: Int, take: Int, where: InventoryWhereInput): Inventory
   findFirstProduct(cursor: ProductWhereUniqueInput, distinct: [ProductScalarFieldEnum], orderBy: [ProductOrderByWithRelationInput], skip: Int, take: Int, where: ProductWhereInput): Product
   findFirstPromocodes(cursor: PromocodesWhereUniqueInput, distinct: [PromocodesScalarFieldEnum], orderBy: [PromocodesOrderByWithRelationInput], skip: Int, take: Int, where: PromocodesWhereInput): Promocodes
@@ -4180,10 +4786,13 @@ type Query {
   findFirstToken(cursor: TokenWhereUniqueInput, distinct: [TokenScalarFieldEnum], orderBy: [TokenOrderByWithRelationInput], skip: Int, take: Int, where: TokenWhereInput): Token
   findFirstTransaction(cursor: TransactionWhereUniqueInput, distinct: [TransactionScalarFieldEnum], orderBy: [TransactionOrderByWithRelationInput], skip: Int, take: Int, where: TransactionWhereInput): Transaction
   findFirstTransfers(cursor: TransfersWhereUniqueInput, distinct: [TransfersScalarFieldEnum], orderBy: [TransfersOrderByWithRelationInput], skip: Int, take: Int, where: TransfersWhereInput): Transfers
-  findFirstUrlSettings: urlSettings
+  findFirstUrlSettings(cursor: UrlSettingsWhereUniqueInput, distinct: [UrlSettingsScalarFieldEnum], orderBy: [UrlSettingsOrderByWithRelationInput], skip: Int, take: Int, where: UrlSettingsWhereInput): UrlSettings
   findFirstUser(cursor: UserWhereUniqueInput, distinct: [UserScalarFieldEnum], orderBy: [UserOrderByWithRelationInput], skip: Int, take: Int, where: UserWhereInput): User
-  findManyBaseSettings: [baseSettings!]!
-  findManyBaseSettingsCount: Int!
+  findFirstVisitors(cursor: VisitorsWhereUniqueInput, distinct: [VisitorsScalarFieldEnum], orderBy: [VisitorsOrderByWithRelationInput], skip: Int, take: Int, where: VisitorsWhereInput): Visitors
+  findManyBaseSettings(cursor: BaseSettingsWhereUniqueInput, distinct: [BaseSettingsScalarFieldEnum], orderBy: [BaseSettingsOrderByWithRelationInput], skip: Int, take: Int, where: BaseSettingsWhereInput): [BaseSettings!]!
+  findManyBaseSettingsCount(cursor: BaseSettingsWhereUniqueInput, distinct: [BaseSettingsScalarFieldEnum], orderBy: [BaseSettingsOrderByWithRelationInput], skip: Int, take: Int, where: BaseSettingsWhereInput): Int!
+  findManyContacts(cursor: ContactsWhereUniqueInput, distinct: [ContactsScalarFieldEnum], orderBy: [ContactsOrderByWithRelationInput], skip: Int, take: Int, where: ContactsWhereInput): [Contacts!]!
+  findManyContactsCount(cursor: ContactsWhereUniqueInput, distinct: [ContactsScalarFieldEnum], orderBy: [ContactsOrderByWithRelationInput], skip: Int, take: Int, where: ContactsWhereInput): Int!
   findManyInventory(cursor: InventoryWhereUniqueInput, distinct: [InventoryScalarFieldEnum], orderBy: [InventoryOrderByWithRelationInput], skip: Int, take: Int, where: InventoryWhereInput): [Inventory!]!
   findManyInventoryCount(cursor: InventoryWhereUniqueInput, distinct: [InventoryScalarFieldEnum], orderBy: [InventoryOrderByWithRelationInput], skip: Int, take: Int, where: InventoryWhereInput): Int!
   findManyProduct(cursor: ProductWhereUniqueInput, distinct: [ProductScalarFieldEnum], orderBy: [ProductOrderByWithRelationInput], skip: Int, take: Int, where: ProductWhereInput): [Product!]!
@@ -4202,11 +4811,14 @@ type Query {
   findManyTransactionCount(cursor: TransactionWhereUniqueInput, distinct: [TransactionScalarFieldEnum], orderBy: [TransactionOrderByWithRelationInput], skip: Int, take: Int, where: TransactionWhereInput): Int!
   findManyTransfers(cursor: TransfersWhereUniqueInput, distinct: [TransfersScalarFieldEnum], orderBy: [TransfersOrderByWithRelationInput], skip: Int, take: Int, where: TransfersWhereInput): [Transfers!]!
   findManyTransfersCount(cursor: TransfersWhereUniqueInput, distinct: [TransfersScalarFieldEnum], orderBy: [TransfersOrderByWithRelationInput], skip: Int, take: Int, where: TransfersWhereInput): Int!
-  findManyUrlSettings: [urlSettings!]!
-  findManyUrlSettingsCount: Int!
+  findManyUrlSettings(cursor: UrlSettingsWhereUniqueInput, distinct: [UrlSettingsScalarFieldEnum], orderBy: [UrlSettingsOrderByWithRelationInput], skip: Int, take: Int, where: UrlSettingsWhereInput): [UrlSettings!]!
+  findManyUrlSettingsCount(cursor: UrlSettingsWhereUniqueInput, distinct: [UrlSettingsScalarFieldEnum], orderBy: [UrlSettingsOrderByWithRelationInput], skip: Int, take: Int, where: UrlSettingsWhereInput): Int!
   findManyUser(cursor: UserWhereUniqueInput, distinct: [UserScalarFieldEnum], orderBy: [UserOrderByWithRelationInput], skip: Int, take: Int, where: UserWhereInput): [User!]!
   findManyUserCount(cursor: UserWhereUniqueInput, distinct: [UserScalarFieldEnum], orderBy: [UserOrderByWithRelationInput], skip: Int, take: Int, where: UserWhereInput): Int!
-  findUniqueBaseSettings: baseSettings
+  findManyVisitors(cursor: VisitorsWhereUniqueInput, distinct: [VisitorsScalarFieldEnum], orderBy: [VisitorsOrderByWithRelationInput], skip: Int, take: Int, where: VisitorsWhereInput): [Visitors!]!
+  findManyVisitorsCount(cursor: VisitorsWhereUniqueInput, distinct: [VisitorsScalarFieldEnum], orderBy: [VisitorsOrderByWithRelationInput], skip: Int, take: Int, where: VisitorsWhereInput): Int!
+  findUniqueBaseSettings(where: BaseSettingsWhereUniqueInput!): BaseSettings
+  findUniqueContacts(where: ContactsWhereUniqueInput!): Contacts
   findUniqueInventory(where: InventoryWhereUniqueInput!): Inventory
   findUniqueProduct(where: ProductWhereUniqueInput!): Product
   findUniquePromocodes(where: PromocodesWhereUniqueInput!): Promocodes
@@ -4216,8 +4828,9 @@ type Query {
   findUniqueToken(where: TokenWhereUniqueInput!): Token
   findUniqueTransaction(where: TransactionWhereUniqueInput!): Transaction
   findUniqueTransfers(where: TransfersWhereUniqueInput!): Transfers
-  findUniqueUrlSettings: urlSettings
+  findUniqueUrlSettings(where: UrlSettingsWhereUniqueInput!): UrlSettings
   findUniqueUser(where: UserWhereUniqueInput!): User
+  findUniqueVisitors(where: VisitorsWhereUniqueInput!): Visitors
   getSchema: Schema!
 }
 
@@ -6372,8 +6985,23 @@ input UpdateModelInput {
   update: Boolean
 }
 
+type UrlSettings {
+  hidden: Boolean!
+  icon: String
+  id: Int!
+  isHaveSidebar: Boolean
+  sections: Json
+  text: String
+  typeUrl: ETypeOfURL!
+  url: String!
+}
+
 type UrlSettingsAvgAggregateOutputType {
   id: Float
+}
+
+input UrlSettingsAvgOrderByAggregateInput {
+  id: SortOrder
 }
 
 type UrlSettingsCountAggregateOutputType {
@@ -6388,6 +7016,38 @@ type UrlSettingsCountAggregateOutputType {
   url: Int!
 }
 
+input UrlSettingsCountOrderByAggregateInput {
+  hidden: SortOrder
+  icon: SortOrder
+  id: SortOrder
+  isHaveSidebar: SortOrder
+  sections: SortOrder
+  text: SortOrder
+  typeUrl: SortOrder
+  url: SortOrder
+}
+
+input UrlSettingsCreateInput {
+  hidden: Boolean
+  icon: String
+  isHaveSidebar: Boolean
+  sections: Json
+  text: String
+  typeUrl: ETypeOfURL
+  url: String!
+}
+
+input UrlSettingsCreateManyInput {
+  hidden: Boolean
+  icon: String
+  id: Int
+  isHaveSidebar: Boolean
+  sections: Json
+  text: String
+  typeUrl: ETypeOfURL
+  url: String!
+}
+
 type UrlSettingsMaxAggregateOutputType {
   hidden: Boolean
   icon: String
@@ -6398,6 +7058,16 @@ type UrlSettingsMaxAggregateOutputType {
   url: String
 }
 
+input UrlSettingsMaxOrderByAggregateInput {
+  hidden: SortOrder
+  icon: SortOrder
+  id: SortOrder
+  isHaveSidebar: SortOrder
+  text: SortOrder
+  typeUrl: SortOrder
+  url: SortOrder
+}
+
 type UrlSettingsMinAggregateOutputType {
   hidden: Boolean
   icon: String
@@ -6406,6 +7076,43 @@ type UrlSettingsMinAggregateOutputType {
   text: String
   typeUrl: ETypeOfURL
   url: String
+}
+
+input UrlSettingsMinOrderByAggregateInput {
+  hidden: SortOrder
+  icon: SortOrder
+  id: SortOrder
+  isHaveSidebar: SortOrder
+  text: SortOrder
+  typeUrl: SortOrder
+  url: SortOrder
+}
+
+input UrlSettingsOrderByWithAggregationInput {
+  _avg: UrlSettingsAvgOrderByAggregateInput
+  _count: UrlSettingsCountOrderByAggregateInput
+  _max: UrlSettingsMaxOrderByAggregateInput
+  _min: UrlSettingsMinOrderByAggregateInput
+  _sum: UrlSettingsSumOrderByAggregateInput
+  hidden: SortOrder
+  icon: SortOrder
+  id: SortOrder
+  isHaveSidebar: SortOrder
+  sections: SortOrder
+  text: SortOrder
+  typeUrl: SortOrder
+  url: SortOrder
+}
+
+input UrlSettingsOrderByWithRelationInput {
+  hidden: SortOrder
+  icon: SortOrder
+  id: SortOrder
+  isHaveSidebar: SortOrder
+  sections: SortOrder
+  text: SortOrder
+  typeUrl: SortOrder
+  url: SortOrder
 }
 
 enum UrlSettingsScalarFieldEnum {
@@ -6419,7 +7126,96 @@ enum UrlSettingsScalarFieldEnum {
   url
 }
 
+input UrlSettingsScalarWhereWithAggregatesInput {
+  AND: [UrlSettingsScalarWhereWithAggregatesInput]
+  NOT: [UrlSettingsScalarWhereWithAggregatesInput]
+  OR: [UrlSettingsScalarWhereWithAggregatesInput]
+  hidden: BoolWithAggregatesFilter
+  icon: StringNullableWithAggregatesFilter
+  id: IntWithAggregatesFilter
+  isHaveSidebar: BoolNullableWithAggregatesFilter
+  sections: JsonNullableWithAggregatesFilter
+  text: StringNullableWithAggregatesFilter
+  typeUrl: EnumETypeOfURLWithAggregatesFilter
+  url: StringWithAggregatesFilter
+}
+
 type UrlSettingsSumAggregateOutputType {
+  id: Int
+}
+
+input UrlSettingsSumOrderByAggregateInput {
+  id: SortOrder
+}
+
+input UrlSettingsUncheckedCreateInput {
+  hidden: Boolean
+  icon: String
+  id: Int
+  isHaveSidebar: Boolean
+  sections: Json
+  text: String
+  typeUrl: ETypeOfURL
+  url: String!
+}
+
+input UrlSettingsUncheckedUpdateInput {
+  hidden: BoolFieldUpdateOperationsInput
+  icon: NullableStringFieldUpdateOperationsInput
+  id: IntFieldUpdateOperationsInput
+  isHaveSidebar: NullableBoolFieldUpdateOperationsInput
+  sections: Json
+  text: NullableStringFieldUpdateOperationsInput
+  typeUrl: EnumETypeOfURLFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+}
+
+input UrlSettingsUncheckedUpdateManyInput {
+  hidden: BoolFieldUpdateOperationsInput
+  icon: NullableStringFieldUpdateOperationsInput
+  id: IntFieldUpdateOperationsInput
+  isHaveSidebar: NullableBoolFieldUpdateOperationsInput
+  sections: Json
+  text: NullableStringFieldUpdateOperationsInput
+  typeUrl: EnumETypeOfURLFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+}
+
+input UrlSettingsUpdateInput {
+  hidden: BoolFieldUpdateOperationsInput
+  icon: NullableStringFieldUpdateOperationsInput
+  isHaveSidebar: NullableBoolFieldUpdateOperationsInput
+  sections: Json
+  text: NullableStringFieldUpdateOperationsInput
+  typeUrl: EnumETypeOfURLFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+}
+
+input UrlSettingsUpdateManyMutationInput {
+  hidden: BoolFieldUpdateOperationsInput
+  icon: NullableStringFieldUpdateOperationsInput
+  isHaveSidebar: NullableBoolFieldUpdateOperationsInput
+  sections: Json
+  text: NullableStringFieldUpdateOperationsInput
+  typeUrl: EnumETypeOfURLFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+}
+
+input UrlSettingsWhereInput {
+  AND: [UrlSettingsWhereInput]
+  NOT: [UrlSettingsWhereInput]
+  OR: [UrlSettingsWhereInput]
+  hidden: BoolFilter
+  icon: StringNullableFilter
+  id: IntFilter
+  isHaveSidebar: BoolNullableFilter
+  sections: JsonNullableFilter
+  text: StringNullableFilter
+  typeUrl: EnumETypeOfURLFilter
+  url: StringFilter
+}
+
+input UrlSettingsWhereUniqueInput {
   id: Int
 }
 
@@ -7696,6 +8492,187 @@ input UserWhereUniqueInput {
   steamID: String
 }
 
+type Visitors {
+  createdAt: DateTime!
+  id: Int!
+  ip: String!
+  sortDate: String!
+  sortedMonth: String!
+}
+
+type VisitorsAvgAggregateOutputType {
+  id: Float
+}
+
+input VisitorsAvgOrderByAggregateInput {
+  id: SortOrder
+}
+
+type VisitorsCountAggregateOutputType {
+  _all: Int!
+  createdAt: Int!
+  id: Int!
+  ip: Int!
+  sortDate: Int!
+  sortedMonth: Int!
+}
+
+input VisitorsCountOrderByAggregateInput {
+  createdAt: SortOrder
+  id: SortOrder
+  ip: SortOrder
+  sortDate: SortOrder
+  sortedMonth: SortOrder
+}
+
+input VisitorsCreateInput {
+  createdAt: DateTime
+  ip: String!
+  sortDate: String!
+  sortedMonth: String!
+}
+
+input VisitorsCreateManyInput {
+  createdAt: DateTime
+  id: Int
+  ip: String!
+  sortDate: String!
+  sortedMonth: String!
+}
+
+type VisitorsMaxAggregateOutputType {
+  createdAt: DateTime
+  id: Int
+  ip: String
+  sortDate: String
+  sortedMonth: String
+}
+
+input VisitorsMaxOrderByAggregateInput {
+  createdAt: SortOrder
+  id: SortOrder
+  ip: SortOrder
+  sortDate: SortOrder
+  sortedMonth: SortOrder
+}
+
+type VisitorsMinAggregateOutputType {
+  createdAt: DateTime
+  id: Int
+  ip: String
+  sortDate: String
+  sortedMonth: String
+}
+
+input VisitorsMinOrderByAggregateInput {
+  createdAt: SortOrder
+  id: SortOrder
+  ip: SortOrder
+  sortDate: SortOrder
+  sortedMonth: SortOrder
+}
+
+input VisitorsOrderByWithAggregationInput {
+  _avg: VisitorsAvgOrderByAggregateInput
+  _count: VisitorsCountOrderByAggregateInput
+  _max: VisitorsMaxOrderByAggregateInput
+  _min: VisitorsMinOrderByAggregateInput
+  _sum: VisitorsSumOrderByAggregateInput
+  createdAt: SortOrder
+  id: SortOrder
+  ip: SortOrder
+  sortDate: SortOrder
+  sortedMonth: SortOrder
+}
+
+input VisitorsOrderByWithRelationInput {
+  createdAt: SortOrder
+  id: SortOrder
+  ip: SortOrder
+  sortDate: SortOrder
+  sortedMonth: SortOrder
+}
+
+enum VisitorsScalarFieldEnum {
+  createdAt
+  id
+  ip
+  sortDate
+  sortedMonth
+}
+
+input VisitorsScalarWhereWithAggregatesInput {
+  AND: [VisitorsScalarWhereWithAggregatesInput]
+  NOT: [VisitorsScalarWhereWithAggregatesInput]
+  OR: [VisitorsScalarWhereWithAggregatesInput]
+  createdAt: DateTimeWithAggregatesFilter
+  id: IntWithAggregatesFilter
+  ip: StringWithAggregatesFilter
+  sortDate: StringWithAggregatesFilter
+  sortedMonth: StringWithAggregatesFilter
+}
+
+type VisitorsSumAggregateOutputType {
+  id: Int
+}
+
+input VisitorsSumOrderByAggregateInput {
+  id: SortOrder
+}
+
+input VisitorsUncheckedCreateInput {
+  createdAt: DateTime
+  id: Int
+  ip: String!
+  sortDate: String!
+  sortedMonth: String!
+}
+
+input VisitorsUncheckedUpdateInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  id: IntFieldUpdateOperationsInput
+  ip: StringFieldUpdateOperationsInput
+  sortDate: StringFieldUpdateOperationsInput
+  sortedMonth: StringFieldUpdateOperationsInput
+}
+
+input VisitorsUncheckedUpdateManyInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  id: IntFieldUpdateOperationsInput
+  ip: StringFieldUpdateOperationsInput
+  sortDate: StringFieldUpdateOperationsInput
+  sortedMonth: StringFieldUpdateOperationsInput
+}
+
+input VisitorsUpdateInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  ip: StringFieldUpdateOperationsInput
+  sortDate: StringFieldUpdateOperationsInput
+  sortedMonth: StringFieldUpdateOperationsInput
+}
+
+input VisitorsUpdateManyMutationInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  ip: StringFieldUpdateOperationsInput
+  sortDate: StringFieldUpdateOperationsInput
+  sortedMonth: StringFieldUpdateOperationsInput
+}
+
+input VisitorsWhereInput {
+  AND: [VisitorsWhereInput]
+  NOT: [VisitorsWhereInput]
+  OR: [VisitorsWhereInput]
+  createdAt: DateTimeFilter
+  id: IntFilter
+  ip: StringFilter
+  sortDate: StringFilter
+  sortedMonth: StringFilter
+}
+
+input VisitorsWhereUniqueInput {
+  id: Int
+}
+
 type baseSettings {
   IPWhiteList: String!
   apiKey: String!
@@ -7707,180 +8684,6 @@ type baseSettings {
   startBalance: Int!
 }
 
-input baseSettingsAvgOrderByAggregateInput {
-  id: SortOrder
-  startBalance: SortOrder
-}
-
-input baseSettingsCountOrderByAggregateInput {
-  IPWhiteList: SortOrder
-  apiKey: SortOrder
-  header: SortOrder
-  id: SortOrder
-  mainPage: SortOrder
-  panelURLs: SortOrder
-  saleMode: SortOrder
-  startBalance: SortOrder
-}
-
-input baseSettingsCreateInput {
-  IPWhiteList: String!
-  apiKey: String!
-  header: String!
-  mainPage: String!
-  panelURLs: Json
-  saleMode: Boolean
-  startBalance: Int!
-}
-
-input baseSettingsCreateManyInput {
-  IPWhiteList: String!
-  apiKey: String!
-  header: String!
-  id: Int
-  mainPage: String!
-  panelURLs: Json
-  saleMode: Boolean
-  startBalance: Int!
-}
-
-input baseSettingsMaxOrderByAggregateInput {
-  IPWhiteList: SortOrder
-  apiKey: SortOrder
-  header: SortOrder
-  id: SortOrder
-  mainPage: SortOrder
-  saleMode: SortOrder
-  startBalance: SortOrder
-}
-
-input baseSettingsMinOrderByAggregateInput {
-  IPWhiteList: SortOrder
-  apiKey: SortOrder
-  header: SortOrder
-  id: SortOrder
-  mainPage: SortOrder
-  saleMode: SortOrder
-  startBalance: SortOrder
-}
-
-input baseSettingsOrderByWithAggregationInput {
-  IPWhiteList: SortOrder
-  _avg: baseSettingsAvgOrderByAggregateInput
-  _count: baseSettingsCountOrderByAggregateInput
-  _max: baseSettingsMaxOrderByAggregateInput
-  _min: baseSettingsMinOrderByAggregateInput
-  _sum: baseSettingsSumOrderByAggregateInput
-  apiKey: SortOrder
-  header: SortOrder
-  id: SortOrder
-  mainPage: SortOrder
-  panelURLs: SortOrder
-  saleMode: SortOrder
-  startBalance: SortOrder
-}
-
-input baseSettingsOrderByWithRelationInput {
-  IPWhiteList: SortOrder
-  apiKey: SortOrder
-  header: SortOrder
-  id: SortOrder
-  mainPage: SortOrder
-  panelURLs: SortOrder
-  saleMode: SortOrder
-  startBalance: SortOrder
-}
-
-input baseSettingsScalarWhereWithAggregatesInput {
-  AND: [baseSettingsScalarWhereWithAggregatesInput]
-  IPWhiteList: StringWithAggregatesFilter
-  NOT: [baseSettingsScalarWhereWithAggregatesInput]
-  OR: [baseSettingsScalarWhereWithAggregatesInput]
-  apiKey: StringWithAggregatesFilter
-  header: StringWithAggregatesFilter
-  id: IntWithAggregatesFilter
-  mainPage: StringWithAggregatesFilter
-  panelURLs: JsonNullableWithAggregatesFilter
-  saleMode: BoolWithAggregatesFilter
-  startBalance: IntWithAggregatesFilter
-}
-
-input baseSettingsSumOrderByAggregateInput {
-  id: SortOrder
-  startBalance: SortOrder
-}
-
-input baseSettingsUncheckedCreateInput {
-  IPWhiteList: String!
-  apiKey: String!
-  header: String!
-  id: Int
-  mainPage: String!
-  panelURLs: Json
-  saleMode: Boolean
-  startBalance: Int!
-}
-
-input baseSettingsUncheckedUpdateInput {
-  IPWhiteList: StringFieldUpdateOperationsInput
-  apiKey: StringFieldUpdateOperationsInput
-  header: StringFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  mainPage: StringFieldUpdateOperationsInput
-  panelURLs: Json
-  saleMode: BoolFieldUpdateOperationsInput
-  startBalance: IntFieldUpdateOperationsInput
-}
-
-input baseSettingsUncheckedUpdateManyInput {
-  IPWhiteList: StringFieldUpdateOperationsInput
-  apiKey: StringFieldUpdateOperationsInput
-  header: StringFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  mainPage: StringFieldUpdateOperationsInput
-  panelURLs: Json
-  saleMode: BoolFieldUpdateOperationsInput
-  startBalance: IntFieldUpdateOperationsInput
-}
-
-input baseSettingsUpdateInput {
-  IPWhiteList: StringFieldUpdateOperationsInput
-  apiKey: StringFieldUpdateOperationsInput
-  header: StringFieldUpdateOperationsInput
-  mainPage: StringFieldUpdateOperationsInput
-  panelURLs: Json
-  saleMode: BoolFieldUpdateOperationsInput
-  startBalance: IntFieldUpdateOperationsInput
-}
-
-input baseSettingsUpdateManyMutationInput {
-  IPWhiteList: StringFieldUpdateOperationsInput
-  apiKey: StringFieldUpdateOperationsInput
-  header: StringFieldUpdateOperationsInput
-  mainPage: StringFieldUpdateOperationsInput
-  panelURLs: Json
-  saleMode: BoolFieldUpdateOperationsInput
-  startBalance: IntFieldUpdateOperationsInput
-}
-
-input baseSettingsWhereInput {
-  AND: [baseSettingsWhereInput]
-  IPWhiteList: StringFilter
-  NOT: [baseSettingsWhereInput]
-  OR: [baseSettingsWhereInput]
-  apiKey: StringFilter
-  header: StringFilter
-  id: IntFilter
-  mainPage: StringFilter
-  panelURLs: JsonNullableFilter
-  saleMode: BoolFilter
-  startBalance: IntFilter
-}
-
-input baseSettingsWhereUniqueInput {
-  id: Int
-}
-
 type urlSettings {
   hidden: Boolean!
   icon: String
@@ -7890,176 +8693,4 @@ type urlSettings {
   text: String
   typeUrl: ETypeOfURL!
   url: String!
-}
-
-input urlSettingsAvgOrderByAggregateInput {
-  id: SortOrder
-}
-
-input urlSettingsCountOrderByAggregateInput {
-  hidden: SortOrder
-  icon: SortOrder
-  id: SortOrder
-  isHaveSidebar: SortOrder
-  sections: SortOrder
-  text: SortOrder
-  typeUrl: SortOrder
-  url: SortOrder
-}
-
-input urlSettingsCreateInput {
-  hidden: Boolean
-  icon: String
-  isHaveSidebar: Boolean
-  sections: Json
-  text: String
-  typeUrl: ETypeOfURL
-  url: String!
-}
-
-input urlSettingsCreateManyInput {
-  hidden: Boolean
-  icon: String
-  id: Int
-  isHaveSidebar: Boolean
-  sections: Json
-  text: String
-  typeUrl: ETypeOfURL
-  url: String!
-}
-
-input urlSettingsMaxOrderByAggregateInput {
-  hidden: SortOrder
-  icon: SortOrder
-  id: SortOrder
-  isHaveSidebar: SortOrder
-  text: SortOrder
-  typeUrl: SortOrder
-  url: SortOrder
-}
-
-input urlSettingsMinOrderByAggregateInput {
-  hidden: SortOrder
-  icon: SortOrder
-  id: SortOrder
-  isHaveSidebar: SortOrder
-  text: SortOrder
-  typeUrl: SortOrder
-  url: SortOrder
-}
-
-input urlSettingsOrderByWithAggregationInput {
-  _avg: urlSettingsAvgOrderByAggregateInput
-  _count: urlSettingsCountOrderByAggregateInput
-  _max: urlSettingsMaxOrderByAggregateInput
-  _min: urlSettingsMinOrderByAggregateInput
-  _sum: urlSettingsSumOrderByAggregateInput
-  hidden: SortOrder
-  icon: SortOrder
-  id: SortOrder
-  isHaveSidebar: SortOrder
-  sections: SortOrder
-  text: SortOrder
-  typeUrl: SortOrder
-  url: SortOrder
-}
-
-input urlSettingsOrderByWithRelationInput {
-  hidden: SortOrder
-  icon: SortOrder
-  id: SortOrder
-  isHaveSidebar: SortOrder
-  sections: SortOrder
-  text: SortOrder
-  typeUrl: SortOrder
-  url: SortOrder
-}
-
-input urlSettingsScalarWhereWithAggregatesInput {
-  AND: [urlSettingsScalarWhereWithAggregatesInput]
-  NOT: [urlSettingsScalarWhereWithAggregatesInput]
-  OR: [urlSettingsScalarWhereWithAggregatesInput]
-  hidden: BoolWithAggregatesFilter
-  icon: StringNullableWithAggregatesFilter
-  id: IntWithAggregatesFilter
-  isHaveSidebar: BoolNullableWithAggregatesFilter
-  sections: JsonNullableWithAggregatesFilter
-  text: StringNullableWithAggregatesFilter
-  typeUrl: EnumETypeOfURLWithAggregatesFilter
-  url: StringWithAggregatesFilter
-}
-
-input urlSettingsSumOrderByAggregateInput {
-  id: SortOrder
-}
-
-input urlSettingsUncheckedCreateInput {
-  hidden: Boolean
-  icon: String
-  id: Int
-  isHaveSidebar: Boolean
-  sections: Json
-  text: String
-  typeUrl: ETypeOfURL
-  url: String!
-}
-
-input urlSettingsUncheckedUpdateInput {
-  hidden: BoolFieldUpdateOperationsInput
-  icon: NullableStringFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  isHaveSidebar: NullableBoolFieldUpdateOperationsInput
-  sections: Json
-  text: NullableStringFieldUpdateOperationsInput
-  typeUrl: EnumETypeOfURLFieldUpdateOperationsInput
-  url: StringFieldUpdateOperationsInput
-}
-
-input urlSettingsUncheckedUpdateManyInput {
-  hidden: BoolFieldUpdateOperationsInput
-  icon: NullableStringFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  isHaveSidebar: NullableBoolFieldUpdateOperationsInput
-  sections: Json
-  text: NullableStringFieldUpdateOperationsInput
-  typeUrl: EnumETypeOfURLFieldUpdateOperationsInput
-  url: StringFieldUpdateOperationsInput
-}
-
-input urlSettingsUpdateInput {
-  hidden: BoolFieldUpdateOperationsInput
-  icon: NullableStringFieldUpdateOperationsInput
-  isHaveSidebar: NullableBoolFieldUpdateOperationsInput
-  sections: Json
-  text: NullableStringFieldUpdateOperationsInput
-  typeUrl: EnumETypeOfURLFieldUpdateOperationsInput
-  url: StringFieldUpdateOperationsInput
-}
-
-input urlSettingsUpdateManyMutationInput {
-  hidden: BoolFieldUpdateOperationsInput
-  icon: NullableStringFieldUpdateOperationsInput
-  isHaveSidebar: NullableBoolFieldUpdateOperationsInput
-  sections: Json
-  text: NullableStringFieldUpdateOperationsInput
-  typeUrl: EnumETypeOfURLFieldUpdateOperationsInput
-  url: StringFieldUpdateOperationsInput
-}
-
-input urlSettingsWhereInput {
-  AND: [urlSettingsWhereInput]
-  NOT: [urlSettingsWhereInput]
-  OR: [urlSettingsWhereInput]
-  hidden: BoolFilter
-  icon: StringNullableFilter
-  id: IntFilter
-  isHaveSidebar: BoolNullableFilter
-  sections: JsonNullableFilter
-  text: StringNullableFilter
-  typeUrl: EnumETypeOfURLFilter
-  url: StringFilter
-}
-
-input urlSettingsWhereUniqueInput {
-  id: Int
 }

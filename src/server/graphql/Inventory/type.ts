@@ -48,5 +48,8 @@ export const Inventory = objectType({
     })
     t.int('productId')
     t.field('createdAt', { type: 'DateTime' })
+    t.boolean('isCanBeRefund')
+    t.nullable.boolean('isPartOfPack')
+    t.nullable.int('packId')
   },
 })
