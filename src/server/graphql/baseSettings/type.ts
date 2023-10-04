@@ -1,11 +1,11 @@
 import { objectType } from 'nexus'
 
-export const baseSettings = objectType({
+export const BaseSettings = objectType({
   nonNullDefaults: {
     output: true,
     input: false,
   },
-  name: 'baseSettings',
+  name: 'BaseSettings',
   definition(t) {
     t.int('id')
     t.string('header')

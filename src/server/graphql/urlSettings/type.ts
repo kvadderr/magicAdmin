@@ -1,11 +1,11 @@
 import { objectType } from 'nexus'
 
-export const urlSettings = objectType({
+export const UrlSettings = objectType({
   nonNullDefaults: {
     output: true,
     input: false,
   },
-  name: 'urlSettings',
+  name: 'UrlSettings',
   definition(t) {
     t.int('id')
     t.nullable.string('icon')
