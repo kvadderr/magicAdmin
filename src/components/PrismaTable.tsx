@@ -11,9 +11,11 @@ const Table = ({ model }: TableProps) => {
 
   // then pass here
   const PrismaTableStyled = styled(PrismaTable)`
-    td {
-      max-width: 12rem !important;
-      background-color: 'red';
+     {
+      td {
+        max-width: 12rem !important;
+        background-color: 'red';
+      }
     }
   `;
 
