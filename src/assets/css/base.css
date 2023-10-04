@@ -60,6 +60,5 @@
   margin-top: 12px;
 }
 td {
-  max-width: 12em !important;
-  background-color: red;
+  max-width: 15em !important;
 }
