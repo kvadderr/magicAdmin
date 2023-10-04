@@ -3,7 +3,10 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { PrismaTable } from '@paljs/admin/PrismaTable';
 
-const Table = (model: string) => {
+interface TableProps {
+  model: string;
+}
+const Table = ({ model }: TableProps) => {
   const router = useRouter();
 
   // then pass here

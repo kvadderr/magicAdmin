@@ -1,8 +1,8 @@
 import React from 'react';
-import PrismaTable from 'components/PrismaTable';
+import Table from 'components/PrismaTable';
 
 const UrlSettings: React.FC = () => {
-  return <PrismaTable model="UrlSettings" />;
+  return <Table model="UrlSettings" />;
 };
 
 export default UrlSettings;

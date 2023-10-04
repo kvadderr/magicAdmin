@@ -1,8 +1,8 @@
 import React from 'react';
-import PrismaTable from 'components/PrismaTable';
+import Table from 'components/PrismaTable';
 
 const Transfers: React.FC = () => {
-  return <PrismaTable model="Transfers" />;
+  return <Table model="Transfers" />;
 };
 
 export default Transfers;
