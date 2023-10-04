@@ -8,7 +8,7 @@ const Table: React.FC<{ model: string }> = ({ model }) => {
 
   // then pass here
   const PrismaTableStyled = styled(PrismaTable)`
-    & td {
+    td {
       max-width: 12rem;
     }
   `;
