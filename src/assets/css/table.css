@@ -23,6 +23,7 @@
   padding: 10px 15px;
   font-size: 14px;
   vertical-align: top;
+  max-width: 12rem !important;
 }
 .table tbody tr:nth-child(even) {
   background: #f3f3f3;
