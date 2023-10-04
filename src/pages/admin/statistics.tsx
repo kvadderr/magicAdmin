@@ -5,7 +5,7 @@ import Visits from 'components/statistic/Visits/Visits';
 
 const Statistics = () => {
   const [activeSection, setActiveSection] = useState(0);
-  const array_menu = ['Общая1', 'Посещения', 'Подробности дохода'];
+  const array_menu = ['Общая', 'Посещения', 'Подробности дохода'];
 
   const section = () => {
     switch (activeSection) {
