@@ -660,6 +660,8 @@ export enum EStatusOfProductInInventory {
 export enum EStatusOfRefill {
   Denied = 'DENIED',
   False = 'FALSE',
+  InProgress = 'IN_PROGRESS',
+  Refund = 'REFUND',
   Success = 'SUCCESS'
 }
 
@@ -7435,6 +7437,7 @@ export type Transaction = {
   createdAt: Scalars['DateTime'];
   id: Scalars['Int'];
   method: Scalars['String'];
+  sendNotification: Scalars['Boolean'];
   status: EStatusOfRefill;
   user?: Maybe<User>;
   userId?: Maybe<Scalars['Int']>;
@@ -7460,6 +7463,7 @@ export type TransactionCountAggregateOutputType = {
   createdAt: Scalars['Int'];
   id: Scalars['Int'];
   method: Scalars['Int'];
+  sendNotification: Scalars['Int'];
   status: Scalars['Int'];
   userId: Scalars['Int'];
 };
@@ -7469,6 +7473,7 @@ export type TransactionCountOrderByAggregateInput = {
   createdAt?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   method?: Maybe<SortOrder>;
+  sendNotification?: Maybe<SortOrder>;
   status?: Maybe<SortOrder>;
   userId?: Maybe<SortOrder>;
 };
@@ -7477,6 +7482,7 @@ export type TransactionCreateInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
   method: Scalars['String'];
+  sendNotification?: Maybe<Scalars['Boolean']>;
   status?: Maybe<EStatusOfRefill>;
   user?: Maybe<UserCreateNestedOneWithoutTransactionInput>;
 };
@@ -7486,6 +7492,7 @@ export type TransactionCreateManyInput = {
   createdAt?: Maybe<Scalars['DateTime']>;
   id?: Maybe<Scalars['Int']>;
   method: Scalars['String'];
+  sendNotification?: Maybe<Scalars['Boolean']>;
   status?: Maybe<EStatusOfRefill>;
   userId?: Maybe<Scalars['Int']>;
 };
@@ -7495,6 +7502,7 @@ export type TransactionCreateManyUserInput = {
   createdAt?: Maybe<Scalars['DateTime']>;
   id?: Maybe<Scalars['Int']>;
   method: Scalars['String'];
+  sendNotification?: Maybe<Scalars['Boolean']>;
   status?: Maybe<EStatusOfRefill>;
 };
 
@@ -7519,6 +7527,7 @@ export type TransactionCreateWithoutUserInput = {
   amount: Scalars['Int'];
   createdAt?: Maybe<Scalars['DateTime']>;
   method: Scalars['String'];
+  sendNotification?: Maybe<Scalars['Boolean']>;
   status?: Maybe<EStatusOfRefill>;
 };
 
@@ -7534,6 +7543,7 @@ export type TransactionMaxAggregateOutputType = {
   createdAt?: Maybe<Scalars['DateTime']>;
   id?: Maybe<Scalars['Int']>;
   method?: Maybe<Scalars['String']>;
+  sendNotification?: Maybe<Scalars['Boolean']>;
   status?: Maybe<EStatusOfRefill>;
   userId?: Maybe<Scalars['Int']>;
 };
@@ -7543,6 +7553,7 @@ export type TransactionMaxOrderByAggregateInput = {
   createdAt?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   method?: Maybe<SortOrder>;
+  sendNotification?: Maybe<SortOrder>;
   status?: Maybe<SortOrder>;
   userId?: Maybe<SortOrder>;
 };
@@ -7553,6 +7564,7 @@ export type TransactionMinAggregateOutputType = {
   createdAt?: Maybe<Scalars['DateTime']>;
   id?: Maybe<Scalars['Int']>;
   method?: Maybe<Scalars['String']>;
+  sendNotification?: Maybe<Scalars['Boolean']>;
   status?: Maybe<EStatusOfRefill>;
   userId?: Maybe<Scalars['Int']>;
 };
@@ -7562,6 +7574,7 @@ export type TransactionMinOrderByAggregateInput = {
   createdAt?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   method?: Maybe<SortOrder>;
+  sendNotification?: Maybe<SortOrder>;
   status?: Maybe<SortOrder>;
   userId?: Maybe<SortOrder>;
 };
@@ -7580,6 +7593,7 @@ export type TransactionOrderByWithAggregationInput = {
   createdAt?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   method?: Maybe<SortOrder>;
+  sendNotification?: Maybe<SortOrder>;
   status?: Maybe<SortOrder>;
   userId?: Maybe<SortOrder>;
 };
@@ -7589,6 +7603,7 @@ export type TransactionOrderByWithRelationInput = {
   createdAt?: Maybe<SortOrder>;
   id?: Maybe<SortOrder>;
   method?: Maybe<SortOrder>;
+  sendNotification?: Maybe<SortOrder>;
   status?: Maybe<SortOrder>;
   user?: Maybe<UserOrderByWithRelationInput>;
   userId?: Maybe<SortOrder>;
@@ -7599,6 +7614,7 @@ export enum TransactionScalarFieldEnum {
   CreatedAt = 'createdAt',
   Id = 'id',
   Method = 'method',
+  SendNotification = 'sendNotification',
   Status = 'status',
   UserId = 'userId'
 }
@@ -7611,6 +7627,7 @@ export type TransactionScalarWhereInput = {
   createdAt?: Maybe<DateTimeFilter>;
   id?: Maybe<IntFilter>;
   method?: Maybe<StringFilter>;
+  sendNotification?: Maybe<BoolFilter>;
   status?: Maybe<EnumEStatusOfRefillFilter>;
   userId?: Maybe<IntNullableFilter>;
 };
@@ -7623,6 +7640,7 @@ export type TransactionScalarWhereWithAggregatesInput = {
   createdAt?: Maybe<DateTimeWithAggregatesFilter>;
   id?: Maybe<IntWithAggregatesFilter>;
   method?: Maybe<StringWithAggregatesFilter>;
+  sendNotification?: Maybe<BoolWithAggregatesFilter>;
   status?: Maybe<EnumEStatusOfRefillWithAggregatesFilter>;
   userId?: Maybe<IntNullableWithAggregatesFilter>;
 };
@@ -7645,6 +7663,7 @@ export type TransactionUncheckedCreateInput = {
   createdAt?: Maybe<Scalars['DateTime']>;
   id?: Maybe<Scalars['Int']>;
   method: Scalars['String'];
+  sendNotification?: Maybe<Scalars['Boolean']>;
   status?: Maybe<EStatusOfRefill>;
   userId?: Maybe<Scalars['Int']>;
 };
@@ -7661,6 +7680,7 @@ export type TransactionUncheckedCreateWithoutUserInput = {
   createdAt?: Maybe<Scalars['DateTime']>;
   id?: Maybe<Scalars['Int']>;
   method: Scalars['String'];
+  sendNotification?: Maybe<Scalars['Boolean']>;
   status?: Maybe<EStatusOfRefill>;
 };
 
@@ -7669,6 +7689,7 @@ export type TransactionUncheckedUpdateInput = {
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   method?: Maybe<StringFieldUpdateOperationsInput>;
+  sendNotification?: Maybe<BoolFieldUpdateOperationsInput>;
   status?: Maybe<EnumEStatusOfRefillFieldUpdateOperationsInput>;
   userId?: Maybe<NullableIntFieldUpdateOperationsInput>;
 };
@@ -7678,6 +7699,7 @@ export type TransactionUncheckedUpdateManyInput = {
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   method?: Maybe<StringFieldUpdateOperationsInput>;
+  sendNotification?: Maybe<BoolFieldUpdateOperationsInput>;
   status?: Maybe<EnumEStatusOfRefillFieldUpdateOperationsInput>;
   userId?: Maybe<NullableIntFieldUpdateOperationsInput>;
 };
@@ -7687,6 +7709,7 @@ export type TransactionUncheckedUpdateManyWithoutTransactionInput = {
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   method?: Maybe<StringFieldUpdateOperationsInput>;
+  sendNotification?: Maybe<BoolFieldUpdateOperationsInput>;
   status?: Maybe<EnumEStatusOfRefillFieldUpdateOperationsInput>;
 };
 
@@ -7709,6 +7732,7 @@ export type TransactionUncheckedUpdateWithoutUserInput = {
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   id?: Maybe<IntFieldUpdateOperationsInput>;
   method?: Maybe<StringFieldUpdateOperationsInput>;
+  sendNotification?: Maybe<BoolFieldUpdateOperationsInput>;
   status?: Maybe<EnumEStatusOfRefillFieldUpdateOperationsInput>;
 };
 
@@ -7716,6 +7740,7 @@ export type TransactionUpdateInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   method?: Maybe<StringFieldUpdateOperationsInput>;
+  sendNotification?: Maybe<BoolFieldUpdateOperationsInput>;
   status?: Maybe<EnumEStatusOfRefillFieldUpdateOperationsInput>;
   user?: Maybe<UserUpdateOneWithoutTransactionInput>;
 };
@@ -7724,6 +7749,7 @@ export type TransactionUpdateManyMutationInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   method?: Maybe<StringFieldUpdateOperationsInput>;
+  sendNotification?: Maybe<BoolFieldUpdateOperationsInput>;
   status?: Maybe<EnumEStatusOfRefillFieldUpdateOperationsInput>;
 };
 
@@ -7755,6 +7781,7 @@ export type TransactionUpdateWithoutUserInput = {
   amount?: Maybe<IntFieldUpdateOperationsInput>;
   createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
   method?: Maybe<StringFieldUpdateOperationsInput>;
+  sendNotification?: Maybe<BoolFieldUpdateOperationsInput>;
   status?: Maybe<EnumEStatusOfRefillFieldUpdateOperationsInput>;
 };
 
@@ -7772,6 +7799,7 @@ export type TransactionWhereInput = {
   createdAt?: Maybe<DateTimeFilter>;
   id?: Maybe<IntFilter>;
   method?: Maybe<StringFilter>;
+  sendNotification?: Maybe<BoolFilter>;
   status?: Maybe<EnumEStatusOfRefillFilter>;
   user?: Maybe<UserWhereInput>;
   userId?: Maybe<IntNullableFilter>;
@@ -10022,28 +10050,4 @@ export type VisitorsWhereInput = {
 
 export type VisitorsWhereUniqueInput = {
   id?: Maybe<Scalars['Int']>;
-};
-
-export type BaseSettings = {
-  __typename?: 'baseSettings';
-  IPWhiteList: Scalars['String'];
-  apiKey: Scalars['String'];
-  header: Scalars['String'];
-  id: Scalars['Int'];
-  mainPage: Scalars['String'];
-  panelURLs?: Maybe<Scalars['Json']>;
-  saleMode: Scalars['Boolean'];
-  startBalance: Scalars['Int'];
-};
-
-export type UrlSettings = {
-  __typename?: 'urlSettings';
-  hidden: Scalars['Boolean'];
-  icon?: Maybe<Scalars['String']>;
-  id: Scalars['Int'];
-  isHaveSidebar?: Maybe<Scalars['Boolean']>;
-  sections?: Maybe<Scalars['Json']>;
-  text?: Maybe<Scalars['String']>;
-  typeUrl: ETypeOfUrl;
-  url: Scalars['String'];
 };

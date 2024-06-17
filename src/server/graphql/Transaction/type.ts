@@ -18,6 +18,7 @@ export const Transaction = objectType({
     t.string('method')
     t.int('amount')
     t.field('createdAt', { type: 'DateTime' })
+    t.boolean('sendNotification')
     t.field('status', { type: 'EStatusOfRefill' })
   },
 })

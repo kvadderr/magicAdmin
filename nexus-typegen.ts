@@ -4606,6 +4606,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     method?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sendNotification?: NexusGenEnums['SortOrder'] | null; // SortOrder
     status?: NexusGenEnums['SortOrder'] | null; // SortOrder
     userId?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
@@ -4613,6 +4614,7 @@ export interface NexusGenInputs {
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     method: string; // String!
+    sendNotification?: boolean | null; // Boolean
     status?: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
     user?: NexusGenInputs['UserCreateNestedOneWithoutTransactionInput'] | null; // UserCreateNestedOneWithoutTransactionInput
   }
@@ -4621,6 +4623,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
     method: string; // String!
+    sendNotification?: boolean | null; // Boolean
     status?: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
     userId?: number | null; // Int
   }
@@ -4629,6 +4632,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
     method: string; // String!
+    sendNotification?: boolean | null; // Boolean
     status?: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
   }
   TransactionCreateManyUserInputEnvelope: { // input type
@@ -4649,6 +4653,7 @@ export interface NexusGenInputs {
     amount: number; // Int!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     method: string; // String!
+    sendNotification?: boolean | null; // Boolean
     status?: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
   }
   TransactionListRelationFilter: { // input type
@@ -4661,6 +4666,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     method?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sendNotification?: NexusGenEnums['SortOrder'] | null; // SortOrder
     status?: NexusGenEnums['SortOrder'] | null; // SortOrder
     userId?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
@@ -4669,6 +4675,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     method?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sendNotification?: NexusGenEnums['SortOrder'] | null; // SortOrder
     status?: NexusGenEnums['SortOrder'] | null; // SortOrder
     userId?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
@@ -4685,6 +4692,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     method?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sendNotification?: NexusGenEnums['SortOrder'] | null; // SortOrder
     status?: NexusGenEnums['SortOrder'] | null; // SortOrder
     userId?: NexusGenEnums['SortOrder'] | null; // SortOrder
   }
@@ -4693,6 +4701,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     method?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    sendNotification?: NexusGenEnums['SortOrder'] | null; // SortOrder
     status?: NexusGenEnums['SortOrder'] | null; // SortOrder
     user?: NexusGenInputs['UserOrderByWithRelationInput'] | null; // UserOrderByWithRelationInput
     userId?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -4705,6 +4714,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeFilter'] | null; // DateTimeFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
     method?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    sendNotification?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     status?: NexusGenInputs['EnumEStatusOfRefillFilter'] | null; // EnumEStatusOfRefillFilter
     userId?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
   }
@@ -4716,6 +4726,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeWithAggregatesFilter'] | null; // DateTimeWithAggregatesFilter
     id?: NexusGenInputs['IntWithAggregatesFilter'] | null; // IntWithAggregatesFilter
     method?: NexusGenInputs['StringWithAggregatesFilter'] | null; // StringWithAggregatesFilter
+    sendNotification?: NexusGenInputs['BoolWithAggregatesFilter'] | null; // BoolWithAggregatesFilter
     status?: NexusGenInputs['EnumEStatusOfRefillWithAggregatesFilter'] | null; // EnumEStatusOfRefillWithAggregatesFilter
     userId?: NexusGenInputs['IntNullableWithAggregatesFilter'] | null; // IntNullableWithAggregatesFilter
   }
@@ -4729,6 +4740,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
     method: string; // String!
+    sendNotification?: boolean | null; // Boolean
     status?: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
     userId?: number | null; // Int
   }
@@ -4743,6 +4755,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
     method: string; // String!
+    sendNotification?: boolean | null; // Boolean
     status?: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
   }
   TransactionUncheckedUpdateInput: { // input type
@@ -4750,6 +4763,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     method?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sendNotification?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     status?: NexusGenInputs['EnumEStatusOfRefillFieldUpdateOperationsInput'] | null; // EnumEStatusOfRefillFieldUpdateOperationsInput
     userId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
   }
@@ -4758,6 +4772,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     method?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sendNotification?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     status?: NexusGenInputs['EnumEStatusOfRefillFieldUpdateOperationsInput'] | null; // EnumEStatusOfRefillFieldUpdateOperationsInput
     userId?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
   }
@@ -4766,6 +4781,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     method?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sendNotification?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     status?: NexusGenInputs['EnumEStatusOfRefillFieldUpdateOperationsInput'] | null; // EnumEStatusOfRefillFieldUpdateOperationsInput
   }
   TransactionUncheckedUpdateManyWithoutUserInput: { // input type
@@ -4786,12 +4802,14 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     id?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     method?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sendNotification?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     status?: NexusGenInputs['EnumEStatusOfRefillFieldUpdateOperationsInput'] | null; // EnumEStatusOfRefillFieldUpdateOperationsInput
   }
   TransactionUpdateInput: { // input type
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     method?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sendNotification?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     status?: NexusGenInputs['EnumEStatusOfRefillFieldUpdateOperationsInput'] | null; // EnumEStatusOfRefillFieldUpdateOperationsInput
     user?: NexusGenInputs['UserUpdateOneWithoutTransactionInput'] | null; // UserUpdateOneWithoutTransactionInput
   }
@@ -4799,6 +4817,7 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     method?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sendNotification?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     status?: NexusGenInputs['EnumEStatusOfRefillFieldUpdateOperationsInput'] | null; // EnumEStatusOfRefillFieldUpdateOperationsInput
   }
   TransactionUpdateManyWithWhereWithoutUserInput: { // input type
@@ -4826,6 +4845,7 @@ export interface NexusGenInputs {
     amount?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     method?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sendNotification?: NexusGenInputs['BoolFieldUpdateOperationsInput'] | null; // BoolFieldUpdateOperationsInput
     status?: NexusGenInputs['EnumEStatusOfRefillFieldUpdateOperationsInput'] | null; // EnumEStatusOfRefillFieldUpdateOperationsInput
   }
   TransactionUpsertWithWhereUniqueWithoutUserInput: { // input type
@@ -4841,6 +4861,7 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeFilter'] | null; // DateTimeFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
     method?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    sendNotification?: NexusGenInputs['BoolFilter'] | null; // BoolFilter
     status?: NexusGenInputs['EnumEStatusOfRefillFilter'] | null; // EnumEStatusOfRefillFilter
     user?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
     userId?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
@@ -6546,7 +6567,7 @@ export interface NexusGenEnums {
   ContactsScalarFieldEnum: "icon" | "id" | "name" | "url"
   EButtonColor: "BLUE" | "GREEN"
   EStatusOfProductInInventory: "INVENTORY" | "ON_SERVER"
-  EStatusOfRefill: "DENIED" | "FALSE" | "SUCCESS"
+  EStatusOfRefill: "DENIED" | "FALSE" | "IN_PROGRESS" | "REFUND" | "SUCCESS"
   ETypeOfProduct: "CARDS" | "CURRENCY" | "GAME_ITEM" | "HTTP_REQUEST" | "SERVICE" | "SETS_OF_PRODUCTS"
   ETypeOfURL: "CUSTOM_PAGE" | "DROPDOWN_LIST" | "EXTERNAL_LINK" | "SITE_SECTION"
   InventoryScalarFieldEnum: "amount" | "createdAt" | "dateOfReceive" | "historyOfPurchaseId" | "id" | "isCanBeRefund" | "isPartOfPack" | "packId" | "productId" | "serverId" | "serverName" | "serverTypeId" | "status" | "userId"
@@ -6560,7 +6581,7 @@ export interface NexusGenEnums {
   ServerTypeScalarFieldEnum: "description" | "hidden" | "id" | "name" | "number"
   SortOrder: "asc" | "desc"
   TokenScalarFieldEnum: "browser" | "clientIp" | "deviceName" | "deviceType" | "id" | "os" | "token" | "userId"
-  TransactionScalarFieldEnum: "amount" | "createdAt" | "id" | "method" | "status" | "userId"
+  TransactionScalarFieldEnum: "amount" | "createdAt" | "id" | "method" | "sendNotification" | "status" | "userId"
   TransfersScalarFieldEnum: "amount" | "createdAt" | "id" | "receiverId" | "senderId"
   USER_ROLE: "ADMINISTRATOR" | "CLIENT"
   UrlSettingsScalarFieldEnum: "hidden" | "icon" | "id" | "isHaveSidebar" | "sections" | "text" | "typeUrl" | "url"
@@ -7315,6 +7336,7 @@ export interface NexusGenObjects {
     createdAt: NexusGenScalars['DateTime']; // DateTime!
     id: number; // Int!
     method: string; // String!
+    sendNotification: boolean; // Boolean!
     status: NexusGenEnums['EStatusOfRefill']; // EStatusOfRefill!
     userId?: number | null; // Int
   }
@@ -7329,6 +7351,7 @@ export interface NexusGenObjects {
     createdAt: number; // Int!
     id: number; // Int!
     method: number; // Int!
+    sendNotification: number; // Int!
     status: number; // Int!
     userId: number; // Int!
   }
@@ -7337,6 +7360,7 @@ export interface NexusGenObjects {
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
     method?: string | null; // String
+    sendNotification?: boolean | null; // Boolean
     status?: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
     userId?: number | null; // Int
   }
@@ -7345,6 +7369,7 @@ export interface NexusGenObjects {
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: number | null; // Int
     method?: string | null; // String
+    sendNotification?: boolean | null; // Boolean
     status?: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
     userId?: number | null; // Int
   }
@@ -7580,26 +7605,6 @@ export interface NexusGenObjects {
   }
   VisitorsSumAggregateOutputType: { // root type
     id?: number | null; // Int
-  }
-  baseSettings: { // root type
-    IPWhiteList: string; // String!
-    apiKey: string; // String!
-    header: string; // String!
-    id: number; // Int!
-    mainPage: string; // String!
-    panelURLs?: NexusGenScalars['Json'] | null; // Json
-    saleMode: boolean; // Boolean!
-    startBalance: number; // Int!
-  }
-  urlSettings: { // root type
-    hidden: boolean; // Boolean!
-    icon?: string | null; // String
-    id: number; // Int!
-    isHaveSidebar?: boolean | null; // Boolean
-    sections?: NexusGenScalars['Json'] | null; // Json
-    text?: string | null; // String
-    typeUrl: NexusGenEnums['ETypeOfURL']; // ETypeOfURL!
-    url: string; // String!
   }
 }
 
@@ -8528,6 +8533,7 @@ export interface NexusGenFieldTypes {
     createdAt: NexusGenScalars['DateTime']; // DateTime!
     id: number; // Int!
     method: string; // String!
+    sendNotification: boolean; // Boolean!
     status: NexusGenEnums['EStatusOfRefill']; // EStatusOfRefill!
     user: NexusGenRootTypes['User'] | null; // User
     userId: number | null; // Int
@@ -8543,6 +8549,7 @@ export interface NexusGenFieldTypes {
     createdAt: number; // Int!
     id: number; // Int!
     method: number; // Int!
+    sendNotification: number; // Int!
     status: number; // Int!
     userId: number; // Int!
   }
@@ -8551,6 +8558,7 @@ export interface NexusGenFieldTypes {
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     id: number | null; // Int
     method: string | null; // String
+    sendNotification: boolean | null; // Boolean
     status: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
     userId: number | null; // Int
   }
@@ -8559,6 +8567,7 @@ export interface NexusGenFieldTypes {
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     id: number | null; // Int
     method: string | null; // String
+    sendNotification: boolean | null; // Boolean
     status: NexusGenEnums['EStatusOfRefill'] | null; // EStatusOfRefill
     userId: number | null; // Int
   }
@@ -8803,26 +8812,6 @@ export interface NexusGenFieldTypes {
   }
   VisitorsSumAggregateOutputType: { // field return type
     id: number | null; // Int
-  }
-  baseSettings: { // field return type
-    IPWhiteList: string; // String!
-    apiKey: string; // String!
-    header: string; // String!
-    id: number; // Int!
-    mainPage: string; // String!
-    panelURLs: NexusGenScalars['Json'] | null; // Json
-    saleMode: boolean; // Boolean!
-    startBalance: number; // Int!
-  }
-  urlSettings: { // field return type
-    hidden: boolean; // Boolean!
-    icon: string | null; // String
-    id: number; // Int!
-    isHaveSidebar: boolean | null; // Boolean
-    sections: NexusGenScalars['Json'] | null; // Json
-    text: string | null; // String
-    typeUrl: NexusGenEnums['ETypeOfURL']; // ETypeOfURL!
-    url: string; // String!
   }
 }
 
@@ -9741,6 +9730,7 @@ export interface NexusGenFieldTypeNames {
     createdAt: 'DateTime'
     id: 'Int'
     method: 'String'
+    sendNotification: 'Boolean'
     status: 'EStatusOfRefill'
     user: 'User'
     userId: 'Int'
@@ -9756,6 +9746,7 @@ export interface NexusGenFieldTypeNames {
     createdAt: 'Int'
     id: 'Int'
     method: 'Int'
+    sendNotification: 'Int'
     status: 'Int'
     userId: 'Int'
   }
@@ -9764,6 +9755,7 @@ export interface NexusGenFieldTypeNames {
     createdAt: 'DateTime'
     id: 'Int'
     method: 'String'
+    sendNotification: 'Boolean'
     status: 'EStatusOfRefill'
     userId: 'Int'
   }
@@ -9772,6 +9764,7 @@ export interface NexusGenFieldTypeNames {
     createdAt: 'DateTime'
     id: 'Int'
     method: 'String'
+    sendNotification: 'Boolean'
     status: 'EStatusOfRefill'
     userId: 'Int'
   }
@@ -10016,26 +10009,6 @@ export interface NexusGenFieldTypeNames {
   }
   VisitorsSumAggregateOutputType: { // field return type name
     id: 'Int'
-  }
-  baseSettings: { // field return type name
-    IPWhiteList: 'String'
-    apiKey: 'String'
-    header: 'String'
-    id: 'Int'
-    mainPage: 'String'
-    panelURLs: 'Json'
-    saleMode: 'Boolean'
-    startBalance: 'Int'
-  }
-  urlSettings: { // field return type name
-    hidden: 'Boolean'
-    icon: 'String'
-    id: 'Int'
-    isHaveSidebar: 'Boolean'
-    sections: 'Json'
-    text: 'String'
-    typeUrl: 'ETypeOfURL'
-    url: 'String'
   }
 }
 

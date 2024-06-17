@@ -52,7 +52,6 @@ const ProfitDetails = () => {
   };
 
   const changeComponent = (item: any) => {
-    console.log('item', item);
     let comp = undefined;
     switch (item.component) {
       case 'ProfitOnServer':

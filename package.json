@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "start": "next start",
     "generate": "pal g && yarn generate:prisma && yarn generate:nexus && yarn codegen",
     "migrate:up": "npx prisma migrate deploy",
@@ -25,6 +25,7 @@
     "apollo-server-micro": "3.3.0",
     "axios": "^1.4.0",
     "bcryptjs": "2.4.3",
+    "caniuse-lite": "^1.0.30001606",
     "cookie": "0.4.1",
     "graphql": "15.6.0",
     "graphql-tag": "2.12.5",

@@ -624,6 +624,8 @@ enum EStatusOfProductInInventory {
 enum EStatusOfRefill {
   DENIED
   FALSE
+  IN_PROGRESS
+  REFUND
   SUCCESS
 }
 
@@ -6174,6 +6176,7 @@ type Transaction {
   createdAt: DateTime!
   id: Int!
   method: String!
+  sendNotification: Boolean!
   status: EStatusOfRefill!
   user: User
   userId: Int
@@ -6197,6 +6200,7 @@ type TransactionCountAggregateOutputType {
   createdAt: Int!
   id: Int!
   method: Int!
+  sendNotification: Int!
   status: Int!
   userId: Int!
 }
@@ -6206,6 +6210,7 @@ input TransactionCountOrderByAggregateInput {
   createdAt: SortOrder
   id: SortOrder
   method: SortOrder
+  sendNotification: SortOrder
   status: SortOrder
   userId: SortOrder
 }
@@ -6214,6 +6219,7 @@ input TransactionCreateInput {
   amount: Int!
   createdAt: DateTime
   method: String!
+  sendNotification: Boolean
   status: EStatusOfRefill
   user: UserCreateNestedOneWithoutTransactionInput
 }
@@ -6223,6 +6229,7 @@ input TransactionCreateManyInput {
   createdAt: DateTime
   id: Int
   method: String!
+  sendNotification: Boolean
   status: EStatusOfRefill
   userId: Int
 }
@@ -6232,6 +6239,7 @@ input TransactionCreateManyUserInput {
   createdAt: DateTime
   id: Int
   method: String!
+  sendNotification: Boolean
   status: EStatusOfRefill
 }
 
@@ -6256,6 +6264,7 @@ input TransactionCreateWithoutUserInput {
   amount: Int!
   createdAt: DateTime
   method: String!
+  sendNotification: Boolean
   status: EStatusOfRefill
 }
 
@@ -6270,6 +6279,7 @@ type TransactionMaxAggregateOutputType {
   createdAt: DateTime
   id: Int
   method: String
+  sendNotification: Boolean
   status: EStatusOfRefill
   userId: Int
 }
@@ -6279,6 +6289,7 @@ input TransactionMaxOrderByAggregateInput {
   createdAt: SortOrder
   id: SortOrder
   method: SortOrder
+  sendNotification: SortOrder
   status: SortOrder
   userId: SortOrder
 }
@@ -6288,6 +6299,7 @@ type TransactionMinAggregateOutputType {
   createdAt: DateTime
   id: Int
   method: String
+  sendNotification: Boolean
   status: EStatusOfRefill
   userId: Int
 }
@@ -6297,6 +6309,7 @@ input TransactionMinOrderByAggregateInput {
   createdAt: SortOrder
   id: SortOrder
   method: SortOrder
+  sendNotification: SortOrder
   status: SortOrder
   userId: SortOrder
 }
@@ -6315,6 +6328,7 @@ input TransactionOrderByWithAggregationInput {
   createdAt: SortOrder
   id: SortOrder
   method: SortOrder
+  sendNotification: SortOrder
   status: SortOrder
   userId: SortOrder
 }
@@ -6324,6 +6338,7 @@ input TransactionOrderByWithRelationInput {
   createdAt: SortOrder
   id: SortOrder
   method: SortOrder
+  sendNotification: SortOrder
   status: SortOrder
   user: UserOrderByWithRelationInput
   userId: SortOrder
@@ -6334,6 +6349,7 @@ enum TransactionScalarFieldEnum {
   createdAt
   id
   method
+  sendNotification
   status
   userId
 }
@@ -6346,6 +6362,7 @@ input TransactionScalarWhereInput {
   createdAt: DateTimeFilter
   id: IntFilter
   method: StringFilter
+  sendNotification: BoolFilter
   status: EnumEStatusOfRefillFilter
   userId: IntNullableFilter
 }
@@ -6358,6 +6375,7 @@ input TransactionScalarWhereWithAggregatesInput {
   createdAt: DateTimeWithAggregatesFilter
   id: IntWithAggregatesFilter
   method: StringWithAggregatesFilter
+  sendNotification: BoolWithAggregatesFilter
   status: EnumEStatusOfRefillWithAggregatesFilter
   userId: IntNullableWithAggregatesFilter
 }
@@ -6379,6 +6397,7 @@ input TransactionUncheckedCreateInput {
   createdAt: DateTime
   id: Int
   method: String!
+  sendNotification: Boolean
   status: EStatusOfRefill
   userId: Int
 }
@@ -6395,6 +6414,7 @@ input TransactionUncheckedCreateWithoutUserInput {
   createdAt: DateTime
   id: Int
   method: String!
+  sendNotification: Boolean
   status: EStatusOfRefill
 }
 
@@ -6403,6 +6423,7 @@ input TransactionUncheckedUpdateInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   method: StringFieldUpdateOperationsInput
+  sendNotification: BoolFieldUpdateOperationsInput
   status: EnumEStatusOfRefillFieldUpdateOperationsInput
   userId: NullableIntFieldUpdateOperationsInput
 }
@@ -6412,6 +6433,7 @@ input TransactionUncheckedUpdateManyInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   method: StringFieldUpdateOperationsInput
+  sendNotification: BoolFieldUpdateOperationsInput
   status: EnumEStatusOfRefillFieldUpdateOperationsInput
   userId: NullableIntFieldUpdateOperationsInput
 }
@@ -6421,6 +6443,7 @@ input TransactionUncheckedUpdateManyWithoutTransactionInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   method: StringFieldUpdateOperationsInput
+  sendNotification: BoolFieldUpdateOperationsInput
   status: EnumEStatusOfRefillFieldUpdateOperationsInput
 }
 
@@ -6443,6 +6466,7 @@ input TransactionUncheckedUpdateWithoutUserInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   id: IntFieldUpdateOperationsInput
   method: StringFieldUpdateOperationsInput
+  sendNotification: BoolFieldUpdateOperationsInput
   status: EnumEStatusOfRefillFieldUpdateOperationsInput
 }
 
@@ -6450,6 +6474,7 @@ input TransactionUpdateInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   method: StringFieldUpdateOperationsInput
+  sendNotification: BoolFieldUpdateOperationsInput
   status: EnumEStatusOfRefillFieldUpdateOperationsInput
   user: UserUpdateOneWithoutTransactionInput
 }
@@ -6458,6 +6483,7 @@ input TransactionUpdateManyMutationInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   method: StringFieldUpdateOperationsInput
+  sendNotification: BoolFieldUpdateOperationsInput
   status: EnumEStatusOfRefillFieldUpdateOperationsInput
 }
 
@@ -6489,6 +6515,7 @@ input TransactionUpdateWithoutUserInput {
   amount: IntFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
   method: StringFieldUpdateOperationsInput
+  sendNotification: BoolFieldUpdateOperationsInput
   status: EnumEStatusOfRefillFieldUpdateOperationsInput
 }
 
@@ -6506,6 +6533,7 @@ input TransactionWhereInput {
   createdAt: DateTimeFilter
   id: IntFilter
   method: StringFilter
+  sendNotification: BoolFilter
   status: EnumEStatusOfRefillFilter
   user: UserWhereInput
   userId: IntNullableFilter
@@ -8671,26 +8699,4 @@ input VisitorsWhereInput {
 
 input VisitorsWhereUniqueInput {
   id: Int
-}
-
-type baseSettings {
-  IPWhiteList: String!
-  apiKey: String!
-  header: String!
-  id: Int!
-  mainPage: String!
-  panelURLs: Json
-  saleMode: Boolean!
-  startBalance: Int!
-}
-
-type urlSettings {
-  hidden: Boolean!
-  icon: String
-  id: Int!
-  isHaveSidebar: Boolean
-  sections: Json
-  text: String
-  typeUrl: ETypeOfURL!
-  url: String!
 }

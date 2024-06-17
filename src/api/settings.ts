@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://magicowgs.geryon.space/api';
+const BASE_URL = 'https://mrust.ru/api';
 
 export const baseApi = axios.create({
   baseURL: BASE_URL,
@@ -31,7 +31,7 @@ const config = {
 };
 
 export const checkAdmin = async () => {
-  const response = await axios.get<any>(`https://magicowgs.geryon.space/api/auth/validateAdmin`, config);
+  const response = await axios.get<any>(`https://mrust.ru/api/auth/validateAdmin`, config);
   return response.data;
 };
 
